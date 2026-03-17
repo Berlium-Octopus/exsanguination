@@ -1,0 +1,23 @@
+{
+  "values": [
+    {
+      "factor": 1,
+      "value": "lcmt:chests/town_office_supplies",
+      "inpart": [
+        "lcmt:town/town01_in_office_1",
+        "lcmt:town/town10_in_office_1",
+        "lcmt:town/town11_in_office_1"
+      ]
+    },
+    {
+      "factor": 1,
+      "value": "lcmt:chests/town_valuables",
+      "inpart": [
+        "lcmt:town/town01_in_executive_office_1",
+        "lcmt:town/town01_in_vault_1",
+        "lcmt:town/town10_in_executive_office_1",
+        "lcmt:town/town10_in_vault_1"
+      ]
+    }
+  ]
+}

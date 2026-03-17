@@ -1,0 +1,12 @@
+{
+  "blocks": [
+    {
+      "random": 32,
+      "block": "minecraft:andesite_stairs[facing=south,half=bottom,shape=straight]"
+    },
+    {
+      "random": 1000,
+      "block": "minecraft:stone_stairs[facing=south,half=bottom,shape=straight]"
+    }
+  ]
+}

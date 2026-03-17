@@ -1,0 +1,103 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "f",
+        "variant": "lcmt:stone_brick_stairs_bottom_north"
+      },
+      {
+        "char": "j",
+        "variant": "lcmt:stone_brick_stairs_bottom_east"
+      },
+      {
+        "char": "m",
+        "variant": "lcmt:stone_brick_stairs_bottom_south"
+      },
+      {
+        "char": "i",
+        "variant": "lcmt:stone_brick_stairs_bottom_west"
+      },
+      {
+        "char": "x",
+        "variant": "lcmt:stonebrick",
+        "damaged": "minecraft:iron_bars"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "                ",
+      " xffx      xffx ",
+      " i     p p  p j ",
+      " i   p        j ",
+      " x           px ",
+      "                ",
+      "  p    xxx      ",
+      "      xWWWx p   ",
+      "    p xWWWx     ",
+      "      xWWWx     ",
+      "  p    xxx      ",
+      " x          p x ",
+      " i         p  j ",
+      " i p     p    j ",
+      " xmmxp     xmmx ",
+      "                "
+    ],
+    [
+      "                ",
+      " w  w      w  w ",
+      "                ",
+      "                ",
+      " w            w ",
+      "                ",
+      "        e       ",
+      "                ",
+      "        W       ",
+      "                ",
+      "        e       ",
+      " w            w ",
+      "                ",
+      "                ",
+      " w  w      w  w ",
+      "                "
+    ],
+    [
+      "                ",
+      " w  w      w  w ",
+      "                ",
+      "                ",
+      " w            w ",
+      "                ",
+      "                ",
+      "                ",
+      "        W       ",
+      "                ",
+      "                ",
+      " w            w ",
+      "                ",
+      "                ",
+      " w  w      w  w ",
+      "                "
+    ],
+    [
+      "                ",
+      " ____      ____ ",
+      " _            _ ",
+      " _            _ ",
+      " _            _ ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      " _            _ ",
+      " _            _ ",
+      " _            _ ",
+      " ____      ____ ",
+      "                "
+    ]
+  ]
+}

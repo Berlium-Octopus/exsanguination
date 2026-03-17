@@ -1,0 +1,63 @@
+{
+    "armorSetName": "megainiumkaboom",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "cataclysm:ignitium_helmet",
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "cataclysm:ignitium_elytra_chestplate",
+        "mixAndMatch": ["cataclysm:ignitium_chestplate"],
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "cataclysm:ignitium_chestplate",
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "cataclysm:ignitium_boots",
+        "mustBeEmpty": false
+    },
+    "partialBonusRequiredAmount": 1,
+    "partialSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:stamina",
+            "value": -0.3,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "07a08f55-0786-444c-80b6-4b4a948a70a8",
+            "description": "1100"
+        },
+        {
+            "type": "effect",
+            "name": "vinery:creeper_effect",
+            "value": 0,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "cataclysm:bone_fracture",
+            "value": 2,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "cataclysm:blazing_brand",
+            "value": 1,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

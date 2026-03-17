@@ -1,0 +1,43 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "jeg:revolver",
+                    "weight": 10,
+                    "conditions": []
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "biomemakeover:cowboy_hat",
+                    "weight": 4,
+                    "conditions": []
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "jeg:advanced_firearm_blueprint",
+                    "weight": 20,
+                    "conditions": []
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "jeg:ectoplasm",
+                    "weight": 4,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 30
+                            }
+                        }
+                    ],
+                    "conditions": []
+                }
+            ]
+        }
+    ]
+}

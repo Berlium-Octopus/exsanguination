@@ -1,0 +1,23 @@
+{
+    "armorSetName": "eletranerf",
+    "performanceMode": true,
+    "additionalSetPieces": [
+       {
+         "itemKey": "alexscaves:game_controller",
+           "mustBeEmpty": false
+       }
+   ],
+    "fullSetBonuses": [
+      {
+           "type": "effect",
+           "name": "alexsmobs:fear",
+           "interactionType": "immunity"
+       },
+       {
+            "type": "effect",
+            "name": "potioncore:vulnerable",
+            "interactionType": "immunity"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

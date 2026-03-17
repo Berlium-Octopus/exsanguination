@@ -1,0 +1,6 @@
+
+[general]
+	#Range: 0.0 ~ 1.0
+	white_enderman_chance = 0.01
+	aggressive = true
+

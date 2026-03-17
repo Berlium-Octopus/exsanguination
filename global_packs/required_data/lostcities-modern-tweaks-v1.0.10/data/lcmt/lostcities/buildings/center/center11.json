@@ -1,0 +1,44 @@
+{
+  "filler": "#",
+  "rubble": "}",
+  "allowFillers": false,
+  "parts": [
+    {
+      "cellar": true,
+      "part": "lcmt:center/center11_underground_1"
+    },
+    {
+      "top": false,
+      "cellar": false,
+      "part": "lcmt:center/center11_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_empty"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_solar_panels_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_ac_units_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:center/center11_top_glass_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:center/center11_top_glass_2"
+    },
+    {
+      "top": true,
+      "part": "lcmt:center/center11_top_glass_3"
+    },
+    {
+      "top": true,
+      "part": "lcmt:center/center11_top_glass_4"
+    }
+  ]
+}

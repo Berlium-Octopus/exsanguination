@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:crossbow"
+  ],
+  "incompatible": [
+    "minecraft:flame",
+    "minecraft:punch",
+    "minecraft:infinity",
+    "extra_enchantments:resonating_shot",
+    "extra_enchantments:shadow_shot",
+    "minecraft:quick_charge",
+    "extra_enchantments:electrifying_shot",
+    "extra_enchantments:incompatibility_curse",
+    "minecraft:power"
+  ]
+}

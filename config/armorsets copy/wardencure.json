@@ -1,0 +1,78 @@
+{
+    "armorSetName": "wardencures",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "deeperdarker:warden_helmet",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "chest": {
+        "itemKey": "deeperdarker:warden_chestplate",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "legs": {
+        "itemKey": "deeperdarker:warden_leggings",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "boots": {
+        "itemKey": "deeperdarker:warden_boots",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "potioncore:curse",
+            "interactionType": "immunity",
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "cataclysm:abyssal_curse",
+            "interactionType": "immunity",
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "cataclysm:curse_of_desert",
+            "interactionType": "immunity",
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:resistance",
+            "interactionType": "self",
+            "value": 0,
+            "interactionDuration": 100,
+            "hideBonusDescription": true,
+            "conditions": [
+                {
+                    "type": "inDimension",
+                    "extra": "deeperdarker:otherside"
+                }
+            ]
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

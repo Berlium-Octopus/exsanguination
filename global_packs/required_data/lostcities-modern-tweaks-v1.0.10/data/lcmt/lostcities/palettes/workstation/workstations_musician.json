@@ -1,0 +1,37 @@
+{
+  "palette": [
+    {
+      "char": "F",
+      "blocks": [
+        {
+          "random": 20,
+          "block": "minecraft:crafting_table"
+        },
+        {
+          "random": 20,
+          "block": "minecraft:note_block"
+        },
+        {
+          "random": 10,
+          "block": "minecraft:lectern"
+        },
+        {
+          "random": 10,
+          "block": "minecraft:barrel[facing=up]"
+        },
+        {
+          "random": 5,
+          "block": "minecraft:jukebox"
+        },
+        {
+          "random": 4,
+          "block": "minecraft:bell[attachment=floor,facing=north,powered=false]"
+        },
+        {
+          "random": 1000,
+          "block": "minecraft:cobweb"
+        }
+      ]
+    }
+  ]
+}

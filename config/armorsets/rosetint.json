@@ -1,0 +1,32 @@
+{
+    "armorSetName": "rosetint",
+    "performanceMode": true,
+    "additionalSetPieces": [
+        {
+            "itemKey": "mobcompack:rose_tinted_monocle",
+            "mustBeEmpty": false
+        }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "minecraft:night_vision",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "hideBonusDescription": false,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "attribute",
+            "name": "potioncore:damage_resistance",
+            "value": -0.05,
+            "interactionType": "self",
+            "attributeOperation": 0,
+            "modifierUUID": "63d342ef-1db1-49b1-9bbf-7d8ec421aca2",
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

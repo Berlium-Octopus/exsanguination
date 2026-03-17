@@ -1,0 +1,12 @@
+{
+  "ingredients": [
+    {
+      "item": "quark:crab_shell"
+    }
+  ],
+  "result": {
+    "item": "cataclysm:amethyst_crab_shell",
+    "count": 1
+  },
+  "time": 200
+}

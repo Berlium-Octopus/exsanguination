@@ -1,0 +1,83 @@
+{
+    "armorSetName": "GOD",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "rootoffear:fadedwood_helmet",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "chest": {
+        "itemKey": "rootoffear:fadedwood_chestplate",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "legs": {
+        "itemKey": "rootoffear:fadedwood_leggings",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "boots": {
+        "itemKey": "rootoffear:fadedwood_boots",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "mainHand": {
+        "itemKey": "spartanweaponry:studded_cestus",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "offHand": {
+        "itemKey": "spartanweaponry:studded_cestus",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "partialBonusRequiredAmount": 1,
+    "partialSetBonuses": [
+        {
+              "type": "attribute",
+              "name": "puffish_attributes:stealth",
+              "value": -0.75,
+              "attributeOperation": 1,
+              "modifierUUID": "fc26f27a-9fd3-485f-bf8a-c678b55f79ca",
+              "conditions": [
+                {
+                    "type": "inLava"
+                }
+            ]
+        }
+    ],
+    "fullSetBonuses": [
+      {
+            "type": "attribute",
+            "name": "puffish_attributes:stealth",
+            "value": 0.75,
+            "attributeOperation": 1,
+            "modifierUUID": "fc26f27a-9fd3-485f-bf8a-c678b55f79ca"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

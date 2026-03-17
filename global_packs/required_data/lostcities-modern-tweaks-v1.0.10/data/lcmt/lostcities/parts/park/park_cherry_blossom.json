@@ -1,0 +1,180 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "k",
+        "blocks": [
+          {
+            "random": 32,
+            "block": "minecraft:pink_petals[facing=west,flower_amount=4]"
+          },
+          {
+            "random": 32,
+            "block": "minecraft:pink_petals[facing=south,flower_amount=4]"
+          },
+          {
+            "random": 32,
+            "block": "minecraft:pink_petals[facing=east,flower_amount=4]"
+          },
+          {
+            "random": 32,
+            "block": "minecraft:pink_petals[facing=north,flower_amount=4]"
+          }
+        ]
+      },
+      {
+        "char": "s",
+        "block": "minecraft:bamboo[age=0,leaves=none,stage=0]"
+      },
+      {
+        "char": "H",
+        "variant": "lcmt:stone_brick_stairs_bottom_south"
+      },
+      {
+        "char": "I",
+        "block": "minecraft:cherry_leaves[distance=7,persistent=true,waterlogged=false]"
+      },
+      {
+        "char": "m",
+        "block": "minecraft:potted_dead_bush"
+      },
+      {
+        "char": "o",
+        "variant": "lcmt:stone_brick_stairs_bottom_west"
+      },
+      {
+        "char": "j",
+        "blocks": [
+          {
+            "random": 32,
+            "block": "minecraft:pink_petals[facing=west,flower_amount=3]"
+          },
+          {
+            "random": 32,
+            "block": "minecraft:pink_petals[facing=south,flower_amount=3]"
+          },
+          {
+            "random": 32,
+            "block": "minecraft:pink_petals[facing=east,flower_amount=3]"
+          },
+          {
+            "random": 32,
+            "block": "minecraft:pink_petals[facing=north,flower_amount=3]"
+          }
+        ]
+      },
+      {
+        "char": "J",
+        "block": "minecraft:potted_cherry_sapling"
+      },
+      {
+        "char": "i",
+        "blocks": [
+          {
+            "random": 32,
+            "block": "minecraft:pink_petals[facing=west,flower_amount=2]"
+          },
+          {
+            "random": 32,
+            "block": "minecraft:pink_petals[facing=south,flower_amount=2]"
+          },
+          {
+            "random": 32,
+            "block": "minecraft:pink_petals[facing=east,flower_amount=2]"
+          },
+          {
+            "random": 32,
+            "block": "minecraft:pink_petals[facing=north,flower_amount=2]"
+          }
+        ]
+      },
+      {
+        "char": "f",
+        "blocks": [
+          {
+            "random": 32,
+            "block": "minecraft:pink_petals[facing=west,flower_amount=1]"
+          },
+          {
+            "random": 32,
+            "block": "minecraft:pink_petals[facing=south,flower_amount=1]"
+          },
+          {
+            "random": 32,
+            "block": "minecraft:pink_petals[facing=east,flower_amount=1]"
+          },
+          {
+            "random": 32,
+            "block": "minecraft:pink_petals[facing=north,flower_amount=1]"
+          }
+        ]
+      },
+      {
+        "char": "n",
+        "variant": "lcmt:stone_brick_stairs_bottom_north"
+      },
+      {
+        "char": "r",
+        "variant": "lcmt:stone_brick_stairs_bottom_east"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "                ",
+      "  f f    fff f  ",
+      "  ijkifffijfi   ",
+      "  ikmki ikkkjf  ",
+      " ffjkj  jkmkji  ",
+      "  fiiif  jkjk   ",
+      "   f   n fji    ",
+      "       ff if    ",
+      "     ofu r f    ",
+      "       f    f   ",
+      "  s    H ffjif  ",
+      "   f  f   ikji  ",
+      "   wsf  ijkmk   ",
+      "  ss s  fjkki   ",
+      "          if    ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "    I           ",
+      "          I     ",
+      "                ",
+      "                ",
+      "                ",
+      "       J        ",
+      "                ",
+      "  s             ",
+      "                ",
+      "   es      I    ",
+      "  ss s          ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "          I     ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ]
+  ]
+}

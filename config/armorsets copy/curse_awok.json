@@ -1,0 +1,95 @@
+{
+    "armorSetName": "cursed_2",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "cataclysm:cursium_helmet",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "cataclysm:cursium_chestplate",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "cataclysm:cursium_leggings",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "cataclysm:cursium_boots",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "partialBonusRequiredAmount": 1,
+    "partialSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:melee_damage",
+            "value": 0.3,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "1883e4fa-22fd-432e-8088-770798d4e790",
+            "description": "1100"
+        },
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:ranged_damage",
+            "value": 0.3,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "6c141bbd-7642-4237-973c-27b310a569c6",
+            "description": "1100"
+        }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "cataclysm:ghost_sickness",
+            "value": 1,
+            "interactionType": "attack",
+            "interactionDuration": 80,
+            "hideBonusDescription": true
+        },
+        {
+            "type": "effect",
+            "name": "potioncore:weight",
+            "interactionType": "immunity"
+        },
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:magic_damage",
+            "value": 1.5,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "5b9284d6-848f-4169-a1d6-f4f027e09f91",
+            "description": "1100"
+        },
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:magic_resistance",
+            "value": 1.5,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "faf0280b-a636-4739-bad1-a653a17ff031",
+            "description": "1100"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:digger",
+    "oreganized:scribe"
+  ],
+  "incompatible": [
+    "extra_enchantments:incompatibility_curse",
+    "deeperdarker:sculk_smite",
+    "minecraft:bane_of_arthropods",
+    "minecraft:smite",
+    "minecraft:sharpness",
+    "minecraft:efficiency"
+  ]
+}

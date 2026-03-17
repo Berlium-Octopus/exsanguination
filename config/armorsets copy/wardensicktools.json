@@ -1,0 +1,33 @@
+{
+    "armorSetName": "Wardensick",
+    "performanceMode": true,
+    "mainHand": {
+        "itemKey": "deeperdarker:warden_sword",
+        "mixAndMatch": [
+            "deeperdarker:warden_hoe",
+            "deeperdarker:warden_shovel",
+            "deeperdarker:warden_axe",
+            "deeperdarker:warden_pickaxe",
+            "sculkhorde:diascite_hoe",
+            "sculkhorde:diascite_axe",
+            "sculkhorde:diascite_pickaxe",
+            "sculkhorde:diascite_shovel",
+            "sculkhorde:ferriscite_hoe",
+            "sculkhorde:ferriscite_axe",
+            "sculkhorde:ferriscite_pickaxe",
+            "sculkhorde:ferriscite_shovel"
+        ]
+    },
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "sculkhorde:sculk_lure",
+            "value": 1,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

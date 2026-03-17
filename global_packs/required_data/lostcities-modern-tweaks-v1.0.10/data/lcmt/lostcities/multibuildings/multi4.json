@@ -1,0 +1,14 @@
+{
+  "dimx": 2,
+  "dimz": 2,
+  "buildings": [
+    [
+      "lcmt:building4",
+      "lcmt:building4"
+    ],
+    [
+      "lcmt:building4",
+      "lcmt:building4"
+    ]
+  ]
+}

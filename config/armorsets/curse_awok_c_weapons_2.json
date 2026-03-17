@@ -1,0 +1,69 @@
+{
+    "armorSetName": "cursed_2",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "cataclysm:cursium_helmet",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ], 
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "cataclysm:cursium_chestplate",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "cataclysm:cursium_leggings",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "cataclysm:cursium_boots",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+   "mainHand": {
+        "itemKey": "cataclysm:cursed_bow",
+        "mixAndMatch": [
+            "cataclysm:the_annihilator",
+            "cataclysm:soul_render"
+        ],
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:melee_damage",
+            "value": 1.2,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "a3b4dbe8-fce4-46b3-8d14-c2b268ae0546",
+            "description": "1240"
+        },
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:ranged_damage",
+            "value": 1.2,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "478b5095-83fd-4415-b15c-49286039236f",
+            "description": "1240"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

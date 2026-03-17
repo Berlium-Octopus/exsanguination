@@ -1,0 +1,52 @@
+{
+    "armorSetName": "c_engarde awakened",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "minecraft:diamond_helmet",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "chest": {
+        "itemKey": "minecraft:diamond_chestplate",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "legs": {
+        "itemKey": "minecraft:diamond_leggings",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "boots": {
+        "itemKey": "minecraft:diamond_boots",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "potioncore:diamond_skin",
+            "value": 1,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

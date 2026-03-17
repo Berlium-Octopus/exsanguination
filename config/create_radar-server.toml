@@ -1,0 +1,36 @@
+#.
+#Maximum possible distance in blocks between radar links in blocks
+#Range: > 1
+radarLinkRange = 128
+#.
+#Maximum range of a Radar Contraption in blocks
+#Range: > 1
+maxRadarRange = 1000
+#.
+#Maximum size of monitor MultiBlock
+#Range: > 1
+monitorMaxSize = 9
+#.
+#Range increase per dish block in blocks
+#Range: > 1
+dishRangeIncrease = 10
+#.
+#Maximum vertical scan range of a radar in blocks
+#Range: > 1
+radarYScanRange = 20
+#.
+#Base range of a radar receiver in blocks
+#Range: > 1
+radarBaseRange = 20
+#.
+#Field of view of a radar in degrees
+#Range: 1 ~ 360
+radarFOV = 90
+#.
+#Turn rate of radar guidance for CBCMW Missiles
+#Range: 0.0 ~ 1.0
+radarGuidanceTurnRate = 0.15000000596046448
+#.
+#If true, radar bearings will rotate slower the more dishes are connected to them
+gearRadarBearingSpeed = true
+

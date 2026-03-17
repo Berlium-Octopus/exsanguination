@@ -1,0 +1,16 @@
+{
+  "blocks": [
+    {
+      "random": 32,
+      "block": "minecraft:moss_block"
+    },
+    {
+      "random": 8,
+      "block": "minecraft:green_concrete"
+    },
+    {
+      "random": 1000,
+      "block": "minecraft:lime_terracotta"
+    }
+  ]
+}

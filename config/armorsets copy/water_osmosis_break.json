@@ -1,0 +1,56 @@
+{
+    "armorSetName": "hazmasket",
+    "performanceMode": true,
+    "mainHand": {
+      "itemKey": "toughasnails:gold_dirty_water_canteen",
+      "mixAndMatch":[
+          "toughasnails:netherite_dirty_water_canteen",
+          "toughasnails:diamond_dirty_water_canteen",
+          "toughasnails:leather_dirty_water_canteen",
+          "toughasnails:gold_purified_water_canteen",
+          "toughasnails:netherite_purified_water_canteen",
+          "toughasnails:diamond_purified_water_canteen",
+          "toughasnails:leather_purified_water_canteen",
+          "toughasnails:gold_water_canteen",
+          "toughasnails:netherite_water_canteen",
+          "toughasnails:diamond_water_canteen",
+          "toughasnails:leather_water_canteen"
+      ],
+        "mustBeEmpty": false
+    },
+    "offHand": {
+        "itemKey": "toughasnails:gold_dirty_water_canteen",
+        "mixAndMatch":[
+            "toughasnails:netherite_dirty_water_canteen",
+            "toughasnails:diamond_dirty_water_canteen",
+            "toughasnails:leather_dirty_water_canteen",
+            "toughasnails:gold_purified_water_canteen",
+            "toughasnails:netherite_purified_water_canteen",
+            "toughasnails:diamond_purified_water_canteen",
+            "toughasnails:leather_purified_water_canteen",
+            "toughasnails:gold_water_canteen",
+            "toughasnails:netherite_water_canteen",
+            "toughasnails:diamond_water_canteen",
+            "toughasnails:leather_water_canteen"
+        ],
+        "mustBeEmpty": false
+    },
+    "partialBonusRequiredAmount": 1,
+    "partialSetBonuses": [
+        {
+            "type": "effect",
+            "name": "potioncore:repair",
+            "value": 1,
+            "interactionType": "immunity"
+        }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "potioncore:repair",
+            "value": 1,
+            "interactionType": "immunity"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

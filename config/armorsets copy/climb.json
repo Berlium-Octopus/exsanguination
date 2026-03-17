@@ -1,0 +1,22 @@
+{
+    "armorSetName": "meawow",
+    "performanceMode": true,
+    "additionalSetPieces": [
+        {
+            "itemKey": "biomesoplenty:spider_egg",
+            "mustBeEmpty": false
+        }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "potioncore:climb",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

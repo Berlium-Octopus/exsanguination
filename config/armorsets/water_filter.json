@@ -1,0 +1,17 @@
+{
+    "armorSetName": "hazmasket",
+    "performanceMode": true,
+    "head": {
+    "itemKey": "alexscaves:hazmat_mask",
+    "mustBeEmpty": false
+},
+    "fullSetBonuses": [
+      {
+           "type": "effect",
+           "name": "toughasnails:thirst",
+           "value": 1,
+           "interactionType": "immunity"
+       }
+    ],
+    "hideGeneratedTooltip": true
+}

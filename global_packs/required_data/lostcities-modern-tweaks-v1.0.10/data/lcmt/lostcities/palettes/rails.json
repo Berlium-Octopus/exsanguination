@@ -1,0 +1,101 @@
+{
+  "palette": [
+    {
+      "char": "k",
+      "block": "minecraft:rail[shape=north_south]"
+    },
+    {
+      "char": "e",
+      "block": "minecraft:rail[shape=east_west]"
+    },
+    {
+      "char": "j",
+      "block": "minecraft:rail[shape=ascending_east]"
+    },
+    {
+      "char": "q",
+      "block": "minecraft:rail[shape=south_east]"
+    },
+    {
+      "char": "s",
+      "block": "minecraft:rail[shape=south_west]"
+    },
+    {
+      "char": "r",
+      "block": "minecraft:rail[shape=north_west]"
+    },
+    {
+      "char": "n",
+      "block": "minecraft:rail[shape=north_east]"
+    },
+    {
+      "char": "m",
+      "block": "minecraft:powered_rail[powered=true,shape=north_south]"
+    },
+    {
+      "char": "E",
+      "block": "minecraft:powered_rail[powered=true,shape=ascending_south]"
+    },
+    {
+      "char": "H",
+      "block": "minecraft:powered_rail[powered=true,shape=ascending_north]"
+    },
+    {
+      "char": "f",
+      "block": "minecraft:powered_rail[powered=true,shape=east_west]"
+    },
+    {
+      "char": "i",
+      "block": "minecraft:powered_rail[powered=true,shape=ascending_east]"
+    },
+    {
+      "char": "o",
+      "block": "netherexp:ancient_lantern[hanging=false]",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "O",
+      "block": "minecraft:iron_trapdoor[facing=south,half=top,open=false,powered=false]",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "h",
+      "block": "netherexp:ancient_lantern[hanging=false]",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "J",
+      "blocks": [
+        {
+          "random": 12,
+          "block": "minecraft:andesite"
+        },
+        {
+          "random": 1000,
+          "block": "minecraft:polished_andesite"
+        }
+      ],
+      "damaged": "minecraft:sculk_sensor"
+    },
+    {
+      "char": "I",
+      "block": "minecraft:cobbled_deepslate",
+      "damaged": "minecraft:sculk_shrieker"
+    },
+    {
+      "char": "U",
+      "block": "minecraft:quartz_pillar[axis=y]",
+      "damaged":"minecraft:sculk_shrieker"
+    },
+    {
+      "char": "M",
+      "block": "minecraft:chiseled_quartz_block",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "N",
+      "block": "minecraft:quartz_bricks",
+      "damaged": "minecraft:sculk_sensor"
+    }
+  ]
+}

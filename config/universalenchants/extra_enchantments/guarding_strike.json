@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:weapon",
+    "farmersdelight:skillet",
+    "cataclysm:gauntlet_of_guard",
+    "cataclysm:gauntlet_of_bulwark",
+    "cataclysm:gauntlet_of_maelstrom",
+    "cataclysm:the_incinerator",
+    "cataclysm:soul_render",
+    "cataclysm:the_annihilator",
+    "cataclysm:the_immolator",
+    "cataclysm:meat_shredder",
+    "cataclysm:void_forge",
+    "cataclysm:tidal_claws",
+    "cataclysm:infernal_forge",
+    "cataclysm:ancient_spear"
+  ],
+  "incompatible": [
+    "extra_enchantments:frenzy",
+    "extra_enchantments:lifesteal",
+    "extra_enchantments:enigma_resonator",
+    "extra_enchantments:soul_reaper",
+    "extra_enchantments:pain_cycle",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

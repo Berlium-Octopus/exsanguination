@@ -1,0 +1,16 @@
+{
+  "dimx": 2,
+  "dimz": 3,
+  "buildings": [
+    [
+      "lcmt:factory/factory_00",
+      "lcmt:factory/factory_01",
+      "lcmt:factory/factory_02"
+    ],
+    [
+      "lcmt:factory/factory_10",
+      "lcmt:factory/factory_11",
+      "lcmt:factory/factory_12"
+    ]
+  ]
+}

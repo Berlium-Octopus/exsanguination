@@ -1,0 +1,25 @@
+{
+    "armorSetName": "bandages",
+    "performanceMode": true,
+    "additionalSetPieces": [
+        {
+            "itemKey": "archeological:old_bandages",
+            "mustBeEmpty": false
+        }
+    ],
+    "fullSetBonuses": [
+      {
+          "type": "effect",
+          "name": "minecraft:weakness",
+          "value": 1,
+          "interactionType": "immunity"
+      },
+      {
+          "type": "effect",
+          "name": "minecraft:mining_fatigue",
+          "value": 1,
+          "interactionType": "immunity"
+      }
+    ],
+    "hideGeneratedTooltip": true
+}

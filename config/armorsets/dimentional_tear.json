@@ -1,0 +1,34 @@
+{
+    "armorSetName": "tear",
+    "performanceMode": false,
+    "mainHand": {
+        "itemKey": "spelunkery:portal_fluid_bottle"
+    },
+    "offHand": {
+        "itemKey": "spelunkery:portal_fluid_bottle"
+    },
+    "partialBonusRequiredAmount": 1,
+   "partialSetBonuses": [
+     {
+         "type": "effect",
+         "name": "exsanguination:dimentional_sickness",
+         "value": 0.5,
+         "interactionType": "self",
+         "interactionDuration": 240,
+         "hideBonusDescription": true,
+         "onlyImmuneToNewEffects": false
+     }
+   ],
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "exsanguination:dimentional_sickness",
+            "value": 0.4,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

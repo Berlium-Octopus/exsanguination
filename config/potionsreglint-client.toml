@@ -1,0 +1,6 @@
+
+#Potion Re-Glint Configuration
+[potionsreglint]
+	#Enable enchantment glint on potions
+	enablePotionEnchantmentGlint = true
+

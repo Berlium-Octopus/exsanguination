@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "c": {
+      "item": "netherdepthsupgrade:fortress_grouper_plate"
+    },
+    "e": {
+      "item": "netherdepthsupgrade:eyeball"
+    },
+    "g": {
+      "item": "minecraft:glass"
+    }
+  },
+  "pattern": [
+    "ece",
+    "cgc",
+    "ece"
+  ],
+  "result": {
+    "count": 32,
+    "item": "netherdepthsupgrade:lava_glass"
+  }
+}

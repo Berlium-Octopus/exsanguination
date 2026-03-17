@@ -1,0 +1,59 @@
+{
+    "armorSetName": "Keepup",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "alexscaves:gingerbread_helmet",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "chest": {
+        "itemKey": "alexscaves:gingerbread_chestplate",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "legs": {
+        "itemKey": "alexscaves:gingerbread_leggings",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "boots": {
+        "itemKey": "alexscaves:gingerbread_boots",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "forge:step_height_addition",
+            "value": 1,
+            "interactionType": "self",
+            "attributeOperation": 0,
+            "modifierUUID": "ed016ec0-fe9d-4b2f-b126-94d07fd36331",
+            "description": "1240"
+        },
+        {
+            "type": "effect",
+            "name": "toughasnails:ice_resistance",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 240
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

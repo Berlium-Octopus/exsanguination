@@ -1,0 +1,50 @@
+{
+    "armorSetName": "Duramamaz",
+    "performanceMode": true,
+    "chest": {
+        "itemKey": "minecraft:netherite_chestplate",
+        "mixAndMatch": [
+            "minecraft:diamond_chestplate",
+            "minecraft:iron_chestplate",
+            "deeperdarker:warden_chestplate",
+            "alexsmobs:rocky_chestplate",
+            "cataclysm:ignitium_elytra_chestplate",
+            "cataclysm:ignitium_chestplate",
+            "cataclysm:bone_reptile_chestplate",
+            "cataclysm:cursium_chestplate",
+            "outer_end:rose_crystal_chestplate",
+            "outer_end:mint_crystal_chestplate",
+            "outer_end:cobalt_crystal_chestplate",
+            "oreganized:electrum_chestplate"
+        ],
+        "mustBeEmpty": false
+    },
+    "additionalSetPieces": [
+        {
+            "itemKey": "create:netherite_backtank",
+            "mixAndMatch": [
+                "create:copper_backtank"
+            ],
+            "mustBeEmpty": false
+        }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "supplementaries:overencumbered",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:stamina",
+            "value": -0.2,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "d7393447-0e9b-445e-9c02-c9f9d8d62ebb"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

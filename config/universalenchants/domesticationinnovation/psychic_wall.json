@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:pet"
+  ],
+  "incompatible": [
+    "domesticationinnovation:herding",
+    "domesticationinnovation:magnetic",
+    "domesticationinnovation:deflection",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

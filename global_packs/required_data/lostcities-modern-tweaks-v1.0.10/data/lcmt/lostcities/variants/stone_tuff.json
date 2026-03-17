@@ -1,0 +1,28 @@
+{
+  "blocks": [
+    {
+      "random": 24,
+      "block": "minecraft:tuff"
+    },
+    {
+      "random": 40,
+      "block": "minecraft:andesite"
+    },
+    {
+      "random": 16,
+      "block": "minecraft:light_gray_concrete"
+    },
+    {
+      "random": 24,
+      "block": "minecraft:mossy_cobblestone"
+    },
+    {
+      "random": 40,
+      "block": "sculkhorde:infested_stone"
+    },
+    {
+      "random": 1000,
+      "block": "minecraft:stone"
+    }
+  ]
+}

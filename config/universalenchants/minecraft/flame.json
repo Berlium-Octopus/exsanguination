@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:bow",
+    "jeg:compound_bow",
+    "create:potato_cannon",
+    "$minecraft:crossbow"
+  ],
+  "incompatible": [
+    "extra_enchantments:levitational_shot",
+    "minecraft:soul_flame",
+    "extra_enchantments:incompatibility_curse",
+    "supplementaries:lumisene_flame"
+  ]
+}

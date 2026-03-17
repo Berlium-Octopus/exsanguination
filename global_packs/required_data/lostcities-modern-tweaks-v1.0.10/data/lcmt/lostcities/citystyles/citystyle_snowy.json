@@ -1,0 +1,16 @@
+{
+  "style": "lcmt:snowy",
+  "inherit": "lcmt:citystyle_common",
+  "generalblocks": {
+    "leaves": "☘",
+    "rubbledirt": "▣"
+  },
+  "selectors": {
+    "parks": [
+      {
+        "factor": 0.5,
+        "value": "lcmt:park/park_stone_flower_garden_1"
+      }
+    ]
+  }
+}

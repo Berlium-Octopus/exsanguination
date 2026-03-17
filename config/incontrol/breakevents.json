@@ -1,0 +1,20 @@
+  [
+ {
+   "playerhelditem": "spelunkery:bedrock_buster",
+   "block": "minecraft:bedrock",
+   "dimension": "minecraft:overworld",
+   "fire": 1
+ },
+ {
+   "playerhelditem": "spelunkery:bedrock_buster",
+   "block": "minecraft:bedrock",
+   "dimension": "deeperdarker:otherside",
+   "fire": 5
+ },
+ {
+   "playerhelditem": "spelunkery:bedrock_buster",
+   "block": "minecraft:bedrock",
+   "dimension": "deeperdarker:nether",
+   "fire": 3
+ }
+]

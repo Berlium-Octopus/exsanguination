@@ -1,0 +1,33 @@
+
+[crit_chance]
+	#Default Critical Hit Chance
+	#Range: 0.0 ~ 1.0
+	default = 0.1
+	#Critical Hit Chance Increase Per Enchantment Level
+	#Range: 0.0 ~ 1.0
+	increase_per_level = 0.16
+	#Maximum Level for Critical Hit Chance Enchantment
+	#Range: 1 ~ 20
+	max_level = 3
+	#Enable Critical Hit Chance Enchantment
+	enchant_enabled = true
+	#Rarity of Critical Hit Chance Enchantment (1:COMMON, 2:UNCOMMON, 3:RARE, 4:VERY_RARE)
+	#Range: 1 ~ 4
+	enchant_rarity = 3
+
+[crit_effect]
+	#Initial Critical Hit Effect Multiplier
+	#Range: 0.0 ~ 10.0
+	initial = 1.5
+	#Critical Hit Effect Increase Per Enchantment Level
+	#Range: 0.0 ~ 50.0
+	increase_per_level = 0.5
+	#Maximum Level for Critical Hit Effect Enchantment
+	#Range: 1 ~ 15
+	max_level = 2
+	#Enable Critical Hit Effect Enchantment
+	enchant_enabled = true
+	#Rarity of Critical Hit Effect Enchantment (1:COMMON, 2:UNCOMMON, 3:RARE, 4:VERY_RARE)
+	#Range: 1 ~ 4
+	enchant_rarity = 3
+

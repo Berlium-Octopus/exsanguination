@@ -1,0 +1,6 @@
+
+[Enchantato-EnchantmentTableUsage]
+	#If you enable this, the 'DisabledEnchantments' will become 'AllowedEnchantments'
+	InvertedMode = false
+	DisabledEnchantments = ["extra_enchantments:overshield, extra_enchantments:enigma_resonator, extra_enchantments:frenzy, extra_enchantments:shadow_shot, extra_enchantments:spectral_vision, extra_enchantments:guarding_strike"
+]

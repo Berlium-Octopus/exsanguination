@@ -1,0 +1,20 @@
+{
+  "blocks": [
+    {
+      "random": 32,
+      "block": "minecraft:potted_red_tulip"
+    },
+    {
+      "random": 32,
+      "block": "minecraft:potted_orange_tulip"
+    },
+    {
+      "random": 32,
+      "block": "minecraft:potted_white_tulip"
+    },
+    {
+      "random": 32,
+      "block": "minecraft:potted_pink_tulip"
+    }
+  ]
+}

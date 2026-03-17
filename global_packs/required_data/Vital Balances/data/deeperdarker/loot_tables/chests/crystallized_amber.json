@@ -1,0 +1,93 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "alexscaves:totem_of_regeneration",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "deeperdarker:sculk_bone",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:item",
+          "name": "oreganized:electrum_ingot",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_ingot",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:item",
+          "name": "jeg:gunmetal_grit",
+          "weight": 80
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:quartz",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:amethyst_shard",
+          "weight": 80
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_ingot",
+          "weight": 50
+        },
+        {
+          "type": "minecraft:item",
+          "name": "archeological:amethyst_amulet",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 30.0,
+                "min": 20.0
+              },
+              "treasure": true
+            }
+          ],
+          "name": "sculkhorde:ferriscite_axe",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "archeological:ancient_socks",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "archeological:emerald_ring",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "archeological:diamond_charm",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "alexscaves:amber_monolith",
+          "weight": 1
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "deeperdarker:chests/crystallized_amber"
+}

@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "item" : "citadel:icon_item",
+      "nbt": "{IconLocation:\"exsanguination:textures/misc/advancement/icon/overworld.png\"}"
+    },
+    "title": {
+      "translate": "advancements.exsanguination.overworld.title"
+    },
+    "description": {
+      "translate": "advancements.exsanguination.overworld.desc"
+    },
+    "background": "minecraft:acacia_chest_boat",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "open": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "player": {
+          "location": {
+            "dimension": "minecraft:overworld"
+          }
+        }
+      }
+    }
+  }
+}

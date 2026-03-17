@@ -1,0 +1,24 @@
+{
+    "armorSetName": "healthboost",
+    "performanceMode": true,
+    "additionalSetPieces": [
+        {
+            "itemKey": "scalinghealth:heart_crystal_shard",
+            "mustBeEmpty": false
+        }
+    ],
+
+
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "minecraft:health_boost",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "hideBonusDescription": false,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

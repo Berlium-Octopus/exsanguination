@@ -1,0 +1,24 @@
+{
+  "palette": [
+    {
+      "char": "X",
+      "block": "minecraft:mud_bricks",
+      "damaged": "sculkhorde:infested_mud_bricks"
+    },
+    {
+      "char": "$",
+      "block": "minecraft:brown_terracotta",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "#",
+      "variant": "lcmt:packed_mud",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "}",
+      "variant": "lcmt:packed_mud_rubble",
+      "damaged": "sculkhorde:infested_packed_mud"
+    }
+  ]
+}

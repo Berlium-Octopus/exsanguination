@@ -1,0 +1,464 @@
+/**
+ * 
+ * @param {Internal.PathfinderMob} e 
+ * @param {Number} radius 
+ * @param {Number} verticalDistance 
+ * @returns 
+ */
+function getRandomSwimmablePos(e, radius, verticalDistance) {
+  let random = Math.random()
+  let mobPos = e.block.pos
+  let x = mobPos.x + (random * 2 - 1) * radius
+  let y = mobPos.y + (random * 2 - 1) * verticalDistance
+  let z = mobPos.z + (random * 2 - 1) * radius
+  return new BlockPos(x.toFixed(0), y.toFixed(0), z.toFixed(0))
+}
+
+
+// Spawn animation is formshift reverse
+// fall animation if possible is formshift 
+// Add more keyframes idiot the animation is broken
+// Remember to add extra drops to Charged Escapees + Escapee Explodes When Right Clicked ON Via Flint & Steel Via Entity Interact Server Script
+// THE ESCAPEE + Liopyu
+/*
+
+Update Navy isnt checking to see if youve already changed navigation/move control so it will just see 
+that it isnt in land mode and it is in swim mode and it will just keep re 
+setting the nav/movecontrol, same concept with the else statement
+if you look how i did it in the dragon script we're checking a 
+previous variable, if you're curious where to set the prevMode then it 
+should also be in startup script if you do ctrl + f "PrevFlyMode"
+
+
+*/
+const $RenderType = Platform.isClientEnvironment() ? Java.loadClass("net.minecraft.client.renderer.RenderType") : null
+const $ResourceLocation2 = Java.loadClass("net.minecraft.resources.ResourceLocation");
+const Mth = Java.loadClass("net.minecraft.util.Mth")
+
+/**
+ * @param {Internal.ContextUtils$PreRenderContext<Internal.LivingEntity>} context
+ */
+global.geoLayerRender = context => {
+  let { poseStack, entity } = context
+  if (entity.getSyncedData("powered")) {
+    poseStack.scale(1.15, 1.2, 1.15)
+    poseStack.translate(-0.01, -0.1, -0.01)
+  }  else {
+    poseStack.scale(0.01, 0.01, 0.01)
+  }
+}
+
+// I Want It To Be Like The Bedrock Drowned (swimming animations + fish-like? navigation)
+
+/**
+ * 
+ * @param {Internal.ContextUtils$EntityLevelContext} context 
+ * @returns 
+ */
+global.createNavigation = context => {
+    let {level, entity} = context
+    if (entity.getSyncedData("swim") == "walking") {
+        return EntityJSUtils.createGroundPathNavigation(entity, level)
+    }
+    return EntityJSUtils.createWaterBoundPathNavigation(entity, level)
+}
+
+/**
+ * 
+ * @param {Internal.PathfinderMob} entity 
+ * @returns 
+ */
+global.tick = entity => {
+try {
+// if (entity.level.clientSide) return
+if (entity.inWater) {
+    entity.setSyncedData("swim", "swimming")
+} else {
+    entity.setSyncedData("swim", "walking")
+}
+
+UpdateNavy(entity)
+
+} catch (error) {
+console.log(error)
+ }
+}
+
+function UpdateNavy(entity) {
+let {level} = entity
+// Ok Fixed Version HOPE
+let walk = entity.getSyncedData("walk")
+let swim = entity.getSyncedData("swim")
+ if (walk === "walking" && swim !== "walking"){
+    entity.setMoveControl(EntityJSUtils.createMoveControl(entity, builder => {
+         builder.tick(mob => global.moveControlTick(mob))
+    }))
+    entity.setNavigation(EntityJSUtils.createWaterBoundPathNavigation(entity, level))
+}
+ if (swim === "walking" && walk !== "walking"){
+    entity.setMoveControl(EntityJSUtils.createMoveControl(entity, () => { }))
+    entity.setNavigation(EntityJSUtils.createGroundPathNavigation(entity, level))
+}
+    entity.setSyncedData("walk", swim)
+}
+
+
+/**@param {Internal.MoveControlJSBuilder} entity */
+global.setMoveControl = entity => {
+    if (entity.getSyncedData("swim") == "walking"){
+        return EntityJSUtils.createMoveControl(entity, moveControl => { })
+    }
+    
+    return EntityJSUtils.createMoveControl(entity, moveControlBuilder => {
+        moveControlBuilder.tick(mob => global.moveControlTick(mob))
+    })
+}
+
+/**
+ * 
+ * @param {Internal.PathfinderMob} entity The custom mob entity to control.
+ * @returns 
+ */
+global.moveControlTick = entity => {
+  try {
+    var target = entity.target;
+
+    if (wantsToSwim(entity) && entity.inWater) {
+      if (target != null && target.getY() > entity.getY() || entity.getSyncedData("swim") == "walking") {
+        entity.setDeltaMovement(entity.getDeltaMovement().add(0.0, 0.002, 0.0));
+      }
+
+      if (!entity.moveControl.hasWanted() || entity.getNavigation().isDone()) {
+        entity.setSpeed(0.1);
+        return;
+      }
+
+      var xOff = entity.moveControl.wantedX - entity.getX();
+      var yOff = entity.moveControl.wantedY - entity.getY();
+      var zOff = entity.moveControl.wantedZ - entity.getZ();
+      var sqrOff = Math.sqrt(xOff * xOff + yOff * yOff + zOff * zOff);
+      yOff /= sqrOff;
+      var targetAngle = (Mth.atan2(zOff, xOff) * 57.2957763671875) - 90.0;
+      entity.setYaw(rotlerp(entity.yaw, targetAngle, 90.0));
+      entity.yBodyRot = entity.yaw;
+      var $$6 = (entity.moveControl.speedModifier * entity.getAttribute("minecraft:generic.movement_speed").value);
+      var lerp = Mth.lerp(0.125, entity.getSpeed(), $$6);
+      entity.setSpeed(lerp);
+      entity.setDeltaMovement(entity.getDeltaMovement().add(lerp * xOff * 0.005, lerp * yOff * 0.1, lerp * zOff * 0.005));
+    } else {
+      if (!entity.onGround) {
+        entity.setDeltaMovement(entity.getDeltaMovement().add(0.0, -0.008, 0.0));
+      }
+    }
+  } catch (error) {
+    console.log("Error in moveControl:", error)
+  }
+}
+
+function rotlerp(pSourceAngle, pTargetAngle, pMaximumChange) {
+  var f = Mth.wrapDegrees(pTargetAngle - pSourceAngle);
+  if (f > pMaximumChange) {
+    f = pMaximumChange;
+  }
+
+  if (f < -pMaximumChange) {
+    f = -pMaximumChange;
+  }
+
+  var f1 = pSourceAngle + f;
+  if (f1 < 0.0) {
+    f1 += 360.0;
+  } else if (f1 > 360.0) {
+    f1 -= 360.0;
+  }
+
+  return f1;
+}
+
+/**
+ * 
+ * @param {Internal.Mob} entity 
+ * @returns 
+ */
+function wantsToSwim(entity) {
+  if (entity.getSyncedData("swim") == "swimming") {
+    return true;
+  } else {
+    var target = entity.getTarget();
+    return target != null && target.InWater;
+  }
+}
+
+// End Of The Swimming Script
+
+/**
+ * @param {Internal.BaseLivingEntityBuilder$IAnimationPredicateJS} event
+ */
+ global.normal = event => {
+    let entity = event.entity 
+    // If On walk It Plays The Normal Animation
+    // Spawning Animation And Death Is Formshift
+    if (entity.hurtTime > 10){
+    event.thenPlay('hurt')
+    }
+    if (entity.getSyncedData("swim") == "walking"){
+    if (!entity.isMoving()) {
+      event.thenLoop("idle");
+    } else {
+      event.thenLoop("move")
+    }
+    // In Water Plays Swimming Animation But Transforms first
+    } else {
+    if (entity.isMoving()) {
+      event.thenLoop("formshift_move")
+    }
+}
+        return true
+}
+ 
+ global.formshift = event => { 
+        event.addTriggerableAnimation("formshift_long", "formshift", "play_once")
+        event.addTriggerableAnimation("formshift_move", "formshift_move", "loop")
+        event.addTriggerableAnimation("formshift_tall", "formshift_reverse", "play_once")
+        return true
+}
+
+
+ global.hungerdepletion = context => {
+    const {entity, targetEntity} = context
+    let $ExplosionInteraction3 = Java.loadClass('net.minecraft.world.level.Level$ExplosionInteraction');
+    let level = entity.level.getDifficulty().id
+    if (targetEntity.isPlayer()){ 
+    let foodlevel = targetEntity.getFoodData().getFoodLevel()
+    if (Math.random() < 0.5){
+    entity.triggerAnimation('attacking', 'left_bite')
+    // If The Food Level is -6 or -3 bars (Added for creating tension)
+    if (foodlevel <= 0){
+    if (entity.getSyncedData("powered")){
+        targetEntity.block.createExplosion().explosionMode($ExplosionInteraction3.NONE).strength(1).explode()
+    } else {
+        targetEntity.block.createExplosion().explosionMode($ExplosionInteraction3.NONE).strength(0).explode()
+
+    }
+    // If The Food Level Is Higher Then -6
+    } else {
+    if (entity.getSyncedData("powered")){
+        targetEntity.setFoodLevel(foodlevel - ((3 * level)))
+        targetEntity.block.createExplosion().explosionMode($ExplosionInteraction3.NONE).strength(0).explode()
+        entity.heal(4)
+    } else {
+        targetEntity.setFoodLevel(foodlevel - (level))
+        targetEntity.block.createExplosion().explosionMode($ExplosionInteraction3.NONE).strength(0).explode()
+        entity.heal(2) 
+    }
+    }
+    } else {
+    entity.triggerAnimation('attacking', 'right_bite')
+    // If The Food Level is -6 or -3 bars
+    if (foodlevel <= 0){
+    if (entity.getSyncedData("powered")){
+        targetEntity.block.createExplosion().explosionMode($ExplosionInteraction3.NONE).strength(1).explode()
+    } else {
+        targetEntity.potionEffects.add("minecraft:instant_damage", 1, 0, false, true)
+    }
+    } else {
+    if (entity.getSyncedData("powered")){
+        targetEntity.setFoodLevel(foodlevel - (1 + (level * 3)))
+            entity.heal(8)
+    } else {
+        targetEntity.setFoodLevel(foodlevel - (level))
+            entity.heal(4) 
+    }
+    } 
+    }
+    } else {
+    if (Math.random() > 0.7){
+    entity.triggerAnimation('attacking', 'left_bite')
+    if (entity.getSyncedData("powered")){
+    targetEntity.block.createExplosion().explosionMode($ExplosionInteraction3.NONE).strength(2).explode()
+        entity.heal(8)
+    } else {
+    targetEntity.block.createExplosion().explosionMode($ExplosionInteraction3.NONE).strength(1).explode()
+        entity.heal(4)
+    }
+    } else {
+    entity.triggerAnimation('attacking', 'right_bite')
+    targetEntity.potionEffects.add("minecraft:instant_damage", 1, 0, false, true)
+    }
+
+}
+}
+
+const deathticks = 15
+ global.explodingdeath = entity => {
+    let $SoundEvents2 = Java.loadClass('net.minecraft.sounds.SoundEvents')
+    let $ExplosionInteraction2 = Java.loadClass('net.minecraft.world.level.Level$ExplosionInteraction');
+    entity.playSound($SoundEvents2.CREEPER_PRIMED)
+    entity.deathTime++
+    if (entity.deathTime > deathticks){
+    if (entity.getSyncedData("powered")){
+    entity.block.createExplosion().explosionMode($ExplosionInteraction2.NONE).strength(2).explode()
+    } else {
+    entity.block.createExplosion().explosionMode($ExplosionInteraction2.NONE).strength(1).explode()
+    }
+    entity.remove("discarded")
+    }
+}
+
+ global.beastmode = context => {
+    const { entity, poseStack, partialTick } = context
+        let f1 = 1.0 + Mth.sin(partialTick * 100.0) * partialTick * 0.01;
+        let f = Mth.clamp(partialTick, 0.0, 1.0)
+        f *= f
+        f *= f
+        let f2 = (1.0 + f * 0.4) * f1;
+        let f3 = (1.0 + f * 0.1) / f1;
+    if (entity.isDeadOrDying()) {
+        poseStack.scale(f2, f3, f2)
+     } else {
+        poseStack.scale(1, 1, 1)
+     }
+}
+
+
+/** Oh this is the wrong param oh god 
+ * @param {Internal.BaseLivingEntityBuilder>} event
+ */
+global.animation = event => {
+    let { entity } = event
+    // This Is Pitch Btw UP DOWN
+    let RenderUtils = Java.loadClass("software.bernie.geckolib.util.RenderUtils")
+    let aabb = entity.boundingBox.inflate(20);
+    let nearestTarget = null;
+    let nearestDistance = Infinity;
+        entity.level.getEntitiesWithin(aabb).forEach(target => {
+            // I think player is unessessary
+            if (!target) return;
+            let distance = entity.distanceToSqr(target);
+            if (distance < nearestDistance) {
+                nearestDistance = distance;
+                nearestTarget = target;
+            }
+        });
+        if (nearestTarget) {
+            // Idk What Age is Im Setting it to 20 ticks / 1 Second
+            if (entity.age > 20) {
+                // Is This How You Do Run Rise ?
+                let dz = nearestTarget.z - entity.z;
+                let dy = nearestTarget.y - entity.y;
+                let pitch = Math.cos(dy * dz) * (180 / JavaMath.PI) - 90;
+                let geoModel = RenderUtils.getGeoModelForEntity(entity);
+                let head = geoModel.getBone("Head").get();
+                if (head) {
+                    let currentRotZ = head.getRotZ(); 
+                    let targetRotZ = -(pitch / 90); 
+                    let smoothingFactor = 0.1; // Adjust for speed of smoothing (lower = slower)
+                    let smoothedRotZ = currentRotZ + (targetRotZ - currentRotZ) * smoothingFactor;
+                    head.setRotZ(smoothedRotZ); 
+                }
+        }
+
+}
+    return true;
+}
+
+/**
+ * @param {Internal.ContextUtils$LivingEntityContext} context
+ */
+global.canAttack = context => {
+    let { target } = context
+    return (target.canBeSeenAsEnemy());
+}
+
+StartupEvents.registry("entity_type", event => {
+ let builder = event.create("lostcities:escapee", "entityjs:mob")
+ builder.shouldDespawnInPeaceful(true)
+ builder.mobCategory("monster")
+ builder.clientTrackingRange(20)
+ builder.setRenderType("translucent")
+ builder.onHurtTarget(context => global.hungerdepletion(context))
+ builder.createNavigation(context => global.createNavigation(context))
+ builder.canJump(true)
+ builder.defaultDeathPose(false)
+ builder.tick(entity => global.tick(entity))
+ builder.canBreatheUnderwater(true)
+ builder.sized(0.7, 0.9)
+ builder.canAttack(context => global.canAttack(context))
+ builder.animationResource(entity => {
+  return "kubejs:animations/entity/escapee.animation.json"
+ })
+ // Geckolib's Wiki Claims That Animations Can Be Layered, This Is True I Think It Worked
+builder.addAnimationController("escapee", 4, event => global.normal(event))
+builder.addAnimationController( "attacking", 4, event => {
+        event.addTriggerableAnimation("left_attack", "left_bite", "play_once")
+        event.addTriggerableAnimation("right_attack", "right_bite", "play_once")
+        return true
+})
+builder.addAnimationController("formshift", 2, event => global.formshift(event))
+
+builder.setMoveControl(entity => global.setMoveControl(entity))
+builder.addAnimationController("headturning", 2, event => global.animation(event))
+
+ builder.scaleModelForRender(context => global.beastmode(context))
+// add part entity next
+    builder.setHurtSound(context => {
+        const { entity, damageSource } = context;
+        switch (damageSource.getType()) {
+            case "drown":
+                return "minecraft:entity.creeper.hurt";
+            case "explosion":
+                return "minecraft:entity.creeper.hurt";
+            default:
+                return "minecraft:entity.creeper.hurt";
+        }
+    })
+    builder.setDeathSound("minecraft:entity.creeper.death")
+    builder.tickDeath(entity => global.explodingdeath(entity))
+    builder.newGlowingGeoLayer(builder => {
+    builder.renderType(entity => {
+    let time = entity.age + Client.partialTick
+    return $RenderType.energySwirl(
+    new $ResourceLocation2('lostcities:textures/entity/escapee_armor.png'),
+    time * 0.01 % 1.0,
+    time * 0.01 % 1.0
+  )
+  })
+    builder.render(context => global.geoLayerRender(context))
+})
+})
+
+
+EntityJSEvents.attributes(event => {
+    event.modify("lostcities:escapee", attribute => {
+        attribute.add("minecraft:generic.attack_damage", 2)
+        attribute.add("biomemakeover:projectile_resistance", 15)
+        attribute.add("minecraft:generic.movement_speed", 0.25)
+        attribute.add("forge:step_height_addition", 0.5)
+        attribute.add("minecraft:generic.knockback_resistance", 0.2)
+        attribute.add("minecraft:generic.follow_range", 20)
+        attribute.add("forge:swim_speed", 0.5)
+    })
+})
+
+EntityJSEvents.modifyEntity(event => {
+        event.modify("lostcities:escapee", modifyBuilder => {
+            modifyBuilder.defineSyncedData(entity => {
+                entity.addSyncedData("string", "swim", "walking")
+                entity.addSyncedData("string", "walk", "walking")
+                entity.addSyncedData("boolean", "powered", false)
+            })
+        })
+})
+
+// GhastingOut
+ForgeEvents.onEvent(`net.minecraftforge.event.entity.EntityStruckByLightningEvent`, event =>{
+   let {entity, lightning} = event
+   if (entity.type == "lostcities:escapee" && !entity.getSyncedData("powered")){
+    entity.setSyncedData("powered", true)
+    lightning.setVisualOnly(true)
+    event.setCanceled(true)
+   }
+})
+
+
+

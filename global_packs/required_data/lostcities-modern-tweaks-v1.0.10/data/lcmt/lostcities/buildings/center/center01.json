@@ -1,0 +1,86 @@
+{
+  "filler": "#",
+  "rubble": "}",
+  "allowFillers": false,
+  "parts": [
+    {
+      "cellar": true,
+      "part": "lcmt:center/center01_underground_1"
+    },
+    {
+      "top": false,
+      "cellar": false,
+      "part": "lcmt:center/center01_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_empty"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_antennas_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_small_building_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_large_garden_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_solar_panels_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_ac_units_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_chimneys_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_greenhouse_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:center/center_top_antenna_array"
+    }
+  ],
+  "parts2": [
+    {
+      "top": false,
+      "part": "lcmt:center/center_in_empty"
+    },
+    {
+      "top": false,
+      "part": "lcmt:center/center01_in_servers_1"
+    },
+    {
+      "top": false,
+      "part": "lcmt:center/center01_in_servers_2"
+    },
+    {
+      "top": false,
+      "cellar": false,
+      "part": "lcmt:center/center01_in_computer_desks_1"
+    },
+    {
+      "top": false,
+      "cellar": false,
+      "part": "lcmt:center/center01_in_core_1"
+    },
+    {
+      "top": false,
+      "cellar": true,
+      "part": "lcmt:center/center01_in_cooling_system_1"
+    },
+    {
+      "top": false,
+      "cellar": true,
+      "part": "lcmt:center/center01_in_cooling_system_2"
+    }
+  ]
+}

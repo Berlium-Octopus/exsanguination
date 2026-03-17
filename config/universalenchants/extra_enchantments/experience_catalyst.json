@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:weapon"
+  ],
+  "incompatible": [
+    "minecraft:looting",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

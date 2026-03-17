@@ -1,0 +1,24 @@
+{
+  "blocks": [
+    {
+      "random": 12,
+      "block": "minecraft:cracked_stone_bricks"
+    },
+    {
+      "random": 12,
+      "block": "minecraft:stone_bricks"
+    },
+    {
+      "random": 20,
+      "block": "minecraft:andesite"
+    },
+    {
+      "random": 20,
+      "block": "sculkhorde:infested_stone"
+    },
+    {
+      "random": 1000,
+      "block": "minecraft:stone"
+    }
+  ]
+}

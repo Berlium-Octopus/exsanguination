@@ -1,0 +1,86 @@
+{
+  "filler": "#",
+  "rubble": "}",
+  "parts": [
+    {
+      "top": false,
+      "part": "lcmt:building8/building8_empty"
+    },
+    {
+      "top": false,
+      "part": "lcmt:building8/building8_1"
+    },
+    {
+      "top": false,
+      "part": "lcmt:building8/building8_2"
+    },
+    {
+      "top": false,
+      "part": "lcmt:building8/building8_3"
+    },
+    {
+      "top": false,
+      "part": "lcmt:building8/building8_4"
+    },
+    {
+      "top": false,
+      "part": "lcmt:building8/building8_5"
+    },
+    {
+      "top": false,
+      "part": "lcmt:building8/building8_6"
+    },
+    {
+      "top": false,
+      "part": "lcmt:building8/building8_7"
+    },
+    {
+      "top": false,
+      "part": "lcmt:building8/building8_8"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_1_with_floor"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_2_with_floor"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_3_with_floor"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_4_with_floor"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_5_with_floor"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_5_with_floor"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_ex_2_with_floor"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_ex_3_with_floor"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_ex_4_with_floor"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_ex_5_with_floor"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_ex_medium_exit_with_floor"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "f",
+        "block": "minecraft:grass_block"
+      },
+      {
+        "char": "G",
+        "block": "minecraft:sand"
+      },
+      {
+        "char": "p",
+        "block": "minecraft:dead_bush"
+      },
+      {
+        "char": "q",
+        "block": "minecraft:sugar_cane"
+      },
+      {
+        "char": "w",
+        "block": "minecraft:sandstone_wall"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "                ",
+      " ______________ ",
+      " _SSSSSSSSSSSS_ ",
+      " _SGGGGGGGGGGS_ ",
+      " _SGGGGGffGGGS_ ",
+      " _SGGGfWWWGGGS_ ",
+      " _SGGGGWWWfGGS_ ",
+      " _SGGfWWWWWfGS_ ",
+      " _SGfWWWWWfGGS_ ",
+      " _SGGffWWWfGGS_ ",
+      " _SGGfWWWGGGGS_ ",
+      " _SGGGWffGGGGS_ ",
+      " _SGGGGGGGGGGS_ ",
+      " _SSSSSSSSSSSS_ ",
+      " ______________ ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "    p  q   p    ",
+      "     p    q     ",
+      "      q         ",
+      "    p           ",
+      "                ",
+      "      w         ",
+      "         q p    ",
+      "     p          ",
+      "          p     ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "      e         ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ]
+  ]
+}

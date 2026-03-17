@@ -1,0 +1,35 @@
+{
+  "weight": 4,
+  "requests": [
+    {
+      "item": "biomesoplenty:lumaloop",
+      "max_count": 5,
+      "points": 8
+    },
+    {
+      "item": "jeg:ectoplasm",
+      "max_count": 5,
+      "points": 8
+    },
+    {
+      "item": "biomemakeover:scuttler_tail",
+      "max_count": 5,
+      "points": 3.0
+    },
+    {
+      "item": "biomesoplenty:tiny_cactus",
+      "max_count": 8,
+      "points": 1.5
+    },
+    {
+      "item": "biomemakeover:pink_bud",
+      "max_count": 1,
+      "points": 12.0
+    },
+    {
+      "item": "biomemakeover:saguaro_cactus",
+      "max_count": 10,
+      "points": 1.0
+    }
+  ]
+}

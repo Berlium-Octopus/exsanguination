@@ -1,0 +1,24 @@
+{
+  "palette": [
+    {
+      "char": "X",
+      "block": "minecraft:cyan_terracotta",
+      "damaged":"sculkhorde:infested_cyan_terracotta"
+    },
+    {
+      "char": "$",
+      "block": "minecraft:black_terracotta",
+      "damaged":"sculkhorde:infested_black_terracotta"
+    },
+    {
+      "char": "#",
+      "block": "minecraft:cyan_terracotta",
+      "damaged": "sculkhorde:infested_cyan_terracotta"
+    },
+    {
+      "char": "}",
+      "block": "minecraft:cyan_terracotta",
+      "damaged": "minecraft:iron_bars"
+    }
+  ]
+}

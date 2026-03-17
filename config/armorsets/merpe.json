@@ -1,0 +1,20 @@
+{
+    "armorSetName": "Mrrp",
+    "performanceMode": false,
+    "head": {
+        "itemKey": "alexsmobs:gazelle_horns",
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "alexsmobs:tigers_blessing",
+            "value": 1,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

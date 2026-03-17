@@ -1,0 +1,29 @@
+{
+	"display": {
+		"icon": {
+      "item": "minecraft:flint"
+		},
+    "title": {
+      "translate": "advancements.exsanguination.flint.title"
+    },
+    "description": {
+      "translate": "advancements.exsanguination.flint.desc"
+    }
+	},
+	"parent": "exsanguination:overworld/",
+	"criteria": {
+		"iron_pickaxe": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+              "minecraft:flint",
+              "minecraft:stick"
+						]
+					}
+				]
+			}
+		}
+	}
+}

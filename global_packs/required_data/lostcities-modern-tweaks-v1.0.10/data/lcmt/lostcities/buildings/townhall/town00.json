@@ -1,0 +1,61 @@
+{
+  "filler": "#",
+  "rubble": "}",
+  "allowFillers": false,
+  "parts": [
+    {
+      "cellar": true,
+      "part": "lcmt:town/town00_underground"
+    },
+    {
+      "top": false,
+      "ground": true,
+      "cellar": false,
+      "part": "lcmt:town/town00_0"
+    },
+    {
+      "top": false,
+      "ground": false,
+      "cellar": false,
+      "part": "lcmt:town/town00_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:town/town00_top_empty"
+    },
+    {
+      "top": true,
+      "part": "lcmt:town/town00_top_garden_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:town/town00_top_pool_1"
+    }
+  ],
+  "parts2": [
+    {
+      "top": false,
+      "part": "lcmt:town/town_in_empty"
+    },
+    {
+      "top": false,
+      "part": "lcmt:town/town00_in_lobby_1"
+    },
+    {
+      "top": false,
+      "part": "lcmt:town/town00_in_fountain_1"
+    },
+    {
+      "top": false,
+      "part": "lcmt:town/town00_in_aquarium_1"
+    },
+    {
+      "top": false,
+      "part": "lcmt:town/town00_in_restroom_1"
+    },
+    {
+      "top": false,
+      "part": "lcmt:town/town00_in_community_room_1"
+    }
+  ]
+}

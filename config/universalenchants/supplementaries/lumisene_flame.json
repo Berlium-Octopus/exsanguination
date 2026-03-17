@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:bow",
+    "cataclysm:cursed_bow"
+  ],
+  "incompatible": [
+    "minecraft:flame",
+    "minecraft:soul_flame",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

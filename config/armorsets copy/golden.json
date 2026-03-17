@@ -1,0 +1,41 @@
+{
+    "armorSetName": "Magical Tuning",
+    "performanceMode": false,
+    "head": {
+        "itemKey": "minecraft:golden_helmet",
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "minecraft:golden_chestplate",
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "minecraft:golden_leggings",
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "minecraft:golden_boots",
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+      {
+        "type": "effect",
+        "name": "potioncore:magic_focus",
+        "value": 0.5,
+        "interactionType": "self",
+        "interactionDuration": 100,
+        "hideBonusDescription": true,
+        "onlyImmuneToNewEffects": false
+      },
+      {
+        "type": "effect",
+        "name": "potioncore:magic_shield",
+        "value": 0.5,
+        "interactionType": "self",
+        "interactionDuration": 100,
+        "hideBonusDescription": true,
+        "onlyImmuneToNewEffects": false
+      }
+    ],
+    "hideGeneratedTooltip": true
+}

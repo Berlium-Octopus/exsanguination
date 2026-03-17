@@ -1,0 +1,7 @@
+
+[general]
+	#Always display item quality (true = always show, false = default behavior).
+	alwaysDisplayQuality = false
+	#Forces the fix of tooltips when using this mod in armor items and first aid mod is enabled.
+	forcefixtooltips = false
+

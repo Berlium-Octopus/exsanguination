@@ -1,0 +1,57 @@
+{
+    "armorSetName": "attack2",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "outer_end:rose_crystal_helmet",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "outer_end:rose_crystal_chestplate",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "outer_end:rose_crystal_leggings",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "outer_end:rose_crystal_boots",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+      {
+          "type": "effect",
+          "name": "minecraft:levitation",
+          "value": 2,
+          "interactionType": "attack",
+          "interactionDuration": 40
+      },
+      {
+          "type": "effect",
+          "name": "minecraft:regeneration",
+          "value": 1,
+          "interactionType": "self",
+          "interactionDuration": 100
+    }
+    ],
+    "hideGeneratedTooltip": true
+}

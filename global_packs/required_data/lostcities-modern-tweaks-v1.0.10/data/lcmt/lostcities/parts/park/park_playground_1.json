@@ -1,0 +1,139 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "k",
+        "variant": "lcmt:stone_brick_stairs_bottom_south"
+      },
+      {
+        "char": "i",
+        "block": "minecraft:spruce_trapdoor[facing=east,half=top,open=false,powered=false,waterlogged=false]"
+      },
+      {
+        "char": "j",
+        "block": "minecraft:smooth_stone_slab[type=top]"
+      },
+      {
+        "char": "m",
+        "block": "minecraft:chain[axis=y]"
+      },
+      {
+        "char": "x",
+        "variant": "lcmt:stonebrick",
+        "damaged": "minecraft:iron_bars"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "                ",
+      "                ",
+      "             p  ",
+      "                ",
+      "   x iii x      ",
+      "              p ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "  p       uju   ",
+      "                ",
+      "     p    k k   ",
+      "        p       ",
+      "  p             ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "   w m m w      ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "          e *   ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "   w m m w      ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "   w m m w      ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "   _______      ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ]
+  ]
+}

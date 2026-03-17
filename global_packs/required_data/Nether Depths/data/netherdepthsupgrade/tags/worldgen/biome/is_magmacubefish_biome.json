@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:basalt_deltas",
+    {
+      "id": "biomesoplenty:erupting_inferno",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:withered_abyss",
+      "required": false
+    }
+  ]
+}

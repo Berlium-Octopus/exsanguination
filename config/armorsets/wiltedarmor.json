@@ -1,0 +1,151 @@
+{
+    "armorSetName": "GOD",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "rootoffear:wraithwood_helmet",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "chest": {
+        "itemKey": "rootoffear:wraithwood_chestplate",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "legs": {
+        "itemKey": "rootoffear:wraithwood_leggings",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "boots": {
+        "itemKey": "rootoffear:wraithwood_boots",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "mainHand": {
+        "itemKey": "spartanweaponry:studded_cestus",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "offHand": {
+        "itemKey": "spartanweaponry:studded_cestus",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "minecraft:resistance",
+            "value": 1,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "onlyImmuneToNewEffects": false,
+            "conditions": [
+                {
+                    "type": "inLava",
+                    "inverted": true
+                },
+                {
+                    "type": "onFire",
+                    "inverted": true
+                }
+            ]
+        },
+        {
+            "type": "effect",
+            "name": "exsanguination:reincarnatus",
+            "value": 1,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "onlyImmuneToNewEffects": false,
+            "conditions": [
+                {
+                    "type": "inLava",
+                    "inverted": true
+                },
+                {
+                    "type": "onFire",
+                    "inverted": true
+                }
+            ]
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:speed",
+            "value": 1,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "onlyImmuneToNewEffects": false,
+            "conditions": [
+                {
+                    "type": "inLava",
+                    "inverted": true
+                },
+                {
+                    "type": "onFire",
+                    "inverted": true
+                }
+            ]
+        },
+        {
+            "type": "effect",
+            "name": "potioncore:climb",
+            "value": 1,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "onlyImmuneToNewEffects": false,
+            "conditions": [
+                {
+                    "type": "inLava",
+                    "inverted": true
+                },
+                {
+                    "type": "onFire",
+                    "inverted": true
+                }
+            ]
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:jump_boost",
+            "value": 1,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "onlyImmuneToNewEffects": false,
+          "conditions": [
+                {
+                    "type": "inLava",
+                    "inverted": true
+                },
+                {
+                    "type": "onFire",
+                    "inverted": true
+                }
+            ]
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

@@ -1,0 +1,76 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "f",
+        "variant": "lcmt:mossy_stone"
+      },
+      {
+        "char": "q",
+        "block": "minecraft:sugar_cane"
+      },
+      {
+        "char": "n",
+        "block": "minecraft:lily_pad"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "                ",
+      " ______________ ",
+      " _SSSSSSSSSSSS_ ",
+      " _SGGGGGGGGGGS_ ",
+      " _SGGGGGffGGGS_ ",
+      " _SGGGfWWWGGGS_ ",
+      " _SGGGGWWWfGGS_ ",
+      " _SGGfWWWWWfGS_ ",
+      " _SGfWWWWWfGGS_ ",
+      " _SGGffWWWfGGS_ ",
+      " _SGGfWWWGGGGS_ ",
+      " _SGGGWffGGGGS_ ",
+      " _SGGGGGGGGGGS_ ",
+      " _SSSSSSSSSSSS_ ",
+      " ______________ ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "    p  q   p    ",
+      "     p    q     ",
+      "      q n       ",
+      "    p           ",
+      "       n        ",
+      "      w         ",
+      "        nq p    ",
+      "     p          ",
+      "          p     ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "      e         ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ]
+  ]
+}

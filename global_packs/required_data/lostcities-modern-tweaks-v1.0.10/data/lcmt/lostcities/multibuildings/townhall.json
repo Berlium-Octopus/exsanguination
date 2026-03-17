@@ -1,0 +1,14 @@
+{
+  "dimx": 2,
+  "dimz": 2,
+  "buildings": [
+    [
+      "lcmt:townhall/town00",
+      "lcmt:townhall/town01"
+    ],
+    [
+      "lcmt:townhall/town10",
+      "lcmt:townhall/town11"
+    ]
+  ]
+}

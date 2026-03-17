@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "kubejs:block/corrupt_4",
+    "side": "kubejs:block/faded_corruption_4"
+  }
+}

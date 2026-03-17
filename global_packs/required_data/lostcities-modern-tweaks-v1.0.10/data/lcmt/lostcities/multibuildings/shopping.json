@@ -1,0 +1,14 @@
+{
+  "dimx": 2,
+  "dimz": 2,
+  "buildings": [
+    [
+      "lcmt:shopping/shopping00",
+      "lcmt:shopping/shopping01"
+    ],
+    [
+      "lcmt:shopping/shopping10",
+      "lcmt:shopping/shopping11"
+    ]
+  ]
+}

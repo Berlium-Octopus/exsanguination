@@ -1,0 +1,35 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "farmersdelight"
+            },
+            {
+              "type": "forge:item_exists",
+              "item": "netherdepthsupgrade:glowdine_slice"
+            },
+            {
+              "type": "forge:item_exists",
+              "item": "netherdepthsupgrade:cooked_glowdine_slice"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:campfire_cooking",
+        "cookingtime": 600,
+        "experience": 0.35,
+        "ingredient": {
+          "item": "netherdepthsupgrade:glowdine_slice"
+        },
+        "result": "netherdepthsupgrade:cooked_glowdine_slice"
+      }
+    }
+  ]
+}

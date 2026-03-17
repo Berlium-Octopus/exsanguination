@@ -1,0 +1,23 @@
+{
+    "armorSetName": "haha_fog",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "quark:forgotten_hat",
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "alexsmobs:unsettling_kimono",
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "doom_and_gloom:fog",
+            "value": 2,
+            "interactionType": "self",
+            "interactionDuration": 6666,
+            "attributeOperation": 1
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

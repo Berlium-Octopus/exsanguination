@@ -1,0 +1,39 @@
+{
+    "armorSetName": "the_ancient_sequel",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "spelunkers_charm:candle_helmet",
+                "mixAndMatch": [
+            "spelunkers_charm:candle_on_helmet"
+        ],
+        "mustBeEmpty": false
+    },
+    "offHand": {
+        "itemKey": "archeological:rusty_sword",
+        "mixAndMatch": [
+            "archeological:rusty_pickaxe",
+            "archeological:rusty_hoe",
+            "archeological:rusty_axe",
+            "archeological:rusty_shovel"
+        ],
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "alexscaves:stunned",
+            "value": 1,
+            "interactionType": "attack",
+            "interactionDuration": 100
+        },
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:knockback",
+            "value": 1,
+            "interactionType": "self",
+            "attributeOperation": 2,
+            "modifierUUID": "7a1996f3-7ddb-4bb0-929b-395c65e36325"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

@@ -1,0 +1,22 @@
+{
+    "armorSetName": "regenmax",
+    "performanceMode": true,
+    "additionalSetPieces": [
+        {
+            "itemKey": "alexscaves:totem_of_regeneration",
+            "mustBeEmpty": false
+        }
+    ],
+    "fullSetBonuses": [
+      {
+          "type": "effect",
+          "name": "minecraft:regeneration",
+          "value": 0,
+          "interactionType": "self",
+          "interactionDuration": 240,
+          "hideBonusDescription": true,
+          "onlyImmuneToNewEffects": false
+      }
+    ],
+    "hideGeneratedTooltip": true
+}

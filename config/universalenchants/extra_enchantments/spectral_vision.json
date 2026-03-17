@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:armor_head"
+  ],
+  "incompatible": [
+    "extra_enchantments:blindness_curse",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

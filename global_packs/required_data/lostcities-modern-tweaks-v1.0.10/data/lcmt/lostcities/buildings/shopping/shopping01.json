@@ -1,0 +1,137 @@
+{
+  "filler": "#",
+  "rubble": "}",
+  "maxcellars": 0,
+  "minfloors": 4,
+  "maxfloors": 6,
+  "preferslonely": 0.9,
+  "parts": [
+    {
+      "floor": 0,
+      "part": "lcmt:shopping/shopping01_0"
+    },
+    {
+      "floor": 1,
+      "part": "lcmt:shopping/shopping01_1"
+    },
+    {
+      "floor": 2,
+      "part": "lcmt:shopping/shopping01_2"
+    },
+    {
+      "top": false,
+      "range": "3,100",
+      "part": "lcmt:shopping/shopping01_r1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_empty"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_antennas_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_small_building_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_large_garden_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_solar_panels_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_ac_units_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_chimneys_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_greenhouse_1"
+    }
+  ],
+  "parts2": [
+    {
+      "floor": 0,
+      "part": "lcmt:shopping/shopping01_0_in_info_desk"
+    },
+    {
+      "floor": 0,
+      "part": "lcmt:shopping/shopping01_0_in_info_desk_alt"
+    },
+    {
+      "floor": 0,
+      "part": "lcmt:shopping/shopping01_0_in_coral_pond"
+    },
+    {
+      "floor": 0,
+      "part": "lcmt:shopping/shopping01_0_in_fountain"
+    },
+    {
+      "floor": 0,
+      "part": "lcmt:shopping/shopping01_0_in_flower_garden"
+    },
+    {
+      "floor": 0,
+      "part": "lcmt:shopping/shopping01_0_in_glass_sculpture"
+    },
+    {
+      "floor": 2,
+      "part": "lcmt:shopping/shopping_in_empty"
+    },
+    {
+      "floor": 2,
+      "part": "lcmt:shopping/shopping01_2_in_lobby"
+    },
+    {
+      "floor": 2,
+      "part": "lcmt:shopping/shopping01_2_in_vending_machine"
+    },
+    {
+      "top": false,
+      "range": "3,100",
+      "part": "lcmt:shopping/shopping_in_empty"
+    },
+    {
+      "top": false,
+      "range": "3,100",
+      "part": "lcmt:shopping/shopping01_3p_in_store_empty"
+    },
+    {
+      "top": false,
+      "range": "3,100",
+      "part": "lcmt:shopping/shopping01_3p_in_store_display_1"
+    },
+    {
+      "top": false,
+      "range": "3,100",
+      "part": "lcmt:shopping/shopping01_3p_in_store_books_1"
+    },
+    {
+      "top": false,
+      "range": "3,100",
+      "part": "lcmt:shopping/shopping01_3p_in_store_counters_1"
+    },
+    {
+      "top": false,
+      "range": "3,100",
+      "part": "lcmt:shopping/shopping01_3p_in_bar_1a"
+    },
+    {
+      "top": false,
+      "range": "3,100",
+      "part": "lcmt:shopping/shopping01_3p_in_bar_1b"
+    },
+    {
+      "top": false,
+      "range": "3,100",
+      "part": "lcmt:shopping/shopping01_3p_in_bar_1c"
+    }
+  ]
+}

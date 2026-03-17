@@ -1,0 +1,111 @@
+{
+    "xsize": 16,
+    "zsize": 16,
+    "palette": {
+      "palette": [
+      {
+        "char": "i",
+        "blocks": [
+          {
+            "random": 32,
+            "block": "minecraft:coarse_dirt"
+          },
+          {
+            "random": 1000,
+            "block": "minecraft:podzol"
+          }
+        ]
+      },
+      {
+        "char": "k",
+        "blocks": [
+          {
+            "random": 32,
+            "block": "minecraft:muddy_mangrove_roots[axis=y]"
+          },
+          {
+            "random": 1000,
+            "block": "minecraft:mud"
+          }
+        ]
+      },
+      {
+        "char": "n",
+        "block": "minecraft:mangrove_roots[waterlogged=false]"
+      },
+      {
+        "char": "m",
+        "blocks": [
+          {
+            "random": 16,
+            "block": "minecraft:air"
+          },
+          {
+            "random": 24,
+            "block": "minecraft:fern"
+          },
+          {
+            "random": 1000,
+            "block": "minecraft:sugar_cane"
+          }
+        ]
+      }
+    ]
+  },
+  "slices": [
+    [
+      "                ",
+      " ______________ ",
+      " _SSSSSSSSSSSS_ ",
+      " _SiiikkiikkiS_ ",
+      " _SiikWWkkWWkS_ ",
+      " _SikkWWkWWWkS_ ",
+      " _SikWWkWWWkkS_ ",
+      " _SikWWkWWWkiS_ ",
+      " _SikWWWWWWkkS_ ",
+      " _SkWWWWWWWWkS_ ",
+      " _SkWWkkkWWWkS_ ",
+      " _SkkkkikkWWkS_ ",
+      " _SiiiiiikkkkS_ ",
+      " _SSSSSSSSSSSS_ ",
+      " ______________ ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "     m  m       ",
+      "     m  m       ",
+      "       m   m    ",
+      "    m  n        ",
+      "    m      m    ",
+      "                ",
+      "      m m       ",
+      "    m    m      ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "       e        ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ]
+  ]
+}

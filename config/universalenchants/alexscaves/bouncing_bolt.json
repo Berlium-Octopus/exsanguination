@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:sea_staff"
+  ],
+  "incompatible": [
+    "extra_enchantments:incompatibility_curse",
+    "alexscaves:triple_splash"
+  ]
+}

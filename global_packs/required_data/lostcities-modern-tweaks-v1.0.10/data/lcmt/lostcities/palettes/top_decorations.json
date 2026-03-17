@@ -1,0 +1,61 @@
+{
+  "palette": [
+    {
+      "char": "o",
+      "block": "minecraft:cut_copper",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "f",
+      "block": "minecraft:quartz_slab[type=bottom]"
+    },
+    {
+      "char": "i",
+      "block": "minecraft:daylight_detector[inverted=true,power=0]"
+    },
+    {
+      "char": "r",
+      "block": "minecraft:rail[shape=north_west]"
+    },
+    {
+      "char": "k",
+      "block": "minecraft:iron_trapdoor[facing=south,half=bottom,open=false,powered=false]"
+    },
+    {
+      "char": "m",
+      "block": "minecraft:rail[shape=south_east]"
+    },
+    {
+      "char": "q",
+      "block": "minecraft:rail[shape=north_east]"
+    },
+    {
+      "char": "n",
+      "block": "minecraft:rail[shape=south_west]"
+    },
+    {
+      "char": "j",
+      "block": "minecraft:stone_pressure_plate[powered=false]"
+    },
+    {
+      "char": "P",
+      "block": "minecraft:andesite_wall",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "I",
+      "block": "minecraft:polished_andesite",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "8",
+      "block": "minecraft:red_stained_glass_pane[east=false,north=false,south=false,waterlogged=false,west=false]",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "^",
+      "block": "minecraft:white_stained_glass_pane[east=false,north=false,south=false,waterlogged=false,west=false]",
+      "damaged": "minecraft:iron_bars"
+    }
+  ]
+}

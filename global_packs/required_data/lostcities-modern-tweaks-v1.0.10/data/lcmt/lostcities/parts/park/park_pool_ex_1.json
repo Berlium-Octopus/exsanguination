@@ -1,0 +1,76 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "f",
+        "variant": "lcmt:mossy_stone"
+      },
+      {
+        "char": "i",
+        "variant": "lcmt:garden_soil"
+      },
+      {
+        "char": "j",
+        "variant": "lcmt:azalea"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "                ",
+      " ______________ ",
+      " _SSSSSSSSSSSS_ ",
+      " _SGGfGGGGGGGS_ ",
+      " _SGiWiffiiGGS_ ",
+      " _SiWWiWWWWiGS_ ",
+      " _SfiWiWWWWWiS_ ",
+      " _SGGfWWWWWWiS_ ",
+      " _SGiWWWfWWfiS_ ",
+      " _SiWWWWWiiGGS_ ",
+      " _SGifWWWiGGGS_ ",
+      " _SGGGfiiGGGGS_ ",
+      " _SGGGGGGGGGGS_ ",
+      " _SSSSSSSSSSSS_ ",
+      " ______________ ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "    p    j p    ",
+      "      p         ",
+      "                ",
+      "   p            ",
+      "    j   w       ",
+      "          j     ",
+      "           p    ",
+      "     p j        ",
+      "          p     ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "        e       ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ]
+  ]
+}

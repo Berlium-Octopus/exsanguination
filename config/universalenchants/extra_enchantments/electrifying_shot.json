@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:bow",
+    "cataclysm:cursed_bow"
+  ],
+  "incompatible": [
+    "extra_enchantments:levitational_shot",
+    "minecraft:piercing",
+    "extra_enchantments:incandescent",
+    "minecraft:multishot",
+    "extra_enchantments:resonating_shot",
+    "extra_enchantments:supercharge",
+    "extra_enchantments:shadow_shot",
+    "minecraft:quick_charge",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

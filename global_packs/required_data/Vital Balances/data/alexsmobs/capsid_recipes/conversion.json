@@ -1,0 +1,12 @@
+{
+    "ingredients": [
+      {
+        "item": "biomemakeover:raw_crab"
+      }
+    ],
+    "result": {
+      "item": "cataclysm:amethyst_crab_meat",
+      "count": 1
+    },
+    "time": 100
+  }

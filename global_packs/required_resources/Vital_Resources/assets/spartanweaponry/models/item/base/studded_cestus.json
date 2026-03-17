@@ -1,0 +1,100 @@
+{
+	"credit": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
+	"textures": {
+		"layer0": "spartanweaponry:items/studded_cestus",
+		"particle": "reignited_leggings"
+	},
+	"elements": [
+		{
+			"name": "Cestus",
+			"from": [6, 6, 4],
+			"to": [10, 10, 9],
+			"faces": {
+				"north": {"uv": [0, 0, 4, 4], "texture": "#layer0"},
+				"east": {"uv": [4, 4, 8, 9], "rotation": 90, "texture": "#layer0"},
+				"south": {"uv": [4, 0, 8, 4], "texture": "#layer0"},
+				"west": {"uv": [12, 4, 16, 9], "rotation": 270, "texture": "#layer0"},
+				"up": {"uv": [0, 4, 4, 9], "texture": "#layer0"},
+				"down": {"uv": [8, 4, 12, 9], "texture": "#layer0"}
+			}
+		},
+		{
+			"name": "Knux",
+			"from": [5.5, 9.5, 3.5],
+			"to": [10.5, 10.5, 7.5],
+			"faces": {
+				"north": {"uv": [0, 10, 5, 11], "texture": "#layer0"},
+				"east": {"uv": [5, 9, 6, 13], "rotation": 90, "texture": "#layer0"},
+				"south": {"uv": [0, 15, 5, 16], "texture": "#layer0"},
+				"west": {"uv": [11, 9, 12, 13], "rotation": 270, "texture": "#layer0"},
+				"up": {"uv": [0, 11, 5, 15], "texture": "#layer0"},
+				"down": {"uv": [7, 11, 12, 15], "texture": "#layer0"}
+			}
+		},
+		{
+			"name": "Knux2",
+			"from": [5.5, 6.5, 3.5],
+			"to": [10.5, 9.5, 4.5],
+			"faces": {
+				"north": {"uv": [6, 13, 11, 16], "texture": "#layer0"},
+				"east": {"uv": [14, 10, 15, 13], "texture": "#layer0"},
+				"south": {"uv": [11, 13, 16, 16], "texture": "#layer0"},
+				"west": {"uv": [15, 10, 16, 13], "texture": "#layer0"},
+				"up": {"uv": [6, 13, 11, 14], "texture": "#layer0"},
+				"down": {"uv": [11, 15, 16, 16], "texture": "#layer0"}
+			}
+		},
+		{
+			"name": "Knux5",
+			"from": [6.5, 8.5, 2.5],
+			"to": [7.5, 9.5, 3.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-2, 0, -1]},
+			"faces": {
+				"north": {"uv": [7, 13, 8, 14], "texture": "#layer0"},
+				"east": {"uv": [14, 10, 15, 11], "texture": "#layer0"},
+				"south": {"uv": [14, 13, 15, 14], "texture": "#layer0"},
+				"west": {"uv": [15, 10, 16, 11], "texture": "#layer0"},
+				"up": {"uv": [9, 13, 10, 14], "texture": "#layer0"},
+				"down": {"uv": [14, 15, 15, 16], "texture": "#layer0"}
+			}
+		},
+		{
+			"name": "Knux6",
+			"from": [8.5, 8.5, 2.5],
+			"to": [9.5, 9.5, 3.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, -1]},
+			"faces": {
+				"north": {"uv": [7, 13, 8, 14], "texture": "#layer0"},
+				"east": {"uv": [14, 10, 15, 11], "texture": "#layer0"},
+				"south": {"uv": [14, 13, 15, 14], "texture": "#layer0"},
+				"west": {"uv": [15, 10, 16, 11], "texture": "#layer0"},
+				"up": {"uv": [9, 13, 10, 14], "texture": "#layer0"},
+				"down": {"uv": [14, 15, 15, 16], "texture": "#layer0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, 0, 270],
+			"translation": [0, -2, 2.75],
+			"scale": [1.2, 1.2, 1.2]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, 0, 270],
+			"translation": [0, -2, 2.75],
+			"scale": [1.2, 1.2, 1.2]
+		},
+		"firstperson_righthand": {
+			"rotation": [30, 330, 330],
+			"translation": [0, -1, -2.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [30, 330, 330],
+			"translation": [0, -1, -2.5]
+		},
+		"gui": {
+			"rotation": [30, 316, 0],
+			"scale": [1.5, 1.5, 1.5]
+		}
+	}
+}

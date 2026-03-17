@@ -1,0 +1,27 @@
+# Don't change this! Version used to track needed updates.
+version = 0
+biomeColorRain = true
+biomeParticlesRadius = 32
+mushroomSporeBiomes = [
+    "minecraft:mushroom_fields",
+    "biomesoplenty:fungal_jungle"
+]
+mushroomSporeDensity = 10
+fireflyBiomes = [
+    "minecraft:swamp",
+    "minecraft:mangrove_swamp"
+]
+fireflyDensity = 6
+pollenBiomes = [
+    "minecraft:flower_forest",
+    "minecraft:sunflower_plains",
+    "biomesoplenty:auroral_garden"
+]
+pollenDensity = 50
+sculkDustBiomes = [
+    "minecraft:deep_dark",
+    "deeperdarker:blooming_caverns",
+    "deeperdarker:deeplands",
+    "deeperdarker:overcast_columns"
+]
+sculkDustDensity = 4

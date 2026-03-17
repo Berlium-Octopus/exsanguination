@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:weapon",
+    "cataclysm:the_incinerator",
+    "cataclysm:ancient_spear",
+    "$minecraft:universal_enchants_axe"
+  ],
+  "incompatible": [
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

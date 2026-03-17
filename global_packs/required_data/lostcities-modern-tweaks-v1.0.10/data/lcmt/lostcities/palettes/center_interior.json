@@ -1,0 +1,125 @@
+{
+  "palette": [
+    {
+      "char": "k",
+      "block": "minecraft:iron_trapdoor[facing=north,half=top,open=false,powered=false,waterlogged=false]"
+    },
+    {
+      "char": "m",
+      "block": "minecraft:quartz_stairs[facing=east,half=top,shape=straight,waterlogged=false]",
+      "damaged": "minecraft:quartz_slab[type=bottom,waterlogged=false]"
+    },
+    {
+      "char": "n",
+      "block": "minecraft:quartz_stairs[facing=west,half=top,shape=straight,waterlogged=false]",
+      "damaged": "minecraft:quartz_slab[type=bottom,waterlogged=false]"
+    },
+    {
+      "char": "o",
+      "block": "minecraft:chiseled_quartz_block",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "q",
+      "block": "minecraft:quartz_stairs[facing=north,half=top,shape=straight,waterlogged=false]",
+      "damaged": "minecraft:quartz_slab[type=bottom,waterlogged=false]"
+    },
+    {
+      "char": "r",
+      "block": "minecraft:quartz_stairs[facing=south,half=top,shape=straight,waterlogged=false]",
+      "damaged": "minecraft:quartz_slab[type=bottom,waterlogged=false]"
+    },
+    {
+      "char": "s",
+      "block": "minecraft:iron_trapdoor[facing=north,half=bottom,open=false,powered=false,waterlogged=false]"
+    },
+    {
+      "char": "?",
+      "block": "minecraft:chest[facing=north,type=single,waterlogged=false]",
+      "loot": "lcmt:center_loot"
+    },
+    {
+      "char": "F",
+      "blocks": [
+        {
+          "random": 30,
+          "block": "minecraft:crafting_table"
+        },
+        {
+          "random": 20,
+          "block": "minecraft:cauldron"
+        },
+        {
+          "random": 20,
+          "block": "minecraft:barrel[facing=up]"
+        },
+        {
+          "random": 20,
+          "block": "minecraft:scaffolding"
+        },
+        {
+          "random": 1000,
+          "block": "minecraft:cobweb"
+        }
+      ]
+    },
+    {
+      "char": "H",
+      "block": "minecraft:polished_deepslate",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "I",
+      "block": "minecraft:quartz_pillar[axis=z]",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "J",
+      "block": "minecraft:iron_door[facing=north,half=lower,hinge=right,open=false,powered=false]"
+    },
+    {
+      "char": "U",
+      "block": "minecraft:iron_door[facing=north,half=upper,hinge=right,open=false,powered=false]"
+    },
+    {
+      "char": "V",
+      "block": "minecraft:quartz_pillar[axis=x]",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "Z",
+      "blocks": [
+        {
+          "random": 40,
+          "block": "minecraft:cyan_stained_glass_pane"
+        },
+        {
+          "random": 40,
+          "block": "minecraft:blue_stained_glass_pane"
+        },
+        {
+          "random": 1000,
+          "block": "minecraft:light_blue_stained_glass_pane"
+        }
+      ],
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "0",
+      "block": "minecraft:tripwire_hook[attached=false,facing=south,powered=false]"
+    },
+    {
+      "char": "3",
+      "blocks": [
+        {
+          "random": 64,
+          "block": "minecraft:light_blue_concrete"
+        },
+        {
+          "random": 1000,
+          "block": "minecraft:light_blue_concrete_powder"
+        }
+      ]
+    }
+  ]
+}

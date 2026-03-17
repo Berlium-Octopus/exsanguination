@@ -1,0 +1,16 @@
+{
+  "blocks": [
+    {
+      "random": 40,
+      "block": "minecraft:potted_dead_bush"
+    },
+    {
+      "random": 70,
+      "block": "minecraft:potted_cactus"
+    },
+    {
+      "random": 1000,
+      "block": "minecraft:flower_pot"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+    "armorSetName": "leafawaken",
+    "performanceMode": true,
+    "head": {
+      "itemKey": "toughasnails:wool_helmet",
+        "mustBeEmpty": false,
+        "mixAndMatch": [
+            "toughasnails:wool_helmet"
+        ],
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "chest": {
+      "itemKey": "toughasnails:wool_chestplate",
+        "mustBeEmpty": false,
+        "mixAndMatch": [
+            "toughasnails:wool_helmet"
+        ],
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "legs": {
+      "itemKey": "toughasnails:wool_leggings",
+        "mustBeEmpty": false,
+        "mixAndMatch": [
+            "toughasnails:wool_helmet"
+        ],
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "boots": {
+      "itemKey": "toughasnails:wool_boots",
+        "mustBeEmpty": false,
+        "mixAndMatch": [
+            "toughasnails:wool_helmet"
+        ],
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "fullSetBonuses": [
+	{
+            "type": "effect",
+            "name": "minecraft:slowness",
+            "interactionType": "immunity",
+            "interactionDuration": 100,
+            "description": "1100"
+        },
+	{
+            "type": "effect",
+            "name": "minecraft:mining_fatigue",
+            "interactionType": "immunity",
+            "interactionDuration": 100,
+            "description": "1100"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

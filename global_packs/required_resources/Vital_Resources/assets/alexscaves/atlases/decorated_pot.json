@@ -1,0 +1,29 @@
+{
+  "sources": [
+    {
+      "type": "blueprint:paletted_permutations",
+      "sources": [
+        {
+          "type": "minecraft:directory",
+          "prefix": "entity/decorated_pot_trim_patterns/",
+          "source": "entity/decorated_pot_trim_patterns"
+        }
+      ],
+      "palette_key": "clayworks:entity/decorated_pot_trim_palettes/trim_palette",
+      "permutations": {
+        "alexscaves_scarlet_neodymium": "entity/decorated_pot_trim_palettes/scarlet_neodymium",
+        "alexscaves_azure_neodymium": "entity/decorated_pot_trim_palettes/azure_neodymium",
+        "alexscaves_amber": "entity/decorated_pot_trim_palettes/amber",
+        "alexscaves_tectonic": "entity/decorated_pot_trim_palettes/tectonic",
+        "alexscaves_uranium": "entity/decorated_pot_trim_palettes/uranium",
+        "alexscaves_sulfur": "entity/decorated_pot_trim_palettes/sulfur",
+        "alexscaves_pearl": "entity/decorated_pot_trim_palettes/pearl",
+        "alexscaves_bioluminesscence": "entity/decorated_pot_trim_palettes/bioluminesscence",
+        "alexscaves_occult_gem": "entity/decorated_pot_trim_palettes/occult_gem",
+        "alexscaves_pure_darkness": "entity/decorated_pot_trim_palettes/pure_darkness",
+        "alexscaves_candy_cane": "entity/decorated_pot_trim_palettes/candy_cane",
+        "alexscaves_radiant_essence": "entity/decorated_pot_trim_palettes/radiant_essence"
+      }
+    }
+  ]
+}

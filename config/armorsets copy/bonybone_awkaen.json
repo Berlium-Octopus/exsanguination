@@ -1,0 +1,86 @@
+{
+    "armorSetName": "bonnet",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "alexscaves:primordial_helmet",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "alexscaves:primordial_tunic",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "alexscaves:primordial_pants",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "alexscaves:rage",
+            "value": 2,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "cataclysm:bone_fracture",
+            "value": 2,
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "alexsmobs:exsanguination",
+            "value": 2,
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "luminous_monsters:hemorrhage",
+            "value": 2,
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:speed",
+            "value": 0.5,
+            "interactionType": "self",
+            "hideBonusDescription": true,
+            "interactionDuration": 100,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "oreganized:stunning",
+            "value": 0.5,
+            "interactionType": "attack",
+            "interactionDuration": 80
+        },
+        {
+            "type": "attribute",
+            "name": "minecraft:generic.max_health",
+            "value": 64,
+            "interactionType": "self",
+            "attributeOperation": 0,
+            "modifierUUID": "c89c537a-b11e-4fb8-8b39-0c5d4650c5fb",
+            "description": "1100"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

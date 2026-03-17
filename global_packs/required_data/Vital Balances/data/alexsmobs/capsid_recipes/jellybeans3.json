@@ -1,0 +1,12 @@
+{
+  "ingredients": [
+    {
+      "item": "tide:luminescent_jellyfish"
+    }
+  ],
+  "result": {
+    "item": "alexscaves:jelly_bean",
+    "count": 2
+  },
+  "time": 300
+}

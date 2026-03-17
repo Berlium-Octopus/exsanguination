@@ -1,0 +1,6 @@
+{
+  "buildings": [ "lcmt:cabin" ],
+  "terrainheight": "highest",
+  "terrainfix": "none",
+  "heightoffset": -3
+}

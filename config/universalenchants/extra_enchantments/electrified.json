@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:wearable"
+  ],
+  "incompatible": [
+    "extra_enchantments:zeus_curse",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+    "armorSetName": "Ancient",
+    "performanceMode": true,
+    "head": {
+      "itemKey": "create:netherite_diving_helmet",
+      "mixAndMatch": ["create:copper_diving_helmet"],
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "chest": {
+      "itemKey": "create:netherite_backtank",
+      "mixAndMatch": ["create:copper_backtank"],
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "boots": {
+      "itemKey": "create:netherite_diving_boots",
+      "mixAndMatch": ["create:copper_diving_boots"],
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "additionalSetPieces": [
+        {
+            "itemKey": "create:goggles",
+            "mustBeEmpty": false
+        }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "minecraft:haste",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "onlyImmuneToNewEffects": false,
+            "conditions": [
+                {
+                    "type": "inlava"
+                }
+            ]
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:resistance",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "onlyImmuneToNewEffects": false,
+            "conditions": [
+                {
+                    "type": "inwater"
+                }
+            ]
+        },
+  {
+            "type": "effect",
+            "name": "minecraft:resistance",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "onlyImmuneToNewEffects": false,
+            "conditions": [
+                {
+                    "type": "inlava"
+                }
+            ]
+        },
+  {
+            "type": "effect",
+            "name": "minecraft:haste",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "onlyImmuneToNewEffects": false,
+            "conditions": [
+                {
+                    "type": "inwater"
+                }
+            ]
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

@@ -1,0 +1,74 @@
+{
+    "armorSetName": "Real Netherwake",
+    "performanceMode": false,
+    "head": {
+        "itemKey": "minecraft:netherite_helmet",
+        "mixAndMatch": [
+            "cataclysm:monstrous_helm"
+        ],
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "chest": {
+        "itemKey": "minecraft:netherite_chestplate",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "legs": {
+        "itemKey": "minecraft:netherite_leggings",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "boots": {
+        "itemKey": "minecraft:netherite_boots",
+        "mustBeEmpty": false
+    },
+    "enchantments": [
+        {
+            "enchantmentKey": "exsanguination:awakening"
+        }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "potioncore:damage_resistance",
+            "value": 0.2,
+            "interactionType": "self",
+            "attributeOperation": 0,
+            "modifierUUID": "72c00736-2beb-422c-9b24-e1746dff303e",
+            "description": "1100"
+        },
+        {
+            "type": "effect",
+            "name": "toughasnails:ice_resistance",
+            "value": 0,
+            "interactionType": "self",
+            "interactionDuration": 100
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:strength",
+            "value": 1,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "conditions": [
+                {
+                    "type": "inlava"
+                }
+            ]
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

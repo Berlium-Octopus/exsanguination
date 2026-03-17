@@ -1,0 +1,22 @@
+{
+  "palette": [
+        {
+      "char": "E",
+      "blocks": [
+        {
+          "random": 400,
+          "block": "minecraft:lantern[hanging=true]"
+        },
+        {
+          "random": 1000,
+          "block": "minecraft:chain[axis=y]"
+        }
+      ]
+    },
+    {
+      "char": "e",
+      "block": "minecraft:lantern[hanging=false]",
+      "damaged": "minecraft:iron_bars"
+    }
+  ]
+}

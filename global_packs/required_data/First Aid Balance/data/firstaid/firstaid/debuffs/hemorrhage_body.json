@@ -1,0 +1,15 @@
+{
+  "type": "firstaid:on_hit",
+  "debuffSlot": "body",
+  "potionName": "luminous_nether:hemorrhage",
+  "timeBoundaries": [
+    {
+      "damageTakenThreshold": 10,
+      "effectDuration": 80
+    },
+    {
+      "damageTakenThreshold": 8,
+      "effectDuration": 40
+    }
+  ]
+}

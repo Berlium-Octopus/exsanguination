@@ -1,0 +1,96 @@
+{
+    "armorSetName": "boneryboene",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "cataclysm:bone_reptile_helmet",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "chest": {
+        "itemKey": "cataclysm:bone_reptile_chestplate",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "mainHand": {
+        "itemKey": "cataclysm:khopesh",
+        "mixAndMatch": [
+            "cataclysm:ancient_spear"
+        ],
+        "mustBeEmpty": false
+    },
+    "offHand": {
+        "itemKey": "cataclysm:khopesh",
+        "mixAndMatch": [
+            "cataclysm:ancient_spear"
+        ],
+        "mustBeEmpty": false
+    },
+    "additionalSetPieces": [
+        {
+            "itemKey": "cataclysm:necklace_of_the_desert",
+            "mustBeEmpty": false
+        }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "minecraft:strength",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:resistance",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:slowness",
+            "value": 99,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "attribute",
+            "name": "minecraft:generic.attack_knockback",
+            "value": 0.5,
+            "interactionType": "self",
+            "attributeOperation": 0,
+            "modifierUUID": "b12a40eb-55e0-46f4-b2c3-1fed295f36e7",
+            "description": "1240"
+        },
+        {
+            "type": "effect",
+            "name": "potioncore:vulnerable",
+            "value": 1,
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "alexsmobs:oiled",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 800,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

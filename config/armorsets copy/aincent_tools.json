@@ -1,0 +1,65 @@
+{
+    "armorSetName": "Ancient_attack_2",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "alexscaves:diving_helmet",
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "alexscaves:diving_chestplate",
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "alexscaves:diving_leggings",
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "alexscaves:diving_boots",
+        "mustBeEmpty": false
+    },
+    "offHand": {
+        "itemKey": "spartanweaponry:copper_parrying_dagger",
+        "mixAndMatch": [
+            "spartanweaponry:copper_battleaxe",
+            "spartanweaponry:copper_katana",
+            "spartanweaponry:copper_longsword",
+            "spartanweaponry:copper_flanged_mace",
+            "spartanweaponry:copper_glaive",
+            "spartanweaponry:copper_quarterstaff",
+            "spartanweaponry:copper_scythe",
+            "spartanweaponry:copper_rapier",
+            "spartanweaponry:copper_greatsword",
+            "spartanweaponry:copper_battle_hammer",
+            "spartanweaponry:copper_warhammer",
+            "spartanweaponry:copper_spear",
+            "spartanweaponry:copper_halberd",
+            "spartanweaponry:copper_pike",
+            "spartanweaponry:copper_lance",
+            "spartanweaponry:copper_longsword",
+            "spartanweaponry:copper_saber",
+            "minecraft:copper_axe",
+            "minecraft:copper_pickaxe",
+            "minecraft:copper_shovel",
+            "minecraft:copper_hoe",
+            "minecraft:copper_sword",
+            "farmersdelight:copper_knife"
+        ],
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "minecraft:generic.attack_speed",
+            "value": 0.1,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "bd4451dc-667d-4c47-b637-8fb3dc001c4d",
+            "conditions": [
+                {
+                    "type": "inwater"
+                }
+            ]
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

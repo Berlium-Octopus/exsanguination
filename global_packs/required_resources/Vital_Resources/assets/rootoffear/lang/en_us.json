@@ -1,0 +1,54 @@
+{
+	"entity.rootoffear.wilted" : "Wilted",
+	"item.rootoffear.wilted_spawn_egg" : "Wilted Spawn Egg",
+	"entity.rootoffear.decoy_wilted" : "Decoy Wilted",
+	"entity.rootoffear.shadow_wilted" : "Shadow Wilted",
+	"entity.rootoffear.light_extinguisher" : "Light Extinguisher",
+	"entity.rootoffear.wilted_hands" : "Wilted Hands",
+	"entity.rootoffear.wilted_barrier" : "Wilted Barrier",
+
+	"commands.rootoffear.setspawnday.success" : "Set the Wilted's next spawn day to day %s",
+	"commands.rootoffear.setspawndayrelative.success" : "Set the Wilted to spawn in %s days",
+	"commands.rootoffear.getspawnday.success" : "§7You are certain that you only have §7Day §7%s §7left",
+	"commands.rootoffear.getspawndayrelative.success" : "§7You feel as you only have §7%s §7days §7left",
+
+	"commands.rootoffear.getassignedwilted.success" : "%s's assigned Wilted is %s",
+	"commands.rootoffear.setassignedwilted.success" : "Assigned %s to %s",
+	"commands.rootoffear.clearassignedwilted.success" : "Cleared %s's assigned Wilted",
+
+	"commands.rootoffear.getultimatetarget.success" : "%s's ultimate target is %s",
+	"commands.rootoffear.setultimatetarget.success" : "Set %s's ultimate target to %s",
+	"commands.rootoffear.setultimatetarget.success_multiple" : "Set ultimate target of %s Wilted to %s",
+	"commands.rootoffear.clearultimatetarget.success" : "Cleared %s's ultimate target",
+	"commands.rootoffear.clearultimatetarget.success_multiple" : "Cleared the ultimate target of %s Wilted",
+
+	"commands.rootoffear.fail" : "This dimension can't have an assigned Wilted",
+	"commands.rootoffear.fail_no_target" : "The dimension needs an assigned Wilted for this command to be performed",
+	"commands.rootoffear.fail_not_wilted" : "No Wilted selected",
+	"commands.rootoffear.fail_no_assigned_wilted" : "%s doesn't have an assigned Wilted",
+	"commands.rootoffear.fail_no_ultimate_target" : "None of the selected Wilted have an ultimate target",
+
+	"commands.rootoffear.setdisguisedtrue.success" : "Added disguise to %s",
+	"commands.rootoffear.setdisguisedtrue.success_multiple" : "Added disguise to %s Wilted",
+	"commands.rootoffear.setdisguisedfalse.success" : "Removed disguise from %s",
+	"commands.rootoffear.setdisguisedfalse.success_multiple" : "Removed disguise from %s Wilted",
+
+	"block.minecraft.bed.wilted": "You may not rest now; something is hunting you",
+
+	"subtitles.entity.wilted.idle": "Wilted stalks",
+	"subtitles.entity.wilted.hurt": "Wilted burns",
+	"subtitles.entity.wilted.step": "Wilted steps",
+	"subtitles.entity.wilted.attack": "Wilted attacks",
+	"subtitles.entity.wilted.leaf_storm": "Leaves swirl",
+	"subtitles.entity.wilted.sway": "Wilted is shielded",
+	"subtitles.entity.wilted.extinguish": "Wilted extinguishes light",
+	"subtitles.entity.wilted.leap": "Wilted leaps",
+	"subtitles.entity.wilted.land": "Wilted lands",
+	"subtitles.entity.wilted.dig_out": "Wilted emerges",
+	"subtitles.entity.wilted.dig_in": "Wilted burrows",
+	"subtitles.entity.wilted.ground_grab": "Wilted pulls",
+	"subtitles.entity.wilted.curse_item": "Wilted curses",
+	"subtitles.entity.wilted.death": "Wilted dies",
+	"subtitles.entity.wilted.pulse": "Wilted pulses",
+	"subtitles.entity.wilted.reveal": "Wilted unfolds"
+}

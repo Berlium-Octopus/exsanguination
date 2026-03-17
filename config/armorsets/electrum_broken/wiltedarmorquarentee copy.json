@@ -1,0 +1,213 @@
+{
+    "armorSetName": "GOD",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "rootoffear:wraithwood_helmet",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "chest": {
+        "itemKey": "rootoffear:wraithwood_chestplate",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "legs": {
+        "itemKey": "rootoffear:wraithwood_leggings",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "boots": {
+        "itemKey": "rootoffear:wraithwood_boots",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "mainHand": {
+        "itemKey": "spartanweaponry:studded_cestus",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "offHand": {
+        "itemKey": "spartanweaponry:studded_cestus",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "partialBonusRequiredAmount": 1,
+    "partialSetBonuses": [
+      {
+          "type": "attribute",
+          "name": "functionalarmortrim:fire_resistance",
+          "value": -5,
+          "interactionType": "self",
+          "attributeOperation": 0,
+          "modifierUUID": "7ad0bd8a-91b7-482a-b895-d08de8f507bf",
+          "description": "1240"
+      },
+        {
+            "type": "effect",
+            "name": "minecraft:resistance",
+            "value": 2,
+            "interactionType": "immunity",
+            "interactionDuration": 240,
+            "conditions": [
+                {
+                    "type": "inLava",
+                    "type": "onFire"
+                }
+            ]
+        },
+        {
+            "type": "effect",
+            "name": "exsanguination:reincarnatus",
+            "value": 2,
+            "interactionType": "immunity",
+            "interactionDuration": 240,
+            "conditions": [
+                {
+                    "type": "inLava",
+                    "type": "onFire"
+                }
+            ]
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:speed",
+            "value": 2,
+            "interactionType": "immunity",
+            "interactionDuration": 240,
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "inLava",
+                    "type": "onFire"
+                }
+            ]
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:strength",
+            "value": 2,
+            "interactionType": "immunity",
+            "interactionDuration": 240,
+            "conditions": [
+                {
+                    "type": "inLava",
+                    "type": "onFire"
+                }
+            ]
+        },
+        {
+            "type": "effect",
+            "name": "potioncore:climb",
+            "value": 2,
+            "interactionType": "immunity",
+            "interactionDuration": 240,
+            "conditions": [
+                {
+                    "type": "inLava",
+                    "type": "onFire"
+                }
+            ]
+        },
+        {
+            "type": "effect",
+            "name": "potioncore:magic_shield",
+            "value": 2,
+            "interactionType": "immunity",
+            "interactionDuration": 240,
+            "conditions": [
+                {
+                    "type": "inLava",
+                    "type": "onFire"
+                }
+            ]
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:jump_boost",
+            "value": 2,
+            "interactionType": "immunity",
+            "interactionDuration": 240,
+            "conditions": [
+                {
+                    "type": "inLava",
+                    "type": "onFire"
+                }
+            ]
+        }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "minecraft:resistance",
+            "value": 2,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "exsanguination:reincarnatus",
+            "value": 2,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:speed",
+            "value": 2,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:strength",
+            "value": 2,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "potioncore:climb",
+            "value": 2,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:jump_boost",
+            "value": 2,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

@@ -1,0 +1,103 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "n",
+        "blocks": [
+          {
+            "random": 64,
+            "block": "minecraft:red_carpet"
+          }, {
+            "random": 1000,
+            "block": "minecraft:air"
+          }
+        ]
+      },
+      {
+        "char": "k",
+        "block": "minecraft:red_wool"
+      },
+      {
+        "char": "C",
+        "block": "minecraft:chest[facing=north,type=single,waterlogged=false]",
+        "loot": "lcmt:shopping_loot"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "        kkkk    ",
+      "        kkkk    ",
+      "        k  k    ",
+      "        k 1k    ",
+      "        kkkk    ",
+      "        kkkk    ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "       QQQfQQ   ",
+      "       QnnnnQ   ",
+      "       fnnnnQ   ",
+      "        njjn    ",
+      "        njjn    ",
+      "       QnnnnQ   ",
+      "       fnnnnf   ",
+      "       QQfQQQ   ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "       `` *``   ",
+      "       `    `   ",
+      "       `    `   ",
+      "         LL     ",
+      "         LL     ",
+      "       `    `   ",
+      "       `    `   ",
+      "       ``% ``   ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "         CL     ",
+      "         LL     ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ]
+  ]
+}

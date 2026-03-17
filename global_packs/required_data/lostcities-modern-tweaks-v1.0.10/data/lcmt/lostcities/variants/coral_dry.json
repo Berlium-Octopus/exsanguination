@@ -1,0 +1,24 @@
+{
+  "blocks": [
+    {
+      "random": 25,
+      "block": "minecraft:tube_coral[waterlogged=false]"
+    },
+    {
+      "random": 25,
+      "block": "minecraft:brain_coral[waterlogged=false]"
+    },
+    {
+      "random": 25,
+      "block": "minecraft:bubble_coral[waterlogged=false]"
+    },
+    {
+      "random": 25,
+      "block": "minecraft:fire_coral[waterlogged=false]"
+    },
+    {
+      "random": 100,
+      "block": "minecraft:horn_coral[waterlogged=false]"
+    }
+  ]
+}

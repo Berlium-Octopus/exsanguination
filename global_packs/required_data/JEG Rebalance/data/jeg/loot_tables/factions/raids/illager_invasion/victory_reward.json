@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald",
+          "weight": 4,
+          "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 20
+                            }
+                        }
+                    ],
+          "conditions": []
+        },
+        {
+            "type": "minecraft:item",
+            "name": "jeg:pump_shotgun",
+            "weight": 5,
+            "conditions": []
+        },
+        {
+            "type": "minecraft:item",
+            "name": "jeg:advanced_firearm_blueprint",
+            "weight": 20,
+            "conditions": []
+        }
+      ]
+    }
+  ]
+}

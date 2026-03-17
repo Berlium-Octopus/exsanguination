@@ -1,0 +1,57 @@
+{
+    "armorSetName": "attack",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "outer_end:mint_crystal_helmet",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "outer_end:mint_crystal_chestplate",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "outer_end:mint_crystal_leggings",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "outer_end:mint_crystal_boots",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+      {
+          "type": "effect",
+          "name": "potioncore:perplexity",
+          "value": 2,
+          "interactionType": "attack",
+          "interactionDuration": 40
+      },
+      {
+          "type": "effect",
+          "name": "minecraft:speed",
+          "value": 1,
+          "interactionType": "self",
+          "interactionDuration": 240
+    }
+    ],
+    "hideGeneratedTooltip": true
+}

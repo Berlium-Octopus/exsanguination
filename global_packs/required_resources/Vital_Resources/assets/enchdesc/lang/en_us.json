@@ -1,0 +1,13 @@
+{
+  "enchantment.exsanguination.awakening.desc": "Increases the capabilites of armor set bonuses",
+  "enchantment.exsanguination.golden_awakening.desc": "Increases the capabilites of golden equipment and tools",
+  "enchantment.bulletarmorenchant.bullet_proff.desc": "Protects against bullets and gunpowder based weaponary",
+  "enchantment.aggrofix.aggrobaiting.desc": "Taunts the attacker to attack via a right click",
+  "enchantment.aggrofix.aggronizing.desc": "Deals more damage to angered mobs",
+  "enchantment.jeg.atlantic_shooter.desc": "Deals more damage to aquantic mobs",
+  "enchantment.jeg.bullet_protection.desc": "Currently Broken Don't Use It",
+  "enchantment.luminous_nether.soul_cleave.desc": "Has a chance to drop Ghostly Essences when killing an entity",
+  "enchantment.armor_weight.smash.desc": "Higher damage amplification from squashing entities",
+  "enchantment.armor_weight.slight.desc": "Decreses the armor's weight",
+  "enchantment.minecraft.bane_of_arthropods.desc": "Increases damage to all land animals"
+}

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:jeg_gun"
+  ],
+  "incompatible": [
+    "extra_enchantments:incompatibility_curse",
+    "jeg:atlantic_shooter",
+    "jeg:collateral",
+    "jeg:puncturing",
+    "jeg:accelerator"
+  ]
+}

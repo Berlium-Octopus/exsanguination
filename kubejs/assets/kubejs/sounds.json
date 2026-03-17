@@ -1,0 +1,18 @@
+{
+    "music.voidlit_nether": {
+        "sounds": [
+            {
+                "name": "kubejs:voidlit_nether",
+                "stream": true
+            }
+        ]
+    },
+    "voidlit_nether": {
+        "sounds": [
+            {
+                "name": "kubejs:voidlit_nether",
+                "stream": true
+            }
+        ]
+    }
+}

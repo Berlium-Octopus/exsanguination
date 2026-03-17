@@ -1,0 +1,30 @@
+{
+  "values": [
+    {
+      "factor": 1,
+      "value": "lcmt:chests/shopping_food_basic",
+      "inpart": [
+        "lcmt:shopping/shopping01_3p_in_bar_1a",
+        "lcmt:shopping/shopping01_3p_in_bar_1b",
+        "lcmt:shopping/shopping01_3p_in_bar_1c"
+      ]
+    },
+    {
+      "factor": 1,
+      "value": "lcmt:chests/shopping_valuables",
+      "inpart": [
+        "lcmt:shopping/shopping11_2p_in_cashier",
+        "lcmt:shopping/shopping01_0_in_info_desk_alt"
+      ]
+    },
+    {
+      "factor": 1,
+      "value": "lcmt:chests/shopping_vending_machine",
+      "inpart": [
+        "lcmt:shopping/shopping11_2p_in_vending_machine",
+        "lcmt:shopping/shopping01_2_in_vending_machine",
+        "lcmt:shopping/shopping_open01_2_in_vending_machines"
+      ]
+    }
+  ]
+}

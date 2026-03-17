@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:knife",
+    "one_with_the_shadows:scythe",
+    "alexscaves:desolate_dagger"
+  ],
+  "incompatible": [
+    "minecraft:sharpness",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

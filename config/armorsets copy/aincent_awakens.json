@@ -1,0 +1,83 @@
+{
+    "armorSetName": "Ancient",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "alexscaves:diving_helmet",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "chest": {
+        "itemKey": "alexscaves:diving_chestplate",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "legs": {
+        "itemKey": "alexscaves:diving_leggings",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "boots": {
+        "itemKey": "alexscaves:diving_boots",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "minecraft:dolphins_grace",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "onlyImmuneToNewEffects": false,
+            "conditions": [
+                {
+                    "type": "inwater"
+                }
+            ]
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:water_breathing",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "onlyImmuneToNewEffects": false,
+            "conditions": [
+                {
+                    "type": "inwater"
+                }
+            ]
+        },
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:stamina",
+            "value": 0.3,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "9b3315a4-55f6-4edb-8a7a-f17095a1cab3",
+            "description": "1100",
+            "conditions": [
+                {
+                    "type": "inwater"
+                }
+            ]
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

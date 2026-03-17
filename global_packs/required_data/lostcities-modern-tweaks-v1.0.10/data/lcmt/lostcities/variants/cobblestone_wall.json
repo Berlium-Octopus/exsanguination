@@ -1,0 +1,16 @@
+{
+  "blocks": [
+    {
+      "random": 20,
+      "block": "minecraft:mossy_cobblestone_wall"
+    },
+    {
+      "random": 10,
+      "block": "sculkhorde:infested_cobblestone_wall"
+    },
+    {
+      "random": 1000,
+      "block": "minecraft:cobblestone_wall"
+    }
+  ]
+}

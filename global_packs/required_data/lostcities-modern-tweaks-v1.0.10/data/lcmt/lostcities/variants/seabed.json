@@ -1,0 +1,20 @@
+{
+  "blocks": [
+    {
+      "random": 32,
+      "block": "minecraft:dirt"
+    },
+    {
+      "random": 32,
+      "block": "minecraft:gravel"
+    },
+    {
+      "random": 1000,
+      "block": "minecraft:sand"
+    },
+    {
+      "random": 200,
+      "block": "sculkhorde:infested_sand"
+    }
+  ]
+}

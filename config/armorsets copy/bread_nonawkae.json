@@ -1,0 +1,36 @@
+{
+    "armorSetName": "Keepup",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "alexscaves:gingerbread_helmet",
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "alexscaves:gingerbread_chestplate",
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "alexscaves:gingerbread_leggings",
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "alexscaves:gingerbread_boots",
+        "mustBeEmpty": false
+    },
+    "mainHand": {
+        "itemKey": "alexscaves:frostmint_spear",
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:ranged_damage",
+            "value": 0.35,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "7f3b1549-c1bc-40db-979f-4eec105c724b",
+            "description": "1100"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

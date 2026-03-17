@@ -1,0 +1,26 @@
+{
+    "armorSetName": "Ironic",
+    "performanceMode": true,
+    "mainHand": {
+        "itemKey": "alexscaves_torpedoes:shadow_sword",
+        "mixAndMatch": [
+    "alexscaves_torpedoes:shadow_pickaxe",
+    "alexscaves_torpedoes:shadow_axe",
+    "alexscaves_torpedoes:shadow_shovel",
+    "alexscaves_torpedoes:shadow_hoe"
+],
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "alexscavesexemplified:rabial",
+            "value": 0,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

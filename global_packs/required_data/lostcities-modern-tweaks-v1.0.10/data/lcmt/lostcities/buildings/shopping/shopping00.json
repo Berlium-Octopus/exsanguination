@@ -1,0 +1,117 @@
+{
+  "filler": "#",
+  "rubble": "}",
+  "maxcellars": 0,
+  "minfloors": 4,
+  "maxfloors": 6,
+  "preferslonely": 0.9,
+  "parts": [
+    {
+      "floor": 0,
+      "part": "lcmt:shopping/shopping00_0"
+    },
+    {
+      "floor": 1,
+      "part": "lcmt:shopping/shopping00_1"
+    },
+    {
+      "floor": 2,
+      "part": "lcmt:shopping/shopping00_2"
+    },
+    {
+      "top": false,
+      "range": "3,100",
+      "part": "lcmt:shopping/shopping00_r1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_empty"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_antennas_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_small_building_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_large_garden_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_solar_panels_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_ac_units_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_chimneys_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_greenhouse_1"
+    }
+  ],
+  "parts2": [
+    {
+      "floor": 0,
+      "part": "lcmt:shopping/shopping_in_empty"
+    },
+    {
+      "floor": 0,
+      "part": "lcmt:shopping/shopping00_0_in_tables"
+    },
+    {
+      "floor": 0,
+      "part": "lcmt:shopping/shopping00_0_in_info_board"
+    },
+    {
+      "floor": 0,
+      "part": "lcmt:shopping/shopping00_0_in_pot_display"
+    },
+    {
+      "top": false,
+      "range": "2,100",
+      "part": "lcmt:shopping/shopping_in_empty"
+    },
+    {
+      "top": false,
+      "range": "3,100",
+      "part": "lcmt:shopping/shopping00_3p_in_store_empty"
+    },
+    {
+      "top": false,
+      "range": "3,100",
+      "part": "lcmt:shopping/shopping00_3p_in_store_shelves_1"
+    },
+    {
+      "top": false,
+      "range": "3,100",
+      "part": "lcmt:shopping/shopping00_3p_in_store_tables_1"
+    },
+    {
+      "top": false,
+      "range": "3,100",
+      "part": "lcmt:shopping/shopping00_3p_in_store_display_1"
+    },
+    {
+      "top": false,
+      "range": "3,100",
+      "part": "lcmt:shopping/shopping00_3p_in_store_books_1"
+    },
+    {
+      "top": false,
+      "range": "3,100",
+      "part": "lcmt:shopping/shopping00_3p_in_store_books_2"
+    },
+    {
+      "top": false,
+      "range": "3,100",
+      "part": "lcmt:shopping/shopping00_3p_in_store_counters_1"
+    }
+  ]
+}

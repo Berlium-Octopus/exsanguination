@@ -1,0 +1,19 @@
+{
+    "armorSetName": "hunger",
+    "performanceMode": true,
+    "mainHand": {
+        "itemKey": "mobcompack:hammer"
+    },
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "minecraft:hunger",
+            "value": 3,
+            "interactionType": "self",
+            "interactionDuration": 800,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

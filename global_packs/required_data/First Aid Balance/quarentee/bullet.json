@@ -1,0 +1,9 @@
+{
+  "type": "firstaid:static",
+  "damageTypes": ["jeg:bullet"],
+  "algorithm": {
+    "type": "firstaid:standard",
+    "nearestFirst": true,
+    "tryNoKill": false
+  }
+}

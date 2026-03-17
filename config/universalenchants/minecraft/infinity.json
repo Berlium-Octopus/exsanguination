@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:bow",
+    "$minecraft:crossbow"
+  ],
+  "incompatible": [
+    "extra_enchantments:levitational_shot",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

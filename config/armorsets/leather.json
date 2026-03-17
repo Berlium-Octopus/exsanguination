@@ -1,0 +1,65 @@
+{
+    "armorSetName": "ledart",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "minecraft:leather_helmet",
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "minecraft:leather_chestplate",
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "minecraft:leather_leggings",
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "minecraft:leather_boots",
+        "mustBeEmpty": false
+    },
+    "mainHand": {
+        "itemKey": "minecraft:bow",
+        "mixAndMatch": [
+              "spartanweaponry:golden_longbow",
+              "spartanweaponry:netherite_longbow",
+              "spartanweaponry:wooden_longbow",
+              "spartanweaponry:iron_longbow",
+              "spartanweaponry:bronze_longbow",
+              "spartanweaponry:copper_longbow",
+              "spartanweaponry:tin_longbow",
+              "spartanweaponry:steel_longbow",
+              "spartanweaponry:electrum_longbow",
+              "spartanweaponry:lead_longbow",
+              "spartanweaponry:nickel_longbow",
+              "spartanweaponry:invar_longbow",
+              "spartanweaponry:aluminum_longbow",
+              "spartanweaponry:platinum_longbow",
+              "spartanweaponry:constantan_longbow"
+          ]
+    },
+    "additionalSetPieces": [
+        {
+            "itemKey": "supplementaries:quiver"
+        },
+        {
+            "itemKey": "spartanweaponry:small_arrow_quiver",
+            "mixAndMatch": [
+                "spartanweaponry:medium_arrow_quiver",
+                "spartanweaponry:large_arrow_quiver",
+                "spartanweaponry:huge_arrow_quiver"
+            ]
+        }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "potioncore:true_shot",
+            "value": 1,
+            "interactionType": "self",
+            "interactionDuration": 80,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

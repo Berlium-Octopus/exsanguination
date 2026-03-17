@@ -1,0 +1,7 @@
+{
+   "item": "deeperdarker:angler_fish",
+   "description": "A type of sculk entity that resides in the depths of the Otherside, it uses their bioluminesent lights to lure prey.",
+   "page": "otherside",
+   "location": "deeperdarker:otherside",
+   "climate": "cold"
+}

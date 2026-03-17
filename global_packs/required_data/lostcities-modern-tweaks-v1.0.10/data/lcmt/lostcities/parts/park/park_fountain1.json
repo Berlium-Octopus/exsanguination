@@ -1,0 +1,42 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "slices": [
+    [
+      "                ",
+      " wwww      wwww ",
+      " w     p p  p w ",
+      " wp  p        w ",
+      " w           pw ",
+      "       p   p    ",
+      "  p    vv       ",
+      "      vWWv  p   ",
+      "    p vWWv      ",
+      "       vv       ",
+      "  p       p     ",
+      " w    p     p w ",
+      " w            w ",
+      " w p     p    w ",
+      " wwwwp     wwww ",
+      "                "
+    ],
+    [
+      "                ",
+      "    e      e    ",
+      "                ",
+      "                ",
+      " e            e ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "       *        ",
+      "                ",
+      " e            e ",
+      "                ",
+      "                ",
+      "    e      e    ",
+      "                "
+    ]
+  ]
+}

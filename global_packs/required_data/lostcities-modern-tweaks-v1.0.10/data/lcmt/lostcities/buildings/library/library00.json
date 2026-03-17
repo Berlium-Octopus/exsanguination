@@ -1,0 +1,83 @@
+{
+  "filler": "#",
+  "rubble": "}",
+  "allowFillers": false,
+  "preferslonely": 0.95,
+  "parts": [
+    {
+      "cellar": true,
+      "part": "lcmt:library/library00_underground_1"
+    },
+    {
+      "floor": 0,
+      "part": "lcmt:library/library00_0_1"
+    },
+    {
+      "floor": 0,
+      "part": "lcmt:library/library00_0_2"
+    },
+    {
+      "top": false,
+      "ground": false,
+      "cellar": false,
+      "part": "lcmt:library/library00_1p_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:library/library00_top_empty"
+    },
+    {
+      "top": true,
+      "part": "lcmt:library/library00_top_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:library/library00_top_2"
+    },
+    {
+      "top": true,
+      "part": "lcmt:library/library00_top_3"
+    }
+  ],
+  "parts2": [
+    {
+      "top": false,
+      "part": "lcmt:library/library_in_empty"
+    },
+    {
+      "top": false,
+      "cellar": true,
+      "part": "lcmt:library/library00_in_restroom_1"
+    },
+    {
+      "top": false,
+      "cellar": true,
+      "part": "lcmt:library/library00_in_reading_corner_1"
+    },
+    {
+      "top": false,
+      "cellar": true,
+      "part": "lcmt:library/library00_in_bookshelves_1"
+    },
+    {
+      "top": false,
+      "cellar": false,
+      "part": "lcmt:library/library00_in_mini_bookshelves_1"
+    },
+    {
+      "top": false,
+      "cellar": false,
+      "part": "lcmt:library/library00_in_tables_1"
+    },
+    {
+      "top": false,
+      "cellar": false,
+      "part": "lcmt:library/library00_in_info_desk_1"
+    },
+    {
+      "top": false,
+      "cellar": false,
+      "part": "lcmt:library/library00_in_info_screen_1"
+    }
+  ]
+}

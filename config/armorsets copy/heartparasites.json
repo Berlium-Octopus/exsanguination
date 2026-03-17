@@ -1,0 +1,33 @@
+{
+    "armorSetName": "parasites",
+    "performanceMode": true,
+    "additionalSetPieces": [
+        {
+            "itemKey": "deeperdarker:heart_of_the_deep",
+            "mustBeEmpty": false
+        }
+    ],
+
+
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "sculkhorde:sculk_infected",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "hideBonusDescription": false,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:strength",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "hideBonusDescription": false,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

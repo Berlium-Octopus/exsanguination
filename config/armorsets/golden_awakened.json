@@ -1,0 +1,75 @@
+{
+    "armorSetName": "Greater Magical Tuning",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "minecraft:golden_helmet",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:osmosis"
+            }
+        ]
+    },
+    "chest": {
+        "itemKey": "minecraft:golden_chestplate",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:osmosis"
+            }
+        ]
+    },
+    "legs": {
+        "itemKey": "minecraft:golden_leggings",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:osmosis"
+            }
+        ]
+    },
+    "boots": {
+        "itemKey": "minecraft:golden_boots",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:osmosis"
+            }
+        ]
+    },
+    "fullSetBonuses": [
+        {
+          "type": "effect",
+          "name": "potioncore:magic_focus",
+          "value": 1,
+          "interactionType": "self",
+          "interactionDuration": 240,
+          "hideBonusDescription": true,
+          "onlyImmuneToNewEffects": false
+        },
+        {
+          "type": "effect",
+          "name": "potioncore:magic_shield",
+          "value": 1,
+          "interactionType": "self",
+          "interactionDuration": 240,
+          "hideBonusDescription": true,
+          "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:mining_fatigue",
+            "interactionType": "immunity",
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:weakness",
+            "interactionType": "immunity",
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

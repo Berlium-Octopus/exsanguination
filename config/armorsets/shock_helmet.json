@@ -1,0 +1,25 @@
+{
+    "armorSetName": "Shocked",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "alexscaves_torpedoes:magnetic_helmet",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "alexscaves_torpedoes:universal_magnetism"
+            }
+        ]
+    },
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "biomemakeover:shocked",
+            "value": 3,
+            "interactionType": "self",
+            "interactionDuration": 5500,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

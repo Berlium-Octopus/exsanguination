@@ -1,0 +1,36 @@
+{
+    "armorSetName": "Scarlet",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "alexscaves_torpedoes:magnetic_helmet",
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "alexscaves_torpedoes:ferrousslime_boots",
+        "mustBeEmpty": false
+    },
+    "mainHand": {
+        "itemKey": "alexscaves_torpedoes:scarlet_sword",
+        "mixAndMatch": [
+            "alexscaves_torpedoes:scarlet_sword",
+            "alexscaves_torpedoes:scarlet_pickaxe",
+            "alexscaves_torpedoes:scarlet_axe",
+            "alexscaves_torpedoes:scarlet_shovel",
+            "alexscaves_torpedoes:scarlet_hoe"
+        ],
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:knockback",
+            "value": -1,
+            "interactionType": "self",
+            "interactionDuration": 600,
+            "attributeOperation": 0,
+            "modifierUUID": "70fc5ed7-0c30-4e93-a54e-6e4774c30267",
+            "description": "1240"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

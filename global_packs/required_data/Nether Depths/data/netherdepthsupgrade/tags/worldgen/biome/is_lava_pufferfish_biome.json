@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:crimson_forest",
+    "minecraft:warped_forest",
+    {
+      "id": "biomesoplenty:erupting_inferno",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:crystalline_chasm",
+      "required": false
+    }
+  ]
+}

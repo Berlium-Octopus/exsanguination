@@ -1,0 +1,27 @@
+{
+    "generate_all_known_states": false,
+    "retro_gen": false,
+    "state_swapper": [],
+    "swapper": {
+        "biomesoplenty:willow_sapling": "biomemakeover:willow_sapling",
+        "biomesoplenty:willow_wood": "biomemakeover:willow_wood",
+        "biomesoplenty:stripped_willow_wood": "biomemakeover:stripped_willow_wood",
+        "biomesoplenty:willow_planks": "biomemakeover:willow_planks",
+        "biomesoplenty:willow_fence": "biomemakeover:willow_fence",
+        "biomesoplenty:willow_stairs": "biomemakeover:willow_stairs",
+        "biomesoplenty:willow_slab": "biomemakeover:willow_slab",
+        "biomesoplenty:willow_fence_gate": "biomemakeover:willow_fence_gate",
+        "biomesoplenty:willow_door": "biomemakeover:willow_door",
+        "biomesoplenty:willow_trapdoor": "biomemakeover:willow_trapdoor",
+        "biomesoplenty:willow_button": "biomemakeover:willow_button",
+        "biomesoplenty:willow_pressure_plate": "biomemakeover:willow_pressure_plate",
+        "biomesoplenty:willow_hanging_sign": "biomemakeover:willow_hanging_sign",
+        "biomesoplenty:willow_sign": "biomemakeover:willow_sign",
+        "biomesoplenty:willow_log": "biomemakeover:willow_log",
+        "biomesoplenty:willow_leaves": "biomemakeover:willow_leaves",
+        "cataclysm:pointed_icicle": "immersive_weathering:icicle",
+        "jeg:basalt_brimstone_ore": "minecraft:basalt",
+        "jeg:brimstone_ore": "minecraft:dripstone_block",
+        "jeg:blackstone_brimstone_ore": "minecraft:blackstone",
+    }
+}

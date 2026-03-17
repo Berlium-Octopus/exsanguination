@@ -1,0 +1,55 @@
+Tutorial How to Change the sounds in Minecraft
+// by Sencie https://www.planetminecraft.com/texture-pack/old-sounds-4911323/
+
+How to change the sounds?
+1. Extract sounds.json from the pack assets/minecraft/ and make a copy in case you have a problem.
+2. Open sounds.json with a text editor such as Notepad (Windows) or Apple TextEdit (Mac OS X).
+3. Find the item you want to modify and change the lines under it.
+4. If your pack does not work, your sounds.json is broken. Most problems are typo and missing comma. Use www.jsonlint.com to locate the problem in your code.
+
+How to make a sound silent?
+For instance, we silence the music in the menu like this:
+  "music.menu": {
+    "replace": true,
+    "sounds": []
+  },
+
+How to change a sound with an existing one?
+For instance, we replace step/grass1-grass6 by dig/grass1-grass4 like this:
+  "block.grass.step": {
+    "replace": true,
+    "sounds": [
+      "dig/grass1",
+      "dig/grass2",
+      "dig/grass3",
+      "dig/grass4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+
+How to add a new sound? 
+1. In this example, we added a new sound (hurtclassic.ogg) in the pack assets/minecraft/sounds/damage/hurtclassic.ogg
+2. Edit the sounds.json with:
+  "entity.player.hurt": {
+    "replace": true,
+    "sounds": ["damage/hurtclassic"],
+    "subtitle": "subtitles.entity.player.hurt"
+  },
+
+How to restore a sound from default Minecraft?
+First method: Open sounds.json and delete all the item lines. For instance, to restore the music in the menu, delete all of the following:
+  "music.menu": {
+    "replace": true,
+    "sounds": []
+  },
+Second method: 
+1. Open unmodified_sounds.json in the pack assets/minecraft
+2. Find the item you want to restore and copy its lines of text.
+3. Extract and open sounds.json and paste the copied text under the same item.
+
+Where are the original sounds both for mining and steps?
+STONE: dig/stone1-stone4
+GRASS: dig/grass1-grass4
+DIRT/GRAVEL: dig/gravel1-gravel4
+WOOD: dig/wood1-wood4
+SAND: dig/sand1-sand4

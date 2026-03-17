@@ -1,0 +1,54 @@
+Balance Update Part 2
+- Added Stunning to new axes 
+- Fix Ferriskite Nuggets + Rework Ferriscite and Diascite
+- Added Scrap to deepslate iron ore
+- Custom Jokeys (Cultist + Hoglin / Baby Zombie + Adult Zombie / Piglin + Ghast / ETC)
+- Nerfed the amount of hearts 
+- Attempted To Rebalance Some Armorsets
+- Remove Critical Effect Enchnt
+- Nether Maladiction Replace Piglins With Cultists
+- Curses on ancient tomes
+- Courageous is a new potion effect i think
+- Wilted Now Makes You Courageous Near It (+ Entitiy Range)
+- Axe Quicktime event nert
+- Nerf to campfire price
+- Added Piglin Conversion to cultists and vice versa
+- Ectoplasm Ball to ???
+- Skulk Enderman, Wardens, The Monkey Guys, Skulk Cows now lay eggs 
+- Soulbleed now stops the pause menu
+- Recipe Redux 
+- Lost Cities (Get cursed or go there or by random chance :] )
+- Lost Cities DEATH PENALTY!!!
+
+
+MEGA TODO:
+- Deeper Darker Loot Boost
+- Silverfish cancel sufficaton damage
+"spelunkers_charm:candle_helmet" = Armor Penetration
+- Remove all structures and nearly all spawning in The Lost Cities
+- Replace some blocks in the cities with sculk via datapack
+- Lost Cities in Deeper + Darker!
+- Mending II in Lost Cities
+- Make Curios Look Like Armor in rendering
+- piglin cultist neutral with banner
+- Popshroom Juice from crushing recipe
+- Polar Bear Taming
+- Revamp Fire Prot and Blast
+- Candle Helmet {Stunning On Rusty Tools}
+- Candle Helmet {Range + Armor + Toughness Penetration}
+- Give rusty tools 200 Durability each
+- Nerf health on armorsets (leather, cladded, primal)
+- Change Armor Set Bonuses Curios Attributes To Kubejs Curios
+- Pedestrian Eggs Turn To Mite Eggs 
+- Drop Some Items On DEath
+- Brimstone recolor TODO
+- Basalt Rock Removal From nether TODO
+- Fix Voitlit Nether TODO
+- add liquid xp
+- More Experience Based Crafting Recipies
+- Stamina On Armor + Tooltips TODO
+- give horse higher step hight
+- polar bear fur
+- Add mysterious Conversion for rocks to cobblestone
+- Stun Prevention necklaces
+- make incomplete warden layer, waterpipe shotgon blossom semi assult rifles, flare gun shotun fist, bolt action, infantary semi auto service rifle reapting shotgun, double barrer revolver holy, spore bundles, tnt flmaethrower, hollenfire soulhunter 

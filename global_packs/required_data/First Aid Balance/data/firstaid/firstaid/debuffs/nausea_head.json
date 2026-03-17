@@ -1,0 +1,19 @@
+{
+  "type": "firstaid:constant",
+  "debuffSlot": "head",
+  "potionName": "oreganized:stunning",
+  "amplifierBoundaries": [
+    {
+      "healthFractionThreshold": 0.1,
+      "effectAmplifier": 3
+    },
+    {
+      "healthFractionThreshold": 0.2,
+      "effectAmplifier": 2
+    },
+    {
+      "healthFractionThreshold": 0.3,
+      "effectAmplifier": 1
+    }
+  ]
+}

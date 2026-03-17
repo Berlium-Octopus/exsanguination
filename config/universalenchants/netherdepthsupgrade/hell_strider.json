@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:armor_feet",
+    "alexsmobs:pigshoes"
+  ],
+  "incompatible": [
+    "minecraft:frost_walker",
+    "extra_enchantments:hellwalker",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

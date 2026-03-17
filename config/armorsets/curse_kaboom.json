@@ -1,0 +1,80 @@
+{
+    "armorSetName": "cursed",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "cataclysm:cursium_helmet",
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "cataclysm:cursium_chestplate",
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "cataclysm:cursium_leggings",
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "cataclysm:cursium_boots",
+        "mustBeEmpty": false
+    },
+    "partialBonusRequiredAmount": 1,
+    "partialSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:melee_damage",
+            "value": -1,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "f9f21ea7-3876-4285-938a-6d4f04db2a04",
+            "description": "1240"
+        },
+        {
+            "type": "attribute",
+            "name": "forge:entity_reach",
+            "value": -0.2,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "561ee178-3dad-46eb-b754-86d5464166c2",
+            "description": "1240"
+        },
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:ranged_damage",
+            "value": -1,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "c7b789f7-c091-454b-bd18-6cbae6b5cbc6",
+            "description": "1240"
+        },
+        {
+            "type": "effect",
+            "name": "potioncore:weight",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:unluck",
+            "value": 99,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "potioncore:curse",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

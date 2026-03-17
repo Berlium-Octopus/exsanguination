@@ -1,0 +1,96 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "q",
+        "block": "minecraft:cartography_table",
+        "damaged": "minecraft:oak_fence"
+      },
+      {
+        "char": "m",
+        "block": "minecraft:red_carpet"
+      },
+      {
+        "char": "C",
+        "block": "minecraft:chest[facing=north,type=single,waterlogged=false]",
+        "loot": "lcmt:shopping_loot"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "             1  ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "  fQQfQ         ",
+      "  QmmmQ      [  ",
+      "  fm[mL      [  ",
+      "  Qmq           ",
+      "  QfQ           ",
+      "                ",
+      "                ",
+      "  fQf           ",
+      "  QmQ           ",
+      "  fm[        [  ",
+      "  Qmm        [  ",
+      "  fqL           ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "  `` ``         ",
+      "  `   `         ",
+      "      L         ",
+      "  ]             ",
+      "  ```           ",
+      "                ",
+      "                ",
+      "  ```           ",
+      "  ` `           ",
+      "                ",
+      "  ]             ",
+      "  ``L           ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "      *         ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "    C           ",
+      "                ",
+      "                "
+    ]
+  ]
+}

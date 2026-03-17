@@ -1,0 +1,156 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 2,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:glass_bottle",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              },
+              "add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 9,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:water"
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": 1,
+              "add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 1,
+              "add": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{CustomPotionColor:9840680,CustomPotionEffects:[{Id:10,Duration:600,Amplifier:0},{Id:18,Duration:600,Amplifier:2}],display:{Name:'[{\"text\":\"???\",\"italic\":false}]'},HideFlags:32}"
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": 1,
+              "add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{CustomPotionColor:5612800,CustomPotionEffects:[{Id:23,Duration:100,Amplifier:0},{Id:9,Duration:200,Amplifier:0}],display:{Name:'[{\"text\":\"???\",\"italic\":false}]'},HideFlags:32}"
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": 1,
+              "add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{CustomPotionColor:15658734,CustomPotionEffects:[{Id:1,Duration:1800,Amplifier:1},{Id:17,Duration:1800,Amplifier:1}],display:{Name:'[{\"text\":\"???\",\"italic\":false}]'},HideFlags:32}"
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": 1,
+              "add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{CustomPotionColor:3947640,CustomPotionEffects:[{Id:16,Duration:1800,Amplifier:0},{Id:4,Duration:1800,Amplifier:0}],display:{Name:'[{\"text\":\"???\",\"italic\":false}]'},HideFlags:32}"
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": 1,
+              "add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{CustomPotionColor:11831296,CustomPotionEffects:[{Id:5,Duration:1200,Amplifier:2},{Id:19,Duration:600,Amplifier:0}],display:{Name:'[{\"text\":\"???\",\"italic\":false}]'},HideFlags:32}"
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": 1,
+              "add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{CustomPotionColor:5116550,CustomPotionEffects:[{Id:11,Duration:1800,Amplifier:2},{Id:2,Duration:1800,Amplifier:4}],display:{Name:'[{\"text\":\"???\",\"italic\":false}]'},HideFlags:32}"
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": 1,
+              "add": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "random_sequence": "lcmt:chests/shopping_vending_machine"
+}

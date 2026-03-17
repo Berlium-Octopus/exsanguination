@@ -1,0 +1,56 @@
+{
+    "armorSetName": "horus",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "alexscaves:hood_of_darkness",
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "alexscaves:cloak_of_darkness",
+        "mustBeEmpty": false
+    },
+    "mainHand": {
+        "itemKey": "alexscaves:dreadbow",
+        "mixAndMatch": [
+            "alexscavesdelight:pure_darkness_knife",
+            "alexscaves:desolate_dagger"
+        ]
+    },
+    "additionalSetPieces": [
+        {
+            "itemKey": "alexscaves:totem_of_possession",
+            "mustBeEmpty": false
+        }
+    ],
+    "partialBonusRequiredAmount": 1,
+    "partialSetBonuses": [
+      {
+          "type": "attribute",
+          "name": "puffish_attributes:stamina",
+          "value": -0.30,
+          "interactionType": "self",
+          "attributeOperation": 1,
+          "modifierUUID": "9b3315a4-55f6-4edb-8a7a-f17095a1cab3",
+          "description": "1100"
+      }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:ranged_damage",
+            "value": 0.5,
+            "interactionType": "self",
+            "attributeOperation": 0,
+            "modifierUUID": "acaff551-e466-4256-b46a-0240444b88d3"
+        },
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:melee_damage",
+            "value": 4.5,
+            "interactionType": "self",
+            "attributeOperation": 0,
+            "modifierUUID": "99768f7a-dbc2-4ce4-9953-ab2a7522f704"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

@@ -1,0 +1,42 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "farmersdelight"
+            },
+            {
+              "type": "forge:item_exists",
+              "item": "netherdepthsupgrade:soulsucker_slice"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cutting",
+        "ingredients": [
+          {
+            "item": "netherdepthsupgrade:soulsucker"
+          }
+        ],
+        "result": [
+          {
+            "count": 2,
+            "item": "netherdepthsupgrade:soulsucker_slice"
+          },
+          {
+            "item": "minecraft:bone_meal"
+          }
+        ],
+        "tool": {
+          "tag": "forge:tools/knives"
+        }
+      }
+    }
+  ]
+}

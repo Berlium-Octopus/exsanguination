@@ -1,0 +1,25 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "refpalette": "lcmt:streets",
+  "slices": [
+    [
+      "AAAAAAAAAAAAAAAA",
+      "ASSSSSSSSSSSSSSA",
+      "ASSSSSSSSSSSSSSA",
+      "ASSSSSSSSSSSSSSA",
+      "ASSSSSSSSSSSSSSA",
+      "ASSSSSSSSSSSSSSA",
+      "ASSSSSSSSSSSSSSA",
+      "ASSSSSSSSSSSSSSA",
+      "ASSSSSSSSSSSSSSA",
+      "ASSSSSSSSSSSSSSA",
+      "ASSSSSSSSSSSSSSA",
+      "ASSSSSSSSSSSSSSA",
+      "ASSSSSSSSSSSSSSA",
+      "ASSSSSSSSSSSSSSA",
+      "ASSSSSSSSSSSSSSA",
+      "AAAAAAAAAAAAAAAA"
+    ]
+  ]
+}

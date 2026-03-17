@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:bow",
+    "cataclysm:cursed_bow",
+    "create:potato_cannon",
+    "$minecraft:crossbow"
+  ],
+  "incompatible": [
+    "extra_enchantments:levitational_shot",
+    "extra_enchantments:supercharge",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

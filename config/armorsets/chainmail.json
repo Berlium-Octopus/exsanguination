@@ -1,0 +1,68 @@
+{
+    "armorSetName": "Forgotten Armor",
+    "performanceMode": false,
+    "head": {
+        "itemKey": "minecraft:chainmail_helmet",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "chest": {
+        "itemKey": "minecraft:chainmail_chestplate",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "legs": {
+        "itemKey": "minecraft:chainmail_leggings",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "boots": {
+        "itemKey": "minecraft:chainmail_boots",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "functionalarmortrim:thorns",
+            "value": 0.55,
+            "interactionType": "self",
+            "attributeOperation": 0,
+            "modifierUUID": "2f4615c2-73b2-4d07-bbe6-1e03261a99c3"
+        },
+        {
+            "type": "effect",
+            "name": "potioncore:solid_core",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:melee_resistance",
+            "value": 0.3,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "a173c850-f5eb-426d-b9c5-66f59c9d7371"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

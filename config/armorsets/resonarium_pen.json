@@ -1,0 +1,43 @@
+{
+    "armorSetName": "resonarium_pen",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "deeperdarker:resonarium_helmet",
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "deeperdarker:resonarium_chestplate",
+        "mustBeEmpty": false
+
+    },
+    "legs": {
+        "itemKey": "deeperdarker:resonarium_leggings",
+        "mustBeEmpty": false
+
+    },
+    "boots": {
+        "itemKey": "deeperdarker:resonarium_boots",
+        "mustBeEmpty": false
+
+    },
+    "mainHand": {
+        "itemKey": "deeperdarker:resonarium_sword",
+        "mixAndMatch": [
+            "deeperdarker:resonarium_axe",
+            "deeperdarker:resonarium_pickaxe",
+            "deeperdarker:resonarium_shovel",
+            "deeperdarker:resonarium_hoe"
+        ],
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:armor_shred",
+            "value": 0.5,
+            "attributeOperation": 1,
+            "modifierUUID": "d1d9971c-452a-4e24-ac58-92ebf11722e7"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

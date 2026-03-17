@@ -1,0 +1,311 @@
+Old Sounds v1.20_1 (compatible with Minecraft versions 1.20.1+) by Sencie
+https://www.planetminecraft.com/texture-pack/old-sounds-4911323/
+‘Default’ version. The pack brings back the old sounds and no sounds were muted from the game (also includes splash texts from Beta 1.7.3).
+To preserve the consistency of the game experience, some new sounds are changed to old style.
+
+This pack only changes the sounds. Please use it with the Programmer Art pack 
+or another retro texture pack such as Developer Art Classic https://www.planetminecraft.com/texture-pack/devart-classic/
+
+*****
+SOUND CHANGES (no sounds were muted because it is the 'Default' Pack):
+Amethyst block uses old glass sounds (for consistency with glass)
+Amethyst busts uses old glass sounds (for consistency with glass)
+Amethyst bud uses old glass sounds (for consistency with glass)
+Amethyst chimes are silent (for consistency with glass)
+Amethyst cluster uses old glass sounds (for consistency with glass)
+Ancient debris uses old stone sounds (for consistency with ores)
+Anvil uses old stone sounds (for consistency with stone)
+Arrow uses old sound (pre-1.0.0)
+Azalea uses old grass sounds (for consistency with grass)
+Azalea leaves use old grass sounds (for consistency with leaves)
+Bamboo uses old wood sounds (for consistency with wood)
+Bamboo block uses old wood sounds (for consistency with wood)
+Barrel uses old chest sounds (for consistency with chest)
+Basalt uses old stone sounds (for consistency with stone)
+Bone block uses old sounds (pre-1.16)
+Bow uses old sound (pre-1.0.0)
+Brush uses old sand and old gravel sounds (for consistency with sand and gravel)
+Button uses old sounds (pre-1.9)
+Calcite uses old stone sounds (for consistency with stone)
+Campfire crackle uses fire sound (for consistency with fire)
+Candle uses torch sounds (for consistency with torch)
+Cave vines use old vine sounds (for consistency with vines)
+Cherry leaves use old grass sounds (for consistency with leaves)
+Chest uses old sounds (from Beta 1.8)
+Chiseled bookshelf uses old wood sounds (for consistency with wood)
+Copper uses old metal sounds (for consistency with metal)
+Cow uses old sounds (pre-1.4.2)
+Crop breaking uses old sounds (pre-1.10)
+Damage on entity uses old sounds (pre-1.4.2)
+Damage on player uses old 'oof' sound (pre-1.0.0)
+Damage when falling uses old sounds (pre-1.4.2)
+Decorated pot uses old glass sounds (for consistency with glass)
+Deepslate uses old stone sounds (for consistency with stone)
+Deepslate bricks uses old stone sounds (for consistency with stone bricks)
+Deepslate tiles uses old stone sounds (for consistency with stone bricks)
+Dispenser uses old sounds (pre-1.0.0)
+Door uses old sounds (pre-1.0.0)
+Dripstone uses old stone sounds (for consistency with stone)
+Egg throwing uses old sound (pre-1.0.0)
+Ender chest uses old sound (pre-1.10)
+Ender dragon uses old damage sounds (pre-1.4.2)
+Explosion uses old sound (pre-1.0.0)
+Fence gate uses old sounds (pre-1.0.0)
+Fishing rod throwing bobber uses old sound (pre-1.0.0)
+Fishing rod retrieving bobber is silent (pre-1.12)
+Flint and steel uses old sound (pre-1.4.2)
+Flowering azalea uses old grass sounds (for consistency with grass)
+Froglight uses old wood sounds (for consistency with shroomlight)
+Frogspawn breaking uses old sand sounds (for consistency with sand)
+Frogspawn placing uses lily pad sounds (for consistency with lily pad)
+Fungus uses mushroom sounds (for consistency with mushroom)
+Gilded blackstone uses old stone sounds (for consistency with cobblestone)
+Glass steps use old sounds (pre-1.4.2)
+Grass steps use old sounds (pre-1.4.2)
+Gravel steps use old sounds (pre-1.4.2)
+Hanging roots use old dirt sounds (for consistency with dirt)
+Hanging sign uses old wood sounds (for consistency with wood)
+Husk uses zombie sounds (for consistency with zombie)
+Lightning bolt uses old sound (pre-1.0.0)
+Lodestone steps use old stone sounds (for consistency with stone)
+Magma cube uses old slime sounds (for consistency with slime)
+Mangrove roots use old grass sounds (for consistency with grass)
+Metal uses old sounds (pre-1.4.2)
+Mooshroom uses old sounds (pre-1.4.2)
+Moss uses old grass sounds (for consistency with grass)
+Mud uses old dirt sounds (for consistency with dirt)
+Mud bricks use old stone sounds (for consistency with stone)
+Muddy mangrove roots use old dirt sounds (for consistency with dirt)
+Music restricted to C418's music (pre-1.16)
+Nether bricks use old sounds (pre-1.4.2)
+Nether gold ore uses old stone sounds (for consistency with netherrack)
+Nether ore uses old sounds (pre-1.16)
+Nether sprout uses old grass sounds (for consistency with grass)
+Nether wart uses old sound (pre-1.14)
+Nether wart block uses old sounds (pre-1.16)
+Nether wood uses old wood sounds (for consistency with wood)
+Netherite uses old stone sounds (for consistency with metal)
+Netherrack uses old sounds (pre-1.4.2)
+Nylium mining uses old netherrack sounds and steps use old grass sounds (for consistency with netherrack)
+Packed mud uses old stone sounds (for consistency with stone)
+Pink petals use old grass sounds (for consistency with grass)
+Pointed dripstone uses old stone sounds (for consistency with stone)
+Polished deepslate uses old stone sounds (for consistency with stone)
+Pressure plate uses old sounds (pre-1.9)
+Rain uses old sounds (pre-1.9)
+Root mining uses old grass sound (for consistency with vines)
+Rooted dirt uses old dirt sounds (for consistency with dirt)
+Sand uses old sounds (pre-1.4.2)
+Sapling uses old crop sounds (for consistency with crop)
+Scaffolding uses ladder sounds (for consistency with ladder)
+Sheep uses old idle sounds: say3 is cut (pre-1.4.2)
+Shroomlight uses old wood sounds (for consistency with wood)
+Sign uses old sounds (pre-1.20)
+Skeleton uses old sounds (pre-1.4.2)
+Slime uses old sounds (pre-1.4.2)
+Snowball uses old sound (pre-1.0.0)
+Soul sand uses old sounds (pre-1.4.2)
+Soul soil uses old gravel sounds (for consistency with soul sand)
+Spore blossom uses old grass sounds (for consistency with grass)
+Stem uses old wood sounds (for consistency with wood)
+Stone uses old sounds (pre-1.4.2)
+Stray uses old skeleton sounds (for consistency with skeleton)
+Suspicious gravel uses old gravel sounds (for consistency with gravel)
+Suspicious sand uses old sand sounds (for consistency with sand)
+Sweet berry Bush uses old grass sounds (for consistency with bush)
+Trapdoor uses old sounds (pre-1.0.0)
+Tuff uses old stone sounds (for consistency with stone)
+Vines use old sounds (pre-1.16)
+Wart block uses old wood sounds (for consistency with wood)
+Water splash uses old sound (pre-1.4.2)
+Weeping vines mining uses old grass sounds (for consistency with vines)
+Wither skeleton uses old sounds (pre-1.11)
+Wood uses old sounds (pre-1.4.2)
+Zombie villager uses old sounds (pre-1.11)
+
+*****
+CHANGELOG:
+v1.20_1 (2023-06-18)
+Classic versions:
+Eating for animals and milking are silent (pre-1.9)
+Hoe is silent (pre-1.4.2)
+Pink petals placing is silent (for consistency with crop)
+*
+All versions:
+Amethyst block uses old glass sound to resonate (for consistency with glass)
+Brush uses old sand and old gravel sounds (for consistency with sand and gravel)
+Cherry leaves use old grass sounds (for consistency with leaves)
+Cherry sapling uses old crop sounds (for consistency with crop)
+Cherry wood uses old wood sounds (for consistency with wood)
+Cherry wood button uses old button sounds (for consistency with button)
+Cherry wood door uses old door sounds (for consistency with door)
+Cherry wood fence gate uses old gence gate sounds (for consistency with fence gate)
+Cherry wood hanging sign uses old sign sounds (for consistency with sign)
+Cherry wood pressure plate uses old pressure plate sounds (for consistency with pressure plate)
+Cherry wood trapdoor uses old trapdoor sounds (for consistency with trapdoor)
+Decorated pot uses old glass sounds (for consistency with glass)
+Music restricted to C418's music (pre-1.16)
+Pink petals use old grass sounds (for consistency with grass)
+Sign uses old sounds (pre-1.20)
+Suspicious gravel uses old gravel sounds (for consistency with gravel)
+Suspicious sand uses old sand sounds (for consistency with sand)
+
+v1.19_7 (2023-03-09)
+Classic pre-1.4.2:
+Arrow is silent when hitting players (pre-1.4.6)
+Barrel uses chest sounds (for consistency with chest)
+Ender chest uses old sound (pre-1.10)
+Eye of Ender placing is silent (pre-1.12)
+Fishing rod's bobber uses old sounds (pre-1.12)
+*
+Classic pre-Beta 1.8:
+Eye of Ender placing is silent (pre-1.12)
+*
+Default pre-Beta 1.8:
+Ender chest uses old sound (pre-1.10)
+*
+On CurseForge curseforge.com/minecraft/texture-packs/old-sounds
+Added Old Sounds - Classic pre-1.9
+
+
+v1.19_6 (2022-12-20)
+Updated to 1.19.3
+All versions:
+Bamboo block uses wood sounds (for consistency with wood)
+Button uses old sounds (pre-1.9)
+Chiseled bookshelf uses wood sounds (for consistency with wood)
+Hanging sign uses old wood sounds (for consistency with wood)
+Pressure plate uses old sounds (pre-1.9)
+Nether wood uses wood sounds (for consistency with wood)
+Pre-Beta 1.8 versions:
+Door uses old sounds (pre-1.0.0)
+Fence gate uses old sounds (pre-1.0.0)
+Trapdoor uses old sounds (pre-1.0.0)
+Pre-1.4.2 version:
+Door uses old sounds (between 1.0.0 and 1.8.9)
+Fence gate uses old sounds (between 1.0.0 and 1.8.9)
+Trapdoor uses old sounds (between 1.0.0 and 1.8.9)
+
+v1.19_5 (2022-11-27)
+Added pre-1.13 version
+All versions (pre-1.13):
+Bamboo uses old wood sounds (for consistency with wood)
+Bamboo sapling uses old crop sounds and planting is silent (for consistency with crop)
+Scaffolding uses ladder sounds (for consistency with ladder)
+pre-1.4.2 version:
+Chest uses old sounds (between 1.0.0 and 1.8.9)
+Fence gate uses old sounds (between 1.0.0 and 1.8.9)
+Iron door uses old sounds (between 1.0.0 and 1.8.9)
+Iron trapdoor uses old sounds (between 1.0.0 and 1.8.9)
+Wooden door uses old sounds (between 1.0.0 and 1.8.9)
+Wooden trapdoor uses old sounds (between 1.0.0 and 1.8.9)
+
+v1.19_4 (2022-11-09)
+Added pre-1.16 version
+
+v1.19_3 (2022-11-04)
+Improvement for all versions:
+Cow idle uses old sounds (pre-1.4.2: say2 is cut)
+Sheep idle uses old sounds (pre-1.4.2: say3 is cut)
+
+v1.19_2 (2022-07-08)
+Default version:
+Barrel uses old chest sounds (for consistency with chest)
+Musics restricted to C418's musics (pre-1.16)
+Classic version:
+Bat is silent when idle (to restore pre-1.4.2 cave ambience)
+
+v1.19_1 (2022-06-06)
+Updated to 1.19
+Froglight uses old nether wart sounds (for consistency with nether wart)
+Frogspawn uses old sand sounds (for consistency with sand)
+Frogspawn placing uses lily pad sounds (for consistency with lily pad)
+Mangrove roots use old grass sounds (for consistency with grass)
+Mud uses old dirt sounds (for consistency with dirt)
+Mud bricks use old stone sounds (for consistency with stone)
+Muddy mangrove roots use old dirt sounds (for consistency with dirt)
+Packed mud uses old stone sounds (for consistency with stone)
+Musics in menu restricted to menu1-menu4 (between 1.7.4 and 1.17.1)
+
+v1.18_2 (2021-12-13)
+All versions:
+Stem uses old wood sounds (for consistency with wood)
+
+v1.18_1 (2021-12-07)
+All versions:
+Updated to 1.18.1
+'Classic' versions:
+Musics in Overworld restricted to calm1-calm3, hal1-hal4, nuance1-nuance2, piano1-piano3 (pre-1.18)
+Chest added on donkey, mule and llama is silent (pre-1.9)
+Villagers sounds restored (better for gameplay)
+Pillagers sounds restored (for consistency with villager)
+Witch sounds restored (for consistency with villager)
+
+v1.17_1 (2021-06-29)
+Updated to 1.17
+Amethyst block uses old glass sounds (for consistency with glass)
+Amethyst chimes are silent (for consistency with glass)
+Amethyst cluster uses old glass sounds (for consistency with glass)
+Amethyst busts uses old glass sounds (for consistency with glass)
+Axolotl is silent (for consistency with squid)
+Azalea sounds uses old grass sounds (for consistency with grass)
+Azalea leaves use old grass sounds (for consistency with leaves)
+Bone meal is silent (pre-1.17)
+Calcite uses old stone sounds (for consistency with stone)
+Candle uses torch sounds (for consistency with torch)
+Cave vines uses old vine sounds (for consistency with vines)
+Copper uses old metal sounds (for consistency with metal)
+Deepslate uses old stone sounds (for consistency with stone)
+Deepslate bricks uses old stone sounds (for consistency with stone bricks)
+Deepslate tiles uses old stone sounds (for consistency with stone bricks)
+Dripstone uses old stone sounds (for consistency with stone)
+Dyes are silent (pre-1.17)
+Flowering Azalea uses old grass sounds (for consistency with grass)
+Glow ink sac is silent (for consistency with dyes)
+Glow item frame is silent (for consistency with item frame)
+Goat eating and milking are silent (for consistency with cow)
+Hanging Roots uses old dirt sounds (for consistency with dirt)
+Ink sac is silent (pre-1.17)
+Moss uses old grass sounds (for consistency with grass)
+Pointed Dripstone uses old stone sounds (for consistency with stone)
+Pointed Dripstone landing is silent (for consistency with gravel & sand landing)
+Pointed Dripstone dripping is silent (for consistency with water & lava dripping)
+Polished Deepslate uses old stone sounds (for consistency with stone)
+Rooted Dirt uses old dirt sounds (for consistency with dirt)
+Saddle is silent (pre-1.7.2)
+Shroomlight uses old wood sounds (for consistency with wood)
+Spore Blossom uses old grass sounds (for consistency with grass)
+Sweet Berry Bush uses old grass sounds (for consistency with bush)
+Tuff uses old stone sounds (for consistency with stone)
+Vines uses old sounds (pre-1.16)
+Wandering Trader drinking potion is silent (for consistency with witch)
+Wart block uses old wood sounds (for consistency with wood)
+
+v1.16_6 (2021-03-18)
+Door sound is randomized (pre-1.9)
+Fence gate sound is randomized (pre-1.9)
+Trap door sound is randomized (pre-1.9)
+
+v1.16_5 (2021-03-12)
+Classic version - Barrel is silent (for consistency with chest)
+Classic version - Shulker Box is silent (for consistency with chest)
+
+v1.16_4 (2021-03-11)
+Classic version - Chest is silent (pre-Beta 1.8).
+Classic version - Ender Chest is silent (for consistency with chest)
+
+v1.16_3 (2021-02-26)
+Default version - breaking soul sand sounds like gravel (pre-1.4.2)
+Classic version - breaking soul sand sounds like gravel (pre-1.4.2)
+
+v1.16_2 (2021-02-25)
+Default version - breaking sand sounds like gravel (pre-1.4.2)
+Classic version - breaking sand sounds like gravel (pre-1.4.2)
+
+v1.16_1 (2021-02-04)
+Classic version - Fall damage is silent (pre-1.0.0)
+Classic version - Removed Witch sounds when drinking and throwing bottle (pre-1.9)
+Classic version - Leveling up is silent (pre-1.4.2)
+
+v1.16_0 
+Pack by Sencie (2021-02-03)

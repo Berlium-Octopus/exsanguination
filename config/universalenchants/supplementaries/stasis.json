@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:crossbow"
+  ],
+  "incompatible": [
+    "minecraft:multishot",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

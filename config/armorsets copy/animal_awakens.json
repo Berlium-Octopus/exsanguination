@@ -1,0 +1,123 @@
+{
+    "armorSetName": "Animal Power",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "alexsmobs:froststalker_helmet",
+        "mustBeEmpty": false,
+        "mixAndMatch": [
+            "alexsmobs:spiked_turtle_shell",
+            "alexsmobs:gazelle_horns",
+            "minecraft:turtle_helmet"
+        ],
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "chest": {
+        "itemKey": "alexsmobs:crocodile_chestplate",
+        "mustBeEmpty": false,
+        "mixAndMatch": [
+            "alexsmobs:rocky_chestplate",
+            "cataclysm:bloom_stone_pauldrons"
+        ],
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "legs": {
+        "itemKey": "alexsmobs:centipede_leggings",
+        "mustBeEmpty": false,
+        "mixAndMatch": [
+            "alexsmobs:emu_leggings"
+        ],
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "boots": {
+        "itemKey": "alexsmobs:roadrunner_boots",
+        "mustBeEmpty": false,
+        "mixAndMatch": [
+            "alexsmobs:flying_fish_boots",
+            "netherdepthsupgrade:soul_sucker_boots"
+        ],
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "mainHand": {
+        "itemKey": "alexscaves:azure_neodymium_ingot",
+        "mustBeEmpty": false
+    },
+    "offHand": {
+        "itemKey": "alexscavesdelight:cooked_heart_of_iron",
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "potioncore:flight",
+            "value": 3,
+            "interactionType": "self",
+            "interactionDuration": 500,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:strength",
+            "value": 3,
+            "interactionDuration": 100,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:speed",
+            "value": 3,
+            "interactionDuration": 100,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "vinery:lava_walker",
+            "value": 3,
+            "interactionDuration": 500,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "vinery:water_walker",
+            "value": 3,
+            "interactionDuration": 500,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:regeneration",
+            "interactionType": "immunity"
+        },
+        {
+          "type": "effect",
+          "name": "vinery:double_jump",
+          "interactionType": "immunity"
+        },
+        {
+          "type": "effect",
+          "name": "potioncore:step_up",
+          "interactionType": "immunity"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

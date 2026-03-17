@@ -1,0 +1,86 @@
+{
+    "armorSetName": "Tectonica",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "alexscaves_torpedoes:tectonic_helmet",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "chest": {
+        "itemKey": "alexscaves_torpedoes:tectonic_chestplate",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "legs": {
+        "itemKey": "alexscaves_torpedoes:tectonic_leggings",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "boots": {
+        "itemKey": "alexscaves_torpedoes:tectonic_boots",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "mainHand": {
+        "itemKey": "alexscaves:extinction_spear",
+        "mustBeEmpty": false
+    },
+    "partialBonusRequiredAmount": 3,
+    "partialSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:stamina",
+            "value": -0.15,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "f413e391-79f1-406c-964b-4a5614cd8b18",
+            "description": "1100"
+        }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:ranged_damage",
+            "value": 0.2,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "3f432c5a-ed0a-4b98-bd7d-e35e3069f585",
+            "description": "1100"
+        },
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:melee_damage",
+            "value": 0.2,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "aca1e820-384b-4c4b-98d3-23cb2aa4d321",
+            "description": "1100"
+        },
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:ranged_resistance_shred",
+            "value": 0.1,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "ae4a3fbd-dc02-43b4-b22d-221135f7e26e",
+            "description": "1100"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

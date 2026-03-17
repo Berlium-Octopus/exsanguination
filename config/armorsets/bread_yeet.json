@@ -1,0 +1,44 @@
+{
+    "armorSetName": "Keepup",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "alexscaves:gingerbread_helmet",
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "alexscaves:gingerbread_chestplate",
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "alexscaves:gingerbread_leggings",
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "alexscaves:gingerbread_boots",
+        "mustBeEmpty": false
+    },
+    "mainHand": {
+        "itemKey": "alexscaves:frostmint_spear",
+        "mustBeEmpty": false
+    },
+
+    "fullSetBonuses": [
+      {
+          "type": "attribute",
+          "name": "puffish_attributes:ranged_damage",
+          "value": 0.25,
+          "interactionType": "self",
+          "attributeOperation": 1,
+          "modifierUUID": "b1e9aa9b-78aa-46c7-952d-782d4ef053e1",
+          "description": "1240"
+      },
+      {
+          "type": "effect",
+          "name": "alexscaves:sugar_rush",
+          "value": 0.5,
+          "interactionType": "self",
+          "interactionDuration": 240
+      }
+    ],
+    "hideGeneratedTooltip": true
+}

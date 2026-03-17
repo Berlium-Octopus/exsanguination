@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "alexscaves_torpedoes:magnetic_helmet"
+  ],
+  "incompatible": [
+    "extra_enchantments:incompatibility_curse",
+    "minecraft:protection",
+    "minecraft:blast_protection",
+    "minecraft:projectile_protection",
+    "minecraft:fire_protection",
+    "minecraft:unbreaking"
+  ]
+}

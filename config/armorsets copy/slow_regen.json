@@ -1,0 +1,22 @@
+{
+    "armorSetName": "luck",
+    "performanceMode": true,
+    "additionalSetPieces": [
+        {
+            "itemKey": "alexscaves:totem_of_possession",
+            "mustBeEmpty": false
+        }
+    ],
+    "fullSetBonuses": [
+      {
+          "type": "effect",
+          "name": "scalinghealth:bandaged",
+          "value": 1,
+          "interactionType": "self",
+          "interactionDuration": 100,
+          "hideBonusDescription": true,
+          "onlyImmuneToNewEffects": false
+      }
+    ],
+    "hideGeneratedTooltip": true
+}

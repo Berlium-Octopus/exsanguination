@@ -1,0 +1,7 @@
+#Item that can be used to reforge any item.
+"Global reforger" = "minecraft:nether_star"
+#List of items that cannot get any kind of qualities, even if they match tags or datapacks.
+"Black list" = []
+#Overrides reforging requirements. Format: item_or_tag|material_item. Ex: #minecraft:swords|minecraft_diamond
+Override = ["minecraft:bow|minecraft:string"]
+

@@ -1,0 +1,42 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "farmersdelight"
+            },
+            {
+              "type": "forge:item_exists",
+              "item": "netherdepthsupgrade:magmacubefish_slice"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cutting",
+        "ingredients": [
+          {
+            "item": "netherdepthsupgrade:magmacubefish"
+          }
+        ],
+        "result": [
+          {
+            "count": 2,
+            "item": "netherdepthsupgrade:magmacubefish_slice"
+          },
+          {
+            "item": "minecraft:bone_meal"
+          }
+        ],
+        "tool": {
+          "tag": "forge:tools/knives"
+        }
+      }
+    }
+  ]
+}

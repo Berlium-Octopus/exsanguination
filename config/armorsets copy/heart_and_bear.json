@@ -1,0 +1,28 @@
+{
+    "armorSetName": "Ironic",
+    "performanceMode": true,
+    "mainHand": {
+        "itemKey": "alexscaves:azure_neodymium_ingot",
+        "mustBeEmpty": false
+    },
+    "offHand": {
+        "itemKey": "alexscavesdelight:cooked_heart_of_iron",
+        "mustBeEmpty": false,
+        "mixAndMatch": [
+            "alexscaves:heart_of_iron",
+            "alexscavesdelight:filled_heart_of_iron"
+        ]
+    },
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "minecraft:wither",
+            "value": 2,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

@@ -1,0 +1,24 @@
+{
+  "blocks": [
+    {
+      "random": 36,
+      "block": "minecraft:cracked_deepslate_tiles"
+    },
+    {
+      "random": 16,
+      "block": "minecraft:cracked_deepslate_bricks"
+    },
+    {
+      "random": 24,
+      "block": "minecraft:deepslate_bricks"
+    },
+    {
+      "random": 900,
+      "block": "minecraft:deepslate_tiles"
+    },
+        {
+      "random": 100,
+      "block": "sculkhorde:infested_cobbled_deepslate_slab"
+    }
+  ]
+}

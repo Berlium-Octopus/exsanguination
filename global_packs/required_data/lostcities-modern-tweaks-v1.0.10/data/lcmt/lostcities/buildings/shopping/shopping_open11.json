@@ -1,0 +1,110 @@
+{
+  "filler": "#",
+  "rubble": "}",
+  "maxcellars": 0,
+  "minfloors": 4,
+  "maxfloors": 6,
+  "parts": [
+    {
+      "floor": 0,
+      "part": "lcmt:shopping/shopping_open11_0"
+    },
+    {
+      "floor": 1,
+      "part": "lcmt:shopping/shopping_open11_1"
+    },
+    {
+      "floor": 2,
+      "part": "lcmt:shopping/shopping_open11_2"
+    },
+    {
+      "top": false,
+      "range": "3,100",
+      "part": "lcmt:shopping/shopping11_r1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shopping/shopping11_top_empty"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shopping/shopping11_top_garden_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shopping/shopping11_top_tables_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shopping/shopping11_top_tables_2"
+    }
+  ],
+  "parts2": [
+    {
+      "floor": 0,
+      "part": "lcmt:shopping/shopping_in_empty"
+    },
+    {
+      "floor": 0,
+      "part": "lcmt:shopping/shopping10_0_in_large_displays"
+    },
+    {
+      "floor": 0,
+      "part": "lcmt:shopping/shopping11_0_in_counters_1"
+    },
+    {
+      "floor": 0,
+      "part": "lcmt:shopping/shopping11_0_in_counters_2"
+    },
+    {
+      "floor": 0,
+      "part": "lcmt:shopping/shopping11_0_in_counters_3"
+    },
+    {
+      "floor": 1,
+      "part": "lcmt:shopping/shopping_in_chandelier_1"
+    },
+    {
+      "floor": 1,
+      "part": "lcmt:shopping/shopping_in_chandelier_2"
+    },
+    {
+      "floor": 1,
+      "part": "lcmt:shopping/shopping_in_chandelier_3"
+    },
+    {
+      "floor": 1,
+      "part": "lcmt:shopping/shopping_in_chandelier_4"
+    },
+    {
+      "top": false,
+      "range": "2,100",
+      "part": "lcmt:shopping/shopping_in_empty"
+    },
+    {
+      "top": false,
+      "range": "2,100",
+      "part": "lcmt:shopping/shopping11_2p_in_tables"
+    },
+    {
+      "top": false,
+      "range": "2,100",
+      "part": "lcmt:shopping/shopping11_2p_in_counters"
+    },
+    {
+      "top": false,
+      "range": "2,100",
+      "part": "lcmt:shopping/shopping11_2p_in_info_boards"
+    },
+    {
+      "top": false,
+      "range": "2,100",
+      "part": "lcmt:shopping/shopping11_2p_in_cashier"
+    },
+    {
+      "top": false,
+      "range": "2,100",
+      "part": "lcmt:shopping/shopping11_2p_in_vending_machine"
+    }
+  ]
+}

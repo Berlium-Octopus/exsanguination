@@ -1,0 +1,91 @@
+{
+    "armorSetName": "ignium",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "cataclysm:ignitium_helmet",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "cataclysm:ignitium_elytra_chestplate",
+        "mixAndMatch": [
+            "cataclysm:ignitium_chestplate"
+        ],
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "cataclysm:ignitium_chestplate",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "cataclysm:ignitium_boots",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "partialBonusRequiredAmount": 1,
+    "partialSetBonuses": [
+        {
+            "type": "effect",
+            "name": "vinery:creeper_effect",
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "cataclysm:bone_fracture",
+            "interactionType": "immunity",
+            "conditions": [
+                {
+                    "type": "inLava"
+                }
+            ]
+        }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:armor_shred",
+            "value": 0.5,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "317d2ba7-6dd7-4bfa-8e79-9ffc46b6850b",
+            "description": "1100"
+        },
+        {
+            "type": "effect",
+            "name": "cataclysm:blazing_brand",
+            "value": 1,
+            "interactionType": "attack",
+            "interactionDuration": 800
+        },
+        {
+            "type": "effect",
+            "name": "cataclysm:bone_fracture",
+            "interactionType": "immunity",
+            "conditions": [
+                {
+                    "type": "inDimension",
+                    "extra": "minecraft:nether"
+                }
+            ]
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

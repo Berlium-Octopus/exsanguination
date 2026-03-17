@@ -1,0 +1,135 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "v",
+        "block": "minecraft:cut_sandstone",
+        "damaged": "minecraft:iron_bars"
+      },
+      {
+        "char": "w",
+        "block": "minecraft:sandstone_wall"
+      },
+      {
+        "char": "_",
+        "variant": "lcmt:cut_sandstone_slab_bottom_textured"
+      },
+      {
+        "char": "u",
+        "variant": "lcmt:cut_sandstone_textured"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "                ",
+      "      v  v      ",
+      "                ",
+      "   v        v   ",
+      "                ",
+      "                ",
+      " v            v ",
+      "                ",
+      "                ",
+      " v            v ",
+      "                ",
+      "                ",
+      "   v        v   ",
+      "                ",
+      "      v  v      ",
+      "                "
+    ],
+    [
+      "                ",
+      "      w  w      ",
+      "                ",
+      "   w        w   ",
+      "                ",
+      "                ",
+      " w            w ",
+      "                ",
+      "                ",
+      " w            w ",
+      "                ",
+      "                ",
+      "   w        w   ",
+      "                ",
+      "      w  w      ",
+      "                "
+    ],
+    [
+      "                ",
+      "      w  w      ",
+      "                ",
+      "   w        w   ",
+      "                ",
+      "                ",
+      " w            w ",
+      "                ",
+      "                ",
+      " w            w ",
+      "                ",
+      "                ",
+      "   w        w   ",
+      "                ",
+      "      w  w      ",
+      "                "
+    ],
+    [
+      "                ",
+      "      w  w      ",
+      "      E  E      ",
+      "   w        w   ",
+      "                ",
+      "                ",
+      " wE          Ew ",
+      "                ",
+      "                ",
+      " wE          Ew ",
+      "                ",
+      "                ",
+      "   w        w   ",
+      "      E  E      ",
+      "      w  w      ",
+      "                "
+    ],
+    [
+      "                ",
+      "      ____      ",
+      "    ________    ",
+      "   ___uuuu___   ",
+      "  ___uuuuuu___  ",
+      "  __uuuuuuuu__  ",
+      " __uuuuuuuuuu__ ",
+      " __uuuuuuuuuu__ ",
+      " __uuuuuuuuuu__ ",
+      " __uuuuuuuuuu__ ",
+      "  __uuuuuuuu__  ",
+      "  ___uuuuuu___  ",
+      "   ___uuuu___   ",
+      "    ________    ",
+      "      ____      ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "       __       ",
+      "      ____      ",
+      "     ______     ",
+      "     ______     ",
+      "      ____      ",
+      "       __       ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ]
+  ]
+}

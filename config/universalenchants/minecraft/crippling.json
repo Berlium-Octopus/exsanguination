@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 2,
+  "items": [
+"minecraft:golden_pickaxe",
+"minecraft:wooden_pickaxe",
+"minecraft:stone_pickaxe",
+"minecraft:copper_pickaxe",
+"minecraft:iron_pickaxe",
+"sculkhorde:ferriscite_pickaxe",
+"deeperdarker:resonarium_pickaxe",
+"sculkhorde:diascite_pickaxe",
+"alexscaves_torpedoes:scarlet_pickaxe",
+"alexscaves_torpedoes:azure_pickaxe",
+"minecraft:diamond_pickaxe",
+"oreganized:electrum_pickaxe",
+"minecraft:netherite_pickaxe",
+"deeperdarker:warden_pickaxe",
+"alexsmobs:ghostly_pickaxe" 
+  ],
+  "incompatible": [
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

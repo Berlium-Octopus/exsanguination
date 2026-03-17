@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:shot_gum"
+  ],
+  "incompatible": [
+    "extra_enchantments:incompatibility_curse",
+    "alexscaves:targeted_ricochet"
+  ]
+}

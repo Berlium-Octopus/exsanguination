@@ -1,0 +1,53 @@
+{
+    "armorSetName": "Keepup",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "alexscaves:gingerbread_helmet",
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "alexscaves:gingerbread_chestplate",
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "alexscaves:gingerbread_leggings",
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "alexscaves:gingerbread_boots",
+        "mustBeEmpty": false
+    },
+    "mainHand": {
+        "itemKey": "alexscavesdelight:gingerbread_knife",
+        "mustBeEmpty": false
+    },
+
+    "fullSetBonuses": [
+      {
+          "type": "attribute",
+          "name": "puffish_attributes:melee_damage",
+          "value": 7.55,
+          "interactionType": "self",
+          "attributeOperation": 1,
+          "modifierUUID": "e07edc2a-6af7-4922-9f5e-2b238a8762e4",
+          "description": "1100"
+      },
+      {
+          "type": "attribute",
+          "name": "minecraft:generic.attack_speed",
+          "value": 0.65,
+          "interactionType": "self",
+          "attributeOperation": 1,
+          "modifierUUID": "401f1e8e-1dd1-4dd8-8b67-70f04e545353",
+          "description": "1100"
+      },
+      {
+          "type": "effect",
+          "name": "alexscaves:sugar_rush",
+          "value": 0.5,
+          "interactionType": "self",
+          "interactionDuration": 100
+      }
+    ],
+    "hideGeneratedTooltip": true
+}

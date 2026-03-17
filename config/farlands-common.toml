@@ -1,0 +1,7 @@
+#The distance to the Farlands on the X axis
+#Range: > 0
+xDistance = 12550800
+#The distance to the Farlands on the Z axis
+#Range: > 0
+zDistance = 12550800
+

@@ -1,0 +1,37 @@
+{
+    "armorSetName": "buffs",
+    "performanceMode": true,
+    "additionalSetPieces": [
+          {
+            "itemKey": "luminous_nether:nether_beast_totem",
+              "mustBeEmpty": false
+          }
+      ],
+    "fullSetBonuses": [
+      {
+           "type": "effect",
+           "name": "luminous_nether:hemorrhage",
+           "value": 1,
+           "interactionType": "immunity"
+       },
+       {
+            "type": "effect",
+            "name": "alexsmobs:exsanguination",
+            "value": 1,
+            "interactionType": "immunity"
+        },
+        {
+             "type": "effect",
+             "name": "minecraft:nausea",
+             "value": 1,
+             "interactionType": "immunity"
+         },
+         {
+              "type": "effect",
+              "name": "alexsmobsinteraction:blooded",
+              "value": 1,
+              "interactionType": "immunity"
+          }
+    ],
+    "hideGeneratedTooltip": true
+}

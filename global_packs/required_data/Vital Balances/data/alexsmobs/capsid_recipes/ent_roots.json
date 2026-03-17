@@ -1,0 +1,12 @@
+{
+  "ingredients": [
+    {
+      "item": "spelunkery:tangle_roots"
+    }
+  ],
+  "result": {
+    "item": "luminous_beasts:magic_root",
+    "count": 1
+  },
+  "time": 900
+}

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:armor",
+    "$minecraft:universal_enchants_horse_armor"
+  ],
+  "incompatible": [
+    "extra_enchantments:incompatibility_curse",
+    "minecraft:protection",
+    "minecraft:feather_falling",
+    "minecraft:blast_protection",
+    "minecraft:fire_protection"
+  ]
+}

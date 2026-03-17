@@ -1,0 +1,75 @@
+{
+  "filler": "#",
+  "rubble": "}",
+  "allowFillers": false,
+  "preferslonely": 0.5,
+  "parts": [
+    {
+      "cellar": true,
+      "part": "lcmt:library/library10_underground"
+    },
+    {
+      "top": false,
+      "cellar": false,
+      "part": "lcmt:library/library10_0p"
+    },
+    {
+      "top": true,
+      "part": "lcmt:library/library_top_empty"
+    },
+    {
+      "top": true,
+      "part": "lcmt:library/library_top_ac_units_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:library/library_top_ac_units_2"
+    },
+    {
+      "top": true,
+      "part": "lcmt:library/library_top_small_building_1"
+    }
+  ],
+  "parts2": [
+    {
+      "top": false,
+      "ground": true,
+      "part": "lcmt:library/library10_in_reception_1"
+    },
+    {
+      "top": false,
+      "ground": false,
+      "part": "lcmt:library/library10_in_bookshelves_enclosed_1"
+    },
+    {
+      "top": false,
+      "ground": false,
+      "part": "lcmt:library/library10_in_bookshelves_enclosed_treasure_1"
+    },
+    {
+      "top": false,
+      "ground": false,
+      "part": "lcmt:library/library10_in_reading_corner_1"
+    },
+    {
+      "top": false,
+      "ground": false,
+      "part": "lcmt:library/library10_in_reading_corner_2"
+    },
+    {
+      "top": false,
+      "ground": false,
+      "part": "lcmt:library/library10_in_bookshelves_1"
+    },
+    {
+      "top": false,
+      "ground": false,
+      "part": "lcmt:library/library10_in_bookshelves_2"
+    },
+    {
+      "top": false,
+      "ground": false,
+      "part": "lcmt:library/library10_in_bookshelves_3"
+    }
+  ]
+}

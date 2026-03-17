@@ -1,0 +1,16 @@
+{
+  "blocks": [
+    {
+      "random": 70,
+      "block": "minecraft:packed_mud"
+    },
+    {
+      "random": 950,
+      "block": "minecraft:mud_bricks"
+    },
+    {
+      "random": 50,
+      "block": "sculkhorde:infested_mud_bricks"
+    }
+  ]
+}

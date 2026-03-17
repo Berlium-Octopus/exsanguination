@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:shield"
+  ],
+  "incompatible": [
+    "extra_enchantments:incompatibility_curse",
+    "spartanshields:payback"
+  ]
+}

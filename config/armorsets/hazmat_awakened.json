@@ -1,0 +1,80 @@
+{
+    "armorSetName": "Biohazzard",
+    "performanceMode": false,
+    "head": {
+        "itemKey": "alexscaves:hazmat_mask",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "chest": {
+        "itemKey": "alexscaves:hazmat_chestplate",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "legs": {
+        "itemKey": "alexscaves:hazmat_leggings",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "boots": {
+        "itemKey": "alexscaves:hazmat_boots",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "partialBonusRequiredAmount": 3,
+    "partialSetBonuses": [
+      {
+          "type": "attribute",
+          "name": "puffish_attributes:sprinting_speed",
+          "value": 0.4,
+          "interactionType": "self",
+          "attributeOperation": 1,
+          "modifierUUID": "16f2fd09-4c81-481f-8073-79e65d85064d"
+      }
+    ],
+    "fullSetBonuses": [
+      {
+        "type": "effect",
+        "name": "toughasnails:climate_clemency",
+        "value": 0,
+        "interactionType": "self",
+        "interactionDuration": 240,
+        "hideBonusDescription": true,
+        "onlyImmuneToNewEffects": false
+      },
+      {
+        "type": "effect",
+        "name": "alexscaves:irradiated",
+        "value": 0,
+        "interactionType": "attack",
+        "interactionDuration": 240
+      },
+      {
+          "type": "effect",
+          "name": "alexscaves:irradiated",
+          "interactionType": "immunity"
+      },
+      {
+          "type": "effect",
+          "name": "oreganized:stunning",
+          "interactionType": "immunity"
+      }
+    ],
+    "hideGeneratedTooltip": true
+}

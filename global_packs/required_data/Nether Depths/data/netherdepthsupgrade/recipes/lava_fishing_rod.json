@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "b": {
+      "item": "minecraft:blaze_rod"
+    },
+    "c": {
+      "item": "minecraft:chain"
+    },
+    "n": {
+      "item": "minecraft:netherite_scrap"
+    }
+  },
+  "pattern": [
+    " nb",
+    "nbc",
+    "b c"
+  ],
+  "result": {
+    "item": "netherdepthsupgrade:lava_fishing_rod"
+  }
+}

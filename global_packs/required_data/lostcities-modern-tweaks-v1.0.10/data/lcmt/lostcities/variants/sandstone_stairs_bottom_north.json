@@ -1,0 +1,12 @@
+{
+  "blocks": [
+    {
+      "random": 30,
+      "block": "minecraft:smooth_sandstone_stairs[facing=north,half=bottom,shape=straight]"
+    },
+    {
+      "random": 1000,
+      "block": "minecraft:sandstone_stairs[facing=north,half=bottom,shape=straight]"
+    }
+  ]
+}

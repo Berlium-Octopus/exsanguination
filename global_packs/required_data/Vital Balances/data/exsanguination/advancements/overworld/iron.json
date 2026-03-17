@@ -1,0 +1,28 @@
+{
+	"display": {
+		"icon": {
+			"item": "minecraft:stick"
+		},
+    "title": {
+			"translate": "advancements.exsanguination.iron.title"
+    },
+    "description": {
+      "translate": "advancements.exsanguination.iron.desc"
+    }
+	},
+	"parent": "exsanguination:overworld/copper",
+	"criteria": {
+		"iron_pickaxe": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:stick"
+						]
+					}
+				]
+			}
+		}
+	}
+}

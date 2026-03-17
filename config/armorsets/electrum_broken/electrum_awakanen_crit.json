@@ -1,0 +1,52 @@
+{
+    "armorSetName": "electrum_bc",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "oreganized:electrum_helmet",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "oreganized:electrum_chestplate",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "oreganized:electrum_leggings",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "oreganized:electrum_boots",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "oreganized:kinetic_damage",
+            "value": 0.2,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "477335d9-3baa-45af-bdb7-0b1d86adc9f2",
+            "description": "1240"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

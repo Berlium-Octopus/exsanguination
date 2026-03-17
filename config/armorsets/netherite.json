@@ -1,0 +1,71 @@
+{
+    "armorSetName": "Netherwake",
+    "performanceMode": false,
+    "head": {
+        "itemKey": "minecraft:netherite_helmet",
+        "mixAndMatch": [
+            "cataclysm:monstrous_helm"
+        ],
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "minecraft:protection",
+                "minLevel": 3
+            }
+        ]
+    },
+    "chest": {
+        "itemKey": "minecraft:netherite_chestplate",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "minecraft:protection",
+                "minLevel": 3
+            }
+        ]
+    },
+    "legs": {
+        "itemKey": "minecraft:netherite_leggings",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "minecraft:protection",
+                "minLevel": 3
+            }
+        ]
+    },
+    "boots": {
+        "itemKey": "minecraft:netherite_boots",
+        "mustBeEmpty": false
+    },
+    "enchantments": [
+        {
+            "enchantmentKey": "minecraft:protection",
+            "minLevel": 3
+        }
+    ],
+    "partialBonusRequiredAmount": 1,
+    "partialSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:stamina",
+            "value": -0.15,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "2408d1d0-69c7-4528-a5b7-aa7c44e9585e",
+            "description": "1240"
+        }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "potioncore:damage_resistance",
+            "value": 0.03,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "a6344dba-b6f3-4bf5-8864-0a8f5f47d370",
+            "description": "1240"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

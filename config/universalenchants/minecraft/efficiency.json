@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:digger",
+    "quark:pickarang",
+    "quark:flamerang"
+  ],
+  "incompatible": [
+    "trials:density",
+    "minecraft:piercing",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "palette": [
+    {
+      "char": "i",
+      "block": "minecraft:red_carpet"
+    },
+    {
+      "char": "c",
+      "block": "minecraft:chest[facing=north,type=single]",
+      "tag": {
+        "Items": []
+      }
+    },
+    {
+      "char": "C",
+      "block": "minecraft:chest[facing=north,type=single]",
+      "loot": "lcmt:factory_loot"
+    },
+    {
+      "char": "j",
+      "block": "minecraft:barrel[facing=north,open=false]",
+      "tag": {
+        "Items": []
+      }
+    },
+    {
+      "char": "J",
+      "block": "minecraft:barrel[facing=north,open=false]",
+      "loot": "lcmt:factory_loot"
+    },
+    {
+      "char": "k",
+      "block": "minecraft:iron_trapdoor[facing=south,half=bottom,open=false,powered=false]"
+    },
+    {
+      "char": "f",
+      "block": "minecraft:iron_trapdoor[facing=south,half=top,open=false,powered=false]"
+    },
+    {
+      "char": "m",
+      "block": "minecraft:ladder[facing=south]"
+    },
+    {
+      "char": "o",
+      "block": "minecraft:stone_pressure_plate[powered=false]"
+    },
+    {
+      "char": "q",
+      "block": "minecraft:yellow_concrete",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "r",
+      "block": "minecraft:black_concrete",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "H",
+      "block": "minecraft:glow_lichen[down=true,east=false,north=false,south=false,up=false,west=false]"
+    },
+    {
+      "char": "s",
+      "block": "minecraft:piston[extended=false,facing=down]",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "n",
+      "block": "minecraft:decorated_pot[cracked=false,facing=south,waterlogged=false]",
+      "tag": {
+        "sherds": [
+          "minecraft:bricks",
+          "minecraft:bricks",
+          "minecraft:bricks",
+          "minecraft:bricks"
+        ]
+      }
+    },
+    {
+      "char": "I",
+      "block": "minecraft:sculk"
+    },
+    {
+      "char": "O",
+      "block": "minecraft:ochre_froglight[axis=y]"
+    },
+    {
+      "char": "M",
+      "block": "minecraft:polished_andesite",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "U",
+      "block": "minecraft:observer[facing=north,powered=false]",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "P",
+      "block": "minecraft:blast_furnace[facing=east,lit=false]",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "V",
+      "block": "minecraft:andesite_wall",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "N",
+      "blocks": [
+        {
+          "random": 64,
+          "block": "minecraft:chiseled_quartz_block"
+        },
+        {
+          "random": 1000,
+          "block": "minecraft:quartz_bricks"
+        }
+      ],
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "2",
+      "block": "minecraft:quartz_slab[type=bottom,waterlogged=false]"
+    }
+  ]
+}

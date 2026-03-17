@@ -1,0 +1,59 @@
+{
+    "armorSetName": "Greater Magical Tuning",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "create:cardboard_helmet",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "chest": {
+        "itemKey": "create:cardboard_chestplate",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "legs": {
+        "itemKey": "create:cardboard_leggings",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "boots": {
+        "itemKey": "create:cardboard_boots",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "fullSetBonuses": [
+      {
+          "type": "attribute",
+          "name": "puffish_attributes:fall_reduction",
+          "value": 0.3,
+          "interactionType": "self",
+          "attributeOperation": 1,
+          "modifierUUID": "e064002f-3ddc-44cc-a9dc-f96c85b7fa7e"
+      },
+      {
+          "type": "attribute",
+          "name": "puffish_attributes:knockback",
+          "value": 0.5,
+          "interactionType": "self",
+          "attributeOperation": 1,
+          "modifierUUID": "96fd305c-00f6-4818-bf1f-c53b7188c7eb"
+      }
+    ],
+    "hideGeneratedTooltip": true
+}

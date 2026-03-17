@@ -1,0 +1,72 @@
+{
+    "sources": [
+        {
+            "type": "paletted_permutations",
+            "textures": [
+                "trims/models/armor/coast",
+                "trims/models/armor/coast_leggings",
+                "trims/models/armor/sentry",
+                "trims/models/armor/sentry_leggings",
+                "trims/models/armor/dune",
+                "trims/models/armor/dune_leggings",
+                "trims/models/armor/wild",
+                "trims/models/armor/wild_leggings",
+                "trims/models/armor/ward",
+                "trims/models/armor/ward_leggings",
+                "trims/models/armor/eye",
+                "trims/models/armor/eye_leggings",
+                "trims/models/armor/vex",
+                "trims/models/armor/vex_leggings",
+                "trims/models/armor/tide",
+                "trims/models/armor/tide_leggings",
+                "trims/models/armor/snout",
+                "trims/models/armor/snout_leggings",
+                "trims/models/armor/rib",
+                "trims/models/armor/rib_leggings",
+                "trims/models/armor/spire",
+                "trims/models/armor/spire_leggings",
+                "trims/models/armor/wayfinder",
+                "trims/models/armor/wayfinder_leggings",
+                "trims/models/armor/shaper",
+                "trims/models/armor/shaper_leggings",
+                "trims/models/armor/silence",
+                "trims/models/armor/silence_leggings",
+                "trims/models/armor/raiser",
+                "trims/models/armor/raiser_leggings",
+                "trims/models/armor/host",
+                "trims/models/armor/host_leggings"
+            ],
+            "palette_key": "trims/color_palettes/trim_palette",
+            "permutations": {
+        	"scarlet_neodymium": "alexscaves:trims/color_palettes/scarlet_neodymium",
+        	"azure_neodymium": "alexscaves:trims/color_palettes/azure_neodymium",
+        	"amber": "alexscaves:trims/color_palettes/amber",
+        	"tectonic": "alexscaves:trims/color_palettes/tectonic",
+        	"uranium": "alexscaves:trims/color_palettes/uranium",
+        	"sulfur": "alexscaves:trims/color_palettes/sulfur",
+        	"pearl": "alexscaves:trims/color_palettes/pearl",
+        	"bioluminesscence": "alexscaves:trims/color_palettes/bioluminesscence",
+        	"occult_gem": "alexscaves:trims/color_palettes/occult_gem",
+        	"pure_darkness": "alexscaves:trims/color_palettes/pure_darkness",
+        	"candy_cane": "alexscaves:trims/color_palettes/candy_cane",
+        	"radiant_essence": "alexscaves:trims/color_palettes/radiant_essence"
+            }
+        },
+    {
+      "type": "blueprint:paletted_permutations",
+      "palette_key": "minecraft:trims/color_palettes/trim_palette",
+      "permutations": {
+        	"scarlet_neodymium": "alexscaves:trims/color_palettes/scarlet_neodymium",
+        	"azure_neodymium": "alexscaves:trims/color_palettes/azure_neodymium",
+        	"amber": "alexscaves:trims/color_palettes/amber",
+        	"tectonic": "alexscaves:trims/color_palettes/tectonic",
+        	"uranium": "alexscaves:trims/color_palettes/uranium",
+        	"sulfur": "alexscaves:trims/color_palettes/sulfur",
+        	"pearl": "alexscaves:trims/color_palettes/pearl",
+        	"bioluminesscence": "alexscaves:trims/color_palettes/bioluminesscence",
+        	"occult_gem": "alexscaves:trims/color_palettes/occult_gem",
+        	"pure_darkness": "alexscaves:trims/color_palettes/pure_darkness",
+        	"candy_cane": "alexscaves:trims/color_palettes/candy_cane",
+        	"radiant_essence": "alexscaves:trims/color_palettes/radiant_essence"
+      }
+}

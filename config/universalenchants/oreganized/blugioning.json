@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 2,
+  "items": [
+"minecraft:golden_hoe",
+"minecraft:wooden_hoe",
+"minecraft:stone_hoe",
+"minecraft:copper_hoe",
+"minecraft:iron_hoe",
+"sculkhorde:ferriscite_hoe",
+"deeperdarker:resonarium_hoe",
+"sculkhorde:diascite_hoe",
+"alexscaves_torpedoes:scarlet_hoe",
+"alexscaves_torpedoes:azure_hoe",
+"minecraft:diamond_hoe",
+"oreganized:electrum_hoe",
+"minecraft:netherite_hoe",
+"deeperdarker:warden_hoe"
+  ],
+  "incompatible": [
+    "extra_enchantments:incompatibility_curse",
+    "minecraft:crippling"
+  ]
+}

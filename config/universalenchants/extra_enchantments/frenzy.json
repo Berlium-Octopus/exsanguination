@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:universal_enchants_axe",
+    "cataclysm:meat_shredder"
+  ],
+  "incompatible": [
+    "extra_enchantments:lifesteal",
+    "extra_enchantments:enigma_resonator",
+    "extra_enchantments:guarding_strike",
+    "extra_enchantments:soul_reaper",
+    "extra_enchantments:pain_cycle",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

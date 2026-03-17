@@ -1,0 +1,50 @@
+{
+  "style": "lcmt:desert",
+  "inherit": "lcmt:citystyle_common",
+  "generalblocks": {
+    "leaves": "☘",
+    "rubbledirt": "▣"
+  },
+  "selectors": {
+    "fountains": [
+      {
+        "factor": 1.0,
+        "value": "lcmt:fountain/fountain_small_sandstone_1"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:fountain/fountain_small_sandstone_2"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:fountain/fountain_small_quartz_1"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:fountain/fountain_small_quartz_2"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:fountain/fountain_medium_sandstone_1"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:fountain/fountain_medium_bricks_1"
+      }
+    ],
+    "parks": [
+      {
+        "factor": 1.0,
+        "value": "lcmt:park/park_pool_desert"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:park/park_cactus_field"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:park/park_desert_fountain_huge_1"
+      }
+    ]
+  }
+}

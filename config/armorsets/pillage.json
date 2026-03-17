@@ -1,0 +1,70 @@
+{
+    "armorSetName": "cladded",
+    "performanceMode": false,
+    "head": {
+        "itemKey": "biomemakeover:cladded_helmet",
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "biomemakeover:cladded_chestplate",
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "biomemakeover:cladded_leggings",
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "biomemakeover:cladded_boots",
+        "mustBeEmpty": false
+    },
+    "mainHand": {
+        "itemKey": "minecraft:crossbow",
+        "mixAndMatch": [
+              "spartanweaponry:golden_heavy_crossbow",
+              "spartanweaponry:netherite_heavy_crossbow",
+              "spartanweaponry:wooden_heavy_crossbow",
+              "spartanweaponry:iron_heavy_crossbow",
+              "spartanweaponry:bronze_heavy_crossbow",
+              "spartanweaponry:copper_heavy_crossbow",
+              "spartanweaponry:tin_heavy_crossbow",
+              "spartanweaponry:steel_heavy_crossbow",
+              "spartanweaponry:electrum_heavy_crossbow",
+              "spartanweaponry:lead_heavy_crossbow",
+              "spartanweaponry:nickel_heavy_crossbow",
+              "spartanweaponry:invar_heavy_crossbow",
+              "spartanweaponry:aluminum_heavy_crossbow",
+              "spartanweaponry:platinum_heavy_crossbow",
+              "spartanweaponry:constantan_heavy_crossbow"
+          ]
+    },
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "potioncore:true_shot",
+            "value": 1,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        },
+  	    {
+            "type": "attribute",
+            "name": "puffish_attributes:sprinting_speed",
+            "value": 0.5,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "f413e291-72d1-406c-964a-4a559bcd8b19",
+            "description": "1240"
+        },
+        {
+            "type": "attribute",
+            "name": "functionalarmortrim:experience_boost",
+            "value": 0.25,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "6db3fc08-c029-4562-b4f8-6abce7c31011",
+            "description": "1240"
+            }
+    ],
+    "hideGeneratedTooltip": true
+}

@@ -1,0 +1,21 @@
+{
+  "type": "target_self",
+  "fluid": "minecraft:lava",
+  "generate": {
+    "Name": "deeperdarker:sculk_stone"
+  },
+  "adjacent_blocks": {
+    "sides": [
+      {
+        "fluids": "#minecraft:water",
+        "predicate_type": "immersive_weathering:fluid_match"
+      }
+    ],
+    "down": {
+      "block_state": {
+        "Name": "deeperdarker:sculk_grime"
+      },
+      "predicate_type": "minecraft:blockstate_match"
+    }
+  }
+}

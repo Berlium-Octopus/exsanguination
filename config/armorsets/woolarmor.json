@@ -1,0 +1,40 @@
+{
+    "armorSetName": "leafawaken",
+    "performanceMode": true,
+    "head": {
+      "itemKey": "toughasnails:wool_helmet",
+        "mustBeEmpty": false
+    },
+    "chest": {
+      "itemKey": "toughasnails:wool_chestplate",
+        "mustBeEmpty": false
+    },
+    "legs": {
+      "itemKey": "toughasnails:wool_leggings",
+        "mustBeEmpty": false
+    },
+    "boots": {
+      "itemKey": "toughasnails:wool_boots",
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "functionalarmortrim:fire_resistance",
+            "value": -0.2,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "f413e291-72d1-406c-964a-4a551bcd8b19",
+            "description": "1240"
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:jump_boost",
+            "value": 0,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "description": "1240"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

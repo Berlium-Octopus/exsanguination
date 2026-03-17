@@ -1,0 +1,27 @@
+{
+    "armorSetName": "heartofcold",
+    "performanceMode": true,
+    "additionalSetPieces": [
+        {
+            "itemKey": "deeperdarker:sliced_heart_of_the_deep",
+            "mixAndMatch": [
+              "deeperdarker:heart_of_the_deep"
+       ],
+            "mustBeEmpty": false
+        }
+    ],
+
+
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "toughasnails:internal_chill",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "hideBonusDescription": false,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

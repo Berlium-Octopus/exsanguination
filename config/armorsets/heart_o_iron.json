@@ -1,0 +1,22 @@
+{
+    "armorSetName": "Ironic",
+    "performanceMode": true,
+    "additionalSetPieces": [
+        {
+            "itemKey": "alexscavesdelight:filled_heart_of_iron",
+            "mustBeEmpty": false
+        }
+    ],
+    "fullSetBonuses": [
+      {
+          "type": "effect",
+          "name": "minecraft:resistance",
+          "value": 0.3,
+          "interactionType": "self",
+          "interactionDuration": 240,
+          "hideBonusDescription": true,
+          "onlyImmuneToNewEffects": false
+      }
+    ],
+    "hideGeneratedTooltip": true
+}

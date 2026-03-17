@@ -1,0 +1,311 @@
+
+[logging]
+	#Whether to log successful operations or not.
+	log_successful = false
+	#Whether to log failed operations or not.
+	log_errors = true
+
+#Generates a config with all non-default values in propertymodifier-generated.toml.
+[generating]
+	#Generates block state-related entries.
+	block_states = false
+	#Generates block-related entries.
+	blocks = false
+	#Generates item-related entries.
+	items = false
+	#Generates armor-related entries.
+	armor = false
+	#Generates tool-related entries.
+	tools = false
+	#Generates enchantment-related entries.
+	enchantments = false
+	#Generates composting-related entries.
+	composting = false
+	#The default enchantment value used. 0 in vanilla, but mods such as Apotheosis may change this.
+	#Range: 0 ~ 1000000
+	default_enchantment_value = 0
+
+#Set the respective values here by adding lines in the respective groups. Keys can be either a block (e.g. "minecraft:stripped_birch_wood"), a block regex (e.g. "minecraft:.*_block") or a blockstate definition (e.g. "minecraft:grass_block[snowy=true]"). Block regexes cannot contain the [] characters, as their presence will be interpreted as a blockstate definition instead.
+[blocks_and_blockstates]
+
+	#Set the destroy time for a block (state). Dirt has 0.5, stone has 1.5, obsidian has 50. -1 makes the block unbreakable. Examples (without the leading #):
+	#"minecraft:grass_block[snowy=true]" = 100
+	#"minecraft:.*_planks" = 100
+	[blocks_and_blockstates.destroy_time]
+		test = 0.0
+
+	#Set the tool requirement of a block (state). Must be true or false. Examples (without the leading #):
+	#"minecraft:diamond_ore" = false
+	#"minecraft:oak_log" = true
+	[blocks_and_blockstates.requires_tool]
+		test = false
+
+	#Set the light emission of a block (state). Must be an integer between 0 and 15. Examples (without the leading #):
+	#"minecraft:redstone_torch[lit=true]" = 15
+	#"minecraft:.*_bricks" = 7
+	[blocks_and_blockstates.light_emission]
+		test = 0
+
+#Set the respective values here by adding lines in the respective groups. Keys can be either a block (e.g. "minecraft:stripped_birch_wood") or a block regex (e.g. "minecraft:.*_block").
+[blocks]
+
+	#Set the explosion resistance for a block. Dirt has 0.5, stone and has 6, obsidian has 1200. 3600000 or more makes the block completely explosion resistant. Example (without the leading #):
+	#"minecraft:dirt" = 1000
+	[blocks.explosion_resistance]
+		test = 0.0
+
+	#Set the friction for a block. 0.6 for most blocks, 0.8 for slime blocks, 0.98 for ice, packed ice and frosted ice, and 0.989 for blue ice. Example (without the leading #):
+	#"minecraft:.*ice" = 0.6
+	[blocks.friction]
+		test = 0.0
+
+	#Set the speed factor for a block. 1 for most blocks, 0.4 for soul sand and honey blocks. Example (without the leading #):
+	#"minecraft:soul_sand" = 1
+	[blocks.speed_factor]
+		test = 0.0
+
+	#Set the speed factor for a block. 1 for most blocks, 0.5 for honey blocks. Example (without the leading #):
+	#"minecraft:honey_block" = 1
+	[blocks.jump_factor]
+		test = 0.0
+
+#Set the respective values here by adding lines in the respective groups. Keys can be either an item (e.g. "minecraft:stripped_birch_wood") or an item regex (e.g. "minecraft:diamond.*").
+[items]
+
+	#Set the max damage (durability) of an item. Only items that already have durability can have this value altered. Example (without the leading #):
+	#"minecraft:diamond_.*" = 5000
+	[items.max_damage]
+		test = 0
+
+	#Set the max stack size of an item. Only values between 2 and 64 are supported. Items that have durability cannot have this value altered. Example (without the leading #):
+	#"minecraft:ender_pearl" = 64
+	[items.max_stack_size]
+		test = 0
+
+	#Set this value to true to make an item fire resistant (like netherite is), or set it to false to make it burn in fire and lava. Example (without the leading #):
+	#"minecraft:netherite_ingot" = false
+	[items.fire_resistant]
+		test = false
+
+	#Set the rarity (item color) of an item. Must be a valid rarity name. Example (without the leading #):
+	#"minecraft:beacon" = "common"
+	#Default rarities (mods may add more!): "common", "uncommon", "rare", "epic"
+	[items.rarity]
+		test = ""
+
+	#Set the enchantment value of an item. Higher value means better enchantments on average. May not always have a noticeable effect. Example (without the leading #):
+	#"minecraft:.*_hoe" = 40
+	[items.enchantment_value]
+		test = 0
+
+	#Set the repair material of an item. May be an item or a tag containing multiple items, with a # before the tag id. Example (without the leading #):
+	#"minecraft:wooden_.*" = "#minecraft:fishes"
+	[items.repair_material]
+		"minecraft:stone_hoe" = "#exsanguination:flint"
+		"minecraft:stone_pickaxe" = "#exsanguination:flint"
+		"minecraft:stone_axe" = "#exsanguination:flint"
+		"minecraft:stone_shovel" = "#exsanguination:flint"
+		"minecraft:stone_sword" = "#exsanguination:flint"
+		"spartanshields:stone_tower_shield" = "#exsanguination:flint"
+		"spartanshields:stone_basic_shield" = "#exsanguination:flint"
+		"spartanweaponry:stone_dagger" = "#exsanguination:flint"
+		"spartanweaponry:stone_parrying_dagger" = "#exsanguination:flint"
+		"spartanweaponry:stone_longsword" = "#exsanguination:flint"
+		"spartanweaponry:stone_katana" = "#exsanguination:flint"
+		"spartanweaponry:stone_saber" = "#exsanguination:flint"
+		"spartanweaponry:stone_rapier" = "#exsanguination:flint"
+		"spartanweaponry:stone_greatsword" = "#exsanguination:flint"
+		"spartanweaponry:stone_battle_hammer" = "#exsanguination:flint"
+		"spartanweaponry:stone_warhammer" = "#exsanguination:flint"
+		"spartanweaponry:stone_spear" = "#exsanguination:flint"
+		"spartanweaponry:stone_halberd" = "#exsanguination:flint"
+		"spartanweaponry:stone_pike" = "#exsanguination:flint"
+		"spartanweaponry:stone_lance" = "#exsanguination:flint"
+		"spartanweaponry:stone_throwing_knife" = "#exsanguination:flint"
+		"spartanweaponry:stone_tomahawk" = "#exsanguination:flint"
+		"spartanweaponry:stone_javelin" = "#exsanguination:flint"
+		"spartanweaponry:stone_boomerang" = "#exsanguination:flint"
+		"spartanweaponry:stone_battleaxe" = "#exsanguination:flint"
+		"spartanweaponry:stone_flanged_mace" = "#exsanguination:flint"
+		"spartanweaponry:stone_glaive" = "#exsanguination:flint"
+		"spartanweaponry:stone_quarterstaff" = "#exsanguination:flint"
+		"spartanweaponry:stone_scythe" = "#exsanguination:flint"
+		"minecraft:netherite_hoe" = "#exsanguination:netherite_repair"
+		"minecraft:netherite_pickaxe" = "#exsanguination:netherite_repair"
+		"minecraft:netherite_axe" = "#exsanguination:netherite_repair"
+		"minecraft:netherite_shovel" = "#exsanguination:netherite_repair"
+		"minecraft:netherite_sword" = "#exsanguination:netherite_repair"
+		"farmersdelight:netherite_knife" = "#exsanguination:netherite_repair"
+		"create:netherite_diving_helmet" = "#exsanguination:netherite_repair"
+		"cataclysm:monstrous_helm" = "#exsanguination:netherite_repair"
+		"minecraft:netherite_helmet" = "#exsanguination:netherite_repair"
+		"minecraft:netherite_chestplate" = "#exsanguination:netherite_repair"
+		"create:netherite_backtank" = "#exsanguination:netherite_repair"
+		"minecraft:netherite_leggings" = "#exsanguination:netherite_repair"
+		"minecraft:netherite_boots" = "#exsanguination:netherite_repair"
+		"tide:netherite_fishing_rod" = "#exsanguination:netherite_repair"
+		"create:netherite_diving_boots" = "#exsanguination:netherite_repair"
+		"spartanshields:netherite_tower_shield" = "#exsanguination:netherite_repair"
+		"spartanshields:netherite_basic_shield" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_dagger" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_parrying_dagger" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_longsword" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_katana" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_saber" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_rapier" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_greatsword" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_battle_hammer" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_warhammer" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_spear" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_halberd" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_pike" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_lance" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_throwing_knife" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_tomahawk" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_javelin" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_boomerang" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_battleaxe" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_flanged_mace" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_glaive" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_quarterstaff" = "#exsanguination:netherite_repair"
+		"spartanweaponry:netherite_scythe" = "#exsanguination:netherite_repair"
+		"alexscavesdelight:uranium_knife" = "alexscaves:uranium_shard"
+		"alexscavesdelight:pearl_knife" = "alexscaves:pearl"
+		"alexscavesdelight:pure_darkness_knife" = "alexscaves:pure_darkness"
+		"alexscavesdelight:gingerbread_knife" = "alexscaves:gingerbread_crumbs"
+		"alexscavesdelight:candy_knife" = "alexscaves:candy_cane"
+		"alexscavesdelight:caramel_knife" = "alexscaves:caramel_cube"
+		"spelunkers_charm:mining_helmet" = "alexsmobs:mimicream"
+
+	#Set the values for armor.
+	[items.armor]
+
+		#Set the defense value of an armor item. May not work on modded armors, please file an issue if that's the case. Example (without the leading #):
+		#"minecraft:golden_chestplate" = 10
+		[items.armor.defense]
+			"outer_end:mint_crystal_helmet" = 2
+			"outer_end:mint_crystal_chestplate" = 6
+			"outer_end:mint_crystal_leggings" = 6
+			"outer_end:mint_crystal_boots" = 3
+			"outer_end:cobalt_crystal_helmet" = 3
+			"outer_end:cobalt_crystal_chestplate" = 7
+			"outer_end:cobalt_crystal_leggings" = 5
+			"outer_end:cobalt_crystal_boots" = 2
+			"outer_end:rose_crystal_helmet" = 2
+			"outer_end:rose_crystal_chestplate" = 4
+			"outer_end:rose_crystal_leggings" = 4
+			"outer_end:rose_crystal_boots" = 2
+
+		#Set the toughness value of an armor item. May not work on modded armors, please file an issue if that's the case. Example (without the leading #):
+		#"minecraft:golden_boots" = 1
+		[items.armor.toughness]
+			"outer_end:mint_crystal_helmet" = 2
+			"outer_end:mint_crystal_chestplate" = 5
+			"outer_end:mint_crystal_leggings" = 4
+			"outer_end:mint_crystal_boots" = 4
+			"outer_end:cobalt_crystal_helmet" = 4
+			"outer_end:cobalt_crystal_chestplate" = 5
+			"outer_end:cobalt_crystal_leggings" = 3
+			"outer_end:cobalt_crystal_boots" = 1
+			"outer_end:rose_crystal_helmet" = 3
+			"outer_end:rose_crystal_chestplate" = 5
+			"outer_end:rose_crystal_leggings" = 6
+			"outer_end:rose_crystal_boots" = 2
+
+		#Set the knockback resistance of an armor item. May not work on modded armors, please file an issue if that's the case. Example (without the leading #):
+		#"minecraft:golden_leggings" = 0.1
+		[items.armor.knockback_resistance]
+			test = 0.0
+
+	#Set the values for tools, swords and tridents.
+	[items.tools]
+
+		#Set the efficiency value of a tool. May not work on modded tools, please file an issue if that's the case. Also doesn't work on shears, due to internal problems with that. Example (without the leading #):
+		#"minecraft:iron_pickaxe" = 16
+		[items.tools.efficiency]
+			test = 0.0
+
+		#Set the attack damage of a tool or weapon. May not work on modded tools, please file an issue if that's the case. Example (without the leading #):
+		#"minecraft:netherite_sword" = 12
+		[items.tools.attack_damage]
+			test = 0.0
+
+		#Set the attack speed of a tool or weapon. May not work on modded tools, please file an issue if that's the case. Example (without the leading #):
+		#"minecraft:netherite_pickaxe" = 2.5
+		[items.tools.attack_speed]
+			test = 0.0
+
+#Set the values for enchantments.
+[enchantments]
+
+	#Set the rarity of an enchantment. Must be a valid rarity name. Example (without the leading #):
+	#"minecraft:mending" = "common"
+	#Default rarities (mods may add more!): "common", "uncommon", "rare", "very_rare"
+	[enchantments.rarity]
+		test = ""
+
+#Add or remove compostables.
+[composting]
+	#Whether to remove all predefined compostables or not.
+	clear = false
+
+	#Add new compostables here. Consists of an item or item regex and a float between 0 and 1, representing the chance that the composter level is increased. Example (without the leading #):
+	#"minecraft:netherite_scrap" = 0.8
+	[composting.composting]
+		"scalinghealth:bandages" = 0.4
+		"scalinghealth:heart_dust" = 0.6
+		"scalinghealth:heart_crystal" = 0.7
+		"luminous_nether:crimson_flesh_2" = 0.4
+		"luminous_nether:crimson_flesh" = 0.6
+		"luminous_monsters:frozen_flesh" = 0.2
+		"rootoffear:faded_oak_leaves" = 0.6
+		"scalinghealth:heart_crystal_shard" = 0.9
+
+#Set the values for axe stripping.
+[stripping]
+	#Whether to remove all predefined stripping values or not.
+	clear = false
+
+	#Add new stripping transitions here. Consists of a block or block regex and a block or block state, representing the output. Example (without the leading #):
+	#"minecraft:.*_planks" = "minecraft:infested_cobblestone"
+	[stripping.stripping]
+		test = ""
+
+#Set the values for shovel flattening.
+[flattening]
+	#Whether to remove all predefined flattening values or not.
+	clear = false
+
+	#Add new flattening transitions here. Consists of a block or block regex and a block or block state, representing the output. Example (without the leading #):
+	#"minecraft:.*_planks" = "minecraft:infested_cobblestone"
+	[flattening.flattening]
+		test = ""
+
+#Set the values for hoe tilling.
+[tilling]
+	#Whether to remove all predefined tilling values or not.
+	clear = false
+
+	#Add new tilling transitions here. Consists of a block or block regex and a block or block state, representing the output. Example (without the leading #):
+	#"minecraft:diamond_block" = "minecraft:emerald_block"
+	[tilling.tilling]
+		test = ""
+
+	#Whether a certain tilling transition needs air above to work. Consists of a block or block regex and a boolean value (true or false). If left unspecified, true is assumed. Example (without the leading #):
+	#"minecraft:diamond_block" = false
+	[tilling.needs_air]
+		test = false
+
+	#The item that is dropped when tilling. Consists of a block or block regex and an item id. If left unspecified, no item is dropped. Example (without the leading #):
+	#"minecraft:diamond_block" = "minecraft:iron_nugget"
+	[tilling.item_drop]
+		test = "minecraft:missingno"
+
+#Set the values for entities.
+[entities]
+
+	#Set the default attributes for entities. Format is "entityid" = "attributeid;value". Cannot add new attributes to mobs, can only alter those that are present by default anyway. Example (without the leading #):
+	#"minecraft:zombie" = "minecraft:generic.attack_damage;10"
+	[entities.default_attributes]
+		test = ""
+

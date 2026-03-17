@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:pet"
+  ],
+  "incompatible": [
+    "domesticationinnovation:psychic_wall",
+    "domesticationinnovation:chain_lightning",
+    "domesticationinnovation:intimidation",
+    "domesticationinnovation:herding",
+    "domesticationinnovation:shadow_hands",
+    "domesticationinnovation:vampire",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

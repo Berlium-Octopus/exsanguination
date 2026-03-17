@@ -1,0 +1,29 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"6": "kubejs:block/first_egg",
+		"particle": "kubejs:block/first_egg"
+	},
+	"elements": [
+		{
+			"name": "Outside",
+			"from": [4, 0, 4],
+			"to": [12, 14, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 7, 3.55903, 14], "texture": "#6"},
+				"east": {"uv": [0, 0, 3.55908, 7], "texture": "#6"},
+				"south": {"uv": [3.55908, 7, 7.10704, 14], "texture": "#6"},
+				"west": {"uv": [3.55908, 0, 7.10704, 7], "texture": "#6"},
+				"up": {"uv": [11.11111, 4.00001, 7.5743, 0], "texture": "#6", "cullface": "up"},
+				"down": {"uv": [11.1111, 8.05556, 7.59657, 4.01116], "texture": "#6", "cullface": "down"}
+			}
+		}
+	],
+	"display": {
+		"ground": {
+			"translation": [0, 2, 0],
+			"scale": [0.5, 0.5, 0.5]
+		}
+	}
+}

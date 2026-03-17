@@ -1,0 +1,13 @@
+{
+  "tags": ["rubble"],
+  "column": "'",
+  "mincount": 3,
+  "maxcount": 10,
+  "attempts": 8,
+  "inbuilding": true,
+  "upperblocks": {
+    "if_any": [
+      "#lcmt:solid_building_ceiling_or_floor_blocks"
+    ]
+  }
+}

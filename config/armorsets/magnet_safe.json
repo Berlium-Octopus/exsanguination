@@ -1,0 +1,50 @@
+{
+    "armorSetName": "Magnetman",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "alexscaves_torpedoes:magnetic_helmet",
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "alexscaves_torpedoes:ferrousslime_boots",
+        "mustBeEmpty": false
+    },
+    "offHand": {
+        "itemKey": "alexscaves:resistor_shield",
+        "mustBeEmpty": false
+    },
+    "additionalSetPieces": [
+        {
+            "itemKey": "alexscaves_torpedoes:pocket_magnet",
+            "mustBeEmpty": false
+        }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:melee_resistance",
+            "value": -0.35,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "457a9ec9-03cb-4e9c-9a33-e9b49dc0b9db"
+        },
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:ranged_resistance",
+            "value": 0.125,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "457a9ec9-03cb-4e9c-9a33-e9b49dc0b9db"
+        },
+        {
+            "type": "effect",
+            "name": "vinery:magnet",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

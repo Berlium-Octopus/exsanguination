@@ -1,0 +1,162 @@
+{
+    "schemaVersion": 2,
+    "items": [
+        {
+            "id": "minecraft:golden_sword",
+            "exclude": false
+        },
+        {
+            "id": "farmersdelight:golden_knife",
+            "exclude": false
+        },
+        {
+            "id": "minecraft:golden_pickaxe",
+            "exclude": false
+        },
+        {
+            "id": "minecraft:golden_axe",
+            "exclude": false
+        },
+        {
+            "id": "minecraft:golden_shovel",
+            "exclude": false
+        },
+        {
+            "id": "minecraft:golden_hoe",
+            "exclude": false
+        },
+        {
+            "id": "minecraft:golden_helmet",
+            "exclude": false
+        },
+        {
+            "id": "minecraft:golden_chestplate",
+            "exclude": false
+        },
+        {
+            "id": "minecraft:golden_leggings",
+            "exclude": false
+        },
+        {
+            "id": "minecraft:golden_boots",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_dagger",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_parrying_dagger",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_longsword",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_katana",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_saber",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_rapier",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_greatsword",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_battle_hammer",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_warhammer",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_spear",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_halberd",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_pike",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_lance",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_longbow",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_heavy_crossbow",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_throwing_knife",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_tomahawk",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_javelin",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_boomerang",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_battleaxe",
+            "exclude": false
+        },
+        {
+            "id": "golden_flanged_mace",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_glaive",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_quarterstaff",
+            "exclude": false
+        },
+        {
+            "id": "spartanshields:golden_tower_shield",
+            "exclude": false
+        },
+        {
+            "id": "spartanshields:golden_basic_shield",
+            "exclude": false
+        },
+        {
+            "id": "spartanweaponry:golden_flanged_mace",
+            "exclude": false
+        },
+        {
+            "id": "tide:golden_fishing_rod",
+            "exclude": false
+        },
+        {
+            "id": "luminous_nether:gold_cultist_axe",
+            "exclude": false
+        }
+    ],
+    "incompatible": [
+        "extra_enchantments:incompatibility_curse",
+        "exsanguination:awakening",
+        "minecraft:mending"
+    ]
+}

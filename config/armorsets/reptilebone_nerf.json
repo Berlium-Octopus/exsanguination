@@ -1,0 +1,51 @@
+{
+    "armorSetName": "nerfthebone",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "cataclysm:bone_reptile_helmet",
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "cataclysm:bone_reptile_chestplate",
+        "mustBeEmpty": false
+    },
+    "partialBonusRequiredAmount": 1,
+    "partialSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:stamina",
+            "value": -0.5,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "be46056a-ce8d-4c05-bc7b-21b4f60fd348"
+        },
+        {
+            "type": "effect",
+            "name": "potioncore:solid_core",
+            "value": 1,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "potioncore:vulnerable",
+            "value": 1,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:jump",
+            "value": 2,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "1b1fdf6c-cc3b-4111-ab0b-623735e97f44"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

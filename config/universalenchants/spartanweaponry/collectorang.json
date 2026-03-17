@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:spartanweaponry_boomerang"
+  ],
+  "incompatible": [
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

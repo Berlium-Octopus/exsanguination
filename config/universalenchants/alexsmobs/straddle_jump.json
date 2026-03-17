@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:straddleboard"
+  ],
+  "incompatible": [
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

@@ -1,0 +1,53 @@
+[
+  {
+       "on": "mob_killed",
+       "parameters": {
+           "mob": [
+               "minecraft:warden",
+               "deeperdarker:sculk_leech",
+               "deeperdarker:shattered",
+               "deeperdarker:shriek_worm",
+               "deeperdarker:sludge",
+               "minecraft:warden",
+               "sculkhorde:sculk_phantom_corpse",
+               "sculkhorde:sculk_creeper",
+               "sculkhorde:sculk_enderman",
+               "sculkhorde:sculk_hatcher",
+               "sculkhorde:sculk_ravager",
+               "sculkhorde:sculk_spitter",
+               "sculkhorde:sculk_spore_spewer",
+               "sculkhorde:sculk_vindicator",
+               "sculkhorde:sculk_witch",
+               "sculkhorde:sculk_soul_reaper"
+           ],
+           "player": false
+       },
+       "conditions": {
+           "random": 0.25
+       },
+       "spawn": {
+           "mob": "sculkhorde:sculk_mite",
+           "mindistance": 1,
+           "maxdistance": 2,
+           "mincount": 1,
+           "maxcount": 6,
+           "attempts": 35
+       }
+   },
+     {
+    "on": "mob_killed",
+    "parameters": {
+      "mob": "minecraft:phantom",
+      "player": false
+    },
+    "conditions": {
+      "random": 0.9
+    },
+    "spawn": {
+      "mob": "sculkhorde:sculk_phantom_corpse",
+      "maxdistance": 1,
+      "maxcount": 1,
+      "attempts": 30
+    }
+  }
+]

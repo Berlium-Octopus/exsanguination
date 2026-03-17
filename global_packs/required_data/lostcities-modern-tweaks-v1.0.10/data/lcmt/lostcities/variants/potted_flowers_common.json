@@ -1,0 +1,28 @@
+{
+  "blocks": [
+    {
+      "random": 20,
+      "block": "minecraft:potted_dandelion"
+    },
+    {
+      "random": 20,
+      "block": "minecraft:potted_cornflower"
+    },
+    {
+      "random": 20,
+      "block": "minecraft:potted_allium"
+    },
+    {
+      "random": 20,
+      "block": "minecraft:potted_azure_bluet"
+    },
+    {
+      "random": 20,
+      "block": "minecraft:potted_oxeye_daisy"
+    },
+    {
+      "random": 1000,
+      "block": "minecraft:potted_poppy"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"rotating": {
+			"loop": true,
+			"animation_length": 3,
+			"bones": {
+				"bone": {
+					"rotation": {
+						"vector": ["Math.sin(query.anim_time*90)*180", "Math.cos(query.anim_time*90)*180", "Math.sin(query.anim_time*90)*180"]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

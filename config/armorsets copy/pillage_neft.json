@@ -1,0 +1,50 @@
+{
+    "armorSetName": "cladded",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "biomemakeover:cladded_helmet",
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "biomemakeover:cladded_chestplate",
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "biomemakeover:cladded_leggings",
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "biomemakeover:cladded_boots",
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+      {
+          "type": "attribute",
+          "name": "forge:entity_reach",
+          "value": -1.5,
+          "interactionType": "self",
+          "attributeOperation": 1,
+          "modifierUUID": "cea5bd58-9b1a-407d-9921-9f013fca7e8c",
+          "description": "1100"
+      },
+      {
+          "type": "attribute",
+          "name": "puffish_attributes:melee_damage",
+          "value": -1.5,
+          "interactionType": "self",
+          "attributeOperation": 1,
+          "modifierUUID": "43ae29f8-7fa7-44b8-9639-989d1e9bb6c5",
+          "description": "1100"
+      },
+      {
+          "type": "attribute",
+          "name": "puffish_attributes:melee_resistance",
+          "value": -0.5,
+          "interactionType": "self",
+          "attributeOperation": 1,
+          "modifierUUID": "63465bc3-7743-4816-a8f8-9a8f9bf94c11",
+          "description": "1100"
+      }
+    ],
+    "hideGeneratedTooltip": true
+}

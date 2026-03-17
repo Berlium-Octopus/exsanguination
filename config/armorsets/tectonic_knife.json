@@ -1,0 +1,40 @@
+{
+    "armorSetName": "Tectonica_knife",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "alexscaves_torpedoes:tectonic_helmet",
+        "mustBeEmpty": false
+ 
+    },
+    "chest": {
+        "itemKey": "alexscaves_torpedoes:tectonic_chestplate",
+        "mustBeEmpty": false
+ 
+    },
+    "legs": {
+        "itemKey": "alexscaves_torpedoes:tectonic_leggings",
+        "mustBeEmpty": false
+ 
+    },
+    "boots": {
+        "itemKey": "alexscaves_torpedoes:tectonic_boots",
+        "mustBeEmpty": false
+ 
+    },
+    "mainHand": {
+        "itemKey": "alexscavesdelight:tectonic_knife",
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:melee_damage",
+            "value": 0.5,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "d6a32671-2b31-46d4-ae65-d9f833dfd1a1",
+            "description": "1240"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

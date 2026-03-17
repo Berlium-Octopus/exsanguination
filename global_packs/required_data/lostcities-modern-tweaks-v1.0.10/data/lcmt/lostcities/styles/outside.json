@@ -1,0 +1,110 @@
+{
+  "randompalettes": [
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:common"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:default"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:building_base/bricks_standard"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:glass/glass_full"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:glass/glass_side_variant_glass"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:lanterns"
+      },
+      {
+        "factor": 0.01,
+        "palette": "lcmt:soul_lanterns"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:flower_pot/potted_flowers_common"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:furniture/wooden_furniture_oak"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:furniture/wooden_furniture_spruce"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:workstation/workstations_default"
+      },
+      {
+        "factor": 0.5,
+        "palette": "lcmt:workstation/workstations_default_rubble"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:stuff/extra_stuff_standard"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:rubble/rubble_mossy_cobblestone"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:leaf/standard_leaves"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:banner/wall_banners_blue_simple"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:banner/wall_banners_green_simple"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:banner/wall_banners_pink_simple"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:banner/wall_banners_yellow_simple"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:banner/wall_banners_white_simple"
+      }
+    ]
+  ]
+}

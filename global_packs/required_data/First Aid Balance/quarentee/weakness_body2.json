@@ -1,0 +1,15 @@
+{
+  "type": "firstaid:constant",
+  "debuffSlot": "body",
+  "potionName": "potioncore:vulnerable",
+  "amplifierBoundaries": [
+    {
+      "healthFractionThreshold": 0.15,
+      "effectAmplifier": 1
+    },
+    {
+      "healthFractionThreshold": 0.35,
+      "effectAmplifier": 0
+    }
+  ]
+}

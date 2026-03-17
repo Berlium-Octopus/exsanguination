@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:trident",
+    "cataclysm:coral_spear",
+    "cataclysm:coral_bardiche",
+    "alexscaves:ortholance"
+  ],
+  "incompatible": [
+    "deeperdarker:sculk_smite",
+    "minecraft:smite",
+    "minecraft:bane_of_arthropods",
+    "minecraft:sharpness",
+    "minecraft:bane_of_arthropods",
+    "extra_enchantments:illagers_bane",
+    "extra_enchantments:fishermans_blade",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

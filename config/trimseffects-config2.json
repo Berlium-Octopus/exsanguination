@@ -1,0 +1,37 @@
+{
+    "effects": {
+    },
+    "matchingEffectLevels": [
+        1,
+        1,
+        1,
+        1
+    ],
+    "materialEffectLevels": {
+        "oreganized:lead_ingot": 1,
+        "alexscaves:sulfur_dust": 1,
+        "alexscaves:uranium": 1,
+        "alexscaves:bioluminesscence": 1,
+        "biomesoplenty:glowworm_silk": 1
+    },
+    "materialEffectLevelsMinimumMatching": 1,
+    "materialEffectOverrides": {
+        "biomesoplenty:glowworm_silk": [
+            "minecraft:glowing"
+        ],
+        "alexscaves:bioluminesscence": [
+            "minecraft:glowing"
+        ],
+        "oreganized:lead_ingot": [
+            "minecraft:slowness"
+        ],
+        "alexscaves:uranium": [
+            "alexscaves:irradiated"
+        ],
+        "alexscaves:sulfur_dust": [
+            "potioncore:rust"
+        ]
+    },
+    "applyToMobs": true,
+    "absorptionStunSeconds": 150
+}

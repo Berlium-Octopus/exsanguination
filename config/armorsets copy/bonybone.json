@@ -1,0 +1,58 @@
+{
+    "armorSetName": "bonnet2",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "alexscaves:primordial_helmet",
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "alexscaves:primordial_tunic",
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "alexscaves:primordial_pants",
+        "mustBeEmpty": false
+    },
+    "mainHand": {
+        "itemKey": "alexscaves:heavy_bone"
+    },
+    "offHand": {
+        "itemKey": "alexscaves:primitive_club",
+        "mixAndMatch": [
+            "alexscaves:limestone_spear"
+        ]
+    },
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "forge:block_reach",
+            "value": 0.5,
+            "interactionType": "self",
+            "attributeOperation": 0,
+            "modifierUUID": "dd7bd404-ea02-4c01-ac67-fb15bf3c6397"
+        },
+        {
+            "type": "attribute",
+            "name": "forge:entity_reach",
+            "value": 0.5,
+            "interactionType": "self",
+            "attributeOperation": 0,
+            "modifierUUID": "f66f3395-cb14-4c67-b83a-055cc99f4ef2"
+        },
+        {
+            "type": "attribute",
+            "name": "minecraft:generic.attack_damage",
+            "value": 5,
+            "modifierUUID": "4e032a86-9be9-4aec-81af-f97c0ca8ca34",
+            "attributeOperation": 0
+        },
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:ranged_damage",
+            "value": 0.25,
+            "modifierUUID": "049b5b15-5b22-4ca3-ad49-879f70a89f3c",
+            "attributeOperation": 1
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

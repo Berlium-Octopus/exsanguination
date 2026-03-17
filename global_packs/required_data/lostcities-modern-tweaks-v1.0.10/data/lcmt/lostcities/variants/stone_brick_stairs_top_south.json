@@ -1,0 +1,16 @@
+{
+  "blocks": [
+    {
+      "random": 30,
+      "block": "minecraft:mossy_stone_brick_stairs[facing=south,half=top,shape=straight]"
+    },
+    {
+      "random": 20,
+      "block": "minecraft:stone_stairs[facing=south,half=top,shape=straight]"
+    },
+    {
+      "random": 1000,
+      "block": "minecraft:stone_brick_stairs[facing=south,half=top,shape=straight]"
+    }
+  ]
+}

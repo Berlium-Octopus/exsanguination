@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:crossbow",
+    "supplementaries:slingshot",
+    "$minecraft:bow",
+    "deeperdarker:sonorous_staff",
+    "jeg:trumpet"
+  ],
+  "incompatible": [
+    "extra_enchantments:target_lock",
+    "extra_enchantments:levitational_shot",
+    "extra_enchantments:resonating_shot",
+    "extra_enchantments:shadow_shot",
+    "extra_enchantments:electrifying_shot",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

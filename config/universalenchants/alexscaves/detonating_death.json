@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:totem_of_possession"
+  ],
+  "incompatible": [
+    "extra_enchantments:incompatibility_curse",
+    "alexscaves:astral_transferring"
+  ]
+}

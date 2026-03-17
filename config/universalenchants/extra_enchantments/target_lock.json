@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:crossbow"
+  ],
+  "incompatible": [
+    "extra_enchantments:supercharge",
+    "minecraft:quick_charge",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

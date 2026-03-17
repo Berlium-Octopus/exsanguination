@@ -1,0 +1,52 @@
+{
+  "palette": [
+    {
+      "char": "u",
+      "block": "minecraft:white_concrete",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "R",
+      "block": "minecraft:gray_concrete",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "a",
+      "block": "minecraft:polished_andesite",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "-",
+      "block": "minecraft:smooth_stone_slab[type=bottom]",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "=",
+      "block": "minecraft:smooth_stone_slab[type=double]",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "p",
+      "block": "minecraft:light_blue_stained_glass_pane",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "w",
+      "blocks": [
+        {
+          "random": 80,
+          "block": "minecraft:andesite_wall"
+        },
+        {
+          "random": 10,
+          "block": "minecraft:mossy_stone_brick_wall"
+        },
+        {
+          "random": 1000,
+          "block": "minecraft:stone_brick_wall"
+        }
+      ],
+      "damaged": "minecraft:sculk_sensor"
+    }
+  ]
+}

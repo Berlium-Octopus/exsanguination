@@ -1,0 +1,37 @@
+{
+    "armorSetName": "engarde",
+    "performanceMode": false,
+    "head": {
+        "itemKey": "minecraft:iron_helmet",
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "minecraft:iron_chestplate",
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "minecraft:iron_leggings",
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "minecraft:iron_boots",
+        "mustBeEmpty": false
+    },
+    "offHand":
+        {
+            "itemKey": "spartanshields:iron_tower_shield",
+            "mixAndMatch": ["spartanshields:iron_basic_shield"]
+        },
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "potioncore:iron_skin",
+            "value": 1,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

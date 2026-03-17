@@ -1,0 +1,266 @@
+{
+  "randompalettes": [
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:common"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:default"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:building_base/bricks_standard"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:building_base/bricks_cyan"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:building_base/bricks_gray"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:building_base/bricks_silver"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:building_base/concrete_white"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:building_base/concrete_light_gray"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:building_base/concrete_light_blue_with_ice"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:building_base/terracotta_pink_with_white_accent"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:building_base/terracotta_yellow_with_black_accent"
+      },
+      {
+        "factor": 0.5,
+        "palette": "lcmt:building_base/bricks_deepslate"
+      },
+      {
+        "factor": 0.5,
+        "palette": "lcmt:building_base/bricks_blackstone"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:building_base/bricks_stone_andesite"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:glass/glass_full"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:glass/glass_pane"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:glass/glass_full_white"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:glass/glass_pane_white"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:glass/glass_full_blue"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:glass/glass_pane_blue"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:glass/glass_full_light_blue"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:glass/glass_pane_light_blue"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:glass/glass_full_gray"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:glass/glass_pane_gray"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:glass/glass_full_cyan"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:glass/glass_pane_cyan"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:glass/glass_side_variant_glass"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:glass/glass_side_variant_glass"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:glass/glass_side_variant_bricks"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:glass/glass_side_variant_quartz"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:lanterns"
+      },
+      {
+        "factor": 0.01,
+        "palette": "lcmt:soul_lanterns"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:flower_pot/potted_flowers_common"
+      },
+      {
+        "factor": 0.5,
+        "palette": "lcmt:flower_pot/potted_flowers_uncommon"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:flower_pot/potted_flowers_tulips"
+      },
+      {
+        "factor": 0.5,
+        "palette": "lcmt:flower_pot/potted_mushrooms"
+      },
+      {
+        "factor": 0.5,
+        "palette": "lcmt:flower_pot/potted_saplings"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:flower_pot/potted_plants_other"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:furniture/wooden_furniture_bamboo"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:furniture/wooden_furniture_birch"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:furniture/wooden_furniture_dark_oak"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:furniture/wooden_furniture_oak"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:furniture/wooden_furniture_spruce"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:workstation/workstations_default"
+      },
+      {
+        "factor": 0.5,
+        "palette": "lcmt:workstation/workstations_default_rubble"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:workstation/workstations_blacksmith"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:workstation/workstations_cook_snowy"
+      },
+      {
+        "factor": 0.8,
+        "palette": "lcmt:workstation/workstations_librarian"
+      },
+      {
+        "factor": 0.5,
+        "palette": "lcmt:workstation/workstations_musician"
+      },
+      {
+        "factor": 0.8,
+        "palette": "lcmt:workstation/workstations_architect"
+      },
+      {
+        "factor": 0.8,
+        "palette": "lcmt:workstation/workstations_apothecary_snowy"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:stuff/extra_stuff_snowy"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:rubble/rubble_snow"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:leaf/cold_leaves"
+      }
+    ],
+    [
+      {
+        "factor": 1.0,
+        "palette": "lcmt:banner/wall_banners_blue_simple"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:banner/wall_banners_green_simple"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:banner/wall_banners_pink_simple"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:banner/wall_banners_yellow_simple"
+      },
+      {
+        "factor": 1.0,
+        "palette": "lcmt:banner/wall_banners_white_simple"
+      }
+    ]
+  ]
+}

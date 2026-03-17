@@ -1,0 +1,32 @@
+{
+  "blocks": [
+    {
+      "random": 24,
+      "block": "minecraft:cracked_deepslate_tiles"
+    },
+    {
+      "random": 16,
+      "block": "minecraft:deepslate_tile_slab[type=bottom]"
+    },
+    {
+      "random": 16,
+      "block": "minecraft:deepslate_tile_stairs[facing=north,half=bottom]"
+    },
+    {
+      "random": 16,
+      "block": "minecraft:cobbled_deepslate"
+    },
+    {
+      "random": 16,
+      "block": "minecraft:deepslate_bricks"
+    },
+    {
+      "random": 8,
+      "block": "minecraft:smooth_basalt"
+    },
+    {
+      "random": 1000,
+      "block": "minecraft:deepslate_tiles"
+    }
+  ]
+}

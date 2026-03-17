@@ -1,0 +1,201 @@
+{
+  "palette": [
+    {
+      "char": "k",
+      "block": "minecraft:red_wool"
+    },
+    {
+      "char": "⊣",
+      "block": "minecraft:bamboo_hanging_sign[attached=false,rotation=12,waterlogged=false]",
+      "tag": {
+        "is_waxed": false,
+        "front_text": {
+          "has_glowing_text": false,
+          "color": "black",
+          "messages": [
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}"
+          ]
+        },
+        "back_text": {
+          "has_glowing_text": false,
+          "color": "black",
+          "messages": [
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}"
+          ]
+        }
+      },
+      "damaged": "minecraft:chain[axis=y,waterlogged=false]"
+    },
+    {
+      "char": "⊥",
+      "block": "minecraft:bamboo_hanging_sign[attached=false,rotation=0,waterlogged=false]",
+      "tag": {
+        "is_waxed": false,
+        "front_text": {
+          "has_glowing_text": false,
+          "color": "black",
+          "messages": [
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}"
+          ]
+        },
+        "back_text": {
+          "has_glowing_text": false,
+          "color": "black",
+          "messages": [
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}"
+          ]
+        }
+      },
+      "damaged": "minecraft:chain[axis=y,waterlogged=false]"
+    },
+    {
+      "char": "⊢",
+      "block": "minecraft:bamboo_hanging_sign[attached=false,rotation=4,waterlogged=false]",
+      "tag": {
+        "is_waxed": false,
+        "front_text": {
+          "has_glowing_text": false,
+          "color": "black",
+          "messages": [
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}"
+          ]
+        },
+        "back_text": {
+          "has_glowing_text": false,
+          "color": "black",
+          "messages": [
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}"
+          ]
+        }
+      },
+      "damaged": "minecraft:chain[axis=y,waterlogged=false]"
+    },
+    {
+      "char": "⊤",
+      "block": "minecraft:bamboo_hanging_sign[attached=false,rotation=8,waterlogged=false]",
+      "tag": {
+        "is_waxed": false,
+        "front_text": {
+          "has_glowing_text": false,
+          "color": "black",
+          "messages": [
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}"
+          ]
+        },
+        "back_text": {
+          "has_glowing_text": false,
+          "color": "black",
+          "messages": [
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}",
+            "{\"text\":\"\"}"
+          ]
+        }
+      },
+      "damaged": "minecraft:chain[axis=y,waterlogged=false]"
+    },
+    {
+      "char": "n",
+      "block": "minecraft:lectern[facing=west,has_book=true,powered=false]",
+      "tag": {
+        "Book": {
+          "id": "minecraft:writable_book",
+          "Count": 1
+        },
+        "Page": 0
+      }
+    },
+    {
+      "char": "m",
+      "block": "minecraft:lectern[facing=east,has_book=true,powered=false]",
+      "tag": {
+        "Book": {
+          "id": "minecraft:writable_book",
+          "Count": 1
+        },
+        "Page": 0
+      }
+    },
+    {
+      "char": "I",
+      "block": "minecraft:chiseled_bookshelf[facing=north,slot_0_occupied=false,slot_1_occupied=false,slot_2_occupied=false,slot_3_occupied=false,slot_4_occupied=false,slot_5_occupied=false]",
+      "tag": {
+        "last_interacted_slot": 0,
+        "Items": []
+      },
+      "damaged": "minecraft:oak_fence"
+    },
+    {
+      "char": "H",
+      "block": "minecraft:chiseled_bookshelf[facing=south,slot_0_occupied=false,slot_1_occupied=false,slot_2_occupied=false,slot_3_occupied=false,slot_4_occupied=false,slot_5_occupied=false]",
+      "tag": {
+        "last_interacted_slot": 0,
+        "Items": []
+      },
+      "damaged": "minecraft:oak_fence"
+    },
+    {
+      "char": "Z",
+      "blocks": [
+        {
+          "random": 40,
+          "block": "minecraft:cyan_stained_glass_pane"
+        },
+        {
+          "random": 40,
+          "block": "minecraft:blue_stained_glass_pane"
+        },
+        {
+          "random": 1000,
+          "block": "minecraft:light_blue_stained_glass_pane"
+        }
+      ],
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "r",
+      "block": "minecraft:quartz_stairs[facing=east,half=top,shape=straight,waterlogged=false]",
+      "damaged": "minecraft:quartz_slab[type=bottom,waterlogged=false]"
+    },
+    {
+      "char": "O",
+      "block": "minecraft:tripwire_hook[attached=false,facing=north,powered=false]"
+    },
+    {
+      "char": "N",
+      "block": "minecraft:iron_trapdoor[facing=north,half=bottom,open=false,powered=false,waterlogged=false]"
+    },
+    {
+      "char": "s",
+      "block": "minecraft:quartz_stairs[facing=west,half=top,shape=straight,waterlogged=false]",
+      "damaged": "minecraft:quartz_slab[type=bottom,waterlogged=false]"
+    },
+    {
+      "char": "?",
+      "block": "minecraft:chest[facing=north,type=single,waterlogged=false]",
+      "loot": "lcmt:library_loot"
+    }
+  ]
+}

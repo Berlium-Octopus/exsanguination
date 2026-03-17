@@ -1,0 +1,45 @@
+{
+    "armorSetName": "Golden Damage",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "minecraft:golden_helmet",
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "minecraft:golden_chestplate",
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "minecraft:golden_leggings",
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "minecraft:golden_boots",
+        "mustBeEmpty": false
+    },
+    "mainHand": {
+        "itemKey": "minecraft:golden_sword",
+        "mixAndMatch": [
+            "spartanweaponry:golden_dagger",
+            "spartanweaponry:golden_boomerang",
+            "spartanweaponry:golden_throwing_knife",
+            "spartanweaponry:golden_tomahawk",
+            "spartanweaponry:golden_javelin"
+        ],
+        "mustBeEmpty": false
+
+    },
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:ranged_damage",
+            "value": 1.2,
+            "interactionType": "self",
+            "interactionDuration": 600,
+            "attributeOperation": 1,
+            "modifierUUID": "ac740fd4-e6b5-4c1f-84f2-cea599294d26",
+            "description": "1100"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

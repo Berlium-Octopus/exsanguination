@@ -1,0 +1,61 @@
+{
+    "armorSetName": "cladded_A",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "biomemakeover:cladded_helmet",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "biomemakeover:cladded_chestplate",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "biomemakeover:cladded_leggings",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "biomemakeover:cladded_boots",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "minecraft:generic.max_health",
+            "value": 18,
+            "interactionType": "self",
+            "attributeOperation": 0,
+            "modifierUUID": "bc3a30e5-e573-45bf-be24-932c24259ace",
+            "description": "1100"
+        },
+        {
+            "type": "attribute",
+            "name": "jeg:generic.gun_damage",
+            "value": 0.5,
+            "interactionType": "self",
+            "attributeOperation": 0,
+            "modifierUUID": "cf3e045d-4a4c-45a2-abf9-6f853210f0e5",
+            "description": "1100"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

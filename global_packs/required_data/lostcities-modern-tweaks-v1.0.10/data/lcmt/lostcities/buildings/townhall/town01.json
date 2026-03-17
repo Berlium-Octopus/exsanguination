@@ -1,0 +1,88 @@
+{
+  "filler": "#",
+  "rubble": "}",
+  "allowFillers": false,
+  "parts": [
+    {
+      "cellar": true,
+      "part": "lcmt:town/town01_c"
+    },
+    {
+      "top": false,
+      "ground": true,
+      "cellar": false,
+      "part": "lcmt:town/town01_0"
+    },
+    {
+      "top": false,
+      "ground": false,
+      "cellar": false,
+      "part": "lcmt:town/town01_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_empty"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_antennas_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_small_building_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_large_garden_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_solar_panels_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_ac_units_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_chimneys_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top_center_greenhouse_1"
+    }
+  ],
+  "parts2": [
+    {
+      "top": false,
+      "part": "lcmt:town/town_in_empty"
+    },
+    {
+      "top": false,
+      "part": "lcmt:town/town01_in_hearing_room_1"
+    },
+    {
+      "top": false,
+      "part": "lcmt:town/town01_in_office_1"
+    },
+    {
+      "top": false,
+      "part": "lcmt:town/town01_in_archive_1"
+    },
+    {
+      "top": false,
+      "ground": false,
+      "part": "lcmt:town/town01_in_executive_office_1"
+    },
+    {
+      "top": false,
+      "ground": false,
+      "part": "lcmt:town/town01_in_vault_1"
+    },
+    {
+      "top": false,
+      "ground": false,
+      "part": "lcmt:town/town01_in_vault_1_no_loot"
+    }
+  ]
+}

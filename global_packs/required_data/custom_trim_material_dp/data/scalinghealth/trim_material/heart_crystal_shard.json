@@ -1,0 +1,10 @@
+{
+  "asset_name": "heart_crystal",
+  "description": {
+    "color": "#FFF07C",
+    "translate": "trim_material.scalinghealth.heart_crystal"
+  },
+
+  "ingredient": "scalinghealth:heart_crystal_shard",
+  "item_model_index": 0.55
+}

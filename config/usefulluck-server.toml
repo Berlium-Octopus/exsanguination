@@ -1,0 +1,3 @@
+#A list of items to blacklist from being distributed by luck.
+blacklisted_items = ["map", "ars_additions:exploration_warp_scroll", "ars_nouveau:exploration_scroll", "the_bumblezone:honey_compass"]
+

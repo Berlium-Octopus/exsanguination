@@ -1,0 +1,123 @@
+{
+  "filler": "#",
+  "rubble": "}",
+  "mincellars": 1,
+  "maxcellars": 2,
+  "minfloors": 2,
+  "maxfloors": 3,
+  "allowFillers": false,
+  "preferslonely": 0.9,
+  "parts": [
+    {
+      "cellar": true,
+      "part": "lcmt:factory/factory_underground_10"
+    },
+    {
+      "cellar": true,
+      "part": "lcmt:factory/factory_underground_10_walled"
+    },
+    {
+      "floor": 0,
+      "part": "lcmt:factory/factory_0_10"
+    },
+    {
+      "top": false,
+      "range": "1,100",
+      "part": "lcmt:factory/factory_1_10"
+    },
+    {
+      "top": true,
+      "part": "lcmt:factory/factory_top_10"
+    }
+  ],
+  "parts2": [
+    {
+      "cellar": true,
+      "part": "lcmt:factory/factory_in_empty"
+    },
+    {
+      "cellar": true,
+      "part": "lcmt:factory/factory_in_underground_chains"
+    },
+    {
+      "cellar": true,
+      "part": "lcmt:factory/factory_in_underground_pillars"
+    },
+    {
+      "cellar": true,
+      "part": "lcmt:factory/factory_in_underground_pillars_fenced_ns"
+    },
+    {
+      "cellar": true,
+      "part": "lcmt:factory/factory_in_underground_pillars_fenced_we"
+    },
+    {
+      "cellar": true,
+      "part": "lcmt:factory/factory_in_underground_pillars_fenced_all"
+    },
+    {
+      "cellar": true,
+      "part": "lcmt:factory/factory_in_underground_mini_storage_room_1"
+    },
+    {
+      "cellar": true,
+      "part": "lcmt:factory/factory_in_underground_mini_storage_room_2"
+    },
+    {
+      "cellar": true,
+      "part": "lcmt:factory/factory_in_underground_pipes_1"
+    },
+    {
+      "cellar": true,
+      "part": "lcmt:factory/factory_in_underground_pipes_2"
+    },
+    {
+      "cellar": true,
+      "part": "lcmt:factory/factory_in_underground_pipes_3"
+    },
+    {
+      "cellar": true,
+      "part": "lcmt:factory/factory_in_underground_pipes_4"
+    },
+    {
+      "cellar": true,
+      "part": "lcmt:factory/factory_in_underground_pipes_pump_1"
+    },
+    {
+      "cellar": true,
+      "part": "lcmt:factory/factory_in_underground_pipes_pump_2"
+    },
+    {
+      "floor": 0,
+      "part": "lcmt:factory/factory_in_empty"
+    },
+    {
+      "floor": 0,
+      "part": "lcmt:factory/factory_in_reception_north"
+    },
+    {
+      "floor": 0,
+      "part": "lcmt:factory/factory_in_checkpoint_north"
+    },
+    {
+      "top": true,
+      "part": "lcmt:factory/factory_top_deco_empty"
+    },
+    {
+      "top": true,
+      "part": "lcmt:factory/factory_top_deco_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:factory/factory_top_deco_2"
+    },
+    {
+      "top": true,
+      "part": "lcmt:factory/factory_top_deco_3"
+    },
+    {
+      "top": true,
+      "part": "lcmt:factory/factory_top_deco_4"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+	"providers": [
+		{
+			"type": "bitmap",
+			"file": "minecraft:font/primordial_caves.png",
+			"ascent": 4,
+			"height": 17,
+			"chars": [ "\u2C30" ]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:font/toxic_caves.png",
+			"ascent": 4,
+			"height": 24,
+			"chars": [ "\u2C31" ]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:font/magnetic_caves.png",
+			"ascent": 4,
+			"height": 17,
+			"chars": [ "\u2C32" ]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:font/abyssal_chasm.png",
+			"ascent": 4,
+			"height": 20,
+			"chars": [ "\u2C33" ]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:font/forlorn_hollows.png",
+			"ascent": 4,
+			"height": 19,
+			"chars": [ "\u2C34" ]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:font/candy_cavity.png",
+			"ascent": 4,
+			"height": 22,
+			"chars": [ "\u2C35" ]
+		}
+	]
+}

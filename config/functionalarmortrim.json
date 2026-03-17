@@ -1,0 +1,403 @@
+{
+    "minecraft:iron_ingot": [
+        {
+            "attribute": "minecraft:generic.armor",
+            "operation": "addition",
+            "amount": 2
+        }
+    ],
+    "minecraft:diamond": [
+        {
+            "attribute": "minecraft:generic.armor",
+            "operation": "addition",
+            "amount": 1
+        },
+        {
+            "attribute": "minecraft:generic.armor_toughness",
+            "operation": "addition",
+            "amount": 2
+        }
+    ],
+    "minecraft:netherite_ingot": [
+        {
+            "attribute": "minecraft:generic.armor",
+            "operation": "addition",
+            "amount": 4
+        },
+        {
+            "attribute": "minecraft:generic.armor_toughness",
+            "operation": "addition",
+            "amount": 4
+        },
+        {
+            "attribute": "functionalarmortrim:fire_resistance",
+            "operation": "addition",
+            "amount": 0.05
+        }
+    ],
+    "minecraft:redstone": [
+        {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "multiply_total",
+            "amount": 0.05
+        },
+        {
+            "attribute": "forge:step_height_addition",
+            "operation": "addition",
+            "amount": 0.025
+        }
+    ],
+    "minecraft:copper_ingot": [
+        {
+            "attribute": "forge:swim_speed",
+            "operation": "multiply_total",
+            "amount": 0.05
+        },       
+        {
+            "attribute": "puffish_attributes:mining_speed",
+            "operation": "multiply_total",
+            "amount": 0.125
+        }
+    ],
+    "minecraft:amethyst_shard": [
+        {
+            "attribute": "functionalarmortrim:night_vision",
+            "operation": "addition",
+            "amount": 0.25
+        }
+    ],
+    "minecraft:lapis_lazuli": [
+        {
+            "attribute": "functionalarmortrim:experience_boost",
+            "operation": "multiply_total",
+            "amount": 0.05
+        },
+        {
+            "attribute": "potioncore:magic_shield",
+            "operation": "multiply_total",
+            "amount": 0.05
+        }
+    ],
+    "minecraft:quartz": [
+        {
+            "attribute": "functionalarmortrim:thorns",
+            "operation": "addition",
+            "amount": 0.05
+        }
+    ],
+    "minecraft:emerald": [
+        {
+            "attribute": "functionalarmortrim:gossip_boost",
+            "operation": "multiply_total",
+            "amount": 0.05
+        }
+    ],
+    "scalinghealth:heart_crystal_shard": [
+        {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "amount": 10
+        },
+        {
+            "attribute": "exsanguination:flamability",
+            "operation": "multiply_total",
+            "amount": 0.125
+        }
+    ],
+    "alexscaves:amber_curiosity": [
+        {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "amount": 3.5
+        },
+        {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "addition",
+            "amount": -0.01
+        }
+    ],
+    "alexscaves:tectonic_shard": [
+        {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "addition",
+            "amount": -0.015
+        },
+        {
+            "attribute": "minecraft:generic.armor",
+            "operation": "addition",
+            "amount": 6
+        },
+        {
+            "attribute": "functionalarmortrim:fire_resistance",
+            "operation": "addition",
+            "amount": 0.025
+        },
+        {
+            "attribute": "minecraft:generic.knockback_resistance",
+            "operation": "addition",
+            "amount": 0.025
+        }
+    ],
+    "alexscaves:sulfur_dust": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "operation": "multiply_total",
+            "amount": 0.05
+        },
+                {
+            "attribute": "minecraft:generic.armor",
+            "operation": "multiply_total",
+            "amount": -0.05
+        }
+    ],
+    "alexscaves:pearl": [
+        {
+            "attribute": "minecraft:generic.luck",
+            "operation": "multiply_total",
+            "amount": 0.125
+        }
+    ],
+    "cataclysm:black_steel_ingot": [
+        {
+            "attribute": "potioncore:magic_damage",
+            "operation": "multiply_total",
+            "amount": 0.05
+        },
+        {
+            "attribute": "potioncore:magic_shield",
+            "operation": "multiply_total",
+            "amount": 0.15
+        }
+    ],
+    "alexscaves:uranium": [
+        {
+            "attribute": "potioncore:damage_resistance",
+            "operation": "addition",
+            "amount": 0.015
+        }
+    ],
+    "alexscaves:azure_neodymium_ingot": [
+        {
+            "attribute": "forge:entity_gravity",
+            "operation": "addition",
+            "amount": -0.01
+        },
+        {
+            "attribute": "puffish_attributes:knockback",
+            "operation": "multiply_total",
+            "amount": 0.05
+        },
+        {
+            "attribute": "forge:entity_reach",
+            "operation": "addition",
+            "amount": 0.15
+        },
+        {
+            "attribute": "forge:block_reach",
+            "operation": "addition",
+            "amount": 0.15
+        }
+    ],
+    "alexscaves:scarlet_neodymium_ingot": [
+        {
+            "attribute": "forge:entity_gravity",
+            "operation": "addition",
+            "amount": 0.01
+        },
+        {
+            "attribute": "puffish_attributes:mining_speed",
+            "operation": "multiply_total",
+            "amount": 0.015
+        },
+        {
+            "attribute": "minecraft:generic.attack_speed",
+            "operation": "multiply_total",
+            "amount": 0.015
+        }
+    ],
+    "alexscaves:occult_gem": [
+        {
+            "attribute": "puffish_attributes:healing",
+            "operation": "multiply_total",
+            "amount": -1
+        },
+        {
+            "attribute": "puffish_attributes:life_steal",
+            "operation": "multiply_total",
+            "amount": 1.1
+        },
+        {
+            "attribute": "minecraft:generic.flying_speed",
+            "operation": "multiply_total",
+            "amount": 0.15
+        }
+    ],
+    "alexscaves:pure_darkness": [
+        {
+            "attribute": "puffish_attributes:stealth",
+            "operation": "addition",
+            "amount": 0.15
+        },
+        {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "multiply_total",
+            "amount": -0.05
+        },
+        {
+            "attribute": "puffish_attributes:fall_reduction",
+            "operation": "multiply_total",
+            "amount": 0.05
+        }
+    ],
+    "biomesoplenty:rose_quartz_chunk": [
+        {
+            "attribute": "puffish_attributes:ranged_damage",
+            "operation": "multiply_total",
+            "amount": 0.05
+        },
+        {
+            "attribute": "puffish_attributes:ranged_resistance",
+            "operation": "multiply_total",
+            "amount": -0.05
+        },
+        {
+            "attribute": "functionalarmortrim:thorns",
+            "operation": "addition",
+            "amount": 0.05
+        }
+    ],
+    "alexscaves:bioluminesscence": [
+        {
+            "attribute": "forge:swim_speed",
+            "operation": "multiply_total",
+            "amount": 0.05
+        }
+    ],
+    "oreganized:electrum_ingot": [
+        {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "multiply_total",
+            "amount": 0.05
+        },
+        {
+            "attribute": "oreganized:kinetic_damage",
+            "operation": "multiply_total",
+            "amount": 0.5
+        }
+    ],
+    "oreganized:silver_ingot": [
+        {
+            "attribute": "oreganized:undead_resistance",
+            "operation": "addition",
+            "amount": 0.05
+        },
+        {
+            "attribute": "forge:swim_speed",
+            "operation": "multiply_total",
+            "amount": 0.5
+        }
+    ],
+    "alexscaves:radiant_essence": [
+        {
+            "attribute": "puffish_attributes:repair_cost",
+            "operation": "multiply_total",
+            "amount": -0.125
+        }
+    ],
+    "alexscaves:candy_cane": [
+        {
+            "attribute": "puffish_attributes:protection_shred",
+            "operation": "multiply_total",
+            "amount": 0.025
+        },
+        {
+            "attribute": "puffish_attributes:toughness_shred",
+            "operation": "multiply_total",
+            "amount": 0.025
+        },
+        {
+            "attribute": "puffish_attributes:armor_shred",
+            "operation": "multiply_total",
+            "amount": 0.025
+        },
+        {
+            "attribute": "puffish_attributes:stamina",
+            "operation": "multiply_total",
+            "amount": -0.15
+        }
+    ],
+    "cataclysm:ancient_metal_ingot": [
+        {
+            "attribute": "potioncore:projectile_damage",
+            "operation": "multiply_total",
+            "amount": 0.05
+        }
+    ],
+    "cataclysm:witherite_ingot": [
+        {
+            "attribute": "minecraft:generic.attack_knockback",
+            "operation": "multiply_total",
+            "amount": 0.05
+        },
+        {
+            "attribute": "puffish_attributes:ranged_damage",
+            "operation": "addition",
+            "amount": 0.15
+        }
+
+    ],
+    "oreganized:lead_ingot": [
+        {
+            "attribute": "jeg:generic.gun_damage",
+            "operation": "addition",
+            "amount": 0.05
+        },
+        {
+            "attribute": "puffish_attributes:sprinting_speed",
+            "operation": "addition",
+            "amount": -0.15
+        }
+
+    ],
+    "cataclysm:ignitium_ingot": [
+        {
+            "attribute": "puffish_attributes:resistance",
+            "operation": "multiply_total",
+            "amount": 0.015
+        },
+        {
+            "attribute": "puffish_attributes:repair_cost",
+            "operation": "multiply_total",
+            "amount": 0.1
+        },
+        {
+            "attribute": "puffish_attributes:stamina",
+            "operation": "multiply_total",
+            "amount": -0.05
+        }
+    ],
+    "cataclysm:cursium_ingot": [
+        {
+            "attribute": "puffish_attributes:stamina",
+            "operation": "multiply_total",
+            "amount": 0.05
+        },
+        {
+            "attribute": "puffish_attributes:healing",
+            "operation": "multiply_total",
+            "amount": 0.05
+        }
+    ],
+    "scalinghealth:power_crystal": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "operation": "multiply_total",
+            "amount": 0.15
+        },
+        {
+            "attribute": "minecraft:generic.attack_speed",
+            "operation": "multiply_total",
+            "amount": 0.15
+        }
+    ]
+}

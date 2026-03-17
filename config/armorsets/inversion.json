@@ -1,0 +1,22 @@
+{
+    "armorSetName": "heartinvert",
+    "performanceMode": true,
+    "additionalSetPieces": [
+        {
+          "itemKey": "alexscaves:immortal_embryo",
+            "mustBeEmpty": false
+        }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "potioncore:drown",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 6500,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

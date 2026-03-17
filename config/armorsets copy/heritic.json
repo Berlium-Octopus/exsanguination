@@ -1,0 +1,49 @@
+{
+    "armorSetName": "horus",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "alexscaves:hood_of_darkness",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "chest": {
+        "itemKey": "alexscaves:cloak_of_darkness",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "additionalSetPieces": [
+        {
+            "itemKey": "alexscaves:totem_of_possession",
+            "mustBeEmpty": false
+        }
+    ],
+    "fullSetBonuses": [
+      {
+          "type": "effect",
+          "name": "minecraft:speed",
+          "value": 1,
+          "interactionType": "self",
+          "interactionDuration": 100,
+          "hideBonusDescription": true,
+          "onlyImmuneToNewEffects": false
+      },
+      {
+          "type": "effect",
+          "name": "minecraft:strength",
+          "value": 0.5,
+          "interactionType": "self",
+          "interactionDuration": 100,
+          "hideBonusDescription": true,
+          "onlyImmuneToNewEffects": false
+      }
+    ],
+    "hideGeneratedTooltip": true
+}

@@ -1,0 +1,19 @@
+{
+    "type": "firstaid:static",
+    "damageTypes": [
+        "drown",
+        "starve"
+    ],
+    "algorithm": {
+        "type": "firstaid:standard",
+        "partMap": {
+            "head": [
+                "head"
+            ],
+            "chest": [
+                "body"
+            ]
+        },
+        "tryNoKill": true
+    }
+}

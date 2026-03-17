@@ -1,0 +1,66 @@
+{
+  "filler": "#",
+  "rubble": "}",
+  "parts": [
+    {
+      "top": false,
+      "part": "lcmt:building2/building2_1"
+    },
+    {
+      "top": false,
+      "part": "lcmt:building2/building2_2"
+    },
+    {
+      "top": false,
+      "part": "lcmt:building2/building2_3"
+    },
+    {
+      "top": false,
+      "part": "lcmt:building2/building2_4"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_2"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_3"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_4"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_5"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_ex_1"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_ex_2"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_ex_3"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_ex_4"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_ex_5"
+    },
+    {
+      "top": true,
+      "part": "lcmt:shared/top/top1x1_ex_medium_exit"
+    }
+  ]
+}

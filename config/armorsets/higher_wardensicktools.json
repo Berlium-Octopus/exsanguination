@@ -1,0 +1,23 @@
+{
+    "armorSetName": "Wardensick",
+    "performanceMode": true,
+    "mainHand": {
+        "itemKey": "jeg:subsonic_rifle",
+        "mixAndMatch": [
+          "jeg:hypersonic_cannon",
+          "jeg:supersonic_shotgun"
+        ]
+    },
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "sculkhorde:sculk_lure",
+            "value": 2,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:crossbow",
+    "$minecraft:trident",
+    "$minecraft:bow"
+  ],
+  "incompatible": [
+    "extra_enchantments:resonating_shot",
+    "extra_enchantments:supercharge",
+    "minecraft:efficiency",
+    "extra_enchantments:shadow_shot",
+    "extra_enchantments:electrifying_shot",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

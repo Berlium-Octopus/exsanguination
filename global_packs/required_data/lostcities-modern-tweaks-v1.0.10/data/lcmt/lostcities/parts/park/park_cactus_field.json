@@ -1,0 +1,89 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "G",
+        "block": "minecraft:sand"
+      },
+      {
+        "char": "q",
+        "blocks": [
+          {
+            "random": 32,
+            "block": "minecraft:dead_bush"
+          },
+          {
+            "random": 1000,
+            "block": "minecraft:cactus"
+          }
+        ]
+      },
+      {
+        "char": "_",
+        "variant": "lcmt:cut_sandstone_slab_bottom_textured"
+      },
+      {
+        "char": "u",
+        "variant": "lcmt:cut_sandstone_textured"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "                ",
+      " ______________ ",
+      " _SSSSSSSSSSSS_ ",
+      " _SGGGGGGGGGGS_ ",
+      " _SGGGGGGGGGGS_ ",
+      " _SGGGGGGGGGGS_ ",
+      " _SGGGGGGGGGGS_ ",
+      " _SGGGGGGGGGGS_ ",
+      " _SGGGGGGGGGGS_ ",
+      " _SGGGGGGGGGGS_ ",
+      " _SGGGGGGGGGGS_ ",
+      " _SGGGGGGGGGGS_ ",
+      " _SGGGGGGGGGGS_ ",
+      " _SSSSSSSSSSSS_ ",
+      " ______________ ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "          q q   ",
+      "    q      q    ",
+      "     q  _       ",
+      "       _u_      ",
+      "    q  _uu  q   ",
+      "      _uu_      ",
+      "       __   q   ",
+      "          q     ",
+      "   q   q        ",
+      "           q    ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "        _       ",
+      "        e       ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ]
+  ]
+}

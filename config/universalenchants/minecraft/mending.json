@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:breakable",
+      {
+        "id": "minecraft:golden_sword",
+        "exclude": true
+      },
+      {
+        "id": "farmersdelight:golden_knife",
+        "exclude": true
+      },
+      {
+        "id": "minecraft:golden_pickaxe",
+        "exclude": true
+      },
+      {
+        "id": "minecraft:golden_axe",
+        "exclude": true
+      },
+      {
+        "id": "minecraft:golden_shovel",
+        "exclude": true
+      },
+      {
+        "id": "minecraft:golden_hoe",
+        "exclude": true
+      },
+      {
+        "id": "minecraft:golden_helmet",
+        "exclude": true
+      },
+      {
+        "id": "minecraft:golden_chestplate",
+        "exclude": true
+      },
+      {
+        "id": "minecraft:golden_leggings",
+        "exclude": true
+      },
+      {
+        "id": "minecraft:golden_boots",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_dagger",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_parrying_dagger",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_longsword",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_katana",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_saber",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_rapier",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_greatsword",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_battle_hammer",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_warhammer",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_spear",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_halberd",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_pike",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_lance",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_longbow",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_heavy_crossbow",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_throwing_knife",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_tomahawk",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_javelin",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_boomerang",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_battleaxe",
+        "exclude": true
+      },
+      {
+        "id": "golden_flanged_mace",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_glaive",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_quarterstaff",
+        "exclude": true
+      },
+      {
+        "id": "spartanshields:golden_tower_shield",
+        "exclude": true
+      },
+      {
+        "id": "spartanshields:golden_basic_shield",
+        "exclude": true
+      },
+      {
+        "id": "spartanweaponry:golden_flanged_mace",
+        "exclude": true
+      },
+      {
+        "id": "tide:golden_fishing_rod",
+        "exclude": true
+      },
+      {
+        "id": "luminous_nether:gold_cultist_axe",
+        "exclude": true
+      }
+  ],
+  "incompatible": [
+    "alexscaves:taxing_bellow",
+    "luminous_nether:soul_cleave",
+    "minecraft:infinity",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

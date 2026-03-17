@@ -1,0 +1,15 @@
+{
+  "type": "firstaid:on_hit",
+  "debuffSlot": "head",
+  "potionName": "alexscaves:stunned",
+  "timeBoundaries": [
+    {
+      "damageTakenThreshold": 12,
+      "effectDuration": 20
+    },
+    {
+      "damageTakenThreshold": 6,
+      "effectDuration": 10
+    }
+  ]
+}

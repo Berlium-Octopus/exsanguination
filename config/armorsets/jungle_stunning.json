@@ -1,0 +1,18 @@
+{
+    "armorSetName": "heartofgold",
+    "performanceMode": true,
+    "additionalSetPieces": [
+        {
+            "itemKey": "luminous_beasts:jungle_pendant",
+            "mustBeEmpty": false
+        }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "alexscaves:stunned",
+            "interactionType": "immunity"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

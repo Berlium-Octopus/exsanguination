@@ -1,0 +1,94 @@
+{
+    "armorSetName": "Vinny",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "vinery:straw_hat",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "chest": {
+        "itemKey": "vinery:winemaker_apron",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "legs": {
+        "itemKey": "vinery:winemaker_leggings",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "boots": {
+        "itemKey": "vinery:winemaker_boots",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "mainHand": {
+        "itemKey": "spartanweaponry:diamond_scythe",
+        "mixAndMatch": [
+            "spartanweaponry:golden_scythe",
+            "spartanweaponry:netherite_scythe",
+            "spartanweaponry:wooden_scythe",
+            "spartanweaponry:iron_scythe",
+            "spartanweaponry:stone_scythe",
+            "spartanweaponry:bronze_scythe",
+            "spartanweaponry:copper_scythe",
+            "spartanweaponry:tin_scythe",
+            "spartanweaponry:steel_scythe",
+            "spartanweaponry:electrum_scythe",
+            "spartanweaponry:lead_scythe",
+            "spartanweaponry:nickel_scythe",
+            "spartanweaponry:invar_scythe",
+            "spartanweaponry:aluminum_scythe",
+            "spartanweaponry:platinum_scythe",
+            "spartanweaponry:constantan_scythe"
+        ],
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "potioncore:reach",
+            "value": 1,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:stamina",
+            "value": -0.2,
+            "interactionType": "self",
+            "interactionDuration": 600,
+            "attributeOperation": 1,
+            "modifierUUID": "354a7396-7247-46fb-82f2-c138224ceb03",
+            "description": "1100"
+        },
+ {
+            "type": "attribute",
+            "name": "minecraft:generic.attack_speed",
+            "value": 0.50,
+            "interactionType": "self",
+            "interactionDuration": 600,
+            "attributeOperation": 1,
+            "modifierUUID": "682d0037-e701-430d-8817-13f3bd8a70ba",
+            "description": "1100"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

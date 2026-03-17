@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:crimson_forest",
+    "minecraft:soul_sand_valley",
+    {
+      "id": "biomesoplenty:withered_abyss",
+      "required": false
+    },
+    {
+      "id": "gardens_of_the_dead:whistling_woods",
+      "required": false
+    }
+  ]
+}

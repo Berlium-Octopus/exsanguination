@@ -1,0 +1,100 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "P",
+        "blocks": [
+          {
+            "random": 32,
+            "block": "minecraft:oak_sapling[stage=1]"
+          },
+          {
+            "random": 32,
+            "block": "minecraft:spruce_sapling[stage=1]"
+          },
+          {
+            "random": 32,
+            "block": "minecraft:birch_sapling[stage=1]"
+          },
+          {
+            "random": 1000,
+            "block": "minecraft:acacia_sapling[stage=1]"
+          }
+        ]
+      },
+      {
+        "char": "i",
+        "variant": "lcmt:stone_brick_stairs_bottom_south"
+      },
+      {
+        "char": "k",
+        "variant": "lcmt:stone_brick_stairs_bottom_west"
+      },
+      {
+        "char": "n",
+        "block": "minecraft:short_grass"
+      },
+      {
+        "char": "f",
+        "variant": "lcmt:stone_brick_slab_bottom"
+      },
+      {
+        "char": "j",
+        "variant": "lcmt:stone_brick_stairs_bottom_east"
+      },
+      {
+        "char": "m",
+        "variant": "lcmt:stone_brick_stairs_bottom_north"
+      },
+      {
+        "char": "D",
+        "variant": "lcmt:garden_soil"
+      },
+      {
+        "char": "x",
+        "variant": "lcmt:stonebrick",
+        "damaged": "minecraft:iron_bars"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "                ",
+      "                ",
+      "   ixi    ixi   ",
+      "  jDDDk  jDDDk  ",
+      "  xDDDx  xDDDx  ",
+      "  jDDDk  jDDDk  ",
+      "   mxm    mxm   ",
+      "                ",
+      "                ",
+      "   ixi    ixi   ",
+      "  jDDDk  jDDDk  ",
+      "  xDDDx  xDDDx  ",
+      "  jDDDk  jDDDk  ",
+      "   mxm    mxm   ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "   fff    fff   ",
+      "  fennf  fnnef  ",
+      "  fnPnf  fnPnf  ",
+      "  fnnnf  fnnnf  ",
+      "   fff    fff   ",
+      "                ",
+      "                ",
+      "   fff    fff   ",
+      "  fnnnf  fnnnf  ",
+      "  fnPnf  fnPnf  ",
+      "  fennf  fnnef  ",
+      "   fff    fff   ",
+      "                ",
+      "                "
+    ]
+  ]
+}

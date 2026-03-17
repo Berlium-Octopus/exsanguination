@@ -1,0 +1,35 @@
+{
+  "values": [
+    "#minecraft:dirt",
+    {
+      "id": "#forge:stone",
+      "required": false
+    },
+    "#minecraft:stone_bricks",
+    {
+      "id": "#forge:sandstone",
+      "required": false
+    },
+    "#minecraft:terracotta",
+    "#lcmt:hardened_concrete",
+    "minecraft:smooth_stone",
+    "minecraft:quartz_block",
+    "minecraft:chiseled_quartz_block",
+    "minecraft:quartz_bricks",
+    "minecraft:quartz_pillar",
+    "minecraft:smooth_quartz",
+    "minecraft:blackstone",
+    "minecraft:polished_blackstone",
+    "minecraft:polished_blackstone_bricks",
+    "minecraft:cracked_polished_blackstone_bricks",
+    "minecraft:deepslate_tiles",
+    "minecraft:deepslate_bricks",
+    "minecraft:cracked_deepslate_bricks",
+    "minecraft:cracked_deepslate_tiles",
+    "minecraft:cobbled_deepslate",
+    "minecraft:cobblestone",
+    "minecraft:mossy_cobblestone",
+    "minecraft:packed_mud",
+    "minecraft:mud_bricks"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#is_overworld",
+  "features": "spelunkers_charm:deepslate_rock_pile_feature",
+  "step": "underground_decoration"
+}

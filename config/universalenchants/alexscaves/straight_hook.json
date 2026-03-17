@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:candy_cane_hook"
+  ],
+  "incompatible": [
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

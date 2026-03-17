@@ -1,0 +1,160 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "k",
+        "variant": "lcmt:cut_sandstone_textured",
+        "damaged": "minecraft:iron_bars"
+      },
+      {
+        "char": "n",
+        "variant": "lcmt:sandstone_stairs_bottom_south"
+      },
+      {
+        "char": "I",
+        "variant": "lcmt:sandstone_stairs_bottom_west"
+      },
+      {
+        "char": "f",
+        "variant": "lcmt:cut_sandstone_slab_bottom_textured"
+      },
+      {
+        "char": "m",
+        "block": "minecraft:cut_red_sandstone",
+        "damaged": "minecraft:iron_bars"
+      },
+      {
+        "char": "J",
+        "variant": "lcmt:sandstone_stairs_bottom_north"
+      },
+      {
+        "char": "w",
+        "block": "minecraft:sandstone_wall"
+      },
+      {
+        "char": "i",
+        "block": "minecraft:cut_red_sandstone_slab[type=bottom,waterlogged=false]"
+      },
+      {
+        "char": "H",
+        "variant": "lcmt:sandstone_stairs_bottom_east"
+      },
+      {
+        "char": "j",
+        "block": "minecraft:chiseled_sandstone"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "                ",
+      " ffffffiiffffff ",
+      " fjkkkjmmjkkkjf ",
+      " fkkkkkmmkkkkkf ",
+      " fkkkkkkkkkkkkf ",
+      " fkkkkkkkkkkkkf ",
+      " fjkkkkkkkkkkjf ",
+      " immkkkkkkkkmmi ",
+      " immkkkkkkkkmmi ",
+      " fjkkkkkkkkkkjf ",
+      " fkkkkkkkkkkkkf ",
+      " fkkkkkkkkkkkkf ",
+      " fkkkkkmmkkkkkf ",
+      " fjkkkjmmjkkkjf ",
+      " ffffffiiffffff ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "   jnnj  jnnj   ",
+      "   HWWjnnjWWI   ",
+      "   HWWWWWWWWI   ",
+      "   jjWWWWWWjj   ",
+      "    HWWkkWWI    ",
+      "    HWWkkWWI    ",
+      "   jjWWWWWWjj   ",
+      "   HWWWWWWWWI   ",
+      "   HWWjJJjWWI   ",
+      "   jJJj  jJJk   ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "   w  w  w  w   ",
+      "                ",
+      "                ",
+      "   w        w   ",
+      "       ww       ",
+      "       ww       ",
+      "   w        w   ",
+      "                ",
+      "                ",
+      "   w  w  w  w   ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "   w  w  w  w   ",
+      "                ",
+      "                ",
+      "   w        w   ",
+      "       jj       ",
+      "       jj       ",
+      "   w        w   ",
+      "                ",
+      "                ",
+      "   w  w  w  w   ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "   w  w  w  w   ",
+      "      E  E      ",
+      "                ",
+      "   wE      Ew   ",
+      "       WW       ",
+      "       WW       ",
+      "   wE      Ew   ",
+      "                ",
+      "      E  E      ",
+      "   w  w  w  w   ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "   ffff  ffff   ",
+      "   f  ffff  f   ",
+      "   f        f   ",
+      "   ff      ff   ",
+      "    f      f    ",
+      "    f      f    ",
+      "   ff      ff   ",
+      "   f        f   ",
+      "   f  ffff  f   ",
+      "   ffff  ffff   ",
+      "                ",
+      "                ",
+      "                "
+    ]
+  ]
+}

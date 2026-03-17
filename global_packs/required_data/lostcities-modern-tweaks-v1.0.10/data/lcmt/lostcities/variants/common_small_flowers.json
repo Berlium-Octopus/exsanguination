@@ -1,0 +1,48 @@
+{
+  "blocks": [
+    {
+      "random": 15,
+      "block": "minecraft:dandelion"
+    },
+    {
+      "random": 500,
+      "block": "minecraft:wither_rose"
+    },
+    {
+      "random": 15,
+      "block": "minecraft:oxeye_daisy"
+    },
+    {
+      "random": 15,
+      "block": "minecraft:cornflower"
+    },
+    {
+      "random": 5,
+      "block": "minecraft:lily_of_the_valley"
+    },
+    {
+      "random": 8,
+      "block": "minecraft:red_tulip"
+    },
+    {
+      "random": 8,
+      "block": "minecraft:orange_tulip"
+    },
+    {
+      "random": 8,
+      "block": "minecraft:white_tulip"
+    },
+    {
+      "random": 8,
+      "block": "minecraft:pink_tulip"
+    },
+    {
+      "random": 5,
+      "block": "minecraft:blue_orchid"
+    },
+    {
+      "random": 500,
+      "block": "minecraft:poppy"
+    }
+  ]
+}

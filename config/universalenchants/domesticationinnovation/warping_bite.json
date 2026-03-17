@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:pet"
+  ],
+  "incompatible": [
+    "domesticationinnovation:frost_fang",
+    "domesticationinnovation:intimidation",
+    "domesticationinnovation:bubbling",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

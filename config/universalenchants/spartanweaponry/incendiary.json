@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:spartanweaponry_throwing_weapon"
+  ],
+  "incompatible": [
+    "spartanweaponry:hydrodynamic",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

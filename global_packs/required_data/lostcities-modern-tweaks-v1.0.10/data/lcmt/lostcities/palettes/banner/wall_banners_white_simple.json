@@ -1,0 +1,52 @@
+{
+  "palette": [
+    {
+      "char": "5",
+      "block": "minecraft:white_wall_banner[facing=north]",
+      "tag": {
+        "Patterns": [
+          {
+            "Pattern": "bo",
+            "Color": 7
+          }
+        ]
+      }
+    },
+    {
+      "char": "6",
+      "block": "minecraft:white_wall_banner[facing=east]",
+      "tag": {
+        "Patterns": [
+          {
+            "Pattern": "bo",
+            "Color": 7
+          }
+        ]
+      }
+    },
+    {
+      "char": "7",
+      "block": "minecraft:white_wall_banner[facing=south]",
+      "tag": {
+        "Patterns": [
+          {
+            "Pattern": "bo",
+            "Color": 7
+          }
+        ]
+      }
+    },
+    {
+      "char": "8",
+      "block": "minecraft:white_wall_banner[facing=west]",
+      "tag": {
+        "Patterns": [
+          {
+            "Pattern": "bo",
+            "Color": 7
+          }
+        ]
+      }
+    }
+  ]
+}

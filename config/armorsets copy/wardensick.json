@@ -1,0 +1,69 @@
+{
+    "armorSetName": "Wardensick",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "deeperdarker:warden_helmet",
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "deeperdarker:warden_chestplate",
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "deeperdarker:warden_leggings",
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "deeperdarker:warden_boots",
+        "mustBeEmpty": false
+    },
+    "partialBonusRequiredAmount": 1,
+    "partialSetBonuses": [
+        {
+            "type": "effect",
+            "name": "sculkhorde:sculk_infected",
+            "value": 1,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "hideBonusDescription": true
+        },
+        {
+            "type": "effect",
+            "name": "potioncore:curse",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "effect",
+            "name": "sculkhorde:sculk_lure",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        },
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:stamina",
+            "value": -0.2,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "f7393447-0e9e-445e-9c02-c9f9d8d62ebb"
+        }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "minecraft:slowness",
+            "value": 0,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

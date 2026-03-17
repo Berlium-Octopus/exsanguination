@@ -1,0 +1,10 @@
+{
+  "asset_name": "power_crystal",
+  "description": {
+    "color": "#b60010",
+    "translate": "trim_material.scalinghealth.power_crystal"
+  },
+
+  "ingredient": "deeperdarker:heart_of_the_deep",
+  "item_model_index": 0.4
+}

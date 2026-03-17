@@ -1,0 +1,45 @@
+{
+  "palette": [
+    {
+      "char": "F",
+      "blocks": [
+        {
+          "random": 20,
+          "block": "minecraft:smoker[facing=north]"
+        },
+        {
+          "random": 15,
+          "block": "minecraft:crafting_table"
+        },
+        {
+          "random": 15,
+          "block": "minecraft:powder_snow_cauldron[level=3]"
+        },
+        {
+          "random": 10,
+          "block": "minecraft:campfire[facing=north,lit=false]"
+        },
+        {
+          "random": 10,
+          "block": "minecraft:composter[level=0]"
+        },
+        {
+          "random": 5,
+          "block": "minecraft:composter[level=8]"
+        },
+        {
+          "random": 4,
+          "block": "minecraft:cake"
+        },
+        {
+          "random": 2,
+          "block": "minecraft:candle_cake"
+        },
+        {
+          "random": 1000,
+          "block": "minecraft:cobweb"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+    "armorSetName": "Magnetman",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "alexscaves_torpedoes:magnetic_helmet",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "boots": {
+        "itemKey": "alexscaves_torpedoes:ferrousslime_boots",
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "offHand": {
+        "itemKey": "alexscaves:resistor_shield",
+        "mustBeEmpty": false
+    },
+    "additionalSetPieces": [
+        {
+            "itemKey": "alexscaves_torpedoes:pocket_magnet",
+            "mustBeEmpty": false
+        }
+    ],
+    "fullSetBonuses": [
+      {
+          "type": "attribute",
+          "name": "puffish_attributes:melee_damage",
+          "value": 0.45,
+          "interactionType": "self",
+          "interactionDuration": 600,
+          "attributeOperation": 1,
+          "modifierUUID": "1e771860-a719-48d6-9bb6-9ee1c2d7185e"
+      },
+      {
+          "type": "effect",
+          "name": "potioncore:step_up",
+          "value": 0.5,
+          "interactionType": "self",
+          "interactionDuration": 100,
+          "hideBonusDescription": true,
+          "onlyImmuneToNewEffects": false
+      }
+    ],
+    "hideGeneratedTooltip": true
+}

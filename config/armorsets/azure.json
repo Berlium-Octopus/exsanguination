@@ -1,0 +1,44 @@
+{
+    "armorSetName": "Azure",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "alexscaves_torpedoes:magnetic_helmet",
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "alexscaves_torpedoes:ferrousslime_boots",
+        "mustBeEmpty": false
+    },
+    "mainHand": {
+        "itemKey": "alexscaves_torpedoes:azure_sword",
+        "mixAndMatch": [
+            "alexscaves_torpedoes:azure_sword",
+            "alexscaves_torpedoes:azure_pickaxe",
+            "alexscaves_torpedoes:azure_axe",
+            "alexscaves_torpedoes:azure_shovel",
+            "alexscaves_torpedoes:azure_hoe"
+        ],
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "forge:block_reach",
+            "value": 0.5,
+            "interactionType": "self",
+            "attributeOperation": 0,
+            "modifierUUID": "ac740fd4-e6b5-4c1f-84f2-cea599294d26",
+            "description": "1240"
+        },
+        {
+            "type": "attribute",
+            "name": "forge:entity_reach",
+            "value": 0.5,
+            "interactionType": "self",
+            "attributeOperation": 0,
+            "modifierUUID": "561ee178-3dad-46eb-b754-86d5464166c2",
+            "description": "1240"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

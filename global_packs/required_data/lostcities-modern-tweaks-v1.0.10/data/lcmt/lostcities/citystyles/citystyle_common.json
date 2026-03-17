@@ -1,0 +1,336 @@
+{
+  "stuff_tags": ["rubble"],
+  "streetblocks": {
+    "width": 8,
+    "border": "y",
+    "wall": "w",
+    "street": "S",
+    "streetbase": "b",
+    "streetvariant": "B",
+    "parts": {
+      "full": ["lcmt:street/street_full_base"],
+      "straight": [
+        "lcmt:street/street_straight_base",
+        "lcmt:street/street_straight_alt_lamp",
+        "lcmt:street/street_straight_alt_lamp_bench",
+        "lcmt:street/street_straight_no_lamp",
+        "lcmt:street/street_straight_no_lamp_bench",
+        "lcmt:street/street_straight_no_lamp_bushes_1",
+        "lcmt:street/street_straight_no_lamp_bushes_2"
+      ],
+      "end": [
+        "lcmt:street/street_end_base",
+        "lcmt:street/street_end_no_lamp",
+        "lcmt:street/street_end_bench_1",
+        "lcmt:street/street_end_bench_2",
+        "lcmt:street/street_end_bench_trash_1",
+        "lcmt:street/street_end_bench_trash_2",
+        "lcmt:street/street_end_bushes"
+      ],
+      "bend": [
+        "lcmt:street/street_bend_base",
+        "lcmt:street/street_bend_bushes",
+        "lcmt:street/street_bend_alt_lamp",
+        "lcmt:street/street_bend_alt_lamp_bench_1",
+        "lcmt:street/street_bend_alt_lamp_bench_2",
+        "lcmt:street/street_bend_alt_lamp_bench_trash_1",
+        "lcmt:street/street_bend_alt_lamp_bench_trash_2",
+        "lcmt:street/street_bend_no_lamp"
+      ],
+      "t": [
+        "lcmt:street/street_t_base",
+        "lcmt:street/street_t_bench",
+        "lcmt:street/street_t_bushes",
+        "lcmt:street/street_t_alt_lamp",
+        "lcmt:street/street_t_alt_lamp_bushes",
+        "lcmt:street/street_t_no_lamp"
+      ],
+      "none": [
+        "lcmt:street/street_none_base",
+        "lcmt:street/street_none_alt_lamp",
+        "lcmt:street/street_none_no_lamp",
+        "lcmt:street/street_none_no_lamp_bushes"
+      ],
+      "all": [
+        "lcmt:street/street_all_base",
+        "lcmt:street/street_all_bushes",
+        "lcmt:street/street_all_flowers",
+        "lcmt:street/street_all_no_lamp",
+        "lcmt:street/street_all_no_lamp_bushes"
+      ]
+    }
+  },
+  "parkblocks": {
+    "elevation": "x"
+  },
+  "corridorblocks": {
+    "roof": "x",
+    "glass": "+"
+  },
+  "railblocks": {
+    "railmain": "y"
+  },
+  "sphereblocks": {
+    "glass": "Z",
+    "border": "9",
+    "inner": "b"
+  },
+  "selectors": {
+    "buildings": [
+      {
+        "factor": 0.3,
+        "value": "lcmt:building1"
+      },
+      {
+        "factor": 0.4,
+        "value": "lcmt:building2"
+      },
+      {
+        "factor": 0.2,
+        "value": "lcmt:building3"
+      },
+      {
+        "factor": 0.2,
+        "value": "lcmt:building4"
+      },
+      {
+        "factor": 0.3,
+        "value": "lcmt:building5"
+      },
+      {
+        "factor": 0.2,
+        "value": "lcmt:building6"
+      },
+      {
+        "factor": 0.2,
+        "value": "lcmt:building7"
+      },
+      {
+        "factor": 0.4,
+        "value": "lcmt:building8"
+      }
+    ],
+    "multibuildings": [
+      {
+        "factor": 0.2,
+        "value": "lcmt:multi1"
+      },
+      {
+        "factor": 0.2,
+        "value": "lcmt:multi2"
+      },
+      {
+        "factor": 0.12,
+        "value": "lcmt:multi3"
+      },
+      {
+        "factor": 0.12,
+        "value": "lcmt:multi4"
+      },
+      {
+        "factor": 0.05,
+        "value": "lcmt:multi5"
+      },
+      {
+        "factor": 0.07,
+        "value": "lcmt:library"
+      },
+      {
+        "factor": 0.07,
+        "value": "lcmt:center"
+      },
+      {
+        "factor": 0.05,
+        "value": "lcmt:townhall"
+      },
+      {
+        "factor": 0.15,
+        "value": "lcmt:shopping"
+      },
+      {
+        "factor": 0.12,
+        "value": "lcmt:shopping_open"
+      },
+      {
+        "factor": 0.05,
+        "value": "lcmt:huge1"
+      },
+      {
+        "factor": 0.05,
+        "value": "lcmt:huge2"
+      },
+      {
+        "factor": 0.13,
+        "value": "lcmt:factory"
+      }
+    ],
+    "bridges": [
+      {
+        "factor": 1.0,
+        "value": "lcmt:bridge/bridge_open"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:bridge/bridge_covered"
+      }
+    ],
+    "fronts": [
+      {
+        "factor": 1.0,
+        "value": "lcmt:building_front/building_front1"
+      },
+      {
+        "factor": 0.5,
+        "value": "lcmt:building_front/building_front1_ex_solid"
+      },
+      {
+        "factor": 0.5,
+        "value": "lcmt:building_front/building_front1_ex_glass"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:building_front/building_front2"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:building_front/building_front2_ex_flower_pots"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:building_front/building_front3"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:building_front/building_front3_ex_flower_pots"
+      },
+      {
+        "factor": 0.5,
+        "value": "lcmt:building_front/building_front_mini_1"
+      },
+      {
+        "factor": 0.5,
+        "value": "lcmt:building_front/building_front_mini_1_flower_pots"
+      }
+    ],
+    "stairs": [
+      {
+        "factor": 1.0,
+        "value": "lcmt:staircase/stairs1"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:staircase/stairs1_steep_railing"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:staircase/stairs2"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:staircase/stairs2_steep_railing"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:staircase/stairsnormal"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:staircase/stairsnormal_leaves"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:staircase/stairsbig"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:staircase/stairsbig_leaves"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:staircase/stairs_maintenance_iron_bars"
+      }
+    ],
+    "fountains": [
+      {
+        "factor": 1.0,
+        "value": "lcmt:fountain/fountain_small_stone_1"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:fountain/fountain_small_stone_2"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:fountain/fountain_small_quartz_1"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:fountain/fountain_small_quartz_2"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:fountain/fountain_medium_stone_1"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:fountain/fountain_medium_bricks_1"
+      }
+    ],
+    "parks": [
+      {
+        "factor": 1.0,
+        "value": "lcmt:park/park_pool"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:park/park_plants"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:park/park_trees"
+      },
+      {
+        "factor": 1.0,
+        "value": "lcmt:park/park_plants_pillars"
+      },
+      {
+        "factor": 0.8,
+        "value": "lcmt:park/park_fountain1"
+      },
+      {
+        "factor": 0.8,
+        "value": "lcmt:park/park_fountain2"
+      },
+      {
+        "factor": 0.3,
+        "value": "lcmt:park/park_building"
+      },
+      {
+        "factor": 0.3,
+        "value": "lcmt:park/park_building2"
+      },
+      {
+        "factor": 0.8,
+        "value": "lcmt:park/park_fountain_ex_1"
+      },
+      {
+        "factor": 0.8,
+        "value": "lcmt:park/park_fountain_ex_2"
+      },
+      {
+        "factor": 0.4,
+        "value": "lcmt:park/park_playground_1"
+      }
+    ],
+    "raildungeons": [
+      {
+        "factor": 1.0,
+        "value": "rail_dungeon1"
+      },
+      {
+        "factor": 1.0,
+        "value": "rail_dungeon2"
+      }
+    ]
+  }
+}

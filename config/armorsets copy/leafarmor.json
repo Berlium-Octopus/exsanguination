@@ -1,0 +1,40 @@
+{
+    "armorSetName": "leafawaken",
+    "performanceMode": true,
+    "head": {
+      "itemKey": "toughasnails:leaf_helmet",
+        "mustBeEmpty": false
+    },
+    "chest": {
+      "itemKey": "toughasnails:leaf_chestplate",
+        "mustBeEmpty": false
+    },
+    "legs": {
+      "itemKey": "toughasnails:leaf_leggings",
+        "mustBeEmpty": false
+    },
+    "boots": {
+      "itemKey": "toughasnails:leaf_boots",
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "minecraft:speed",
+            "value": 0,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "description": "1100"
+        },
+        {
+            "type": "attribute",
+            "name": "functionalarmortrim:fire_resistance",
+            "value": -0.2,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "f413e291-72d1-406c-964a-4a551bcd8b19",
+            "description": "1100"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

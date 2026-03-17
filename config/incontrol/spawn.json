@@ -1,0 +1,132 @@
+[
+    {
+        "dimension": "deeperdarker:otherside",
+        "mob": [
+            "sculkhorde:sculk_creeper",
+            "sculkhorde:sculk_ravager",
+            "sculkhorde:sculk_ravager",
+            "sculkhorde:sculk_spitter"
+        ],
+        "mincount": {
+            "amount": 30,
+            "hostile": true,
+            "perchunk": true
+        },
+        "incontrol": true,
+        "result": "deny"
+    },
+    {
+        "dimension": "minecraft:overworld",
+        "mob": [
+            "quark:stoneling",
+            "quark:oretoises"
+        ],
+        "biome": "alexscaves:primordial_caves",
+        "result": "deny"
+    },
+    {
+        "dimension": "deeperdarker:otherside",
+        "mob": [
+            "sculkhorde:sculk_soul_reaper",
+            "deeperdarker:stalker"
+        ],
+        "mincount": {
+            "amount": 3,
+            "hostile": true,
+            "perchunk": true
+        },
+        "incontrol": true,
+        "result": "deny"
+    },
+    {
+        "dimension": "deeperdarker:otherside",
+        "mob": [
+            "sculkhorde:sculk_hatcher",
+            "sculkhorde:sculk_mite_aggressor",
+            "sculkhorde:sculk_bee_harvester",
+            "sculkhorde:sculk_bee_infector",
+            "sculkhorde:sculk_spore_spewer"
+        ],
+        "mincount": {
+            "amount": 50,
+            "hostile": true,
+            "perchunk": true
+        },
+        "incontrol": true,
+        "result": "deny"
+    },
+    {
+        "dimension": "deeperdarker:otherside",
+        "mob": [
+            "sculkhorde:sculk_vindicator",
+            "sculkhorde:sculk_phantom",
+            "sculkhorde:sculk_vex"
+        ],
+        "mincount": {
+            "amount": 40,
+            "hostile": true,
+            "perchunk": true
+        },
+        "incontrol": true,
+        "result": "deny"
+    },
+    {
+        "dimension": "minecraft:overworld",
+        "mob": [
+            "sculkhorde:sculk_vindicator",
+            "sculkhorde:sculk_zombie",
+            "sculkhorde:sculk_spore_spewer",
+            "sculkhorde:sculk_phantom",
+            "sculkhorde:sculk_vex",
+            "luminous_monsters:miner_zombie",
+            "luminous_monsters:miner_skeleton"
+        ],
+        "when": "onjoin",
+        "result": "deny"
+    },
+    {
+        "dimension": "minecraft:the_nether",
+        "mob": [
+            "sculkhorde:sculk_ravager",
+            "sculkhorde:sculk_spitter",
+            "sculkhorde:sculk_spore_spewer",
+            "sculkhorde:sculk_vindicator",
+            "sculkhorde:sculk_zombie",
+            "sculkhorde:sculk_witch",
+            "sculkhorde:sculk_soul_reaper",
+            "sculkhorde:sculk_vex",
+            "luminous_monsters:crimson_walker",
+            "luminous_monsters:revenant_skeleton",
+            "luminous_beasts:piglin_executioner",
+            "luminous_nether:cultist_rider",
+            "luminous_nether:basalt_executioner",
+            "luminous_beasts:rare_executioner",
+            "luminous_nether:piglin_cultist_leader",
+            "sculkhorde:sculk_phantom",
+            "rootoffear:wilted"
+        ],
+        "when": "onjoin",
+        "result": "deny"
+    },
+    {
+        "dimension": "minecraft:the_end",
+        "mob": [
+            "sculkhorde:sculk_phantom",
+            "rootoffear:wilted"
+        ],
+        "when": "onjoin",
+        "result": "deny"
+    },
+    { 
+       "dimension": "lostcities:lostcity",
+       "mob":["corpse:corpse", "alexsmobs:mimicube", "create:contraption","minecraft:chest_boat","minecraft:spawner_minecart", "minecraft:hopper_minecart", "minecraft:chest_minecart","minecraft:tnt_minecart", "oreganized:shrapnel_bomb_minecart","minecraft:minecart", "minecraft:boat", "dummmmmmy:target_dummy", "minecraft:warden", "whiteenderman:white_enderman","biomemakeover:ghost","minecraft:vex","doom_and_gloom:holler","alexsmobs:skreecher","alexsmobs:farseer","minecraft:allay"],
+       "when": "onjoin",
+       "result": "allow"
+    },
+    {
+       "dimension": "lostcities:lostcity",
+       "when": "onjoin",
+       "result": "deny"
+    }
+
+]

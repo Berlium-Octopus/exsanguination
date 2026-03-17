@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "netherdepthsupgrade:glowdine"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "minecraft:glowstone_dust"
+  }
+}

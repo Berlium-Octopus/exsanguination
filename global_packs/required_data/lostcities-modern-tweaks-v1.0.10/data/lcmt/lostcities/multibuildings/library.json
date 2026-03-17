@@ -1,0 +1,14 @@
+{
+  "dimx": 2,
+  "dimz": 2,
+  "buildings": [
+    [
+      "lcmt:library/library00",
+      "lcmt:library/library01"
+    ],
+    [
+      "lcmt:library/library10",
+      "lcmt:library/library11"
+    ]
+  ]
+}

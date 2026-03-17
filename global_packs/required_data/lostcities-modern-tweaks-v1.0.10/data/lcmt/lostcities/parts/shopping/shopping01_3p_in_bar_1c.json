@@ -1,0 +1,130 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "q",
+        "block": "minecraft:yellow_glazed_terracotta[facing=north]",
+        "damaged": "minecraft:iron_bars"
+      },
+      {
+        "char": "H",
+        "block": "minecraft:yellow_glazed_terracotta[facing=east]",
+        "damaged": "minecraft:iron_bars"
+      },
+      {
+        "char": "s",
+        "block": "minecraft:yellow_glazed_terracotta[facing=south]",
+        "damaged": "minecraft:iron_bars"
+      },
+      {
+        "char": "o",
+        "block": "minecraft:yellow_glazed_terracotta[facing=west]",
+        "damaged": "minecraft:iron_bars"
+      },
+      {
+        "char": "I",
+        "block": "minecraft:smoker[facing=west,lit=false]",
+        "damaged": "minecraft:cobblestone_slab[type=bottom,waterlogged=false]"
+      },
+      {
+        "char": "C",
+        "block": "minecraft:chest[facing=north,type=single,waterlogged=false]",
+        "loot": "lcmt:shopping_loot"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "  #             ",
+      "  #   2))))2    ",
+      "  #  2ffQQfQ2   ",
+      "     [Qsosof]   ",
+      "     [QHqHqQ]   ",
+      "     [QsosoQ]   ",
+      "     [fHqHqf]   ",
+      "  I  2fQffQQ2   ",
+      "  #   2((((2    ",
+      "  #             ",
+      "  #             ",
+      "  ##QfQ    ###  ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "  Z             ",
+      "  Z             ",
+      "  Z             ",
+      "       .  .     ",
+      "                ",
+      "                ",
+      "       .  .     ",
+      "  w             ",
+      "                ",
+      "  -             ",
+      "  `             ",
+      "  `` (      -C  ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "       -  -     ",
+      "                ",
+      "                ",
+      "       -  -     ",
+      "  w             ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "  w             ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ]
+  ]
+}

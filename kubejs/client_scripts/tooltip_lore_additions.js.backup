@@ -1,0 +1,425 @@
+
+JEIEvents.information(event => {
+  event.addItem('spelunkers_charm:rock', ['Obtained from smashing stone and cobblestone mostly with a wooden knife.'])
+});
+JEIEvents.information(event => {
+  event.addItem('spelunkers_charm:deepslate_rock', ['Obtained from deepslate and cobbled deepslate.'])
+});
+JEIEvents.information(event => {
+  event.addItem('nocubesbetterfletchingtable:arrow_fletching', ['Right click feathers on a fletching table.'])
+});
+JEIEvents.information(event => {
+  event.addItem('#immersive_weathering:bark', ['Some logs are weak enough to extract their bark with only a wooden knife.'])
+  event.addItem('biomesoplenty:glowworm_silk', ['Provides immunity to Poison and Wither.'])
+  event.addItem('rootoffear:agitated_primitive_heart', ['Provides Internal Warmth.'])
+  event.addItem(['deeperdarker:sliced_heart_of_the_deep','deeperdarker:heart_of_the_deep'], ['Provides Internal Chill.'])
+  event.addItem('spelunkery:portal_fluid_bottle', ['Opens Nether Portals.'])
+  event.addItem("alexsmobs:gazelle_horns", ["The Larper's Horns."])
+  event.addItem("jeg:advanced_firearm_blueprint", ["Could be found by Piglin bartering or by fishing in lava."])
+  event.addItem("jeg:firearm_blueprint", ["Could be found in mineshafts, by villager trading, and other metheods."])
+  event.addItem("luminous_nether:nether_beast_totem", ["Could be found Nether Vases and mineshafts."])
+
+
+  event.addItem('minecraft:flint_and_steel', ['Not powerful enough to tear apart space or create a portal.'])
+});
+
+JEIEvents.information(event => {
+  event.addItem('archeological:old_bandages', ['Grants immunity to Mining Fatigue and Weakness.'])
+  event.addItem('jeg:flare', ['The flares that are not §4Ominous §0are safe to use.'])
+});
+JEIEvents.information(event => {
+  event.addItem('luminous_nether:nether_beast_totem', ['This totem protects from Exsanguination,', 'Hemorrhage and Nausea.'])
+});
+JEIEvents.information(event => {
+  event.addItem('#create:pressurized_air_sources', ['A Weareable Tank the provides pressurized air to equipment that needs it, the collection of air is based on kinetic speed.'])
+});
+JEIEvents.information(event => {
+  event.addItem(['biomesoplenty:spider_egg'], 'Provides a Spider Climbing Ability')
+  event.addItem(['archeological:ancient_socks'], 'Provides a Double Jump Ability')
+  event.addItem(['alexscavesdelight:filled_heart_of_iron'], 'Provides- wait,Oh Lord....')
+  event.addItem('sculkhorde:soul_disrupter', ['Weakens Sculk Reapers when pointed at.'])
+  event.addItem(['minecraft:soul_campfire'], ['Burns infinitely if fed Soul Beads or Soul Embers','Could be started by right clicking a Soul Starter on a regular campfire'])
+  event.addItem(['minecraft:campfire'], ['Burns infinitely if fed Blaze Powder or Burning Ashes','Converted back via wrench'])
+  event.addItem(['alexscaves:azure_neodymium_ingot'], 'Heart Of Iron hates these')
+});
+
+
+JEIEvents.information(event => {
+  event.addItem(['alexsmobs:roadrunner_boots','luminous_beasts:shellmet_helmet'], ['Faster movement speed in sand and or deserts.'])
+});
+JEIEvents.information(event => {
+  event.addItem('alexsmobs:emu_leggings', ['Has a chance to dodge projectiles.'])
+});
+JEIEvents.information(event => {
+  event.addItem('alexsmobs:flying_fish_boots', ['Faster swimming speed in water and provides a leaping ability when in water.'])
+});
+JEIEvents.information(event => {
+  event.addItem('vinery:stinky_wine', ['Would repel mousquitoes in exchange for some suffering.'])
+});
+JEIEvents.information(event => {
+  event.addItem('jeg:tech_trash', ['Found inside most citizens of the magnetic caves.'])
+});
+
+JEIEvents.information(event => {
+  event.addItem('alexsmobs:rocky_chestplate', ['Grants the ability to roll','"Got places to go gonna follow my way home."-???'])
+});
+JEIEvents.information(event => {
+  event.addItem('biomemakeover:ectoplasm', ['Could be used in a composter to start soul soil.'])
+});
+JEIEvents.information(event => {
+  event.addItem('luminous_nether:molten_coal', ['[Offhand]','Grants Strength in lava.'])
+});
+JEIEvents.information(event => {
+  event.addItem('luminous_beasts:mummy_wraps_helmet', ['Immunity to Weakness and Poison.'])
+});
+
+JEIEvents.information(event => {
+  event.addItem('luminous_beasts:bone_rattle', ['[Offhand]','Summons something after death.'])
+});
+JEIEvents.information(event => {
+  event.addItem('luminous_beasts:yeti_horn', ['[Offhand]','Faster Regeneration in colder biomes.'])
+});
+JEIEvents.information(event => {
+  event.addItem('luminous_beasts:phoenix_feather', ['[Offhand]','Keeps items upon death.'])
+});
+JEIEvents.information(event => {
+  event.addItem('luminous_beasts:gator_tooth', ['[Offhand]','Chance to poison victims.'])
+});
+JEIEvents.information(event => {
+  event.addItem('luminous_beasts:viper_tooth', ['[Offhand]','Resistance and Night Vision in water.'])
+});
+JEIEvents.information(event => {
+  event.addItem('spartanweaponry:simple_handle', ['Formed by right clicking sticks on grass'])
+  event.addItem('alexsmobs:spectral_dagger', ['When activated could pierce the user into the Spectral Realm for a moment'])
+  event.addItem(['alexsmobs:shattered_dimensional_carver','alexsmobs:dimensional_carver'], ['Right Click to tear apart space'])
+});
+
+JEIEvents.information(event => {
+  event.addItem('netherdepthsupgrade:soul_sucker_boots', ['Provides built in Soul Speed'])
+});
+
+JEIEvents.information(event => {
+  event.addItem('luminous_beasts:magic_root', ['[Offhand]','Chance to slow victims.'])
+});
+JEIEvents.information(event => {
+  event.addItem('luminous_beasts:pumpkin_helmet_helmet', ['Strength based on moon phases.'])
+});
+JEIEvents.information(event => {
+  event.addItem(['luminous_beasts:spore_bundle','luminous_nether:spore_bundle'], ['Explodes and harms attackers after death.'])
+});
+
+// Something Is wrong here
+JEIEvents.hideItems(event => {
+  event.hide([
+    'rootoffear:faded_oak_wood_corrupt1',
+    'rootoffear:faded_oak_wood_corrupt2',
+    'rootoffear:faded_oak_wood_corrupt3',
+    'rootoffear:faded_oak_log_phase3',
+    'rootoffear:faded_oak_log_phase2',
+    'rootoffear:faded_oak_log_phase1',
+    'luminous_beasts:executioner_cowl_helmet',
+    'deeperdarker:warden_upgrade_smithing_template',
+    'supplementaries:altimeter'
+])
+  event.hide('spelunkers_charm:mining_helmet')
+  event.hide('#spartanweaponry:platinum_weapons')
+  event.hide('#spartanweaponry:tin_weapons')
+  event.hide('spelunkery:item_magnet')
+  event.hide('spelunkery:copper_nugget')
+  event.hide('vinery:apple_juice')
+  event.hide('jeg:combat_pistol')
+  event.hide('jeg:combat_rifle')
+  event.hide('#spartanweaponry:aluminum_weapons')
+  event.hide('#spartanweaponry:invar_weapons')
+  event.hide('spartanweaponry:enderman_head')
+  event.hide('#spartanweaponry:contantan_weapons')
+  event.hide('spartanshields:aluminum_basic_shield')
+  event.hide('spartanshields:invar_basic_shield')
+  event.hide('spartanshields:contantan_basic_shield')
+  event.hide('spartanshields:aluminum_basic_shield')
+  event.hide('spartanshields:invar_basic_shield')
+  event.hide('spartanshields:contantan_basic_shield')
+  event.hide('spartanshields:aluminum_tower_shield')
+  event.hide('spartanshields:invar_tower_shield')
+  event.hide('spartanshields:contantan_tower_shield')
+  event.hide('spartanshields:stone_basic_shield')
+  event.hide('spartanshields:stone_tower_shield')
+  event.hide('jeg:compound_bow')
+  event.hide('luminous_beasts:molten_coal')
+  event.hide('toughasnails:iron_purified_water_canteen')
+  event.hide('toughasnails:iron_water_canteen')
+  event.hide('toughasnails:iron_dirty_water_canteen')
+  event.hide('toughasnails:copper_water_canteen')
+  event.hide('toughasnails:copper_purified_water_canteen')
+  event.hide('toughasnails:copper_dirty_water_canteen')
+  event.hide('#spartanweaponry:nickel_weapons')
+  event.hide([
+    'farmersdelight:beetroot_crate',
+    'farmersdelight:carrot_crate',
+    'farmersdelight:potato_crate',
+    'spartanshields:manasteel_basic_shield',
+    'spartanshields:manasteel_tower_shield',
+    'spartanshields:terrasteel_basic_shield',
+    'spartanshields:terrasteel_tower_shield',
+    'spartanshields:elementium_basic_shield',
+    'spartanshields:refined_obsidian_basic_shield',
+    'spartanshields:refined_glowstone_basic_shield',
+    'spartanshields:lapis_lazuli_basic_shield',
+    'spartanshields:osmium_basic_shield',
+    'spartanshields:elementium_tower_shield',
+    'spartanshields:basic_mekanists_basic_shield',
+    'spartanshields:basic_mekanists_tower_shield',
+    'spartanshields:advanced_mekanists_basic_shield',
+    'spartanshields:advanced_mekanists_tower_shield',
+    'spartanshields:elite_mekanists_basic_shield',
+    'spartanshields:dark_steel_riot_tower_shield',
+    'spartanshields:dark_steel_riot_basic_shield',
+    'spartanshields:ultimate_mekanists_tower_shield',
+    'spartanshields:ultimate_mekanists_basic_shield',
+    'spartanshields:elite_mekanists_tower_shield',
+    'spartanshields:signalum_basic_shield',
+    'spartanshields:signalum_tower_shield',
+    'spartanshields:lumium_basic_shield',
+    'spartanshields:lumium_tower_shield',
+    'spartanshields:enderium_basic_shield',
+    'spartanshields:nickel_basic_shield',
+    'spartanshields:nickel_tower_shield',
+    'spartanshields:constantan_tower_shield',
+    'spartanshields:constantan_basic_shield',
+    'spartanshields:enderium_tower_shield',
+    'spartanshields:platinum_basic_shield',
+    'spartanshields:platinum_tower_shield',
+    'spartanshields:tin_tower_shield',
+    'spartanshields:tin_basic_shield',
+    "biomesoplenty:willow_sapling",
+    "biomesoplenty:willow_wood",
+    "biomesoplenty:stripped_willow_wood",
+    "biomesoplenty:stripped_willow_log",
+    "biomesoplenty:willow_planks",
+    "biomesoplenty:willow_fence",
+    "biomesoplenty:willow_stairs",
+    "biomesoplenty:willow_slab",
+    "biomesoplenty:willow_fence_gate",
+    "biomesoplenty:willow_door",
+    "biomesoplenty:willow_trapdoor",
+    "biomesoplenty:willow_button",
+    "biomesoplenty:willow_pressure_plate",
+    "biomesoplenty:willow_hanging_sign",
+    "biomesoplenty:willow_sign",
+    "biomesoplenty:willow_log",
+    "biomesoplenty:willow_leaves",
+    "suppsquared:biomesoplenty/item_shelf_willow",
+    "supplementaries:biomesoplenty/sign_post_willow",
+    "biomesoplenty:willow_chest_boat",
+    'biomesoplenty:willow_boat',
+    'immersive_weathering:biomesoplenty/willow_bark',
+    'immersive_weathering:biomesoplenty/willow_leaf_pile',
+    'vinery:dark_cherry_chair',
+    'jeg:pump_shotgun',
+    'jeg:combat_pistol',
+    'jeg:grenade_launcher',
+    'jeg:semi_auto_pistol',
+])
+})
+
+
+
+JEIEvents.hideItems(event => {
+  event.hide('immersive_weathering:cataclysm/chorus_scales')
+  event.hide('camping:small_backpack')
+  event.hide('jeg:gunmetal_workbench')
+  event.hide('jeg:gunnite_workbench')
+  event.hide('jeg:scrap_workbench')
+  event.hide('jeg:pocket_bubble')
+  event.hide('jeg:blueprint_workbench')
+  event.hide('tide:stone_fishing_rod')
+  event.hide('netherdepthsupgrade:lava_fishing_rod')
+  event.hide('supplementaries:pedestal')
+  event.hide('jeg:schematic_station')
+  event.hide('toughasnails:empty_copper_canteen')
+  event.hide('toughasnails:empty_iron_canteen')
+  event.hide('decorative_blocks:brazier')
+  event.hide('decorative_blocks:soul_brazier')
+  event.hide('alexscavesdelight:dried_tripodfish')
+});
+
+ItemEvents.tooltip(event => {
+  event.addAdvanced(['jeg:raw_brimstone','jeg:brimstone_crystal','jeg:tech_trash','jeg:scrap'], (item, advanced, text) => {
+      text.remove(1)
+      text.remove(1)
+      text.remove(1)
+  })
+});
+
+
+ItemEvents.tooltip(event => {
+  event.addAdvanced(['luminous_nether:nether_beast_totem','jeg:repair_kit','sculkhorde:soulite_shard','sculkhorde:purification_flask','sculkhorde:infestation_purifier','sculkhorde:diasculk','sculkhorde:ferrisculk'], (item, advanced, text) => {
+      text.remove(1)
+      text.remove(1)
+      text.remove(1)
+  })
+});
+
+
+
+ItemEvents.tooltip(event => {
+  event.addAdvanced(['spartanweaponry:witch_head','spartanweaponry:illager_head','spartanweaponry:blaze_head','spartanweaponry:enderman_head','spartanweaponry:zombified_piglin_head','spartanweaponry:husk_head','spartanweaponry:spider_head','spartanweaponry:cave_spider_head','spartanweaponry:drowned_head'], (item, advanced, text) => {
+      text.remove(1)
+      text.remove(1)
+  })
+});
+
+
+
+ItemEvents.tooltip(event => {
+  event.addAdvanced(['cataclysm:blazing_grips',
+  'cataclysm:cursed_bow',
+  'cataclysm:wrath_of_the_desert',
+  'cataclysm:gauntlet_of_guard',
+  'cataclysm:gauntlet_of_bulwark',
+  'cataclysm:gauntlet_of_maelstrom',
+  'cataclysm:the_incinerator',
+  'cataclysm:the_immolator',
+  'cataclysm:the_annihilator',
+  'cataclysm:meat_shredder',
+  'cataclysm:tidal_claws',
+  'cataclysm:void_forge',
+  'cataclysm:void_assault_shoulder_weapon',
+  'cataclysm:wither_assault_shoulder_weapon',
+  'cataclysm:laser_gatling',
+  'luminous_beasts:shellmet_helmet',
+  'cataclysm:ancient_spear'], (item, advanced, text) => {
+      text.remove(1)
+      text.remove(1)
+      text.remove(1)
+  })
+});
+
+
+ItemEvents.tooltip(event => {
+  event.addAdvanced('jeg:soul_treat', (item, advanced, text) => {
+      text.remove(2)
+  })
+});
+
+ItemEvents.tooltip(event => {
+  event.addAdvanced('jeg:explosive_muzzle', (item, advanced, text) => {
+      text.remove(1)
+      text.remove(1)
+      text.remove(1)
+      text.remove(1)
+      text.remove(1)
+      text.remove(1)
+  })
+});
+
+
+ItemEvents.tooltip(event => {
+  event.addAdvanced(['cataclysm:infernal_forge','cataclysm:bulwark_of_the_flame'], (item, advanced, text) => {
+      text.remove(1)
+      text.remove(1)
+  })
+});
+
+ItemEvents.tooltip(event => {
+  event.addAdvanced(['luminous_beasts:ultimate_bestiary','luminous_beasts:magic_root','luminous_nether:spore_bundle','luminous_nether:molten_coal','luminous_beasts:mummy_wraps_helmet','luminous_beasts:bone_rattle','luminous_beasts:phoenix_feather','luminous_beasts:gator_tooth','luminous_beasts:yeti_horn','luminous_beasts:viper_tooth','luminous_beasts:pumpkin_helmet_helmet','sculkhorde:calcite_ore','spartanweaponry:simple_handle'], (item, advanced, text) => {
+      text.remove(1)
+  })
+});
+ItemEvents.tooltip(event => {
+  event.addAdvanced(Item.of('jeg:flare', "{HasRaid:1b,display:{Name:'{\"italic\":false,\"color\":\"red\",\"translate\":\"item.jeg.raid_flare\"}'}}")
+, (item, advanced, text) => {
+      text.remove(1)
+      text.remove(1)
+  })
+});
+ItemEvents.tooltip(event => {
+  event.addAdvanced(['sculkhorde:sculk_enderman_cleaver','sculkhorde:soul_disrupter','jeg:ectoplasm','jeg:gunnite_ingot','jeg:gunmetal_ingot','jeg:gunmetal_grit'], (item, advanced, text) => {
+      text.remove(1)
+      text.remove(1)
+  })
+});
+
+
+ItemEvents.tooltip(event => {
+  event.addAdvanced(['jeg:blaze_round','alexsmobs:unsettling_kimono','create:netherite_backtank','create:copper_backtank','create:netherite_diving_helmet','create:copper_diving_boots','create:netherite_diving_boots','create:copper_diving_helmet'], (item, advanced, text) => {
+      text.remove(1)
+  })
+});
+ItemEvents.tooltip(event => {
+  event.addAdvanced(['sculkhorde:calcite_clump','sculkhorde:eye_of_purity','sculkhorde:pure_souls','sculkhorde:crying_souls','sculkhorde:sculk_sweeper_sword'], (item, advanced, text) => {
+      text.remove(1)
+      text.remove(1)
+  })
+});
+ItemEvents.tooltip(event => {
+  event.addAdvanced(['jeg:pocket_bubble','jeg:ammo_pouch','jeg:firearm_blueprint','jeg:advanced_firearm_blueprint','jeg:water_bomb'], (item, advanced, text) => {
+      text.remove(1)
+      text.remove(1)
+  })
+});
+
+ItemEvents.tooltip(event => {
+  event.addAdvanced(['jeg:supersonic_shotgun','jeg:subsonic_rifle'], (item, advanced, text) => {
+      text.remove(5)
+      text.remove(5)
+      text.remove(5)
+      text.remove(5)
+      text.remove(5)
+  })
+});
+ItemEvents.tooltip(event => {
+  event.addAdvanced(['jeg:flare_gun','jeg:semi_auto_rifle'], (item, advanced, text) => {
+      text.remove(5)
+  })
+});
+ItemEvents.tooltip(event => {
+  event.addAdvanced(['jeg:blossom_rifle'], (item, advanced, text) => {
+      text.remove(5)
+      text.remove(5)
+
+  })
+});
+
+ItemEvents.tooltip(event => {
+  event.addAdvanced(['jeg:hypersonic_cannon'], (item, advanced, text) => {
+      text.remove(5)
+      text.remove(5)
+      text.remove(5)
+      text.remove(5)
+      text.remove(6)
+  })
+});
+
+ItemEvents.tooltip(event => {
+  event.add(['scalinghealth:heart_crystal_shard'], '§7The Wilted heart, used to give vitality to armor pieces')
+  event.add(['scalinghealth:heart_dust'], '§7An empty unfueled heart, it hungers for health')
+  event.add(['alexscavesdelight:cooked_ferrouslime_ball'], '§7Lacking heavy metals, it makes this vaguely edible')
+  event.add(['alexscavesdelight:cooked_heart_of_iron'], '§7Formed by melted parts, it could be safely eaten')
+  event.add(['cataclysm:necklace_of_the_desert'], '§7Used to wake up something')
+  event.add(['mobcompack:hammer'], '§7Mines a 3x3 area but eats away the user')
+  event.add(['scalinghealth:power_crystal_shard'], '§7The roots pulse as the days come closer')
+  event.add(['tide:fishing_journal'], '§7By Brian Timothy')
+  event.add(['luminous_beasts:ultimate_bestiary'], '§6By Mysticist Ripley Lumisaiah')
+  event.add(['jeg:advanced_firearm_blueprint'], '§7Used to create specilized firearms from basic ones')
+  event.add(['jeg:firearm_blueprint'], '§7Used to create basic firearms')
+  //event.add([Item.of('patchouli:guide_book', '{"patchouli:book":"alexsmobsinteraction:ami_interaction_wiki"}')], 'Interactions Encyclopedia')
+  //event.add([Item.of('patchouli:guide_book', '{"patchouli:book":"alexsmobsinteraction:ami_interaction_wiki"}')], '§7By The AMI Initiative')
+  });
+
+
+  JEIEvents.addItems(event => {
+    event.add('jeg:flare')
+    event.add('alexscaves:jelly_bean')
+  })
+
+
+  ClientEvents.lang('en_us', event =>{
+  let discLang = {
+    'exsanguination:music_disc_voidlit_nether:': 'Berlium - Under The Voidlit Nether'
+  }
+  for (let [id, txt] of Object.entries(discLang)) {
+    event.add('exsanguination', `item.kubejs.music_disc_${id}`, 'Music Disc')
+    event.add('exsanguination', `item.kubejs.music_disc_${id}.desc`, txt)
+  }
+})

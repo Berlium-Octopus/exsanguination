@@ -1,0 +1,36 @@
+{
+    "schemaVersion": 2,
+    "items": [
+        "$minecraft:armor",
+        "archeological:diamond_charm",
+        "archeological:emerald_ring",
+        "alexscavesdelight:cooked_heart_of_iron",
+        "alexscaves:heart_of_iron",
+        "archeological:amethyst_amulet",
+        "alexscaves:totem_of_regeneration",
+        "cataclysm:necklace_of_the_desert",
+        "alexscaves:totem_of_possession",
+        "alexscaves:totem_of_regeneration",
+        "spartanweaponry:studded_cestus",
+        {
+            "id": "minecraft:golden_helmet",
+            "exclude": true
+        },
+        {
+            "id": "minecraft:golden_chestplate",
+            "exclude": true
+        },
+        {
+            "id": "minecraft:golden_leggings",
+            "exclude": true
+        },
+        {
+            "id": "minecraft:golden_boots",
+            "exclude": true
+        }
+    ],
+    "incompatible": [
+        "extra_enchantments:incompatibility_curse",
+        "exsanguination:osmosis"
+    ]
+}

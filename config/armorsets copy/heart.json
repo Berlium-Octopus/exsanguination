@@ -1,0 +1,22 @@
+{
+    "armorSetName": "heartofgold",
+    "performanceMode": true,
+    "additionalSetPieces": [
+        {
+            "itemKey": "rootoffear:agitated_primitive_heart",
+            "mustBeEmpty": false
+        }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "toughasnails:internal_warmth",
+            "value": 0.5,
+            "interactionType": "self",
+            "interactionDuration": 100,
+            "hideBonusDescription": false,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

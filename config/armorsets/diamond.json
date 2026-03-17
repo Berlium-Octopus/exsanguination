@@ -1,0 +1,50 @@
+{
+    "armorSetName": "c_engarde",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "minecraft:diamond_helmet",
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "minecraft:diamond_chestplate",
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "minecraft:diamond_leggings",
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "minecraft:diamond_boots",
+        "mustBeEmpty": false
+    },
+    "offHand": {
+        "itemKey": "spartanshields:diamond_tower_shield",
+        "mixAndMatch": [
+            "spartanshields:diamond_basic_shield"
+        ]
+    },
+    "partialBonusRequiredAmount": 1,
+    "partialSetBonuses": [
+      {
+          "type": "attribute",
+          "name": "puffish_attributes:stamina",
+          "value": -0.15,
+          "interactionType": "self",
+          "attributeOperation": 1,
+          "modifierUUID": "9b3315a4-55f6-4edb-8a7a-f17095a1cab3",
+          "description": "1240"
+      }
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "effect",
+            "name": "potioncore:diamond_skin",
+            "value": 1,
+            "interactionType": "self",
+            "interactionDuration": 240,
+            "hideBonusDescription": true,
+            "onlyImmuneToNewEffects": false
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

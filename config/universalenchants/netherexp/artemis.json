@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:bow",
+    "cataclysm:cursed_bow"
+  ],
+  "incompatible": [
+    "extra_enchantments:incompatibility_curse",
+    "netherexp:recoil"
+  ]
+}

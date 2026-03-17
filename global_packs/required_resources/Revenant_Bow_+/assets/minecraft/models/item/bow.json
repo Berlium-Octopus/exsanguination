@@ -1,0 +1,55 @@
+{
+"parent": "item/generated",
+"textures": {
+    "layer0": "item/bow"
+},
+"display":
+{
+"thirdperson_righthand": {"rotation": [ -80, 260, -40 ],"translation": [ -1, -2, 2.5 ],"scale": [ 0.9, 0.9, 0.9 ]},
+"thirdperson_lefthand": {"rotation": [ -80, -280, 40 ],"translation": [ -1, -2, 2.5 ],"scale": [ 0.9, 0.9, 0.9 ]},
+"firstperson_righthand": {"rotation": [ 0, -90, 25 ],"translation": [ 1.13, 3.2, 1.13],"scale": [ 0.68, 0.68, 0.68 ]},
+"firstperson_lefthand": {"rotation": [ 0, 90, -25 ],"translation": [ 1.13, 3.2, 1.13],"scale": [ 0.68, 0.68, 0.68 ]}
+},
+"overrides":
+[
+{"predicate": {"pulling": 1},"model": "item/bow_pulling_0"},
+{"predicate": {"pulling": 1,"pull": 0.65},"model": "item/bow_pulling_1"},
+{"predicate": {"pulling": 1,"pull": 0.9},"model": "item/bow_pulling_2"},
+
+{"predicate": {"custom_model_data":1},"model": "item/bow/1"},
+{"predicate": {"custom_model_data":1,"pulling": 1},"model": "item/bow/1_pulling_0"},
+{"predicate": {"custom_model_data":1,"pulling": 1,"pull": 0.65},"model": "item/bow/1_pulling_1"},
+{"predicate": {"custom_model_data":1,"pulling": 1,"pull": 0.9},"model": "item/bow/1_pulling_2"},
+
+{"predicate": {"custom_model_data":2},"model": "item/bow/2"},
+{"predicate": {"custom_model_data":2,"pulling": 1},"model": "item/bow/2_pulling_0"},
+{"predicate": {"custom_model_data":2,"pulling": 1,"pull": 0.65},"model": "item/bow/2_pulling_1"},
+{"predicate": {"custom_model_data":2,"pulling": 1,"pull": 0.9},"model": "item/bow/2_pulling_2"},
+
+{"predicate": {"custom_model_data":3},"model": "item/bow/3"},
+{"predicate": {"custom_model_data":3,"pulling": 1},"model": "item/bow/3_pulling_0"},
+{"predicate": {"custom_model_data":3,"pulling": 1,"pull": 0.65},"model": "item/bow/3_pulling_1"},
+{"predicate": {"custom_model_data":3,"pulling": 1,"pull": 0.9},"model": "item/bow/3_pulling_2"},
+
+{"predicate": {"custom_model_data":4},"model": "item/bow/4"},
+{"predicate": {"custom_model_data":4,"pulling": 1},"model": "item/bow/4_pulling_0"},
+{"predicate": {"custom_model_data":4,"pulling": 1,"pull": 0.65},"model": "item/bow/4_pulling_1"},
+{"predicate": {"custom_model_data":4,"pulling": 1,"pull": 0.9},"model": "item/bow/4_pulling_2"},
+
+{"predicate": {"custom_model_data":5},"model": "item/bow/5"},
+{"predicate": {"custom_model_data":5,"pulling": 1},"model": "item/bow/5_pulling_0"},
+{"predicate": {"custom_model_data":5,"pulling": 1,"pull": 0.65},"model": "item/bow/5_pulling_1"},
+{"predicate": {"custom_model_data":5,"pulling": 1,"pull": 0.9},"model": "item/bow/5_pulling_2"},
+
+{"predicate": {"custom_model_data":6},"model": "item/bow/6"},
+{"predicate": {"custom_model_data":6,"pulling": 1},"model": "item/bow/6_pulling_0"},
+{"predicate": {"custom_model_data":6,"pulling": 1,"pull": 0.65},"model": "item/bow/6_pulling_1"},
+{"predicate": {"custom_model_data":6,"pulling": 1,"pull": 0.9},"model": "item/bow/6_pulling_2"},
+
+{"predicate": {"custom_model_data":7},"model": "item/bow/7"},
+{"predicate": {"custom_model_data":7,"pulling": 1},"model": "item/bow/7_pulling_0"},
+{"predicate": {"custom_model_data":7,"pulling": 1,"pull": 0.65},"model": "item/bow/7_pulling_1"},
+{"predicate": {"custom_model_data":7,"pulling": 1,"pull": 0.9},"model": "item/bow/7_pulling_2"},
+{"predicate": {"custom_model_data":7},"model": "item/bow/8"}
+]
+}

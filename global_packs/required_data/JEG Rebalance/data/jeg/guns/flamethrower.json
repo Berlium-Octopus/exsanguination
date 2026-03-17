@@ -1,0 +1,52 @@
+{
+  "display": {
+    "flash": {
+      "size": 0.8,
+      "yOffset": 4.1,
+      "zOffset": -11.8
+    }
+  },
+  "general": {
+    "alwaysSpread": true,
+    "canBeBlueprinted": false,
+    "fireMode": "jeg:automatic",
+    "gripType": "jeg:two_handed",
+    "overheatTimer": 40,
+    "projectileAmount": 5,
+    "rate": 1,
+    "recoilAngle": 0.5,
+    "recoilKick": 0.15,
+    "spread": 20.0
+  },
+  "modules": {
+    "zoom": {
+      "fovModifier": 0.6,
+      "yOffset": 5.71,
+      "zOffset": -1.75
+    }
+  },
+  "projectile": {
+    "advantage": "jeg:very_heavy",
+    "collateral": true,
+    "damage": 1.5,
+    "headshotMultiplier": 8,
+    "hideTrail": true,
+    "item": "minecraft:fire_charge",
+    "life": 7,
+    "size": 0.05,
+    "speed": 2.0,
+    "trailColor": 16765577
+  },
+  "reloads": {
+    "emptyMagTimer": 20,
+    "maxAmmo": 50,
+    "reloadItem": "scalinghealth:bandages",
+    "reloadTimer": 220,
+    "reloadType": "jeg:single_item"
+  },
+  "sounds": {
+    "cock": "jeg:item.pistol.cock",
+    "fire": "minecraft:item.firecharge.use",
+    "reload": "jeg:item.pistol.reload"
+  }
+}

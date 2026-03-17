@@ -1,0 +1,177 @@
+{
+    "pack": {
+        "pack_format": 15,
+        "description": "Vital For Exsangunation_NE"
+    },
+    "filter": {
+        "block": [
+            {
+                "namespace": "spelunkery",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "interiors",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "luminous_beasts",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "quark",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "suppsquared",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "copycats",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "mynethersdelight",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "doom_and_gloom",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "bettertridents",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "luminous_nether",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "immersive_weathering",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "minecraft",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "oreganized",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "deeperdarker",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "camping",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "sculkhorde",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "spartanweaponry",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "railways",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "alexscaves",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "farmersdelight",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "create",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "spartanshields",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "repurposed_structures",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "alexsmobsinteraction",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "archeological",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "mobcompack",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "cataclysm",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "biomesoplenty",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "betterdungeons",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "betterdeserttemples",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "yungscavebiomes",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "vinery",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "supplementaries",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "netherdepthsupgrade",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "alexsmobs",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "sereneseasons",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "jeg",
+                "path": "advancements/.*"
+            },
+
+            {
+                "namespace": "biomemakeover",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "tide",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "decorative_blocks",
+                "path": "advancements/.*"
+            },
+            {
+                "namespace": "netherexp",
+                "path": "advancements/.*"
+            }
+
+
+        ]
+    }
+}

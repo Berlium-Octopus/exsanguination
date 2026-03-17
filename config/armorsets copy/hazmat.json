@@ -1,0 +1,131 @@
+{
+    "armorSetName": "Biohazard",
+    "performanceMode": false,
+    "head": {
+        "itemKey": "alexscaves:hazmat_mask",
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "alexscaves:hazmat_chestplate",
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "alexscaves:hazmat_leggings",
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "alexscaves:hazmat_boots",
+        "mustBeEmpty": false
+    },
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:ranged_resistance",
+            "value": -0.25,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "ab7c6307-de0c-4d1f-a064-1fcdf08cfcb4"
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:poison",
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:weakness",
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:slowness",
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:wither",
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "potioncore:disorganization",
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:mining_fatigue",
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "vinery:creeper_effect",
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:instant_damage",
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "potioncore:perplexity",
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "potioncore:rust",
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "sculkhorde:corroded",
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "alexsmobs:debilitating_sting",
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "sculkhorde:sculk_vessel",
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "alexscavesexemplified:rabial",
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "sculkhorde:diseased_cysts",
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "sculkhorde:sculk_infected",
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "cataclysm:abyssal_burn",
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "cataclysm:stun",
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:blindness",
+            "interactionType": "immunity"
+        },
+        {
+            "type": "effect",
+            "name": "minecraft:darkness",
+            "interactionType": "immunity"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

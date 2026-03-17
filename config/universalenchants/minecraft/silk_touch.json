@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:digger",
+    "quark:pickarang",
+    "quark:flamerang"
+  ],
+  "incompatible": [
+    "spartanweaponry:lucky_throw",
+    "minecraft:luck_of_the_sea",
+    "minecraft:fortune",
+    "minecraft:looting",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

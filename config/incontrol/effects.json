@@ -1,0 +1,52 @@
+[
+    {
+        "timeout": 20,
+        "helmet": [
+            "rootoffear:wraithwood_helmet",
+            "rootoffear:fadedwood_helmet"
+        ],
+        "minlight": 4,
+        "fire": 2
+    },
+    {
+        "timeout": 20,
+        "chestplate": [
+            "rootoffear:wraithwood_chestplate",
+            "rootoffear:fadedwood_chestplate"
+        ],
+        "minlight": 4,
+        "fire": 2
+    },
+    {
+        "timeout": 20,
+        "leggings": [
+            "rootoffear:wraithwood_leggings",
+            "rootoffear:fadedwood_leggings"
+        ],
+        "minlight": 4,
+        "fire": 2
+    },
+    {
+        "timeout": 20,
+        "boots": [
+            "rootoffear:wraithwood_boots",
+            "rootoffear:fadedwood_boots"
+        ],
+        "minlight": 4,
+        "fire": 2
+    },
+    {
+        "timeout": 20,
+        "block": {
+            "block": "rootoffear:faded_oak_wood"
+        },
+        "damage": "minecraft:cactus"
+    },
+    {
+        "timeout": 20,
+        "block": {
+            "block": "rootoffear:faded_oak_log"
+        },
+        "damage": "minecraft:cactus"
+    }
+]

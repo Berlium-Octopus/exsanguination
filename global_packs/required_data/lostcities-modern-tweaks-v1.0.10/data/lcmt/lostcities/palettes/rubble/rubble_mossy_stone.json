@@ -1,0 +1,21 @@
+{
+  "palette": [
+    {
+      "char": "▣",
+      "blocks": [
+        {
+          "random": 20,
+          "block": "minecraft:mossy_stone_bricks"
+        },
+        {
+          "random": 60,
+          "block": "minecraft:mossy_cobblestone"
+        },
+        {
+          "random": 1000,
+          "block": "minecraft:moss_block"
+        }
+      ]
+    }
+  ]
+}

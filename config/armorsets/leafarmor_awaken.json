@@ -1,0 +1,64 @@
+{
+    "armorSetName": "leafawaken",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "toughasnails:leaf_helmet",
+        "mustBeEmpty": false,
+        "mixAndMatch": [
+            "toughasnails:wool_helmet"
+        ],
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "chest": {
+        "itemKey": "toughasnails:leaf_chestplate",
+        "mustBeEmpty": false,
+        "mixAndMatch": [
+            "toughasnails:wool_chestplate"
+        ],
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "legs": {
+        "itemKey": "toughasnails:leaf_leggings",
+        "mixAndMatch": [
+            "toughasnails:wool_leggings"
+        ],
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "boots": {
+        "itemKey": "toughasnails:leaf_boots",
+        "mixAndMatch": [
+            "toughasnails:wool_boots"
+        ],
+        "mustBeEmpty": false,
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ]
+    },
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "puffish_attributes:stamina",
+            "value": 0.4,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "f414f291-52d1-406c-963a-4a552bdd8b18",
+            "description": "1240"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

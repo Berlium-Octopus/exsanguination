@@ -1,0 +1,20 @@
+{
+    "armorSetName": "eletranerf",
+    "performanceMode": true,
+    "additionalSetPieces": [
+       {
+         "itemKey": "archeological:ancient_socks",
+           "mustBeEmpty": false
+       }
+   ],
+    "fullSetBonuses": [
+      {
+           "type": "effect",
+           "name": "vinery:double_jump",
+           "value": 0,
+           "interactionType": "self",
+           "interactionDuration": 100
+       }
+    ],
+    "hideGeneratedTooltip": true
+}

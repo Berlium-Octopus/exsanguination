@@ -1,0 +1,21 @@
+{
+    "armorSetName": "eletranerf",
+    "performanceMode": true,
+    "additionalSetPieces": [
+          {
+            "itemKey": "create:goggles",
+              "mustBeEmpty": false
+          }
+      ],
+    "fullSetBonuses": [
+      {
+           "type": "effect",
+           "name": "minecraft:blindness",
+           "value": 1,
+           "interactionType": "self",
+           "interactionDuration": 240,
+           "interactionType": "immunity"
+       }
+    ],
+    "hideGeneratedTooltip": true
+}

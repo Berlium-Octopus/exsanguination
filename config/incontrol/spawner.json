@@ -1,0 +1,146 @@
+[
+    {
+        "mob": [
+            "sculkhorde:sculk_mite",
+            "sculkhorde:sculk_mite_aggressor",
+            "sculkhorde:sculk_creeper",
+            "sculkhorde:sculk_hatcher",
+            "sculkhorde:sculk_ravager",
+            "sculkhorde:sculk_spitter",
+            "sculkhorde:sculk_spore_spewer",
+            "sculkhorde:sculk_vindicator",
+            "sculkhorde:sculk_zombie",
+            "minecraft:phantom",
+            "sculkhorde:sculk_phantom_corpse",
+            "sculkhorde:sculk_witch",
+            "sculkhorde:sculk_vex",
+            "alexsmobs:skreecher"
+        ],
+        "persecond": 0.5,
+        "attempts": 2,
+        "amount": {
+            "minimum": 2,
+            "maximum": 5
+        },
+        "conditions": {
+            "dimension": "deeperdarker:otherside",
+            "mindist": 20,
+            "maxdist": 100,
+            "maxheight": 123
+        }
+    },
+        {
+        "mob": ["minecraft:vex", "biomemakeover:ghost"],
+        "persecond": 0.4,
+        "attempts": 1,
+        "amount": {
+            "minimum": 1,
+            "maximum": 5
+        },
+        "conditions": {
+            "dimension": "lostcities:lostcity",
+            "mindist": 20,
+            "maxdist": 100,
+            "maxheight": 123
+        }
+    },
+       {
+        "mob": ["alexsmobs:farseer"],
+        "persecond": 0.5,
+        "attempts": 1,
+        "amount": {
+            "minimum": 1,
+            "maximum": 2
+        },
+        "conditions": {
+            "dimension": "lostcities:lostcity",
+            "mindist": 60,
+            "maxdist": 100,
+            "maxheight": 123
+        }
+    },
+           {
+        "mob": ["alexsmobs:mimicube", "lostcities:escapee"],
+        "persecond": 0.5,
+        "attempts": 1,
+        "amount": {
+            "minimum": 1,
+            "maximum": 2
+        },
+        "conditions": {
+            "dimension": "lostcities:lostcity",
+            "minheight": -90,
+            "maxheight": 10,
+            "maxthis": 40
+        }
+    },
+    {
+        "mob": [
+            "sculkhorde:sculk_bee_harvester",
+            "sculkhorde:sculk_bee_infector"
+        ],
+        "persecond": 0.25,
+        "attempts": 1,
+        "amount": {
+            "minimum": 1,
+            "maximum": 2
+        },
+        "conditions": {
+            "dimension": "deeperdarker:otherside",
+            "mindist": 20,
+            "maxdist": 100,
+            "maxheight": 123
+        }
+    },
+    {
+        "mob": [
+            "sculkhorde:sculk_soul_reaper",
+            "deeperdarker:stalker"
+        ],
+        "persecond": 0.1,
+        "attempts": 2,
+        "amount": {
+            "minimum": 1,
+            "maximum": 2
+        },
+        "conditions": {
+            "dimension": "deeperdarker:otherside",
+            "mindist": 20,
+            "maxdist": 100,
+            "maxheight": 123
+        }
+    },
+    {
+        "mob": "alexsmobs:farseer",
+        "attempts": 1,
+        "persecond": 0.1,
+        "amount": {
+            "minimum": 1,
+            "maximum": 3
+        },
+        "conditions": {
+            "dimension": "minecraft:the_nether",
+            "norestrictions": true,
+            "minheight": 110,
+            "maxheight": 148,
+            "maxthis": 30
+        }
+    },
+  {
+    "mob": "sculkhorde:sculk_leech",
+    "persecond": 0.2,
+    "attempts": 3,
+    "amount": {
+      "minimum": 1,
+      "maximum": 5,
+      "groupdistance": 3
+    },
+    "conditions": {
+      "dimension": "deeperdarker:otherside",
+      "inwater": true,
+      "minheight": -45,
+      "maxheight": 110,
+      "maxthis": 40
+    }
+  }
+]

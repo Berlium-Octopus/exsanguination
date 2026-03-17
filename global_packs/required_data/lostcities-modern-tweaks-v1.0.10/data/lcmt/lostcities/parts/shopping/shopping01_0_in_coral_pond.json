@@ -1,0 +1,42 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "slices": [
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "     QQffQQ     ",
+      "     QQffQQ     ",
+      "     ffQQff     ",
+      "     ffQQff     ",
+      "     QQffQQ     ",
+      "     QQffQQ     ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "     fQQQQf     ",
+      "    fWW≈WW≈f    ",
+      "    QW≈W≈WWQ    ",
+      "    QWWWW≈WQ    ",
+      "    QW≈W≈WWQ    ",
+      "    QWW≈WWWQ    ",
+      "    f≈WWW≈Wf    ",
+      "     fQQQQf     ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ]
+  ]
+}

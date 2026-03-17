@@ -1,0 +1,65 @@
+{
+    "armorSetName": "Golden Damage",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "minecraft:golden_helmet",
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "minecraft:golden_chestplate",
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "minecraft:golden_leggings",
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "minecraft:golden_boots",
+        "mustBeEmpty": false
+    },
+    "mainHand": {
+        "itemKey": "minecraft:golden_sword",
+        "mixAndMatch": [
+            "minecraft:golden_hoe",
+            "minecraft:golden_pickaxe",
+            "minecraft:golden_axe",
+            "minecraft:golden_shovel",
+            "spartanweaponry:golden_parrying_dagger",
+            "spartanweaponry:golden_dagger",
+            "spartanweaponry:golden_battleaxe",
+            "spartanweaponry:golden_longsword",
+            "spartanweaponry:golden_flanged_mace",
+            "spartanweaponry:golden_glaive",
+            "spartanweaponry:golden_quarterstaff",
+            "spartanweaponry:golden_rapier",
+            "spartanweaponry:golden_greatsword",
+            "spartanweaponry:golden_battle_hammer",
+            "spartanweaponry:golden_warhammer",
+            "spartanweaponry:golden_halberd",
+            "spartanweaponry:golden_pike",
+            "spartanweaponry:golden_lance",
+            "spartanweaponry:golden_longsword",
+            "spartanweaponry:golden_saber",
+            "spartanweaponry:golden_boomerang",
+            "spartanweaponry:golden_throwing_knife",
+            "spartanweaponry:golden_tomahawk",
+            "spartanweaponry:golden_javelin",
+            "spartanweaponry:golden_longbow",
+            "luminous_nether:gold_cultist_axe"
+        ],
+        "mustBeEmpty": false
+
+    },
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "minecraft:generic.attack_damage",
+            "value": 1.2,
+            "interactionType": "self",
+            "attributeOperation": 1,
+            "modifierUUID": "118f9dbc-04c4-4d43-816b-b431b5f8f2d6",
+            "description": "1100"
+        }
+    ],
+    "hideGeneratedTooltip": true
+}

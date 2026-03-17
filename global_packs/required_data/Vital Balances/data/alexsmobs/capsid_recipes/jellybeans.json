@@ -1,0 +1,12 @@
+{
+    "ingredients": [
+      {
+        "item": "alexsmobs:rainbow_jelly"
+      }
+    ],
+    "result": {
+      "item": "alexscaves:jelly_bean",
+      "count": 1
+    },
+    "time": 500
+  }

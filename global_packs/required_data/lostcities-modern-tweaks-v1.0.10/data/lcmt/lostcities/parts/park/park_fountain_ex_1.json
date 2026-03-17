@@ -1,0 +1,125 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "q",
+        "variant": "lcmt:stone_brick_stairs_top_east",
+        "damaged": "minecraft:iron_bars"
+      },
+      {
+        "char": "r",
+        "variant": "lcmt:stone_brick_stairs_top_west",
+        "damaged": "minecraft:iron_bars"
+      },
+      {
+        "char": "s",
+        "variant": "lcmt:stone_brick_stairs_top_north",
+        "damaged": "minecraft:iron_bars"
+      },
+      {
+        "char": "o",
+        "variant": "lcmt:stone_brick_stairs_top_south",
+        "damaged": "minecraft:iron_bars"
+      },
+      {
+        "char": "x",
+        "variant": "lcmt:stonebrick",
+        "damaged": "minecraft:iron_bars"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "                ",
+      "                ",
+      "    p      p    ",
+      "      xxxx      ",
+      "  p xxWWWWxx p  ",
+      "    xWWWWWWx    ",
+      "   xWWWWWWWWx   ",
+      "   xWWWxxWWWx   ",
+      "   xWWWxxWWWx   ",
+      "   xWWWWWWWWx   ",
+      "    xWWWWWWx    ",
+      "  p xxWWWWxx p  ",
+      "      xxxx      ",
+      "    p      p    ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "    e      e    ",
+      "                ",
+      "                ",
+      "       ww       ",
+      "       ww       ",
+      "                ",
+      "                ",
+      "    e      e    ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "       oo       ",
+      "      qxxr      ",
+      "      qxxr      ",
+      "       ss       ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "       WW       ",
+      "      WxxW      ",
+      "      WxxW      ",
+      "       WW       ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "       WW       ",
+      "       WW       ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ]
+  ]
+}

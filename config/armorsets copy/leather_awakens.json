@@ -1,0 +1,112 @@
+{
+    "armorSetName": "lethad2",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "minecraft:leather_helmet",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "chest": {
+        "itemKey": "minecraft:leather_chestplate",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "legs": {
+        "itemKey": "minecraft:leather_leggings",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "boots": {
+        "itemKey": "minecraft:leather_boots",
+        "enchantments": [
+            {
+                "enchantmentKey": "exsanguination:awakening"
+            }
+        ],
+        "mustBeEmpty": false
+    },
+    "mainHand": {
+        "itemKey": "minecraft:bow",
+        "mixAndMatch":[
+              "spartanweaponry:golden_longbow",
+              "spartanweaponry:netherite_longbow",
+              "spartanweaponry:wooden_longbow",
+              "spartanweaponry:iron_longbow",
+              "spartanweaponry:bronze_longbow",
+              "spartanweaponry:copper_longbow",
+              "spartanweaponry:tin_longbow",
+              "spartanweaponry:steel_longbow",
+              "spartanweaponry:electrum_longbow",
+              "spartanweaponry:lead_longbow",
+              "spartanweaponry:nickel_longbow",
+              "spartanweaponry:invar_longbow",
+              "spartanweaponry:aluminum_longbow",
+              "spartanweaponry:platinum_longbow",
+              "spartanweaponry:constantan_longbow",
+              "alexscaves:dreadbow",
+              "cataclysm:cursed_bow",
+              "cataclysm:wrath_of_the_desert"
+          ]
+    },
+    "additionalSetPieces": [
+        {
+            "itemKey": "supplementaries:quiver"
+          },
+          {
+            "itemKey": "spartanweaponry:small_arrow_quiver",
+            "mixAndMatch":[
+                "spartanweaponry:medium_arrow_quiver",
+                "spartanweaponry:large_arrow_quiver",
+                "spartanweaponry:huge_arrow_quiver"]
+        }
+    ],
+    "fullSetBonuses": [
+      {
+          "type": "effect",
+          "name": "potioncore:true_shot",
+          "value": 3,
+          "interactionType": "self",
+          "interactionDuration": 100,
+          "description": "1100"
+      },
+      {
+          "type": "effect",
+          "name": "minecraft:speed",
+          "value": 2,
+          "interactionType": "self",
+          "interactionDuration": 100,
+          "description": "1100"
+      },
+      {
+          "type": "attribute",
+          "name": "puffish_attributes:stamina",
+          "value": -0.25,
+          "interactionType": "self",
+          "attributeOperation": 1,
+          "modifierUUID": "f413e291-72d1-406c-964a-4a559bcd8b19",
+          "description": "1100"
+      },
+      {
+          "type": "attribute",
+          "name": "minecraft:generic.max_health",
+          "value": 16,
+          "interactionType": "self",
+          "attributeOperation": 0,
+          "modifierUUID": "f413e291-72d1-406c-964a-4a559bcd8b19",
+          "description": "1100"
+      }
+    ],
+    "hideGeneratedTooltip": true
+}

@@ -1,0 +1,17 @@
+{
+  "palette": [
+    {
+      "char": "'",
+      "blocks": [
+        {
+          "random": 32,
+          "block": "minecraft:hanging_roots[waterlogged=false]"
+        },
+        {
+          "random": 1000,
+          "block": "minecraft:cave_vines[age=0,berries=false]"
+        }
+      ]
+    }
+  ]
+}

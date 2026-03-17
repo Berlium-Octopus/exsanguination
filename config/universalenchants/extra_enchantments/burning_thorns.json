@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:armor",
+    "$minecraft:universal_enchants_horse_armor",
+    "$minecraft:universal_enchants_shield"
+  ],
+  "incompatible": [
+    "extra_enchantments:freezing_thorns",
+    "minecraft:thorns",
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

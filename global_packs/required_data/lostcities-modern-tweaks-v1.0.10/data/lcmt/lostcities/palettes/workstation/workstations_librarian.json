@@ -1,0 +1,37 @@
+{
+  "palette": [
+    {
+      "char": "F",
+      "blocks": [
+        {
+          "random": 20,
+          "block": "minecraft:crafting_table"
+        },
+        {
+          "random": 20,
+          "block": "minecraft:cartography_table"
+        },
+        {
+          "random": 15,
+          "block": "minecraft:lectern"
+        },
+        {
+          "random": 10,
+          "block": "minecraft:barrel[facing=up]"
+        },
+        {
+          "random": 10,
+          "block": "minecraft:bookshelf"
+        },
+        {
+          "random": 4,
+          "block": "minecraft:enchanting_table"
+        },
+        {
+          "random": 1000,
+          "block": "minecraft:cobweb"
+        }
+      ]
+    }
+  ]
+}

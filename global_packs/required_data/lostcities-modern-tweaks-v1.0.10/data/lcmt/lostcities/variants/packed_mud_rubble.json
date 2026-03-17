@@ -1,0 +1,16 @@
+{
+  "blocks": [
+    {
+      "random": 40,
+      "block": "minecraft:mud_brick_slab[type=bottom]"
+    },
+    {
+      "random": 40,
+      "block": "minecraft:mud_brick_stairs[facing=east,half=bottom]"
+    },
+    {
+      "random": 1000,
+      "block": "minecraft:packed_mud"
+    }
+  ]
+}

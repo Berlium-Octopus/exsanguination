@@ -1,0 +1,156 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "I",
+        "block": "minecraft:lever[face=wall,facing=north,powered=true]"
+      },
+      {
+        "char": "n",
+        "block": "minecraft:dropper[facing=north,triggered=true]",
+        "loot": "lcmt:shopping_loot"
+      },
+      {
+        "char": "m",
+        "block": "minecraft:iron_trapdoor[facing=west,half=bottom,open=true,powered=false,waterlogged=false]"
+      },
+      {
+        "char": "q",
+        "block": "minecraft:iron_trapdoor[facing=east,half=bottom,open=true,powered=false,waterlogged=false]"
+      },
+      {
+        "char": "H",
+        "block": "minecraft:chiseled_bookshelf[facing=north,slot_0_occupied=false,slot_1_occupied=false,slot_2_occupied=false,slot_3_occupied=false,slot_4_occupied=false,slot_5_occupied=false]",
+        "tag": {
+          "last_interacted_slot": 0,
+          "Items": []
+        }
+      },
+      {
+        "char": "r",
+        "block": "minecraft:stone_button[face=wall,facing=north,powered=false]"
+      },
+      {
+        "char": "k",
+        "block": "minecraft:bamboo_wall_sign[facing=north,waterlogged=false]",
+        "tag": {
+          "is_waxed": false,
+          "front_text": {
+            "has_glowing_text": true,
+            "color": "white",
+            "messages": [
+              "{\"text\":\"==========\"}",
+              "{\"text\":\"\"}",
+              "{\"text\":\"\"}",
+              "{\"text\":\"==========\"}"
+            ]
+          },
+          "back_text": {
+            "has_glowing_text": false,
+            "color": "black",
+            "messages": [
+              "{\"text\":\"\"}",
+              "{\"text\":\"\"}",
+              "{\"text\":\"\"}",
+              "{\"text\":\"\"}"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "slices": [
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "   j((j         ",
+      "   ]            ",
+      "   ]            ",
+      "   j            ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "      k   k     ",
+      "    mn# mn#     ",
+      "    m##qm##q    ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "   *            ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "     r   r      ",
+      "     #+  #+     ",
+      "     #Hq #Hq    ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "     I   I      ",
+      "     #+  #+     ",
+      "     #Hq #Hq    ",
+      "                ",
+      "                ",
+      "                "
+    ],
+    [
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "     __  __     ",
+      "     __  __     ",
+      "                ",
+      "                ",
+      "                "
+    ]
+  ]
+}
