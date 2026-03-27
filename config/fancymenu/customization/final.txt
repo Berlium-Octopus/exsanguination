@@ -101,7 +101,7 @@ element {
 
 element {
   interactable = true
-  source = Exsanguination_CE Version 0.0.4%n%
+  source = Exsanguination_CE Version 0.0.5%n%
   source_mode = direct
   shadow = true
   scale = 1.0

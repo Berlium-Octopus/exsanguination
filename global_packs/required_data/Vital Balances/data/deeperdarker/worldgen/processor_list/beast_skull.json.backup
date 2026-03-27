@@ -15,7 +15,7 @@
               "block": "deeperdarker:sculk_grime"
             },
             "output_state": {
-              "Name": "deeperdarker:suspisious_sculk_grime",
+              "Name": "deeperdarker:suspicious_sculk_grime",
               "Properties": {
                 "dusted": "0"
               }

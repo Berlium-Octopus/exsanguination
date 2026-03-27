@@ -1,13 +1,19 @@
-// Spawn animation is formshift reverse
-// fall animation if possible is formshift 
-// Add more keyframes idiot the animation is broken
-// Remember to add extra drops to Charged Escapees + Escapee Explodes When Right Clicked ON Via Flint & Steel Via Entity Interact Server Script
+// priority 100
 // THE ESCAPEE + Liopyu
+// TODO V2:
+// CUSTOM ESCAPEE HEADS + Head DROPS
+// CUSTOM MUSIC + DISC DROPS
+// CHANGING TRIGGER ANIMS TO ENTITY.SWING?
 
+// TODO FOR EXAMPLE SCRIPT:
+// ADD ITEM PHYSICS
+// ADD LOST CITIES SPAWNER DATAPACK
+// 
 const $RenderType = Platform.isClientEnvironment() ? Java.loadClass("net.minecraft.client.renderer.RenderType") : null
 const $ResourceLocation2 = Java.loadClass("net.minecraft.resources.ResourceLocation");
 const Mth = Java.loadClass("net.minecraft.util.Mth")
 let Axis = Platform.isClientEnvironment() ? Java.loadClass("com.mojang.math.Axis") : null
+let Minecraft = Platform.isClientEnvironment() ? Java.loadClass("net.minecraft.client.Minecraft") : null
 
 /**
  * @param {Internal.ContextUtils$PreRenderContext<Internal.LivingEntity>} context
@@ -44,38 +50,52 @@ global.createNavigation = context => {
  */
 global.tick = entity => {
     try {
+        let prevPitch = entity.getSyncedData("PrevPitch") || 0
+        entity.setSyncedData("PrevPitch", prevPitch)
+
+        // IDK IF THIS WORKS TRUST THE DROWNED.JAVA!
         let BlockPathTypes = Java.loadClass("net.minecraft.world.level.pathfinder.BlockPathTypes")
         entity.setPathfindingMalus(BlockPathTypes.WATER, 0.0)
+        entity.setPathfindingMalus(BlockPathTypes.WATER_BORDER, 0.0)
+        entity.setPathfindingMalus(BlockPathTypes.UNPASSABLE_RAIL, 0.0)
+        
+        // There is a small rotation problem as it can't rotate in it's x? axis 
+        // so the random look, looks wierd and idk what i am doing
+        if (entity.level.clientSide) {
+            let wrapDeg = d => ((d + 180) % 360 + 360) % 360 - 180
+            let lerpAngleDeg = (fromDeg, toDeg, t) => fromDeg + wrapDeg(toDeg - fromDeg) * t
+            let bodyT = 1
+            let look = entity.getLookAngle()
+            let targetYaw = Math.atan2(look.z(), look.x()) * (180 / JavaMath.PI) - 90
+            let curYaw = entity.yRot
+            let newYaw = lerpAngleDeg(curYaw, targetYaw, bodyT)
 
-        // Make Entity Follow The Line (full model: body + head + yaw)
-        let wrapDeg = d => ((d + 180) % 360 + 360) % 360 - 180
-        let lerpAngleDeg = (fromDeg, toDeg, t) => fromDeg + wrapDeg(toDeg - fromDeg) * t
-        let bodyT = 0.5
-        let look = entity.getLookAngle()
-        let targetYaw = Math.atan2(look.z(), look.x()) * (180 / JavaMath.PI) - 90
-        let curYaw = entity.yRot
-        let newYaw = lerpAngleDeg(curYaw, targetYaw, bodyT)
-
-        entity.setYaw(newYaw)
-        entity.yHeadRot = newYaw
-        entity.yBodyRot = newYaw
-        entity.setYBodyRot(newYaw)
-        entity.lerpHeadTo(look.x(), look.z())
-
+            entity.setYaw(newYaw)
+            entity.yHeadRot = newYaw
+            entity.yBodyRot = newYaw
+            entity.setYBodyRot(newYaw)
+            entity.lerpHeadTo(look.x(), look.z())
+        }
         if (entity.inWater) {
             entity.setSyncedData("swim", "swimming")
         } else {
             entity.setSyncedData("swim", "walking")
         }
+        if (entity.age > 100)
         UpdateNavy(entity)
     } catch (error) {
         console.log(error)
     }
 }
+/*
+
+global.faceTowards = (entity, tx, ty, tz) => {
+
+}
+*/
 
 function UpdateNavy(entity) {
     let { level } = entity
-    // Ok Fixed Version HOPE
     let walk = entity.getSyncedData("walk")
     let swim = entity.getSyncedData("swim")
 
@@ -116,21 +136,23 @@ global.moveControlTick = entity => {
 
         if (wantsToSwim(entity) && entity.inWater) {
 
-            if (target != null && target.getY() > entity.getY() && target.inWater || entity.getSyncedData("swim") == "walking") {
+            // If The Victim Is Above The Entity
+            if (target != null && target.getY() > entity.getY() && target.inWater) {
                 entity.setDeltaMovement(entity.getDeltaMovement().add(0.0, 0.01, 0.0));
             }
-            if (target != null && target.getY() > entity.getY() && !target.inWater || entity.getSyncedData("swim") == "walking") {
+
+            // Does Jumps/Leaps When Victim Is In Land
+            if (target != null && target.getY() > entity.getY() && !target.inWater) {
                 let dx = target.getX() - entity.getX();
                 let dz = target.getZ() - entity.getZ();
                 let horizontalDist = Math.sqrt(dx * dx + dz * dz);
-                if (horizontalDist > 0.5) {
-                    let push = 0.03;
-                    entity.setDeltaMovement(entity.getDeltaMovement().add((dx / horizontalDist) * push, 0.06, (dz / horizontalDist) * push));
+                if (horizontalDist > 0.05) {
+                    entity.setDeltaMovement(entity.getDeltaMovement().add((dx / horizontalDist) * 0.03, 0.06, (dz / horizontalDist) * 0.03));
                 }
             }
 
             if (!entity.moveControl.hasWanted() || entity.getNavigation().isDone()) {
-                entity.setSpeed(0.4);
+                entity.setSpeed(0.0);
                 return;
             }
 
@@ -199,15 +221,12 @@ global.normal = event => {
     let entity = event.entity
     // If On walk It Plays The Normal Animation
     // Spawning Animation And Death Is Formshift
-    if (entity.hurtTime >= 8) {
-        event.thenPlay('hurt')
-    }
     if (entity.getSyncedData("swim") == "walking") {
         if (entity.isMoving()) {
             event.thenLoop("move")
         } else {
             event.thenLoop("idle")
-        } 
+        }
         // In Water Plays Swimming Animation But Transforms first
     } else {
         if (entity.isMoving()) {
@@ -350,7 +369,7 @@ function spawnLingeringCloud(entity) {
 
 
 global.beastmode = context => {
-    const { entity, poseStack, partialTick } = context
+    let { entity, poseStack, partialTick } = context
     let f1 = 1.0 + Mth.sin(partialTick * 100.0) * partialTick * 0.01;
     let f = Mth.clamp(partialTick, 0.0, 1.0)
     f *= f
@@ -371,7 +390,7 @@ global.beastmode = context => {
 global.animation = event => {
     try {
         let { entity } = event
-            rotateHeadBone(entity, "Head")
+        rotateHeadBone(entity, "Head")
     } catch (error) {
         console.log("ANIMATION ALERT:", error)
     }
@@ -388,7 +407,7 @@ function rotateHeadBone(entity, boneName) {
     // How do i make the head rotate less odd
     let blend = 0.8
     let rotXOffset = Mth.lerp(blend, 0, Rotx)
-    head.setRotX((head.getRotX() + rotXOffset) - 0.11)
+    head.setRotX((head.getRotX() + rotXOffset))
 
 }
 
@@ -400,17 +419,25 @@ global.applyRotations = context => {
     let { poseStack, entity, partialTick } = context
     try {
         // whats partialTick for???
-        if (entity.getSyncedData("swim") === "swimming") {
+        let isPaused = Minecraft.getInstance().isSingleplayer() && Minecraft.getInstance().isPaused()
+        if (entity.getSyncedData("swim") === "swimming" && !isPaused) {
             let look = entity.getLookAngle()
-            if (look) {
-                // Hori
-                let horizontal = Math.sqrt(look.x() * look.x() + look.z() * look.z())
-                let targetPitch = Math.atan2(look.y(), horizontal) * (180 / JavaMath.PI)
-                let currentPitch = entity.xRot || 0
-                let lerpT = 0.3
-                let appliedPitch = currentPitch + (targetPitch - currentPitch) * lerpT
-                poseStack.mulPose(Axis.XP.rotationDegrees(appliedPitch))
-            }
+            // Hori
+            let horizontal = Math.sqrt(look.x() * look.x() + look.z() * look.z())
+            let targetPitch = Math.atan2(look.y(), horizontal) * (180 / JavaMath.PI)
+            let currentPitch = entity.xRot || 0
+            let lerpT = 0.3
+            let appliedPitch = currentPitch + (targetPitch - currentPitch) * lerpT
+            poseStack.mulPose(Axis.XP.rotationDegrees(appliedPitch))
+            entity.setSyncedData("PrevPitch", appliedPitch)
+        } else if (entity.getSyncedData("swim") === "walking" && !isPaused) {
+            // Gradually Rotate Back To Upright When Not Swimming
+            let currentPitch = entity.getSyncedData("PrevPitch") || 0
+            let targetPitch = entity.xRot || 0
+            let lerpT = 0.3
+            let appliedPitch = currentPitch + (targetPitch - currentPitch) * lerpT
+            poseStack.mulPose(Axis.XP.rotationDegrees(appliedPitch))
+            entity.setSyncedData("PrevPitch", 0)
         }
     } catch (error) {
         console.log("Error in applyRotations:", error)
@@ -434,6 +461,28 @@ StartupEvents.registry("entity_type", event => {
     builder.mobCategory("monster")
     builder.clientTrackingRange(20)
     builder.setRenderType("translucent")
+    builder.biomeSpawn(["minecraft:cherry_grove"], 1, 0, 1)
+    /* For Escapee V2
+    builder.aiStep(entity => {
+        // Custom logic to be executed during the living entity's AI step
+        // Access information about the entity
+        // Tick the previously registered part entity/hitbox to be 1 square y-offset to the entity
+        entity.tickPart("head", 0, 1, 0)
+    })
+    builder.onAddedToWorld(entity => {
+        entityBuilder = EntityJSUtils.getEntityBuilder(entity.getType())
+        if (entity.getSyncedData("swim") == "walking") {
+            entityBuilder.addPartEntity("head", 0.3, 0.3, hitboxEntityBuilder => {
+                hitboxEntityBuilder.onPartHurt(context => {
+                    const { entity, part, source, amount } = context
+                    // Custom logic for determining how the parts of the entity should relay damage
+                    // For example, hurt the parent entity twice the damage when this part is hit.
+                    entity.attack(source, amount * 2)
+                })
+            })
+        }
+    })
+*/
     builder.onHurtTarget(context => global.hungerdepletion(context))
     builder.createNavigation(context => global.createNavigation(context))
     builder.canJump(true)
@@ -441,34 +490,40 @@ StartupEvents.registry("entity_type", event => {
     builder.tick(entity => global.tick(entity))
     builder.canBreatheUnderwater(true)
     builder.sized(0.7, 0.9)
+    builder.eggItem(i =>{
+        i.highlightColor(0x9c2f6c)
+        i.backgroundColor(0x110000)
+    })
     builder.canAttack(context => global.canAttack(context))
     builder.animationResource(entity => {
         return "kubejs:animations/entity/escapee.animation.json"
     })
     // Geckolib's Wiki Claims That Animations Can Be Layered, This Is True I Think It Worked
-
     builder.addAnimationController("escapee", 4, event => global.normal(event))
     builder.addAnimationController("attacking", 4, event => {
+        if (event.entity.hurtTime > 8) {
+            event.thenPlay('hurt')
+        }
         event.addTriggerableAnimation("left_attack", "left_bite", "play_once")
         event.addTriggerableAnimation("formshift_attack_left", "formshift_bite_left", "play_once")
         event.addTriggerableAnimation("formshift_attack_right", "formshift_bite_right", "play_once")
         event.addTriggerableAnimation("right_attack", "right_bite", "play_once")
         return true
     })
-    builder.addAnimationController("headturning", 8, event => global.animation(event))
+    builder.addAnimationController("headturning", 4, event => global.animation(event))
     builder.setMoveControl(entity => global.setMoveControl(entity))
     builder.scaleModelForRender(context => global.beastmode(context))
     // add part entity next
     builder.setHurtSound(context => {
         const { entity, damageSource } = context;
         switch (damageSource.getType()) {
-            case "drown":
-                return "minecraft:entity.creeper.hurt"
-            case "explosion":
-                return "minecraft:entity.creeper.hurt"
             default:
                 return "minecraft:entity.creeper.hurt"
         }
+    })
+    builder.experienceReward(killedEntity => {
+        // If Powered Give 8 xp
+        return killedEntity.getSyncedData("powered") ? 8 : 4
     })
     builder.applyRotations(context => global.applyRotations(context))
     builder.setDeathSound("minecraft:entity.creeper.death")
@@ -490,7 +545,7 @@ StartupEvents.registry("entity_type", event => {
 EntityJSEvents.attributes(event => {
     event.modify("lostcities:escapee", attribute => {
         attribute.add("minecraft:generic.attack_damage", 2)
-        attribute.add("biomemakeover:projectile_resistance", 15)
+        attribute.add("biomemakeover:projectile_resistance", 18)
         attribute.add("minecraft:generic.movement_speed", 0.28)
         attribute.add("minecraft:generic.knockback_resistance", 0.2)
         attribute.add("minecraft:generic.follow_range", 40)
@@ -504,6 +559,7 @@ EntityJSEvents.modifyEntity(event => {
             entity.addSyncedData("string", "swim", "walking")
             entity.addSyncedData("string", "walk", "walking")
             entity.addSyncedData("boolean", "powered", false)
+            entity.addSyncedData("float", "PrevPitch", 0)
         })
     })
 })
@@ -517,3 +573,39 @@ ForgeEvents.onEvent(`net.minecraftforge.event.entity.EntityStruckByLightningEven
         event.setCanceled(true)
     }
 })
+
+
+StartupEvents.registry("item", (e) => {
+    e.create("lostcities:escapee_stylet")
+        .texture('kubejs:item/escapee_stylet')
+        .displayName("Escapee Stylet")
+});
+
+const $MobEffectBuilder = Java.loadClass("dev.latvian.mods.kubejs.misc.BasicMobEffect$Builder")
+const $PotionBuilder = Java.loadClass("dev.latvian.mods.kubejs.misc.PotionBuilder")
+const $DeferredRegisterCreate = Java.loadClass("net.minecraftforge.registries.DeferredRegister")["create(net.minecraftforge.registries.IForgeRegistry,java.lang.String)"]
+const $ForgeRegistries = Java.loadClass("net.minecraftforge.registries.ForgeRegistries")
+
+const MOB_EFFECTS = $DeferredRegisterCreate($ForgeRegistries.MOB_EFFECTS, "lostcities")
+const POTIONS = $DeferredRegisterCreate($ForgeRegistries.POTIONS, "lostcities")
+MOB_EFFECTS.register(ForgeModEvents.eventBus())
+POTIONS.register(ForgeModEvents.eventBus())
+
+StartupEvents.init(event => {
+    const escapee_feast = new $MobEffectBuilder("lostcities:escapee_feast").displayName("Escapee's Feast").color(0xa4012c)
+    const escapee_feast_effect = MOB_EFFECTS.register("escapee_feast", () => escapee_feast.createObject())
+    
+    const escapee_feast_potion = Utils.lazy(() => new $PotionBuilder("lostcities:escapee_feast").effect(escapee_feast_effect.get(), 3600, 0))
+    const escapee_potion = POTIONS.register("escapee_feast", () => escapee_feast_potion.get().createObject())
+
+    const escapee_feast_potion_strong = Utils.lazy(() => new $PotionBuilder("lostcities:escapee_feast_strong").effect(escapee_feast_effect.get(), 3600, 1))
+    const escapee_potion_strong = POTIONS.register("escapee_feast_strong", () => escapee_feast_potion_strong.get().createObject())
+})
+
+MoreJSEvents.registerPotionBrewing(event => {
+    event.addPotionBrewing("lostcities:escapee_stylet", "minecraft:awkward", "lostcities:escapee_feast")
+    event.addPotionBrewing("minecraft:glowstone_dust", "lostcities:escapee_feast", "lostcities:escapee_feast_strong")
+})
+
+
+

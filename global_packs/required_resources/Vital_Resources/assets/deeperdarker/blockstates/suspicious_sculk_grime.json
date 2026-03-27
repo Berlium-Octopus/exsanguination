@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "dusted=0": {
+      "model": "deeperdarker:block/suspicious_sculk_grime_0"
+    },
+    "dusted=1": {
+      "model": "deeperdarker:block/suspicious_sculk_grime_1"
+    },
+    "dusted=2": {
+      "model": "deeperdarker:block/suspicious_sculk_grime_2"
+    },
+    "dusted=3": {
+      "model": "deeperdarker:block/suspicious_sculk_grime_3"
+    }
+  }
+}

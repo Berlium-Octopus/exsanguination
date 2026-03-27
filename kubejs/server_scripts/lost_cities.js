@@ -21,7 +21,7 @@ global.portalEvent = (/**@type {Internal.EntityTravelToDimensionEvent} */event) 
     if(!entity.player) return;
     if(dimension == "lostcities:lostcity"){
     entity.removeAllEffects()
-    entity.potionEffects.add("exsanguination:unlisted", 6600, 0, false, false)
+    entity.potionEffects.add("lostcities:unlisted", 6600, 0, false, false)
     entity.potionEffects.add("doom_and_gloom:fog", INFINITE, 0, false, false)
     entity.statusMessage = Text.of("Survive Until Being Relisted")
   } else {
@@ -38,8 +38,8 @@ global.nightmareEvents = (/**@type {Internal.PlayerSleepInBedEvent} */event) => 
       const entity = /** @type {any} */ (event.entity)
       let server = entity.server
       // 2% Chance Of Being Teleported
-      if (Math.random() > 0.98){
       if (entity.level.dimension != 'minecraft:overworld') return
+      if (Math.random() > 0.98){
       const {x, z} = entity.onPos
       server.scheduleInTicks(10, () => {       
       entity.potionEffects.add('minecraft:resistance', 500, 4, false, false)
@@ -52,19 +52,6 @@ global.nightmareEvents = (/**@type {Internal.PlayerSleepInBedEvent} */event) => 
       }
   }
 // FalAut + EAZY's script (Modified)
-/*
-[09Mar2026 15:55:45.224] [Server thread/ERROR] [KubeJS Server/]: lost_cities.js#61: Error in 'EntityEvents.death': TypeError: Cannot read property "x" from null
-
-*/
-// If Player Dies in the cities they wake up and then loose new items as a penalty
-/*
-
-[11Mar2026 15:43:36.266] [Server thread/ERROR] [KubeJS Server/]: lost_cities.js#104: Error in 'EntityEvents.death': The choice of Java method net.minecraft.server.level.ServerPlayer.m_8999_ matching JavaScript argument types (net.minecraft.server.level.ServerLevel,number,number,number,number,number) is ambiguous; candidate methods are: 
-    void m_8999_(net.minecraft.server.level.ServerLevel,double,double,double,float,float)
-    void kjs$teleportTo(net.minecraft.resources.ResourceLocation,double,double,double,float,float)
-
-*/
-
 EntityEvents.death("minecraft:player", event => {
       const { player, server } = event;
       let respawnLevel = server.getLevel(player.getRespawnDimension().location());

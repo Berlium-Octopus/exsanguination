@@ -21,7 +21,6 @@ StartupEvents.registry("enchantment", event => {
 // from ZAP
 ForgeEvents.onEvent('net.minecraftforge.event.ItemAttributeModifierEvent', event => {
     /**
-     * 
      * @param {Internal.Enchantment} enchantment enchantment ID
      * @param {Internal.Attribute} attribute attribute ID
      * @param {Internal.AttributeModifier$Operation} operation can be 'addition', 'multiply_base', or 'multiply_total'. usually you want 'multiply_base'
@@ -225,7 +224,7 @@ let fire = [
 // fan_lava,fireball,molten_lead,,stove_burn,,luminous_nether:furnace_damage,fan_fire,firework,stove_burn,,volatile_scoria_explosion,,
 
 
-let wiltednerf = ["onFire", "inFire", "create:fan_fire", "minecraft:lava"]
+let wiltednerf = ["onFire", "inFire", "create:fan_fire", "minecraft:lava" , "minecraft:out_of_world"]
 let doubledamage = ["explosion", "explosion.player"]
 let cramming = ["cramming"]
 let animalBlacklist = ['minecraft:iron_golem','vinery:wandering_winemaker', 'minecraft:wandering_trader', 'minecraft:villager', 'minecraft:allay', 'guardvillagers:guard']

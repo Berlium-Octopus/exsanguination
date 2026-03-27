@@ -14,7 +14,14 @@ function createRarity( /** @type {string} */ name, /** @type {number} */ colorCo
     })
     return $Rarity["create(java.lang.String,java.util.function.UnaryOperator)"](name, color)
 }
-
+/*
+    "sculkhorde:diascite_axe",
+        "sculkhorde:ferriscite_axe",
+        "luminous_nether:gold_cultist_axe",
+        "oreganized:electrum_axe",
+        "cataclysm:black_steel_axe",
+        "oreganized:silver_axe"
+        */
 // create your rarities here
 createRarity("luminous_beasts:luminescent", 0Xfba800)
 createRarity("alexscaves:demonic", 0XAA0000)
@@ -77,7 +84,7 @@ ItemEvents.modification(event => {
                     4,
                     'addition'
                 )
-                 .addAttribute(
+                .addAttribute(
                     "minecraft:generic.armor_toughness",
                     "02895ea2-6237-4011-94f9-102be0146823",
                     2,
@@ -97,7 +104,7 @@ ItemEvents.modification(event => {
                     0.5,
                     'addition'
                 )
-                 .addAttribute(
+                .addAttribute(
                     "minecraft:generic.luck",
                     "e5554bbd-5cad-48c1-ac3d-6f257229ab01",
                     0.2,
@@ -135,7 +142,7 @@ ItemEvents.modification(event => {
     })
 })
 
- 
+
 ItemEvents.modification(event => {
     event.modify("archeological:amethyst_amulet", item => {
         item.attachCuriosCapability(
@@ -203,7 +210,7 @@ ItemEvents.modification(event => {
                     0.1,
                     'addition'
                 )
-                 .addAttribute(
+                .addAttribute(
                     "minecraft:generic.luck",
                     "21f7b2fc-4aaf-45d1-9136-a0e5b00b66fc",
                     0.1,
@@ -221,11 +228,7 @@ ItemEvents.modification(event => {
         item.maxStackSize = 32
     })
 })
-ItemEvents.modification(event => {
-    event.modify('scalinghealth:enchanted_medkit', item => {
-        item.rarity = 'RARE'
-    })
-})
+
 
 ItemEvents.modification(event => {
     event.modify('rootoffear:wilted_stew', item => {
@@ -248,11 +251,12 @@ ItemEvents.modification(event => {
 
 
 ItemEvents.modification(event => {
-    event.modify(['cataclysm:necklace_of_the_desert', 'biomesoplenty:spider_egg', 'biomesoplenty:glowworm_silk'], item => {
+    event.modify(['scalinghealth:power_crystal_shard','scalinghealth:medkit','cataclysm:necklace_of_the_desert', 'biomesoplenty:spider_egg', 'biomesoplenty:glowworm_silk'], item => {
         item.rarity = 'RARE'
         item.maxStackSize = 1
     })
 })
+
 
 // Lytho from discord
 ItemEvents.modification(event => {
@@ -269,15 +273,17 @@ ItemEvents.modification(event => {
     })
 })
 
-ItemEvents.modification(event => {
-    event.modify('scalinghealth:enchanted_medkit', item => {
-        const builder = new ItemBuilder('scalinghealth:enchanted_medkit').glow(true);
-        item.setItemBuilder(builder);
-    })
-})
 
 
 const $AttributeModifier = Java.loadClass("net.minecraft.world.entity.ai.attributes.AttributeModifier")
+
+const BLADEMOD = new $AttributeModifier(
+    "3ea30f3a-58b3-417f-972e-18081cabdcad",
+    "forge:entity_reach",
+    -1,
+    "ADDITION"
+)
+
 const BULLET_MOD = new $AttributeModifier(
     "7e529c59-c650-489e-b5c1-82ee90167b08",
     "jeg:generic.gun_damage",
@@ -305,32 +311,32 @@ const THORN_MOD = new $AttributeModifier(
 const EXP_MOD = new $AttributeModifier(
     "46425c11-bd57-4d13-996f-202eec4310ad",
     "exsanguination:flamability",
-     0.125,
+    0.125,
     "ADDITION"
 )
 
 const EXP_MOD2 = new $AttributeModifier(
     "0efc8044-9f66-48e3-8cbc-1fbbe134c8f2",
     "exsanguination:flamability",
-     0.125,
+    0.125,
     "ADDITION"
 )
 const EXP_MOD3 = new $AttributeModifier(
     "3d3aef15-5f55-47f2-b52e-d08f2bf0f4ff",
     "exsanguination:flamability",
-     0.125,
+    0.125,
     "ADDITION"
 )
 const EXP_MOD4 = new $AttributeModifier(
     "c4302892-5666-41df-b119-c44898a02450",
     "exsanguination:flamability",
-     0.125,
+    0.125,
     "ADDITION"
 )
-    const EXP_MOD5 = new $AttributeModifier(
+const EXP_MOD5 = new $AttributeModifier(
     "3a7a6c0f-64a2-4f44-9715-a104600961fb",
     "exsanguination:flamability",
-     0.125,
+    0.125,
     "ADDITION"
 )
 
@@ -759,11 +765,13 @@ StartupEvents.registry("minecraft:attribute", event => {
     event.createCustom(RES.Undead, () => new $RangedAttribute("Undead Resistance", 0, 0, 20).setSyncable(true))
 })
 
-EntityJSEvents.attributes(event => {event.allTypes.forEach(type => {
-    event.modify(type, ctx => {
-        ctx.add(RES.Undead)
+EntityJSEvents.attributes(event => {
+    event.allTypes.forEach(type => {
+        event.modify(type, ctx => {
+            ctx.add(RES.Undead)
+        })
     })
-})})
+})
 
 const /**@type {{NAME: Internal.Attribute}} */ GunAttribute = {}
 GunAttribute.GUN_AMP = "jeg:generic.gun_damage"
@@ -813,8 +821,87 @@ EntityJSEvents.attributes(event => {
     })
 })
 
-
+let small_weapons = [
+    "alexscaves:desolate_dagger",
+    "alexsmobs:spectral_dagger",
+    "spartanweaponry:stone_dagger",
+    "spartanweaponry:copper_dagger",
+    "spartanweaponry:iron_dagger",
+    "spartanweaponry:diamond_dagger",
+    "spartanweaponry:netherite_parrying_dagger",
+    "spartanweaponry:diamond_parrying_dagger",
+    "spartanweaponry:golden_parrying_dagger",
+    "spartanweaponry:iron_parrying_dagger",
+    "spartanweaponry:copper_parrying_dagger",
+    "spartanweaponry:stone_parrying_dagger",
+    "spartanweaponry:netherite_dagger",
+    "spartanweaponry:bronze_dagger",
+    "spartanweaponry:steel_dagger",
+    "spartanweaponry:silver_dagger",
+    "spartanweaponry:electrum_dagger",
+    "spartanweaponry:bronze_parrying_dagger",
+    "spartanweaponry:steel_parrying_dagger",
+    "spartanweaponry:silver_parrying_dagger",
+    "spartandeeperdarker:warden_parrying_dagger",
+    "spartandeeperdarker:warden_dagger",
+    "spartandeeperdarker:resonarium_parrying_dagger",
+    "spartandeeperdarker:resonarium_dagger",
+    "outer_end:sinker_dagger",
+    "spartanweaponry:electrum_parrying_dagger",
+    "spartandeeperdarker:warden_throwing_knife",
+    "spartandeeperdarker:resonarium_throwing_knife",
+    "oreganized:electrum_knife",
+    "spartanweaponry:electrum_throwing_knife",
+    "spartanweaponry:iron_throwing_knife",
+    "spartanweaponry:golden_throwing_knife",
+    "spartanweaponry:diamond_throwing_knife",
+    "spartanweaponry:netherite_throwing_knife",
+    "spartanweaponry:bronze_throwing_knife",
+    "spartanweaponry:steel_throwing_knife",
+    "spartanweaponry:silver_throwing_knife",
+    "spartanweaponry:copper_throwing_knife",
+    "spartanweaponry:stone_throwing_knife",
+    "farmersdelight:bronze_knife",
+    "farmersdelight:silver_knife",
+    "farmersdelight:wooden_knife",
+    "farmersdelight:copper_knife",
+    "farmersdelight:golden_knife",
+    "alexscavesdelight:candy_knife",
+    "alexscavesdelight:sweet_tooth_knife",
+    "alexscavesdelight:caramel_knife",
+    "farmersdelight:flint_knife",
+    "farmersdelight:iron_knife",
+    "farmersdelight:diamond_knife",
+    "farmersdelight:netherite_knife",
+    "alexscavesdelight:gingerbread_knife",
+    "alexscavesdelight:pure_darkness_knife",
+    "alexscavesdelight:pearl_knife",
+    "alexscavesdelight:tectonic_knife",
+    "alexscavesdelight:uranium_knife",
+    "alexscavesdelight:scarlet_neodymium_knife",
+    "alexscavesdelight:azure_neodymium_knife",
+    "spartanweaponry:diamond_tomahawk",
+    "spartanweaponry:stone_tomahawk",
+    "spartanweaponry:steel_tomahawk",
+    "spartanweaponry:bronze_tomahawk",
+    "spartanweaponry:netherite_tomahawk",
+    "spartanweaponry:golden_tomahawk",
+    "spartanweaponry:iron_tomahawk",
+    "spartanweaponry:electrum_tomahawk",
+    "spartanweaponry:copper_tomahawk",
+    "spartanweaponry:silver_tomahawk",
+    "spartandeeperdarker:resonarium_tomahawk",
+    "spartandeeperdarker:warden_tomahawk",
+    "spartanweaponry:studded_cestus",
+    "spartanweaponry:cestus"
+]
 ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (event) => {
+    small_weapons.forEach(weapon => {
+        if (event.itemStack.id == weapon && event.slotType == "mainhand") {
+            event.addModifier("forge:entity_reach", BLADEMOD)
+        }
+    })
+
     if (event.itemStack.id == "minecraft:golden_sword" && event.slotType == "mainhand") {
         event.addModifier("oreganized:kinetic_damage", MAMA_M)
     }
@@ -1065,7 +1152,7 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     if (event.itemStack.id == "spelunkers_charm:candle_helmet" && event.slotType == "head") {
         event.addModifier("potioncore:magic_damage", HELM_MOD)
     }
-        if (event.itemStack.id == "spelunkers_charm:candle_on_helmet" && event.slotType == "head") {
+    if (event.itemStack.id == "spelunkers_charm:candle_on_helmet" && event.slotType == "head") {
         event.addModifier("potioncore:magic_damage", HELM_MOD)
     }
     if (event.itemStack.id == "cataclysm:bloom_stone_pauldrons" && event.slotType == "chest") {
@@ -1092,7 +1179,7 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     if (event.itemStack.id == "rootoffear:fadedwood_helmet" && event.slotType == "head") {
         event.addModifier("exsanguination:flamability", EXP_MOD)
     }
-    if (event.itemStack.id == "spartanweaponry:cestus" && event.slotType == "mainhand") {
+    if (event.itemStack.id == "spartanweaponry:studded_cestus" && event.slotType == "mainhand") {
         event.addModifier("exsanguination:flamability", EXP_MOD5)
     }
     if (event.itemStack.id == "rootoffear:fadedwood_chestplate" && event.slotType == "chest") {
@@ -1220,7 +1307,7 @@ EntityJSEvents.attributes(event => {
     event.modify("minecraft:vex", attribute => {
         attribute.add("puffish_attributes:life_steal", 0.125)
     })
-        event.modify("sculkhorde:sculk_witch", attribute => {
+    event.modify("sculkhorde:sculk_witch", attribute => {
         attribute.add("minecraft:generic.max_health", 30)
         attribute.add("minecraft:generic.armor", 25)
         attribute.add("minecraft:generic.armor_toughness", 10)
@@ -1276,7 +1363,7 @@ ItemEvents.modification(event => {
     })
 })
 ItemEvents.modification(event => {
-    event.modify(['rootoffear:agitated_primitive_heart', 'alexscavesdelight:azure_neodymium_knife', 'alexscavesdelight:scarlet_neodymium_knife', 'alexscaves_torpedoes:azure_pickaxe', 'alexscaves_torpedoes:azure_axe', 'alexscaves_torpedoes:azure_axe', 'alexscaves_torpedoes:azure_sword', 'alexscaves_torpedoes:azure_hoe', 'alexscaves_torpedoes:azure_shovel', 'alexscaves_torpedoes:ferrousslime_boots'], item => {
+    event.modify(['scalinghealth:medkit','rootoffear:agitated_primitive_heart', 'alexscavesdelight:azure_neodymium_knife', 'alexscavesdelight:scarlet_neodymium_knife', 'alexscaves_torpedoes:azure_pickaxe', 'alexscaves_torpedoes:azure_axe', 'alexscaves_torpedoes:azure_axe', 'alexscaves_torpedoes:azure_sword', 'alexscaves_torpedoes:azure_hoe', 'alexscaves_torpedoes:azure_shovel', 'alexscaves_torpedoes:ferrousslime_boots'], item => {
         item.rarity = 'UNCOMMON'
     })
 })
@@ -1335,26 +1422,26 @@ ItemEvents.modification(event => {
 
 ItemEvents.modification(event => {
     event.modify('minecraft:wheat', item => {
-            item.foodProperties = food => {
+        item.foodProperties = food => {
             food.hunger(1)
             food.saturation(1)
             food.removeEffect("minecraft:hunger")
-            }
-        })
+        }
     })
+})
 
 
 ItemEvents.modification(event => {
-        event.modify('deeperdarker:bloom_berries', item => {
-            item.foodProperties = food => {
+    event.modify('deeperdarker:bloom_berries', item => {
+        item.foodProperties = food => {
             food.hunger(2)
             food.saturation(1)
             food.removeEffect('sculkhorde:sculk_lure')
             food.removeEffect('sculkhorde:sculk_infected')
             food.removeEffect('alexsmobsinteraction:skreeching')
-            }
-        })
+        }
     })
+})
 
 ItemEvents.modification(event => {
     event.modify('minecraft:cooked_porkchop', item => {
@@ -1364,13 +1451,6 @@ ItemEvents.modification(event => {
     })
 })
 
-ItemEvents.modification(event => {
-    event.modify("luminous_nether:pale_melon_slice", item => {
-        item.foodProperties = food => {
-            food.effect('rootoffear:courage', 300, 0, 0.4)
-        }
-    })
-})
 
 ItemEvents.modification(event => {
     event.modify('minecraft:porkchop', item => {
@@ -2018,20 +2098,20 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     if (event.itemStack.id == "cataclysm:monstrous_helm" && event.slotType == "head") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_HEAD)
 
-    }    
+    }
     if (event.itemStack.id == "deeperdarker:warden_helmet" && event.slotType == "head") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_HEAD)
     }
     if (event.itemStack.id == "minecraft:golden_helmet" && event.slotType == "head") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_HEAD)
     }
-        if (event.itemStack.id == "rootoffear:wraithwood_helmet" && event.slotType == "head") {
+    if (event.itemStack.id == "rootoffear:wraithwood_helmet" && event.slotType == "head") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_HEAD)
     }
-        if (event.itemStack.id == "rootoffear:fadedwood_helmet" && event.slotType == "head") {
+    if (event.itemStack.id == "rootoffear:fadedwood_helmet" && event.slotType == "head") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_HEAD)
     }
-        if (event.itemStack.id == "cataclysm:bone_reptile_helmet" && event.slotType == "head") {
+    if (event.itemStack.id == "cataclysm:bone_reptile_helmet" && event.slotType == "head") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_HEAD)
     }
     if (event.itemStack.id == "create:copper_diving_helmet" && event.slotType == "head") {
@@ -2042,7 +2122,7 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     if (event.itemStack.id == "minecraft:diamond_helmet" && event.slotType == "head") {
         event.addModifier("puffish_attributes:stamina", HIGHNERF_HEAD)
 
-    }   
+    }
     if (event.itemStack.id == "create:netherite_diving_helmet" && event.slotType == "head") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_HEAD)
     }
@@ -2057,7 +2137,7 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     }
     if (event.itemStack.id == "minecraft:iron_helmet" && event.slotType == "head") {
         event.addModifier("puffish_attributes:stamina", HIGHNERF_HEAD)
-    }     
+    }
     if (event.itemStack.id == "alexscaves:primordial_helmet" && event.slotType == "head") {
         event.addModifier("puffish_attributes:stamina", HIGHNERF_HEAD)
     }
@@ -2085,13 +2165,13 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     if (event.itemStack.id == "minecraft:leather_helmet" && event.slotType == "head") {
         event.addModifier("puffish_attributes:stamina", LOWNERF_HEAD)
     }
-        if (event.itemStack.id == "biomemakeover:cladded_helmet" && event.slotType == "head") {
+    if (event.itemStack.id == "biomemakeover:cladded_helmet" && event.slotType == "head") {
         event.addModifier("puffish_attributes:stamina", LOWNERF_HEAD)
     }
     // Tiny
     if (event.itemStack.id == "toughasnails:leaf_helmet" && event.slotType == "head") {
         event.addModifier("puffish_attributes:stamina", SMALLNERF_HEAD)
-    }    
+    }
     if (event.itemStack.id == "minecraft:turtle_helmet" && event.slotType == "head") {
         event.addModifier("puffish_attributes:stamina", SMALLNERF_HEAD)
     }
@@ -2113,11 +2193,11 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     if (event.itemStack.id == "alexsmobs:fedora" && event.slotType == "head") {
         event.addModifier("puffish_attributes:stamina", SMALLNERF_HEAD)
     }
-   if (event.itemStack.id == "quark:forgotten_hat" && event.slotType == "head") {
+    if (event.itemStack.id == "quark:forgotten_hat" && event.slotType == "head") {
         event.addModifier("puffish_attributes:stamina", SMALLNERF_HEAD)
     }
 
-    
+
     // Chestplates
     // Heavy
     if (event.itemStack.id == "cataclysm:ignitium_chestplate" && event.slotType == "chest") {
@@ -2144,25 +2224,25 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     if (event.itemStack.id == "minecraft:golden_chestplate" && event.slotType == "chest") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_CHEST)
     }
-        if (event.itemStack.id == "create:netherite_backtank" && event.slotType == "chest") {
+    if (event.itemStack.id == "create:netherite_backtank" && event.slotType == "chest") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_CHEST)
     }
-        if (event.itemStack.id == "rootoffear:wraithwood_chestplate" && event.slotType == "chest") {
+    if (event.itemStack.id == "rootoffear:wraithwood_chestplate" && event.slotType == "chest") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_CHEST)
     }
-        if (event.itemStack.id == "rootoffear:fadedwood_chestplate" && event.slotType == "chest") {
+    if (event.itemStack.id == "rootoffear:fadedwood_chestplate" && event.slotType == "chest") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_CHEST)
     }
-        if (event.itemStack.id == "cataclysm:bone_reptile_chestplate" && event.slotType == "chest") {
+    if (event.itemStack.id == "cataclysm:bone_reptile_chestplate" && event.slotType == "chest") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_CHEST)
     }
-        if (event.itemStack.id == "cataclysm:ignitium_elytra_chestplate" && event.slotType == "chest") {
+    if (event.itemStack.id == "cataclysm:ignitium_elytra_chestplate" && event.slotType == "chest") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_CHEST)
     }
     if (event.itemStack.id == "minecraft:diamond_chestplate" && event.slotType == "chest") {
         event.addModifier("puffish_attributes:stamina", HIGHNERF_CHEST)
 
-    }    
+    }
     // Mid
     if (event.itemStack.id == "outer_end:cobalt_crystal_chestplate" && event.slotType == "chest") {
         event.addModifier("puffish_attributes:stamina", HIGHNERF_CHEST)
@@ -2175,10 +2255,10 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     }
     if (event.itemStack.id == "minecraft:iron_chestplate" && event.slotType == "chest") {
         event.addModifier("puffish_attributes:stamina", HIGHNERF_CHEST)
-    }    
+    }
     if (event.itemStack.id == "create:copper_backtank" && event.slotType == "chest") {
         event.addModifier("puffish_attributes:stamina", HIGHNERF_CHEST)
-    }    
+    }
     // Mid
     if (event.itemStack.id == "alexsmobs:rocky_chestplate" && event.slotType == "chest") {
         event.addModifier("puffish_attributes:stamina", MIDNERF_CHEST)
@@ -2203,16 +2283,16 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
         event.addModifier("puffish_attributes:stamina", LOWNERF_CHEST)
     }
     if (event.itemStack.id == "minecraft:elytra" && event.slotType == "chest") {
-    event.addModifier("puffish_attributes:stamina", LOWNERF_CHEST)
+        event.addModifier("puffish_attributes:stamina", LOWNERF_CHEST)
     }
     if (event.itemStack.id == "minecraft:elytra" && event.slotType == "chest") {
-    event.addModifier("puffish_attributes:stamina", LOWNERF_CHEST)
+        event.addModifier("puffish_attributes:stamina", LOWNERF_CHEST)
     }
     if (event.itemStack.id == "deeperdarker:soul_elytra" && event.slotType == "chest") {
-    event.addModifier("puffish_attributes:stamina", LOWNERF_CHEST)
+        event.addModifier("puffish_attributes:stamina", LOWNERF_CHEST)
     }
     if (event.itemStack.id == "alexsmobs:tarantula_hawk_elytra" && event.slotType == "chest") {
-    event.addModifier("puffish_attributes:stamina", LOWNERF_CHEST)
+        event.addModifier("puffish_attributes:stamina", LOWNERF_CHEST)
     }
     // Tiny
     if (event.itemStack.id == "toughasnails:leaf_chestplate" && event.slotType == "chest") {
@@ -2230,7 +2310,7 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     if (event.itemStack.id == "vinery:winemaker_apron" && event.slotType == "chest") {
         event.addModifier("puffish_attributes:stamina", SMALLNERF_CHEST)
     }
-        if (event.itemStack.id == "biomemakeover:cladded_chestplate" && event.slotType == "chest") {
+    if (event.itemStack.id == "biomemakeover:cladded_chestplate" && event.slotType == "chest") {
         event.addModifier("puffish_attributes:stamina", SMALLNERF_CHEST)
     }
     // Leggings
@@ -2252,17 +2332,17 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     }
     if (event.itemStack.id == "minecraft:netherite_leggings" && event.slotType == "legs") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_LEGS)
-    }  
+    }
     if (event.itemStack.id == "deeperdarker:warden_leggings" && event.slotType == "legs") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_LEGS)
     }
     if (event.itemStack.id == "minecraft:golden_leggings" && event.slotType == "legs") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_LEGS)
     }
-        if (event.itemStack.id == "rootoffear:wraithwood_leggings" && event.slotType == "legs") {
+    if (event.itemStack.id == "rootoffear:wraithwood_leggings" && event.slotType == "legs") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_LEGS)
     }
-        if (event.itemStack.id == "rootoffear:fadedwood_leggings" && event.slotType == "legs") {
+    if (event.itemStack.id == "rootoffear:fadedwood_leggings" && event.slotType == "legs") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_LEGS)
     }
 
@@ -2270,7 +2350,7 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     if (event.itemStack.id == "minecraft:diamond_leggings" && event.slotType == "legs") {
         event.addModifier("puffish_attributes:stamina", HIGHNERF_LEGS)
 
-    }  
+    }
     if (event.itemStack.id == "outer_end:cobalt_crystal_leggings" && event.slotType == "legs") {
         event.addModifier("puffish_attributes:stamina", HIGHNERF_LEGS)
     }
@@ -2282,7 +2362,7 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     }
     if (event.itemStack.id == "minecraft:iron_leggings" && event.slotType == "legs") {
         event.addModifier("puffish_attributes:stamina", HIGHNERF_LEGS)
-    }     
+    }
     // Mid
     if (event.itemStack.id == "alexscaves:diving_leggings" && event.slotType == "legs") {
         event.addModifier("puffish_attributes:stamina", MIDNERF_LEGS)
@@ -2301,10 +2381,10 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     }
     if (event.itemStack.id == "minecraft:chainmail_leggings" && event.slotType == "legs") {
         event.addModifier("puffish_attributes:stamina", MIDNERF_LEGS)
-    }    
+    }
     if (event.itemStack.id == "alexsmobs:crocodile_chestplate" && event.slotType == "chest") {
         event.addModifier("puffish_attributes:stamina", MIDNERF_LEGS)
-    }    
+    }
     if (event.itemStack.id == "alexscaves:cloak_of_darkness" && event.slotType == "legs") {
         event.addModifier("puffish_attributes:stamina", MIDNERF_LEGS)
     }
@@ -2318,7 +2398,7 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     if (event.itemStack.id == "alexscaves:primordial_pants" && event.slotType == "legs") {
         event.addModifier("puffish_attributes:stamina", LOWNERF_LEGS)
     }
-        if (event.itemStack.id == "biomemakeover:cladded_leggings" && event.slotType == "legs") {
+    if (event.itemStack.id == "biomemakeover:cladded_leggings" && event.slotType == "legs") {
         event.addModifier("puffish_attributes:stamina", LOWNERF_LEGS)
     }
     // Tiny
@@ -2357,17 +2437,17 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     }
     if (event.itemStack.id == "minecraft:netherite_boots" && event.slotType == "feet") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_FEET)
-    }  
+    }
     if (event.itemStack.id == "deeperdarker:warden_boots" && event.slotType == "feet") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_FEET)
     }
     if (event.itemStack.id == "minecraft:golden_boots" && event.slotType == "feet") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_FEET)
     }
-        if (event.itemStack.id == "rootoffear:wraithwood_boots" && event.slotType == "feet") {
+    if (event.itemStack.id == "rootoffear:wraithwood_boots" && event.slotType == "feet") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_FEET)
     }
-        if (event.itemStack.id == "rootoffear:fadedwood_boots" && event.slotType == "feet") {
+    if (event.itemStack.id == "rootoffear:fadedwood_boots" && event.slotType == "feet") {
         event.addModifier("puffish_attributes:stamina", HEAVYNERF_FEET)
     }
 
@@ -2375,7 +2455,7 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     if (event.itemStack.id == "minecraft:diamond_boots" && event.slotType == "feet") {
         event.addModifier("puffish_attributes:stamina", HIGHNERF_FEET)
 
-    }  
+    }
     if (event.itemStack.id == "outer_end:cobalt_crystal_boots" && event.slotType == "feet") {
         event.addModifier("puffish_attributes:stamina", HIGHNERF_FEET)
     }
@@ -2387,13 +2467,13 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     }
     if (event.itemStack.id == "minecraft:iron_boots" && event.slotType == "feet") {
         event.addModifier("puffish_attributes:stamina", HIGHNERF_FEET)
-    }   
+    }
     if (event.itemStack.id == "create:copper_diving_boots" && event.slotType == "feet") {
         event.addModifier("puffish_attributes:stamina", HIGHNERF_FEET)
     }
     if (event.itemStack.id == "alexscaves_torpedoes:ferrousslime_boots" && event.slotType == "feet") {
         event.addModifier("puffish_attributes:stamina", HIGHNERF_FEET)
-    }  
+    }
     // Mid
     if (event.itemStack.id == "alexscaves:diving_boots" && event.slotType == "feet") {
         event.addModifier("puffish_attributes:stamina", MIDNERF_FEET)
@@ -2411,7 +2491,7 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     if (event.itemStack.id == "minecraft:leather_boots" && event.slotType == "feet") {
         event.addModifier("puffish_attributes:stamina", LOWNERF_FEET)
     }
-        if (event.itemStack.id == "biomemakeover:cladded_boots" && event.slotType == "feet") {
+    if (event.itemStack.id == "biomemakeover:cladded_boots" && event.slotType == "feet") {
         event.addModifier("puffish_attributes:stamina", LOWNERF_FEET)
     }
     // Tiny
@@ -2439,5 +2519,5 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     if (event.itemStack.id == "alexscaves:rainbounce_boots" && event.slotType == "feet") {
         event.addModifier("puffish_attributes:stamina", SMALLNERF_FEET)
     }
-    
+
 });

@@ -756,6 +756,8 @@ if (event.player.getMainHandItem().hasEnchantment('minecraft:silk_touch', 1)) re
 if (event.player.getMainHandItem().hasEnchantment('minecraft:efficiency', 1)) return
 switch(event.player.mainHandItem.getId()){
   case 'minecraft:stone_pickaxe':
+  case 'spartanweaponry:wooden_club': 
+  case 'spartanweaponry:studded_club': 
     event.block.popItem("spelunkers_charm:rock");
     event.block.set('minecraft:cobblestone', event.block.properties);
     event.player.damageHeldItem('main_hand', 1)
@@ -783,6 +785,8 @@ if (event.player.getMainHandItem().hasEnchantment('minecraft:efficiency', 1)) re
 switch(event.player.mainHandItem.getId()){
   case 'minecraft:stone_pickaxe':
   case 'minecraft:copper_pickaxe':
+  case 'spartanweaponry:wooden_club':
+  case 'spartanweaponry:studded_club': 
     event.block.popItem("spelunkers_charm:deepslate_rock");
     event.block.set('minecraft:cobbled_deepslate', event.block.properties);
     event.player.damageHeldItem('main_hand', 2)

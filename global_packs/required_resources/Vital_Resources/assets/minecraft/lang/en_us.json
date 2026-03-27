@@ -6970,5 +6970,9 @@
   "tutorial.punch_tree.title": "Destroy the tree",
   "tutorial.socialInteractions.description": "Press %s to open",
   "tutorial.socialInteractions.title": "Social Interactions",
-  "upgrade.minecraft.netherite_upgrade": "Netherite Upgrade"
+  "upgrade.minecraft.netherite_upgrade": "Netherite Upgrade",
+  "item.minecraft.tipped_arrow.effect.escapee_feast": "Arrow of Escapee's Feast",
+  "item.minecraft.lingering_potion.effect.escapee_feast": "Escapee's Feast Lingering Potion",
+  "item.minecraft.potion.effect.escapee_feast": "Potion Of Escapee's Feast",
+  "item.minecraft.splash_potion.effect.escapee_feast": "Splash Potion of Escapee's Feast"
 }

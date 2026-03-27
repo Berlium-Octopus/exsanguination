@@ -165,6 +165,8 @@
     },
     "undestroyableItems": {
       "entries": [
+        "{id:\"item\",item:\"lostcities:escapee_stylet\"}",
+        "{id:\"item\",item:\"minecraft:gunpowder\"}",
         "{id:\"item\",item:\"minecraft:nether_star\"}",
         "{id:\"item\",item:\"minecraft:air\"}",
         "{block:\"minecraft:bedrock\",id:\"block\"}",

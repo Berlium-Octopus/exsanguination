@@ -121,7 +121,7 @@ global.tooltipModifiers.push(
 [
     Text.of(" \u2507 Sets the user on fire near light sources.").green(),
     Text.of(" \u2507 Funtional Immortality with Wraith Cestuses.").blue(),
-    Text.of(" \u2507 Buffs removed when on lava.").blue(),
+    Text.of(" \u2507 Buffs removed when on fire.").blue(),
 ])
 );
 

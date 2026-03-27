@@ -101,7 +101,7 @@
         {
             "attribute": "exsanguination:flamability",
             "operation": "multiply_total",
-            "amount": 0.125
+            "amount": 0.05
         }
     ],
     "alexscaves:amber_curiosity": [

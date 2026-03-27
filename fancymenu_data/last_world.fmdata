@@ -1,0 +1,7 @@
+type = last_world
+
+last_world {
+  is_server = false
+  world = /Users/aaronarcelio/Library/Application Support/minecraft/home/exsangunation/saves/PHOLDER MCDOCTORATE
+}
+

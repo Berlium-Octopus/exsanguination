@@ -1,5 +1,3 @@
-// priority: 500
-// SOMETHING IN HERE CANCELES OUT INTENTIONAL GAME DESIGN EXPLOSION
 const EnchantmentCategory = Java.loadClass('net.minecraft.world.item.enchantment.EnchantmentCategory');
 StartupEvents.registry('enchantment', event => {
     event.create('exsanguination:awakening')
@@ -47,8 +45,7 @@ let listSculk = [
     'sculkhorde:sculk_witch',
     'sculkhorde:sculk_soul_reaper',
     'sculkhorde:sculk_vex',
-    'alexsmobs:skreecher',
-    'dummmmmmy:target_dummy'
+    'alexsmobs:skreecher'
 ]
 
 let listSculk2 = [
@@ -75,15 +72,15 @@ let listSculk2 = [
     'sculkhorde:sculk_soul_reaper',
     'sculkhorde:sculk_vex',
     'alexsmobs:skreecher',
-      'deeperdarker:angler_fish',
-  'deeperdarker:sculk_centipede',
-  'deeperdarker:sculk_leech',
-  'deeperdarker:sculk_snapper',
-  'deeperdarker:shattered',
-  'deeperdarker:shriek_worm',
-  'deeperdarker:sludge',
-  'deeperdarker:stalker',
-  'minecraft:phantom'
+    'deeperdarker:angler_fish',
+    'deeperdarker:sculk_centipede',
+    'deeperdarker:sculk_leech',
+    'deeperdarker:sculk_snapper',
+    'deeperdarker:shattered',
+    'deeperdarker:shriek_worm',
+    'deeperdarker:sludge',
+    'deeperdarker:stalker',
+    'minecraft:phantom'
 ]
 
 
@@ -110,8 +107,7 @@ let listHumanoid = [
     'luminous_nether:piglin_cultist_leader',
     'luminous_beasts:piglin_executioner',
     'luminous_beasts:piglin_executioner',
-    'sculkhorde:sculk_enderman',
-    'dummmmmmy:target_dummy'
+    'sculkhorde:sculk_enderman'
 ]
 let projectilesource = [
     "jeg.bullet.killed",
@@ -137,7 +133,7 @@ let projectilesource = [
     "supplementaries.cannonball",
     "supplementaries.cannonball.player",
     "supplementaries.slingshot.item"
-  ]
+]
 let bulletsources = [
     "jeg.bullet.killed",
     "jeg.bullet.eliminated",
@@ -183,7 +179,7 @@ let crush = [
     "nuke_2",
     "nuke_3",
     "nuke_4",
-    "explosion", 
+    "explosion",
     "explosion.player",
     "supplementaries.amethyst",
     "prickly_vines",
@@ -204,34 +200,40 @@ let fire = [
 
 
 // Un-Broken Curruntly?
-    // Outisde ON PURPOSE
- 
+// Outisde ON PURPOSE
+
 
 let magic = ["magic", "indirectMagic"]
 let wiltednerf = ["onFire", "inFire", "create:fan_fire", "minecraft:lava"]
 let doubledamage = ["explosion", "explosion.player"]
 let cramming = ["cramming", "inWall"]
-let animalBlacklist = ['minecraft:iron_golem','vinery:wandering_winemaker', 'minecraft:wandering_trader', 'minecraft:villager', 'minecraft:allay', 'guardvillagers:guard']
+let animalBlacklist = ['minecraft:iron_golem', 'vinery:wandering_winemaker', 'minecraft:wandering_trader', 'minecraft:villager', 'minecraft:allay', 'guardvillagers:guard']
 let animalWhitelist = ['minecraft:hoglin', 'luminous_beasts:rare_sea_viper', 'luminous_beasts:sea_viper', 'luminous_beasts:rare_yeti', 'luminous_beasts:yeti', 'luminous_beasts:rare_phoenix_bird', 'luminous_beasts:baby_phoenix', 'alexsmobs:sunbird', 'luminous_beasts:rare_vile_gator', 'luminous_beasts:vile_gator', 'alexscaves:vesper', 'alexscaves:underzealot', 'alexscaves:corrodent']
 // let rabies = ['rabial_end','drown']
 // Based Of vomiter's Script
-EntityJSEvents.attributes(event => {event.allTypes.forEach(type => {
-    event.modify(type, ctx => {
-        ctx.add("alexscavesexemplified:rabies_resistance")
+EntityJSEvents.attributes(event => {
+    event.allTypes.forEach(type => {
+        event.modify(type, ctx => {
+            ctx.add("alexscavesexemplified:rabies_resistance")
+        })
     })
-})})
+})
 
-EntityJSEvents.attributes(event => {event.allTypes.forEach(type => {
-    event.modify(type, ctx => {
-        ctx.add("biomemakeover:projectile_resistance")
+EntityJSEvents.attributes(event => {
+    event.allTypes.forEach(type => {
+        event.modify(type, ctx => {
+            ctx.add("biomemakeover:projectile_resistance")
+        })
     })
-})})
+})
 
-EntityJSEvents.attributes(event => {event.allTypes.forEach(type => {
-    event.modify(type, ctx => {
-        ctx.add("potioncore:magic_shield")
+EntityJSEvents.attributes(event => {
+    event.allTypes.forEach(type => {
+        event.modify(type, ctx => {
+            ctx.add("potioncore:magic_shield")
+        })
     })
-})})
+})
 /*
 const getrabiesNegationLvl = (source, entity) => {
     if(!rabies.includes(source.getType())) return;
@@ -242,25 +244,25 @@ const getrabiesNegationLvl = (source, entity) => {
 }
 */
 const getprojectileNegationLvl = (source, entity) => {
-    if(!projectilesource.includes(source.getType())) return;
+    if (!projectilesource.includes(source.getType())) return;
     const projectileNegation = entity.getAttribute("biomemakeover:projectile_resistance")
-    if(!projectileNegation) return;
+    if (!projectileNegation) return;
     const projectileNegationLvl = projectileNegation.getValue()
     return projectileNegationLvl
 }
 
 const getmagicNegationLvl = (source, entity) => {
-    if(!magician.includes(source.getType())) return;
+    if (!magician.includes(source.getType())) return;
     const magicNegation = entity.getAttribute("potioncore:magic_shield")
-    if(!magicNegation) return;
+    if (!magicNegation) return;
     const magicNegationLvl = magicNegation.getValue()
     return magicNegationLvl
 }
 
 const getNegativeFireLevel = (source, entity) => {
-    if(!wiltednerf.includes(source.getType())) return;
+    if (!wiltednerf.includes(source.getType())) return;
     const Wiltedfire = entity.getAttribute("exsanguination:flamability")
-    if(!Wiltedfire) return;
+    if (!Wiltedfire) return;
     const NegativeFireLevel = Wiltedfire.getValue()
     return NegativeFireLevel
 }
@@ -276,55 +278,55 @@ const getUndeadProtrction = (source, entity) => {
 
 // Global Hurti Eventi
 global.hurt = event => {
-    let {entity, source, amount} = event
+    let { entity, source, amount } = event
     let attacker = source.actual
-           
-/*
-    if (entity.isAlive()) {
-    Utils.server.runCommandSilent(`say ${attacker}`)
-     Utils.server.runCommandSilent(`say ${source}`)
-     Utils.server.runCommandSilent(`say ${amount}`)
-    }
-*/
+
+    /*
+        if (entity.isAlive()) {
+        Utils.server.runCommandSilent(`say ${attacker}`)
+         Utils.server.runCommandSilent(`say ${source}`)
+         Utils.server.runCommandSilent(`say ${amount}`)
+        }
+    */
     if (entity.level.isClientSide()) return
     if (!entity.isLiving()) return
-/*
-    const rabiesNegationLvl = getrabiesNegationLvl(source, entity)
-        if(rabiesNegationLvl > 0) {
-        event.setAmount(amount * (20 - rabiesNegationLvl) / 20)
-    //    Utils.server.runCommandSilent(`say ${amount}`)
+    /*
+        const rabiesNegationLvl = getrabiesNegationLvl(source, entity)
+            if(rabiesNegationLvl > 0) {
+            event.setAmount(amount * (20 - rabiesNegationLvl) / 20)
+        //    Utils.server.runCommandSilent(`say ${amount}`)
+    
+        }
+        */
 
-    }
-    */
-   
     const magicNegationLvl = getmagicNegationLvl(source, entity)
-        if(magicNegationLvl > 0) {
+    if (magicNegationLvl > 0) {
         event.setAmount(amount * (20 - magicNegationLvl) / 20)
-     //   Utils.server.runCommandSilent(`say ${amount}`)
+        //   Utils.server.runCommandSilent(`say ${amount}`)
 
     }
 
     const projectileNegationLvl = getprojectileNegationLvl(source, entity)
-        if(projectileNegationLvl) {
+    if (projectileNegationLvl) {
         event.setAmount(amount * (20 - projectileNegationLvl) / 20)
-      //  Utils.server.runCommandSilent(`say ${amount}`)
+        //  Utils.server.runCommandSilent(`say ${amount}`)
     }
-/*
-    const Undead = getUndeadProtrction(source, entity)
-    if (Undeadnegation > 0) {
-    event.setAmount(amount * (20 - Undead) / 20)
-    }
-*/
-     const NegativeFireLevel = getNegativeFireLevel(source, entity)
-        if(NegativeFireLevel > 0) {
+    /*
+        const Undead = getUndeadProtrction(source, entity)
+        if (Undeadnegation > 0) {
+        event.setAmount(amount * (20 - Undead) / 20)
+        }
+    */
+    const NegativeFireLevel = getNegativeFireLevel(source, entity)
+    if (NegativeFireLevel > 0) {
         let math = 10 * NegativeFireLevel
         event.setAmount(amount + math)
-      //  Utils.server.runCommandSilent(`say ${amount}`)
-      //  Utils.server.runCommandSilent(`say ${math}`)
+        //  Utils.server.runCommandSilent(`say ${amount}`)
+        //  Utils.server.runCommandSilent(`say ${math}`)
 
     }
 
-       if (fire.includes(source.getType())) {
+    if (fire.includes(source.getType())) {
         var unbreak = 0
         let armorPieces = [
             entity.getHeadArmorItem(),
@@ -336,7 +338,7 @@ global.hurt = event => {
                 unbreak += piece.getEnchantments().get("minecraft:fire_protection")
             }
         })
-         if (unbreak > 0) {
+        if (unbreak > 0) {
             let reduction = unbreak * 0.08
             let finalDamage = amount * (1 - reduction)
             event.setAmount(finalDamage)
@@ -355,7 +357,7 @@ global.hurt = event => {
                 unbreak += piece.getEnchantments().get('minecraft:projectile_protection')
             }
         })
-         if (unbreak > 0) {
+        if (unbreak > 0) {
             let reduction = unbreak * 0.08
             let finalDamage = amount * (1 - reduction)
             //Utils.server.runCommandSilent(`say ${amount} effected`)
@@ -386,24 +388,24 @@ global.hurt = event => {
         }
     }
 
- // Outside on purpose
-// Un-Broken Curruntly?
-if (doubledamage.includes(source.getType())) {
-    let boom = (amount * 3.5)
-  if (entity.type == "minecraft:player"){
-        event.setAmount((boom))
+    // Outside on purpose
+    // Un-Broken Curruntly?
+    if (doubledamage.includes(source.getType())) {
+        let boom = (amount * 3.5)
+        if (entity.type == "minecraft:player") {
+            event.setAmount((boom))
         }
-}
+    }
 
-if (cramming.includes(source.getType())) {
-    let cram = (0)
-    if (uncrammable.toString().includes(entity.type)) {
-        event.setAmount((cram))
+    if (cramming.includes(source.getType())) {
+        let cram = (0)
+        if (uncrammable.toString().includes(entity.type)) {
+            event.setAmount((cram))
         }
-}
+    }
 
 
-// I think i need to rework These enchants
+    // I think i need to rework These enchants
 
     if (listSculk.toString().includes(entity.type)) { // This part is Xeru's script
         if (!attacker) return
@@ -416,7 +418,7 @@ if (cramming.includes(source.getType())) {
             if (Math.random() < 0.6) {
                 entity.potionEffects.add("potioncore:broken_armor", Highnumber, 2, false, true)
             }
-            //attacker.tell("Smite damage: " + smiteDamage + ", original damage: " + amount + ", final damage: " + (amount + smiteDamage))
+            // attacker.tell("Smite damage: " + smiteDamage + ", original damage: " + amount + ", final damage: " + (amount + smiteDamage))
         }
         if (attacker.offHandItem.getEnchantmentLevel("deeperdarker:sculk_smite") > 0) {
             let smiteDamage = (smiteLvl * 2.5);
@@ -442,7 +444,7 @@ if (cramming.includes(source.getType())) {
             if (Math.random() < 0.6) {
                 entity.potionEffects.add("minecraft:weakness", Highnumber, 2, false, true)
             }
-           //  attacker.tell("Builder Bane damage: " + baneDamage + ", original damage: " + amount + ", final damage: " + (amount + baneDamage))
+            //  attacker.tell("Builder Bane damage: " + baneDamage + ", original damage: " + amount + ", final damage: " + (amount + baneDamage))
         }
         if (attacker.offHandItem.getEnchantmentLevel("extra_enchantments:illagers_bane") > 0) {
             let baneDamage = (BaneLvl * 2.5);
@@ -454,7 +456,6 @@ if (cramming.includes(source.getType())) {
             //attacker.tell("Offhand Builder Bane damage: " + baneDamage + ", original damage: " + amount + ", final damage: " + (amount + baneDamage))
         }
     }
-// HELP ME IT CRASHES WHAT
     if (entity.isAnimal()) {
         if (!attacker) return
         if (source.getType() != 'player') return
@@ -544,10 +545,10 @@ if (cramming.includes(source.getType())) {
 }
 // Placed Outside Global To Prevent Conflicts
 ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", (event) => {
-    let {entity, source, amount} = event
+    let { entity, source, amount } = event
     if (entity.level.isClientSide()) return
     if (!entity.isLiving()) return
-   if (crush.includes(source.getType())) {
+    if (crush.includes(source.getType())) {
         var unbreak = 0
         let armorPieces = [
             entity.getHeadArmorItem(),
@@ -565,35 +566,35 @@ ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", (e
             event.setAmount(finalDamage)
         }
     }
-    })
+})
 
 ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", (event) => {
-    let {entity, source, amount} = event
+    let { entity, source, amount } = event
     let attacker = source.actual
     if (entity.level.isClientSide()) return
     if (!entity.isLiving()) return
     if (bulletsources.includes(source.getType())) {
         if (!attacker) return
-            let pazazz = (attacker.attributes.getValue("jeg:generic.gun_damage"));
-            if (pazazz > 0){
+        let pazazz = (attacker.attributes.getValue("jeg:generic.gun_damage"));
+        if (pazazz > 0) {
             let tiyfixes = (pazazz + 1)
             event.setAmount(amount * tiyfixes)
-        //    attacker.tell("PAINPOWER: " + pazazz + ", DAMAGE: " + amount + ", FINALDAMAGE: " + (amount * pazazz))
-            }
+            //    attacker.tell("PAINPOWER: " + pazazz + ", DAMAGE: " + amount + ", FINALDAMAGE: " + (amount * pazazz))
+        }
     }
 
-    })
-// Not Working
+})
+
 ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", (event) => {
-    let {entity, source, amount} = event
+    let { entity, source, amount } = event
     if (magic.includes(source.getType())) {
-    if (entity.level.isClientSide()) return
-    if (!entity.isLiving()) return
-    let cram = (0)
-    if (listSculk2.toString().includes(entity.type)) {
-        event.setAmount((cram))
+        if (entity.level.isClientSide()) return
+        if (!entity.isLiving()) return
+        let cram = (0)
+        if (listSculk2.toString().includes(entity.type)) {
+            event.setAmount((cram))
         }
-}
+    }
 })
 
 
@@ -607,4 +608,165 @@ StartupEvents.registry("enchantment", event => {
         .rarity('UNCOMMON')
         .category(EnchantmentCategory.ARMOR)
         .displayName("Magic Protection")
+})
+
+
+
+ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", event => global.RangedNerf(event))
+
+/**
+* @param {Internal.LivingHurtEvent} event 
+*/
+global.RangedNerf = event => {
+    let { entity, source, amount } = event
+    if (entity.level.isClientSide()) return
+    let attacker = source.actual
+    // Sorry For This Chunk Of Code I Don't Trust Myself To Not Break It
+    if (!attacker) return
+    if (entity.level.isClientSide()) return
+    if (source.getType() != 'player') return
+
+    // Distance
+    let dx = attacker.x - entity.x
+    let dy = attacker.y - entity.y
+    let dz = attacker.z - entity.z
+    // Made The Damage Lower When Outside Reach
+    let distance = Math.sqrt(dx * dx + dy * dy + dz * dz)
+    let reach = attacker.getEntityReach()
+    // The Reach Part
+    let innereach = reach * Math.max(0, 1.0 - 0.27)
+    let innereach_highdmg = reach * Math.max(0, 1.0 - 0.44) // 4441%
+    let innereach_dagger = reach * Math.max(0, 1.0 - 0.03)
+    // distance / reach
+    let t = distance / innereach
+    let t_highdmg = distance / innereach_highdmg
+    let t_dagger = distance / innereach_dagger
+    // Further DMG Reduction
+    let multiplier = t * 0.8
+    let multiplier_highdmg = t_highdmg * 0.9
+    let multiplier_dagger = Math.max(1, 1.5 - t_dagger)
+
+    if (attacker.creative) return
+    if (attacker.getMainHandItem() == "minecraft:air") return
+    if (distance <= innereach && reach > 3) {
+        let newDamage = amount * multiplier
+        event.setAmount(newDamage);
+        //attacker.tell("Effect Triggered: " + newDamage)
+        //attacker.tell("Distance: " + distance + ", Reach: " + reach)
+
+        // Damage Capped If Damage is Greater then 10, This Is To Make
+        // Combat Less Trivial + INDIRECT Spartan Nerf
+    } else if (distance <= innereach_highdmg && reach == 3) {
+        if (attacker.potionEffects.isActive("lostcities:courage")) return
+        let newDamage = amount * multiplier_highdmg
+        let newDamage2 = amount * multiplier
+        if (amount >= 10) {
+            event.setAmount(newDamage2)
+            //attacker.tell("HighDMG Triggered: " + newDamage + " t: " + t_highdmg)
+            //attacker.tell("Distance: " + distance + ", Reach: " + reach)
+        }
+        if (amount < 10) {
+            event.setAmount(newDamage)
+            //attacker.tell("NormDMG Triggered: " + newDamage + " t: " + t)
+            //attacker.tell("Distance: " + distance + ", Reach: " + reach)
+        }
+
+
+        // Daggers are getting a buff 
+    } else if (distance <= innereach_dagger && reach <= 2) {
+        let newDamage = amount * multiplier_dagger
+        event.setAmount(newDamage);
+        //attacker.tell("Dagger Triggered: " + newDamage)
+        //attacker.tell("multiplier_dagger: " + multiplier_dagger + ", t_dagger: " + t_dagger)
+    }
+}
+
+
+
+
+// Lifted From EyesEyes's Backstab Script
+// Adds The Thrown Weapon Bonuses on Backstabbing
+ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", (event) => {
+
+    const $ResourceLocation = Java.loadClass("net.minecraft.resources.ResourceLocation");
+    const $ThrowingWeaponEntity = Java.loadClass("com.oblivioussp.spartanweaponry.entity.projectile.ThrowingWeaponEntity");
+    const $PacketDistributor = Java.loadClass("net.minecraftforge.network.PacketDistributor");
+    const $ClientboundLevelParticlesPacket = Java.loadClass("net.minecraft.network.protocol.game.ClientboundLevelParticlesPacket");
+    const $ForgeRegistries = Java.loadClass("net.minecraftforge.registries.ForgeRegistries");
+    const $LivingEntity = Java.loadClass("net.minecraft.world.entity.LivingEntity");
+    const DEGREES_TO_RADIANS = 0.017453292519943295;
+
+    const { entity, source, amount } = event;
+    if (entity.level.isClientSide()) return;
+
+    let victim = entity;
+    let attacker = source.getActual();
+    if (!attacker || !(attacker instanceof $LivingEntity)) return;
+
+    try {
+        let weaponStack = null;
+        let directEntity = source.getImmediate();
+
+        if (directEntity instanceof $ThrowingWeaponEntity) {
+            weaponStack = directEntity.getWeaponItem();
+        }
+
+        if (!weaponStack || weaponStack.isEmpty()) return;
+        let item = weaponStack.getItem();
+        let backstablevel = item.getEnchantmentLevel(weaponStack, "farmersdelight:backstabbing")
+        if (backstablevel > 0) {
+            let victimLook = victim.getViewVector(1.0).normalize();
+            let attackDir;
+            if (directEntity instanceof $ThrowingWeaponEntity) {
+                attackDir = directEntity.getDeltaMovement().normalize();
+            }
+            let radian = 50 * DEGREES_TO_RADIANS;
+            let dotProduct = attackDir.dot(victimLook);
+            let threshold = Math.cos(radian);
+
+            if (dotProduct >= threshold) {
+                // Direct Farmer's Delight DMG Port
+                let bonus = (backstablevel * 0.2) + 1.2
+                event.setAmount(amount * bonus);
+
+                // --- SOUND LOGIC ---
+                // Standard broadcast
+                attacker.level.playSound(
+                    null,
+                    victim.getX(),
+                    victim.getY(),
+                    victim.getZ(),
+                    "minecraft:entity.arrow.hit",
+                    "players",
+                    0.8,
+                    1.2,
+                );
+                // Thank you konsola5 (1083438156667424768) for client sided sounds ""
+
+                // --- PARTICLE LOGIC --- ""
+                let particleType = $ForgeRegistries.PARTICLE_TYPES.getValue(new $ResourceLocation("minecraft:crit"));
+                if (particleType) {
+                    let realOffset = victim.getBbWidth() / 2.0 + 0.15
+                    let xOffset = victim.getX() - victimLook.x() * realOffset;
+                    let zOffset = victim.getZ() - victimLook.z() * realOffset;
+                    let packet = new $ClientboundLevelParticlesPacket(
+                        particleType,
+                        false,
+                        xOffset,
+                        victim.getEyeY(),
+                        zOffset,
+                        0.1,
+                        0.1,
+                        0.1,
+                        0.0,
+                        5,
+                    );
+
+                    $PacketDistributor.TRACKING_ENTITY_AND_SELF.with(() => victim).send(packet);
+                }
+            }
+        }
+    } catch (err) {
+    console.error("Backstab Logic Error: " + err);
+    }
 })

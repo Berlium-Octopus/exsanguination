@@ -40,8 +40,7 @@ global.tooltipModifiers.push(
         chestplate: ['minecraft:golden_chestplate'],
         leggings: ['minecraft:golden_leggings'],
         boots: ['minecraft:golden_boots'],
-        mainhand: ['minecraft:golden_sword',
-                  '#spartanweaponry:golden_weapons'],
+        mainhand: ['kubejs:none'],
         offhand: ['kubejs:none'],
         curios: ['kubejs:none']
 

@@ -151,7 +151,7 @@ global.tooltipModifiers.push(
         chestplate: ['outer_end:rose_crystal_chestplate'],
         leggings: ['outer_end:rose_crystal_leggings'],
         boots: ['outer_end:rose_crystal_boots'],
-        mainhand: ['outer_end:rose_crystal_sword'],
+        mainhand: ['kubejs:none'],
         curios: ['kubejs:none'],
         offhand: ['kubejs:none']
     },
@@ -242,7 +242,6 @@ global.tooltipModifiers.push(
     },
     "Cogwheeled Perfection",
     [
-        Text.of(" \u2507 Backtank needs to be in the chest slot.").blue(),
         Text.of(" \u2507 Grants Haste when in lava and on fire.").blue(),
         Text.of(" \u2507 Grants Resistance when in water.").blue()
     ])

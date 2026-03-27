@@ -474,9 +474,9 @@ EntityEvents.spawned(event => {
     let { entity } = event
     if(Math.random()<0.1){
     let newHoglin = entity.block.createEntity("minecraft:hoglin")
-    if (!newHoglin.persistentData.IsCultist) newHoglin.persistentData.IsStabbed = 0
+      if (!newHoglin.persistentData.IsCultist) newHoglin.persistentData.IsCultist = 0
     newHoglin.spawn()
-    newHoglin.persistentData.IsCultist == 1
+    newHoglin.persistentData.IsCultist = 1
     }
 })
 

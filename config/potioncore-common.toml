@@ -216,5 +216,5 @@ strong_random_teleport_recipe = true
 #Enable surface_teleport recipe?
 surface_teleport_recipe = false
 #Enable spawn_teleport recipe?
-spawn_teleport_recipe = true
+spawn_teleport_recipe = false
 

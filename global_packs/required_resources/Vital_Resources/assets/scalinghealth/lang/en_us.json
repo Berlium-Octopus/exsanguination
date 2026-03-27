@@ -41,10 +41,10 @@
   "item.scalinghealth.heart_dust": "§eEmpty Creaking Heart",
   "item.scalinghealth.heart_dust.desc": "An empty unfueled heart, it's hungers for fuel",
 
-  "item.scalinghealth.medkit": "§bForgotten Medkit",
+  "item.scalinghealth.medkit": "Forgotten Medkit",
   "item.scalinghealth.power_crystal": "§bPure Warden Soul",
   "item.scalinghealth.power_crystal.desc": "Increases base attack damage",
-  "item.scalinghealth.power_crystal_shard": "§eWilting Rod",
+  "item.scalinghealth.power_crystal_shard": "Wilting Rod",
 
   "item.scalinghealth.stat_booster.notEnoughXP": "§7Insufficient %d XP levels to stitch.",
   "itemGroup.scalinghealth": "Scaling Health",

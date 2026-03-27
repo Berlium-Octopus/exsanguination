@@ -372,7 +372,7 @@
 		"Item Quality" = 2
 		"Normal Upgrade Cost" = 15
 		"Limit Break Upgrade Cost" = 35
-		"Valid Enchantments" = ["minecraft:feather_falling", "minecraft:thorns", "minecraft:knockback", "minecraft:fire_aspect", "minecraft:looting", "minecraft:sweeping", "minecraft:efficiency", "minecraft:unbreaking", "minecraft:fortune", "minecraft:punch", "minecraft:luck_of_the_sea", "minecraft:lure", "minecraft:loyalty", "minecraft:riptide", "minecraft:impaling", "minecraft:piercing", "extra_enchantments:freezing_aspect", "extra_enchantments:burning_thorns", "extra_enchantments:freezing_thorns", "extra_enchantments:supercharge", "minecraft:quick_charge", "minecraft:mending"]
+		"Valid Enchantments" = ["farmersdelight:backstabbing", "minecraft:feather_falling", "minecraft:thorns", "minecraft:knockback", "minecraft:fire_aspect", "minecraft:looting", "minecraft:sweeping", "minecraft:efficiency", "minecraft:unbreaking", "minecraft:fortune", "minecraft:punch", "minecraft:luck_of_the_sea", "minecraft:lure", "minecraft:loyalty", "minecraft:riptide", "minecraft:impaling", "minecraft:piercing", "extra_enchantments:freezing_aspect", "extra_enchantments:burning_thorns", "extra_enchantments:freezing_thorns", "extra_enchantments:supercharge", "minecraft:quick_charge", "minecraft:mending"]
 		"Overleveled Books Glow Rainbow" = true
 		#When enabled, Efficiency VI Diamond and Netherite pickaxes can instamine Deepslate when under Haste 2
 		"Deepslate Tweak" = true

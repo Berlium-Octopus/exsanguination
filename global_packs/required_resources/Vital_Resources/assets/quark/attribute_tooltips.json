@@ -220,19 +220,6 @@
         "texture": "quark:attribute/gravity",
         "compare": "lower_better"
     },
-       "exsanguination:flamability": {
-        "display": {
-            "mainhand": "difference",
-            "offhand": "difference",
-            "feet": "difference",
-            "legs": "difference",
-            "chest": "difference",
-            "head": "difference",
-            "potion": "difference"
-        },
-        "texture": "quark:attribute/fire_resistance",
-        "compare": "lower_better"
-    },
     "forge:block_reach": {
         "display": {
             "mainhand": "difference",

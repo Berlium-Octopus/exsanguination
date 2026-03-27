@@ -218,5 +218,7 @@
   },
   "fade-volume": 0.004,
   "fade-pitch": 0.004,
-  "silent-dimensions": []
+  "silent-dimensions": [
+    "lostcity"
+  ]
 }

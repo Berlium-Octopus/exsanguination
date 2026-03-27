@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "deeperdarker:block/suspicious_sculk_grime_0",
+    "side": "deeperdarker:block/suspicious_sculk_grime_0"
+  }
+}

@@ -1,8 +1,5 @@
+// priority: 0
 
-// Prob the one that is broken
-
-
-// Addition Prob broken
 MoreJSEvents.registerPotionBrewing((event) => {
   event.addPotionBrewing("minecraft:feather", "minecraft:strength", "potioncore:archery");
 }
@@ -130,7 +127,7 @@ MoreJSEvents.registerPotionBrewing((event) => {
 
 MoreJSEvents.registerPotionBrewing((event) => {
   event.addPotionBrewing("sculkhorde:sculk_resin", "minecraft:awkward", "deeperdarker:sculk_affinity");
-    event.addPotionBrewing("luminous_nether:pale_melon_slice", "minecraft:awkward", "rootoffear:courage");
+    event.addPotionBrewing("luminous_nether:pale_melon_slice", "minecraft:awkward", "lostcities:courage");
 }
 )
 
