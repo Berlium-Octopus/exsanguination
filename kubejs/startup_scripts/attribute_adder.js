@@ -32,6 +32,8 @@ createRarity("alexscaves:nuclear", 0x55FF55)
 ItemEvents.modification(event => {
     event.modify(
         [
+            'luminous_nether:gold_cultist_axe',
+            'luminous_nether:piglin_flag_bottom',
             'luminous_beasts:shellmet_helmet',
             'luminous_beasts:spore_bundle',
             'luminous_nether:furnace_disk',
@@ -822,6 +824,7 @@ EntityJSEvents.attributes(event => {
 })
 
 let small_weapons = [
+    "trials:mace",
     "alexscaves:desolate_dagger",
     "alexsmobs:spectral_dagger",
     "spartanweaponry:stone_dagger",
@@ -1338,6 +1341,16 @@ ItemEvents.modification(event => {
         item.rarity = 'alexscaves:demonic'
     })
 })
+ItemEvents.modification(event => {
+    event.modify([
+"alexscaves_torpedoes:shadow_pickaxe",
+"alexscaves_torpedoes:shadow_sword",
+"alexscaves_torpedoes:shadow_axe",
+"alexscaves_torpedoes:shadow_shovel",
+"alexscaves_torpedoes:shadow_hoe"], item => {
+        item.rarity = "alexscaves:demonic"
+    })
+})
 
 ItemEvents.modification(event => {
     event.modify(['alexscavesdelight:sweet_tooth_knife', 'alexscaves:gingerbread_helmet', 'alexscaves:gingerbread_chestplate', 'alexscaves:gingerbread_leggings', 'alexscaves:gingerbread_boots', 'alexscavesdelight:gingerbread_knife', 'alexscaves:shot_gum'], item => {
@@ -1358,12 +1371,33 @@ ItemEvents.modification(event => {
 })
 
 ItemEvents.modification(event => {
-    event.modify(["archeological:netherite_charm"], item => {
+    event.modify(["archeological:netherite_charm", 
+        "deeperdarker:warden_horse_armor",
+        "spartandeeperdarker:warden_warhammer",
+        "spartandeeperdarker:warden_dagger",
+        "spartandeeperdarker:warden_rapier",
+        "spartandeeperdarker:warden_katana",
+        "deeperdarker:warden_layered_padding",
+        "spartandeeperdarker:warden_parrying_dagger",
+        "spartandeeperdarker:warden_battle_hammer",
+        "spartandeeperdarker:warden_spear",
+        "spartandeeperdarker:warden_halberd",
+        "spartandeeperdarker:warden_throwing_knife",
+        "spartandeeperdarker:warden_longbow",
+        "spartandeeperdarker:warden_pike",
+        "spartandeeperdarker:warden_tomahawk",
+        "spartandeeperdarker:warden_boomerang",
+        "spartandeeperdarker:warden_battleaxe",
+        "spartandeeperdarker:warden_flanged_mace",
+        "spartandeeperdarker:warden_quarterstaff",
+        "spartandeeperdarker:warden_scythe",
+        "spartandeeperdarker:warden_glaive",
+        "spartandeeperdarker:warden_greatsword"], item => {
         item.rarity = 'RARE'
     })
 })
 ItemEvents.modification(event => {
-    event.modify(['scalinghealth:medkit','rootoffear:agitated_primitive_heart', 'alexscavesdelight:azure_neodymium_knife', 'alexscavesdelight:scarlet_neodymium_knife', 'alexscaves_torpedoes:azure_pickaxe', 'alexscaves_torpedoes:azure_axe', 'alexscaves_torpedoes:azure_axe', 'alexscaves_torpedoes:azure_sword', 'alexscaves_torpedoes:azure_hoe', 'alexscaves_torpedoes:azure_shovel', 'alexscaves_torpedoes:ferrousslime_boots'], item => {
+    event.modify(['archeological:ancient_socks','alexscaves_torpedoes:magnet_display','scalinghealth:medkit','rootoffear:agitated_primitive_heart', 'alexscavesdelight:azure_neodymium_knife', 'alexscavesdelight:scarlet_neodymium_knife', 'alexscaves_torpedoes:azure_pickaxe', 'alexscaves_torpedoes:azure_axe', 'alexscaves_torpedoes:azure_axe', 'alexscaves_torpedoes:azure_sword', 'alexscaves_torpedoes:azure_hoe', 'alexscaves_torpedoes:azure_shovel', 'alexscaves_torpedoes:ferrousslime_boots'], item => {
         item.rarity = 'UNCOMMON'
     })
 })
@@ -1799,6 +1833,17 @@ ItemEvents.modification(event => {
     event.modify(['rootoffear:fadedwood_helmet', 'rootoffear:fadedwood_chestplate', 'rootoffear:fadedwood_leggings', 'rootoffear:fadedwood_boots', 'rootoffear:wraithwood_helmet', 'rootoffear:wraithwood_chestplate', 'rootoffear:wraithwood_leggings', 'rootoffear:wraithwood_boots'], item => {
         item.rarity = 'UNCOMMON'
         item.maxStackSize = 1
+    })
+})
+
+ItemEvents.modification(event => {
+    event.modify([
+"archeological:rusty_shovel",
+"archeological:rusty_pickaxe",
+"archeological:rusty_sword",
+"archeological:rusty_axe",
+"archeological:rusty_hoe"], item => {
+        item.rarity = "UNCOMMON"
     })
 })
 

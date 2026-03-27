@@ -502,7 +502,13 @@ ItemEvents.tooltip(event => {
     "sculkhorde:diascite_shovel",
     "sculkhorde:diascite_axe",
     "sculkhorde:diascite_pickaxe",
-    "sculkhorde:diascite"], (item, advanced, text) => {
+    "sculkhorde:diascite",
+    "cataclysm:soul_render", 
+    "cataclysm:the_incinerator",
+    "cataclysm:the_annihilator",
+    "cataclysm:the_immolator",
+    "cataclysm:gauntlet_of_bulwark"
+], (item, advanced, text) => {
       text.remove(1)
       text.remove(1)
     })
@@ -529,6 +535,14 @@ ItemEvents.tooltip(event => {
     text.remove(2)
   })
 });
+ItemEvents.tooltip(event => {
+  event.addAdvanced('cataclysm:bulwark_of_the_flame', (item, advanced, text) => {
+    text.remove(1)
+    text.remove(1)
+  })
+})
+
+
 
 ItemEvents.tooltip(event => {
   event.add(['scalinghealth:heart_crystal_shard'], '§7The Wilted heart, used to give vitality to armor pieces')

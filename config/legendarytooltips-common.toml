@@ -20,7 +20,7 @@
 		# Whether item names in tooltips should have a line under them separating them from the rest of the tooltip.
 		name_separator = false
 		# If enabled, tooltip border colors will match item rarity colors (except for custom borders).
-		borders_match_rarity = true
+		borders_match_rarity = false
 		# If enabled, tooltips will display a drop shadow.
 		tooltip_shadow = false
 		# If enabled, items showing a custom border will have a special shine effect when hovered over.
@@ -69,6 +69,7 @@
 		level15_entries = []
 		# Enter blacklist selectors here using the same format as above. Any items that match these selectors will NOT show a border.
 		blacklist = []
+
 	# Set border priorities here.  This should be a list of numbers that correspond to border levels, with numbers coming first being higher priority.
 	# Optionally, -1 can be inserted to indicate relative priority of data and api-defined borders.  If you don't know what that means, you don't need to worry about it.
 	[client.priorities]
@@ -93,9 +94,10 @@
 	#   Modifiers - Colors specified in any of the above formats can be modified by using modifiers.
 	#         Modifiers are specified after any color in the format "<+, -, or =><h, s, v, r, g, b, or a><amount>".
 	#         The letters represent h - hue, s - saturation, v - value, r - red, g - green, b - blue, a - alpha.
-	#         Valid amounts are 0 to 255 for all types except hue, which accepts 0 to 359.
+	#         Valid amounts are 0 to 255 for all types except hue, which accepts 0 to 35	#
 	#     Examples: "red+h15", "#saddlebrown-v20+s5", "10_aqua_aqua+v15-h5", "#F4C-r15-v10=a40"
-	#
+	# 
+
 	#   Animated color - An animated color that fades from one to another in sequence.
 	#         A string in the format "<duration in seconds>_<list of color definitions separated by underscores>".  Must be quoted.
 	#     Examples: "10_black_#7FFF00", "5.5_gold_orange_orangered", "20_red_orange_yellow_green_blue_purple"
