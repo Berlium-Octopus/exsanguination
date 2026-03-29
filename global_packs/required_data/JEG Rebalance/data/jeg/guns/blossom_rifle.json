@@ -44,7 +44,7 @@
   },
   "projectile": {
     "advantage": "jeg:undead",
-    "damage": 2.5,
+    "damage": 4.5,
     "ejectsCasing": true,
     "headshotMultiplier": 2,
     "item": "jeg:spectre_round",

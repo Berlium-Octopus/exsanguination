@@ -1,13 +1,16 @@
 {
   "schemaVersion": 2,
   "items": [
-    "$minecraft:digger",
-    "oreganized:scribe"
+        {
+      "id": "trials:mace_2",
+      "exclude": false
+    }
   ],
   "incompatible": [
     "extra_enchantments:incompatibility_curse",
     "deeperdarker:sculk_smite",
     "minecraft:bane_of_arthropods",
+    "extra_enchantments:illagers_bane",
     "minecraft:smite",
     "minecraft:sharpness",
     "minecraft:efficiency"

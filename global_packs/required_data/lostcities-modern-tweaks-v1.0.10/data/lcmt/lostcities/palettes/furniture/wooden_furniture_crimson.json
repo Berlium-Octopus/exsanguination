@@ -1,0 +1,12 @@
+{
+  "palette": [
+    {
+      "char": "-",
+      "block": "minecraft:crimson_pressure_plate"
+    },
+    {
+      "char": ".",
+      "block": "minecraft:crimson_fence"
+    }
+  ]
+}

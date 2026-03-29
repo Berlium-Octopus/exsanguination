@@ -1,0 +1,72 @@
+{
+  "palette": [
+    {
+      "char": "f",
+      "blocks": [
+        {
+          "random": 8,
+          "block": "minecraft:weathered_copper"
+        },
+        {
+          "random": 8,
+          "block": "minecraft:exposed_copper"
+        },
+        {
+          "random": 16,
+          "block": "minecraft:weathered_cut_copper"
+        },
+        {
+          "random": 1000,
+          "block": "minecraft:exposed_cut_copper"
+        }
+      ],
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "i",
+      "block": "minecraft:lightning_rod[facing=up,powered=false,waterlogged=false]"
+    },
+    {
+      "char": "q",
+      "block": "minecraft:acacia_trapdoor[facing=south,half=bottom,open=true,powered=false,waterlogged=false]"
+    },
+    {
+      "char": "k",
+      "block": "minecraft:acacia_trapdoor[facing=north,half=bottom,open=true,powered=false,waterlogged=false]"
+    },
+    {
+      "char": "j",
+      "block": "minecraft:acacia_trapdoor[facing=west,half=top,open=false,powered=false,waterlogged=false]"
+    },
+    {
+      "char": "m",
+      "block": "minecraft:acacia_trapdoor[facing=west,half=bottom,open=true,powered=false,waterlogged=false]"
+    },
+    {
+      "char": "o",
+      "block": "minecraft:acacia_trapdoor[facing=east,half=bottom,open=true,powered=false,waterlogged=false]"
+    },
+    {
+      "char": "r",
+      "block": "minecraft:acacia_trapdoor[facing=west,half=bottom,open=false,powered=false,waterlogged=false]"
+    },
+    {
+      "char": "J",
+      "block": "minecraft:acacia_trapdoor[facing=north,half=bottom,open=false,powered=false,waterlogged=false]"
+    },
+    {
+      "char": "n",
+      "block": "minecraft:acacia_trapdoor[facing=north,half=top,open=false,powered=false,waterlogged=false]"
+    },
+    {
+      "char": "s",
+      "block": "minecraft:polished_andesite",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "H",
+      "block": "minecraft:blast_furnace[facing=east,lit=false]",
+      "damaged": "minecraft:iron_bars"
+    }
+  ]
+}

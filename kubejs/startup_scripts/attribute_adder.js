@@ -1,4 +1,5 @@
 // priority: 0
+// Axes change from distance to recharge
 // Uncandango's from discord, it is used to patch my terrible code that breaks alex's caves rarities
 const $Rarity = Java.loadClass("net.minecraft.world.item.Rarity")
 const $UnaryOperator = Java.loadClass("java.util.function.UnaryOperator")
@@ -7,7 +8,6 @@ const $Style = Java.loadClass("net.minecraft.network.chat.Style")
 const ItemBuilder = Java.loadClass("dev.latvian.mods.kubejs.item.custom.BasicItemJS$Builder")
 
 const withColorMethod = $Style.EMPTY.class.declaredMethods.filter((method) => method.name.includes("m_131148_"))[0]
-
 function createRarity( /** @type {string} */ name, /** @type {number} */ colorCode) {
     let color = $UtilsJS.makeFunctionProxy("startup", $UnaryOperator, (style) => {
         return withColorMethod.invoke(style, Color.of(colorCode).createTextColorJS())
@@ -253,7 +253,7 @@ ItemEvents.modification(event => {
 
 
 ItemEvents.modification(event => {
-    event.modify(['scalinghealth:power_crystal_shard','scalinghealth:medkit','cataclysm:necklace_of_the_desert', 'biomesoplenty:spider_egg', 'biomesoplenty:glowworm_silk'], item => {
+    event.modify(['scalinghealth:power_crystal_shard', 'scalinghealth:medkit', 'cataclysm:necklace_of_the_desert', 'biomesoplenty:spider_egg', 'biomesoplenty:glowworm_silk'], item => {
         item.rarity = 'RARE'
         item.maxStackSize = 1
     })
@@ -391,115 +391,10 @@ const ROLL_MOD9 = new $AttributeModifier(
     0.7,
     "MULTIPLY_TOTAL"
 )
-const REACH_MOD_B = new $AttributeModifier(
-    "a882fb43-dd94-46cc-b83a-b0c9c5064ea9",
-    "forge:block_reach",
-    0.05,
-    "ADDITION"
-)
-const REACH_MOD_A = new $AttributeModifier(
-    "a25768a5-337d-4d9a-86c4-9075b71dd372",
-    "forge:entity_reach",
-    0.05,
-    "ADDITION"
-)
-const REACH_MOD_B2 = new $AttributeModifier(
-    "a669d573-3a20-4d4b-be78-235ffb4a12ea",
-    "forge:block_reach",
-    0.1,
-    "ADDITION"
-)
-
 const SHADOWMEN_A = new $AttributeModifier(
     "c66049c4-446d-4f61-b222-3b1781b1eed3",
-    "forge:block_reach",
+    "combatroll:distance",
     2,
-    "ADDITION"
-)
-
-
-const REACH_MOD_A2 = new $AttributeModifier(
-    "ebf80322-4ea5-4fa7-9136-bc5e882ac2fb",
-    "forge:entity_reach",
-    0.1,
-    "ADDITION"
-)
-const REACH_MOD_B3 = new $AttributeModifier(
-    "b2e8c111-dceb-4853-be21-8aadd9efe0a6",
-    "forge:block_reach",
-    0.15,
-    "ADDITION"
-)
-const REACH_MOD_A3 = new $AttributeModifier(
-    "d09ae486-1ef1-49e6-8057-475498538b47",
-    "forge:entity_reach",
-    0.15,
-    "ADDITION"
-)
-const REACH_MOD_A4 = new $AttributeModifier(
-    "198a3aeb-ae12-4c65-8b0e-6d2893df3610",
-    "forge:entity_reach",
-    0.2,
-    "ADDITION"
-)
-const REACH_MOD_B5 = new $AttributeModifier(
-    "b3c2beb6-694e-460b-ad15-d81a8e6c857d",
-    "forge:block_reach",
-    0.25,
-    "ADDITION"
-)
-const REACH_MOD_A5 = new $AttributeModifier(
-    "79426d9f-25d0-496f-8b7a-50d6806e9c80",
-    "forge:entity_reach",
-    0.25,
-    "ADDITION"
-)
-const REACH_MOD_B6 = new $AttributeModifier(
-    "10fdd399-41ae-4db2-bda3-69e9c4266912",
-    "forge:block_reach",
-    0.3,
-    "ADDITION"
-)
-const REACH_MOD_A6 = new $AttributeModifier(
-    "2ce01ad3-e09b-4d34-81cb-41f74b16378c",
-    "forge:entity_reach",
-    0.3,
-    "ADDITION"
-)
-const REACH_MOD_B7 = new $AttributeModifier(
-    "10fdd399-41ae-4db2-bda3-69e9c4266912",
-    "forge:block_reach",
-    0.35,
-    "ADDITION"
-)
-const REACH_MOD_A7 = new $AttributeModifier(
-    "2ce01ad3-e09b-4d34-81cb-41f74b16378c",
-    "forge:entity_reach",
-    0.35,
-    "ADDITION"
-)
-const REACH_MOD_B8 = new $AttributeModifier(
-    "84ec341d-8203-4f03-9767-0f74c99f7786",
-    "forge:block_reach",
-    0.4,
-    "ADDITION"
-)
-const REACH_MOD_A8 = new $AttributeModifier(
-    "f51fa42d-9874-4868-9bbf-526b5c23667a",
-    "forge:entity_reach",
-    0.4,
-    "ADDITION"
-)
-const REACH_MOD_B9 = new $AttributeModifier(
-    "6c1d0982-fac7-482c-aea9-fd9b0d9a9c36",
-    "forge:block_reach",
-    0.45,
-    "ADDITION"
-)
-const REACH_MOD_A9 = new $AttributeModifier(
-    "bf9de2ff-6053-4f2c-af24-380815cd1baf",
-    "forge:entity_reach",
-    0.45,
     "ADDITION"
 )
 const KID_MOD = new $AttributeModifier(
@@ -525,13 +420,13 @@ const KID_MOD2 = new $AttributeModifier(
 const KID_MOD13 = new $AttributeModifier(
     "a6b8d2e5-138a-4ce1-9657-20f7567beba8",
     "oreganized:kinetic_damage",
-    0.5,
+    1,
     "ADDITION"
 )
 const KID_MOD3 = new $AttributeModifier(
     "3fffcbf0-c644-423a-88ed-5aa73cb525f2",
     "oreganized:kinetic_damage",
-    1,
+    1.5,
     "ADDITION"
 )
 const KID_MOD4 = new $AttributeModifier(
@@ -543,7 +438,7 @@ const KID_MOD4 = new $AttributeModifier(
 const KID_MOD5 = new $AttributeModifier(
     "d181c575-75f3-4008-ba3f-fa470fe40569",
     "oreganized:kinetic_damage",
-    2.2,
+    3,
     "ADDITION"
 )
 const KID_MOD6 = new $AttributeModifier(
@@ -555,7 +450,7 @@ const KID_MOD6 = new $AttributeModifier(
 const KID_MOD11 = new $AttributeModifier(
     "b2420cf2-5943-43a4-919c-7b0a11813392",
     "oreganized:kinetic_damage",
-    2,
+    4.5,
     "ADDITION"
 )
 const KNOCK_MOD = new $AttributeModifier(
@@ -601,34 +496,6 @@ const KNOCK_MOD7 = new $AttributeModifier(
     "ADDITION"
 )
 
-const PEN_MODO = new $AttributeModifier(
-    "68524492-452e-4218-a6f8-b5d0ef2dce63",
-    "puffish_attributes:armor_shred",
-    0.05,
-    "MULTIPLY_TOTAL"
-)
-
-const PEN_MOD = new $AttributeModifier(
-    "a516026a-bee2-4014-bcb6-b6a5775553de",
-    "puffish_attributes:armor_shred",
-    0.1,
-    "MULTIPLY_TOTAL"
-)
-
-const PEN_MOD2 = new $AttributeModifier(
-    "33e7dc70-264a-4623-9267-26776ea8d0e4",
-    "puffish_attributes:armor_shred",
-    0.15,
-    "MULTIPLY_TOTAL"
-)
-
-const PEN_MOD3 = new $AttributeModifier(
-    "006a083d-ddfe-4dac-afb5-1dd0ffaf1fad",
-    "puffish_attributes:armor_shred",
-    0.2,
-    "MULTIPLY_TOTAL"
-)
-
 const RABIES_RES = new $AttributeModifier(
     "a24a2e8a-4ef9-46df-9d36-863a7d645a1a",
     "alexscavesexemplified:rabies_resistance",
@@ -643,69 +510,80 @@ const RABIES_RES2 = new $AttributeModifier(
     "ADDITION"
 )
 
-const PEN_MOD4 = new $AttributeModifier(
-    "4b643dea-91f5-4cba-888d-0e860a6e90a6",
+const YUM_1 = new $AttributeModifier(
+    "36491750-e03a-4b96-aa3c-67cb42905722",
     "puffish_attributes:armor_shred",
-    0.25,
+    0.1,
     "MULTIPLY_TOTAL"
 )
 
 
-const YUM_1 = new $AttributeModifier(
-    "36491750-e03a-4b96-aa3c-67cb42905722",
-    "puffish_attributes:toughness_shred",
+const HELM_MOD = new $AttributeModifier(
+    "b5310c8e-e091-43a6-92b1-35cf6839da5d",
+    "puffish_attributes:armor_shred",
+    0.5,
+    "MULTIPLY_TOTAL"
+)
+
+const YUM_2 = new $AttributeModifier(
+    "05a400dc-286b-42a6-a538-429f90d3a8c4",
+    "puffish_attributes:armor_shred",
+    0.2,
+    "MULTIPLY_TOTAL"
+)
+
+const YUM_3 = new $AttributeModifier(
+    "029c2bed-9436-459d-89bc-15c625353d9d",
+    "puffish_attributes:armor_shred",
     0.3,
     "MULTIPLY_TOTAL"
 )
 
-
-const PEN_MOD45 = new $AttributeModifier(
-    "7b296da2-e67b-4d37-a123-9131ff2f2380",
-    "puffish_attributes:armor_shred",
-    0.35,
-    "MULTIPLY_TOTAL"
-)
-
-const HELM_MOD = new $AttributeModifier(
-    "c4302892-5666-41df-b119-c44898a02450",
-    "puffish_attributes:armor_shred",
-    1,
-    "ADDITION"
-)
-
-
-
-const PEN_MOD5 = new $AttributeModifier(
-    "0e0b5bbe-404f-41dd-ab53-2f48d47c3a91",
+const YUM_4 = new $AttributeModifier(
+    "74e31536-1492-4519-b129-7038e8af0913",
     "puffish_attributes:armor_shred",
     0.4,
     "MULTIPLY_TOTAL"
 )
 
-const YUM_2 = new $AttributeModifier(
-    "0e0b5bbe-404f-41dd-ab53-2f48d47c3a91",
-    "puffish_attributes:toughness_shred",
-    0.10,
-    "MULTIPLY_TOTAL"
-)
-
-const YUM_3 = new $AttributeModifier(
-    "8e544c8a-456f-4fd3-af0d-a0d27b55b641",
-    "puffish_attributes:toughness_shred",
+const YUM_5 = new $AttributeModifier(
+    "ba4243c7-6107-46b1-bc7c-b0389165bd7b",
+    "puffish_attributes:armor_shred",
     0.5,
     "MULTIPLY_TOTAL"
 )
 
-const PEN_MODS = new $AttributeModifier(
-    "80235905-3c25-4e33-bdd9-357f9b1ff915",
+const YUM_6 = new $AttributeModifier(
+    "38018393-984c-44d9-8a59-da50780dda92",
     "puffish_attributes:armor_shred",
-    1,
+    0.6,
     "MULTIPLY_TOTAL"
 )
 
-const YUM_S = new $AttributeModifier(
-    "86130dc5-b1da-48bb-81c0-ca82d2f49fa1",
-    "puffish_attributes:toughness_shred",
+const YUM_7 = new $AttributeModifier(
+    "e0223179-8c6d-4bc3-a7c3-ce2b5b947706",
+    "puffish_attributes:armor_shred",
+    0.7,
+    "MULTIPLY_TOTAL"
+)
+
+const YUM_8 = new $AttributeModifier(
+    "c2827f0e-be30-4fcf-a318-042aebae2e2d",
+    "puffish_attributes:armor_shred",
+    0.8,
+    "MULTIPLY_TOTAL"
+)
+
+const YUM_9 = new $AttributeModifier(
+    "47f4f1e3-d0c0-46fc-a3e2-673e23db3345",
+    "puffish_attributes:armor_shred",
+    0.9,
+    "MULTIPLY_TOTAL"
+)
+
+const YUM_10 = new $AttributeModifier(
+    "ba4243c7-6107-46b1-bc7c-b0389165bd7b",
+    "puffish_attributes:armor_shred",
     1,
     "MULTIPLY_TOTAL"
 )
@@ -809,22 +687,37 @@ EntityJSEvents.attributes(event => {
 
 const /**@type {{NAME: Internal.Attribute}} */ Fakefireattribute = {}
 Fakefireattribute.FFI_RES = "exsanguination:flamability"
+Fakefireattribute.S = "exsanguination:fake_smite"
+Fakefireattribute.SS = "exsanguination:sculk_smite"
+Fakefireattribute.BOB = "exsanguination:bane_of_builders"
+Fakefireattribute.BAN = "exsanguination:bane_of_animals"
+Fakefireattribute.RDAM = "exsanguination:ranged_damage"
 
 StartupEvents.registry("minecraft:attribute", event => {
     const $RangedAttribute = Java.loadClass("net.minecraft.world.entity.ai.attributes.RangedAttribute")
     event.createCustom(Fakefireattribute.FFI_RES, () => new $RangedAttribute("Flamability", 0, 0, 10).setSyncable(true))
+    event.createCustom(Fakefireattribute.S, () => new $RangedAttribute("Undead Damage", 0, 0, 10).setSyncable(true))
+    event.createCustom(Fakefireattribute.SS, () => new $RangedAttribute("Sculk Damage", 0, 0, 10).setSyncable(true))
+    event.createCustom(Fakefireattribute.BOB, () => new $RangedAttribute("Builder Damage", 0, 0, 10).setSyncable(true))
+    event.createCustom(Fakefireattribute.BAN, () => new $RangedAttribute("Animal Damage", 0, 0, 10).setSyncable(true))
+    event.createCustom(Fakefireattribute.RDAM, () => new $RangedAttribute("Ranged Damage", 0, 0, 10).setSyncable(true))
+
 })
 
 EntityJSEvents.attributes(event => {
     event.allTypes.forEach(type => {
         event.modify(type, ctx => {
             ctx.add(Fakefireattribute.FFI_RES)
+            ctx.add(Fakefireattribute.S)
+            ctx.add(Fakefireattribute.SS)
+            ctx.add(Fakefireattribute.BOB)
+            ctx.add(Fakefireattribute.BAN)
+            ctx.add(Fakefireattribute.RDAM)
         })
     })
 })
 
 let small_weapons = [
-    "trials:mace",
     "alexscaves:desolate_dagger",
     "alexsmobs:spectral_dagger",
     "spartanweaponry:stone_dagger",
@@ -944,57 +837,79 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     if (event.itemStack.id == "deeperdarker:warden_sword" && event.slotType == "mainhand") {
         event.addModifier("oreganized:kinetic_damage", MAMA_M6)
     }
-    if (event.itemStack.id == "minecraft:golden_pickaxe" && event.slotType == "mainhand") {
-        event.addModifier("puffish_attributes:armor_shred", PEN_MODO)
-    }
-    if (event.itemStack.id == "minecraft:wooden_pickaxe" && event.slotType == "mainhand") {
-        event.addModifier("puffish_attributes:armor_shred", PEN_MOD)
-    }
+    let tiny = [
+        "minecraft:golden_pickaxe",
+        "archeological:rusty_pickaxe"
+    ]
+    tiny.forEach(weapon => {
+        if (event.itemStack.id == weapon && event.slotType == "mainhand") {
+            event.addModifier("puffish_attributes:armor_shred", YUM_1)
+        }
+    })
     if (event.itemStack.id == "minecraft:stone_pickaxe" && event.slotType == "mainhand") {
-        event.addModifier("puffish_attributes:armor_shred", PEN_MOD2)
+        event.addModifier("puffish_attributes:armor_shred", YUM_2)
     }
-    if (event.itemStack.id == "minecraft:copper_pickaxe" && event.slotType == "mainhand") {
-        event.addModifier("puffish_attributes:armor_shred", PEN_MOD3)
-    }
-    if (event.itemStack.id == "minecraft:iron_pickaxe" && event.slotType == "mainhand") {
-        event.addModifier("puffish_attributes:armor_shred", PEN_MOD4)
-    }
-    if (event.itemStack.id == "sculkhorde:ferriscite_pickaxe" && event.slotType == "mainhand") {
-        event.addModifier("puffish_attributes:armor_shred", PEN_MOD4)
-    }
-    if (event.itemStack.id == "deeperdarker:resonarium_pickaxe" && event.slotType == "mainhand") {
-        event.addModifier("puffish_attributes:armor_shred", PEN_MOD5)
-    }
-    if (event.itemStack.id == "sculkhorde:diascite_pickaxe" && event.slotType == "mainhand") {
-        event.addModifier("puffish_attributes:armor_shred", PEN_MOD5)
-    }
-    if (event.itemStack.id == "alexscaves_torpedoes:scarlet_pickaxe" && event.slotType == "mainhand") {
-        event.addModifier("puffish_attributes:armor_shred", PEN_MOD45)
-        event.addModifier("puffish_attributes:toughness_shred", YUM_1)
-    }
-    if (event.itemStack.id == "alexscaves_torpedoes:azure_pickaxe" && event.slotType == "mainhand") {
-        event.addModifier("puffish_attributes:armor_shred", PEN_MOD45)
-        event.addModifier("puffish_attributes:toughness_shred", YUM_1)
-    }
-    if (event.itemStack.id == "minecraft:diamond_pickaxe" && event.slotType == "mainhand") {
-        event.addModifier("puffish_attributes:armor_shred", PEN_MOD3)
-        event.addModifier("puffish_attributes:toughness_shred", YUM_3)
-    }
-    if (event.itemStack.id == "oreganized:electrum_pickaxe" && event.slotType == "mainhand") {
-        event.addModifier("puffish_attributes:armor_shred", PEN_MOD45)
-        event.addModifier("puffish_attributes:toughness_shred", YUM_2)
-    }
-    if (event.itemStack.id == "minecraft:netherite_pickaxe" && event.slotType == "mainhand") {
-        event.addModifier("puffish_attributes:armor_shred", PEN_MOD45)
-        event.addModifier("puffish_attributes:toughness_shred", YUM_2)
-    }
+    let cop = [
+        "minecraft:copper_pickaxe",
+        "oreganized:silver_pickaxe"
+    ]
+    cop.forEach(weapon => {
+        if (event.itemStack.id == weapon && event.slotType == "mainhand") {
+            event.addModifier("puffish_attributes:armor_shred", YUM_3)
+        }
+    })
+    let iron_s = [
+        "minecraft:iron_pickaxe",
+        "cataclysm:black_steel_pickaxe",
+        "create:bronze_pickaxe"
+    ]
+    iron_s.forEach(weapon => {
+        if (event.itemStack.id == weapon && event.slotType == "mainhand") {
+            event.addModifier("puffish_attributes:armor_shred", YUM_4)
+        }
+    })
+    let scar_and_azure = [
+        "alexscaves_torpedoes:azure_pickaxe",
+        "alexscaves_torpedoes:scarlet_pickaxe"
+    ]
+    scar_and_azure.forEach(weapon => {
+        if (event.itemStack.id == weapon && event.slotType == "mainhand") {
+            event.addModifier("puffish_attributes:armor_shred", YUM_5)
+        }
+    })
+    let duimon = [
+        "minecraft:diamond_pickaxe",
+        "deeperdarker:resonarium_pickaxe"
+    ]
+    duimon.forEach(weapon => {
+        if (event.itemStack.id == weapon && event.slotType == "mainhand") {
+            event.addModifier("puffish_attributes:armor_shred", YUM_6)
+        }
+    })
+    let duimon_plus = [
+        "minecraft:netherite_pickaxe",
+        "oreganized:electrum_pickaxe",
+        "alexscaves_torpedoes:shadow_pickaxe"
+    ]
+    duimon_plus.forEach(weapon => {
+        if (event.itemStack.id == weapon && event.slotType == "mainhand") {
+            event.addModifier("puffish_attributes:armor_shred", YUM_7)
+        }
+    })
     if (event.itemStack.id == "deeperdarker:warden_pickaxe" && event.slotType == "mainhand") {
-        event.addModifier("puffish_attributes:armor_shred", PEN_MOD5)
-        event.addModifier("puffish_attributes:toughness_shred", YUM_2)
+        event.addModifier("puffish_attributes:armor_shred", YUM_8)
     }
+    let horde_plus = [
+        "sculkhorde:ferriscite_pickaxe",
+        "sculkhorde:diascite_pickaxe"
+    ]
+    horde_plus.forEach(weapon => {
+        if (event.itemStack.id == weapon && event.slotType == "mainhand") {
+            event.addModifier("puffish_attributes:armor_shred", YUM_9)
+        }
+    })
     if (event.itemStack.id == "alexsmobs:ghostly_pickaxe" && event.slotType == "mainhand") {
-        event.addModifier("puffish_attributes:armor_shred", PEN_MODS)
-        event.addModifier("puffish_attributes:toughness_shred", YUM_S)
+        event.addModifier("puffish_attributes:armor_shred", YUM_10)
     }
     if (event.itemStack.id == "minecraft:golden_shovel" && event.slotType == "mainhand") {
         event.addModifier("minecraft:generic.attack_knockback", KNOCK_MOD)
@@ -1194,63 +1109,8 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     if (event.itemStack.id == "rootoffear:fadedwood_boots" && event.slotType == "feet") {
         event.addModifier("exsanguination:flamability", EXP_MOD4)
     }
-    if (event.itemStack.id == "minecraft:golden_hoe" && event.slotType == "mainhand") {
-        event.addModifier("forge:block_reach", REACH_MOD_B)
-        event.addModifier("forge:entity_reach", REACH_MOD_A)
-    }
-
     if (event.itemStack.id == "alexscaves_torpedoes:shadow_axe" && event.slotType == "mainhand") {
-        event.addModifier("forge:entity_reach", SHADOWMEN_A)
-    }
-
-    if (event.itemStack.id == "minecraft:wooden_hoe" && event.slotType == "mainhand") {
-        event.addModifier("forge:block_reach", REACH_MOD_B2)
-        event.addModifier("forge:entity_reach", REACH_MOD_A2)
-    }
-    if (event.itemStack.id == "minecraft:stone_hoe" && event.slotType == "mainhand") {
-        event.addModifier("forge:block_reach", REACH_MOD_B3)
-        event.addModifier("forge:entity_reach", REACH_MOD_A3)
-    }
-    if (event.itemStack.id == "minecraft:copper_hoe" && event.slotType == "mainhand") {
-        event.addModifier("forge:block_reach", REACH_MOD_B6)
-        event.addModifier("forge:entity_reach", REACH_MOD_A6)
-    }
-    if (event.itemStack.id == "minecraft:iron_hoe" && event.slotType == "mainhand") {
-        event.addModifier("forge:block_reach", REACH_MOD_B5)
-        event.addModifier("forge:entity_reach", REACH_MOD_A5)
-    }
-    if (event.itemStack.id == "deeperdarker:resonarium_hoe" && event.slotType == "mainhand") {
-        event.addModifier("forge:block_reach", REACH_MOD_B5)
-        event.addModifier("forge:entity_reach", REACH_MOD_A5)
-    }
-    if (event.itemStack.id == "cataclysm:black_steel_hoe" && event.slotType == "mainhand") {
-        event.addModifier("forge:block_reach", REACH_MOD_B5)
-        event.addModifier("forge:entity_reach", REACH_MOD_A5)
-    }
-    if (event.itemStack.id == "alexscaves_torpedoes:scarlet_hoe" && event.slotType == "mainhand") {
-        event.addModifier("forge:block_reach", REACH_MOD_A5)
-        event.addModifier("forge:entity_reach", REACH_MOD_A5)
-    }
-    if (event.itemStack.id == "alexscaves_torpedoes:azure_hoe" && event.slotType == "mainhand") {
-        event.addModifier("forge:block_reach", REACH_MOD_A5)
-        event.addModifier("forge:entity_reach", REACH_MOD_A5)
-    }
-    if (event.itemStack.id == "minecraft:diamond_hoe" && event.slotType == "mainhand") {
-        event.addModifier("forge:block_reach", REACH_MOD_A7)
-        event.addModifier("forge:entity_reach", REACH_MOD_A7)
-    }
-    if (event.itemStack.id == "oreganized:electrum_hoe" && event.slotType == "mainhand") {
-        event.addModifier("oreganized:kinetic_damage", KID_MOD)
-        event.addModifier("forge:block_reach", REACH_MOD_A8)
-        event.addModifier("forge:entity_reach", REACH_MOD_A8)
-    }
-    if (event.itemStack.id == "deeperdarker:warden_hoe" && event.slotType == "mainhand") {
-        event.addModifier("forge:block_reach", REACH_MOD_A9)
-        event.addModifier("forge:entity_reach", REACH_MOD_A9)
-    }
-    if (event.itemStack.id == "minecraft:netherite_hoe" && event.slotType == "mainhand") {
-        event.addModifier("forge:block_reach", REACH_MOD_A8)
-        event.addModifier("forge:entity_reach", REACH_MOD_A8)
+        event.addModifier("combatroll:distance", SHADOWMEN_A)
     }
 })
 
@@ -1343,13 +1203,13 @@ ItemEvents.modification(event => {
 })
 ItemEvents.modification(event => {
     event.modify([
-"alexscaves_torpedoes:shadow_pickaxe",
-"alexscaves_torpedoes:shadow_sword",
-"alexscaves_torpedoes:shadow_axe",
-"alexscaves_torpedoes:shadow_shovel",
-"alexscaves_torpedoes:shadow_hoe"], item => {
-        item.rarity = "alexscaves:demonic"
-    })
+        "alexscaves_torpedoes:shadow_pickaxe",
+        "alexscaves_torpedoes:shadow_sword",
+        "alexscaves_torpedoes:shadow_axe",
+        "alexscaves_torpedoes:shadow_shovel",
+        "alexscaves_torpedoes:shadow_hoe"], item => {
+            item.rarity = "alexscaves:demonic"
+        })
 })
 
 ItemEvents.modification(event => {
@@ -1365,13 +1225,13 @@ ItemEvents.modification(event => {
 })
 
 ItemEvents.modification(event => {
-    event.modify(['alexsmobs:unsettling_kimono', 'outer_end:mint_crystal_helmet', 'outer_end:mint_crystal_chestplate', 'outer_end:mint_crystal_leggings', 'outer_end:mint_crystal_boots'], item => {
+    event.modify(['minecraft:recovery_compass', 'alexsmobs:unsettling_kimono', 'outer_end:mint_crystal_helmet', 'outer_end:mint_crystal_chestplate', 'outer_end:mint_crystal_leggings', 'outer_end:mint_crystal_boots'], item => {
         item.rarity = 'RARE'
     })
 })
 
 ItemEvents.modification(event => {
-    event.modify(["archeological:netherite_charm", 
+    event.modify(["archeological:netherite_charm",
         "deeperdarker:warden_horse_armor",
         "spartandeeperdarker:warden_warhammer",
         "spartandeeperdarker:warden_dagger",
@@ -1393,11 +1253,11 @@ ItemEvents.modification(event => {
         "spartandeeperdarker:warden_scythe",
         "spartandeeperdarker:warden_glaive",
         "spartandeeperdarker:warden_greatsword"], item => {
-        item.rarity = 'RARE'
-    })
+            item.rarity = 'RARE'
+        })
 })
 ItemEvents.modification(event => {
-    event.modify(['archeological:ancient_socks','alexscaves_torpedoes:magnet_display','scalinghealth:medkit','rootoffear:agitated_primitive_heart', 'alexscavesdelight:azure_neodymium_knife', 'alexscavesdelight:scarlet_neodymium_knife', 'alexscaves_torpedoes:azure_pickaxe', 'alexscaves_torpedoes:azure_axe', 'alexscaves_torpedoes:azure_axe', 'alexscaves_torpedoes:azure_sword', 'alexscaves_torpedoes:azure_hoe', 'alexscaves_torpedoes:azure_shovel', 'alexscaves_torpedoes:ferrousslime_boots'], item => {
+    event.modify(['archeological:ancient_socks', 'alexscaves_torpedoes:magnet_display', 'scalinghealth:medkit', 'rootoffear:agitated_primitive_heart', 'alexscavesdelight:azure_neodymium_knife', 'alexscavesdelight:scarlet_neodymium_knife', 'alexscaves_torpedoes:azure_pickaxe', 'alexscaves_torpedoes:azure_axe', 'alexscaves_torpedoes:azure_axe', 'alexscaves_torpedoes:azure_sword', 'alexscaves_torpedoes:azure_hoe', 'alexscaves_torpedoes:azure_shovel', 'alexscaves_torpedoes:ferrousslime_boots'], item => {
         item.rarity = 'UNCOMMON'
     })
 })
@@ -1838,13 +1698,13 @@ ItemEvents.modification(event => {
 
 ItemEvents.modification(event => {
     event.modify([
-"archeological:rusty_shovel",
-"archeological:rusty_pickaxe",
-"archeological:rusty_sword",
-"archeological:rusty_axe",
-"archeological:rusty_hoe"], item => {
-        item.rarity = "UNCOMMON"
-    })
+        "archeological:rusty_shovel",
+        "archeological:rusty_pickaxe",
+        "archeological:rusty_sword",
+        "archeological:rusty_axe",
+        "archeological:rusty_hoe"], item => {
+            item.rarity = "UNCOMMON"
+        })
 })
 
 ItemEvents.modification(event => {
@@ -2566,3 +2426,148 @@ ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (even
     }
 
 });
+
+
+
+// Might Need To Make an entity hurt event to lessen the damage outpout :(
+const HEAVYNERF_BOW = new $AttributeModifier(
+    "97a8db19-a131-41a0-8bcd-f9967c89b86e",
+    "exsanguination:ranged_damage",
+    0.5,
+    "ADDITION"
+)
+
+const MIDNERF_BOW = new $AttributeModifier(
+    "56676eb5-e136-4009-922d-64abb3c2be3b",
+    "exsanguination:ranged_damage",
+    0.6,
+    "ADDITION"
+)
+
+const NERF_BOW = new $AttributeModifier(
+    "09ce976c-3ae0-4823-8f84-67c169762489",
+    "exsanguination:ranged_damage",
+    0.7,
+    "ADDITION"
+)
+
+const SMALLNERF_BOW = new $AttributeModifier(
+    "d2354124-dd86-4b67-b11a-1a989f747c2d",
+    "exsanguination:ranged_damage",
+    0.8,
+    "ADDITION"
+)
+
+
+const SMALLESTNERF_BOW = new $AttributeModifier(
+    "28ca8d32-b5ec-4b9d-a0bd-ed6b22a7ca8a",
+    "exsanguination:ranged_damage",
+    0.9,
+    "ADDITION"
+)
+
+const NULLNERF_BOW = new $AttributeModifier(
+    "afcfbb0a-da7c-4792-9a66-19258adc6ba1",
+    "exsanguination:ranged_damage",
+    1,
+    "ADDITION"
+)
+ForgeEvents.onEvent("net.minecraftforge.event.ItemAttributeModifierEvent", (event) => {
+    // ADD THE LONGBOWS FOR SCARLET + AZURE + Rusty
+    // Heavy
+    if (event.itemStack.id == "spartanweaponry:wooden_longbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", HEAVYNERF_BOW)
+    }
+    if (event.itemStack.id == "spartanweaponry:wooden_heavy_crossbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", HEAVYNERF_BOW)
+    }
+    if (event.itemStack.id == "spartanweaponry:golden_heavy_crossbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", HEAVYNERF_BOW)
+    }
+    if (event.itemStack.id == "spartanweaponry:golden_longbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", HEAVYNERF_BOW)
+    }
+
+    // Mid
+    if (event.itemStack.id == "spartanweaponry:copper_heavy_crossbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", MIDNERF_BOW)
+
+    }
+    if (event.itemStack.id == "spartanweaponry:copper_longbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", MIDNERF_BOW)
+    }
+    if (event.itemStack.id == "spartanweaponry:silver_heavy_crossbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", MIDNERF_BOW)
+    }
+    if (event.itemStack.id == "spartanweaponry:silver_longbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", MIDNERF_BOW)
+    }
+    // Mid
+    if (event.itemStack.id == "spartanweaponry:iron_heavy_crossbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", NERF_BOW)
+    }
+    if (event.itemStack.id == "spartanweaponry:iron_longbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", NERF_BOW)
+    }
+    if (event.itemStack.id == "spartanweaponry:bronze_heavy_crossbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", NERF_BOW)
+    }
+    if (event.itemStack.id == "spartanweaponry:bronze_longbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", NERF_BOW)
+    }
+    if (event.itemStack.id == "spartanweaponry:steel_heavy_crossbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", NERF_BOW)
+    }
+    if (event.itemStack.id == "spartanweaponry:steel_longbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", NERF_BOW)
+    }
+    // Tiny
+    if (event.itemStack.id == "spartanweaponry:diamond_heavy_crossbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", SMALLESTNERF_BOW)
+    }
+    if (event.itemStack.id == "spartanweaponry:diamond_longbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", SMALLESTNERF_BOW)
+    }
+    if (event.itemStack.id == "spartandeeperdarker:resonarium_heavy_crossbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", SMALLESTNERF_BOW)
+    }
+    if (event.itemStack.id == "spartandeeperdarker:resonarium_longbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", SMALLESTNERF_BOW)
+    }
+    // Tiniest
+    if (event.itemStack.id == "spartanweaponry:netherite_heavy_crossbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", SMALLESTNERF_BOW)
+    }
+    if (event.itemStack.id == "spartanweaponry:netherite_longbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", SMALLESTNERF_BOW)
+    }
+    if (event.itemStack.id == "spartanweaponry:electrum_heavy_crossbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", SMALLESTNERF_BOW)
+    }
+    if (event.itemStack.id == "spartanweaponry:electrum_longbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", SMALLESTNERF_BOW)
+    }
+    // NULL
+    if (event.itemStack.id == "cataclysm:cursed_bow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", NULLNERF_BOW)
+    }
+    if (event.itemStack.id == "spartandeeperdarker:warden_longbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", NULLNERF_BOW)
+    }
+    if (event.itemStack.id == "spartandeeperdarker:warden_heavy_crossbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", NULLNERF_BOW)
+    }
+    if (event.itemStack.id == "alexscaves:dreadbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", NULLNERF_BOW)
+    }
+    if (event.itemStack.id == "minecraft:bow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", NULLNERF_BOW)
+    }
+    if (event.itemStack.id == "minecraft:crossbow" && event.slotType == "mainhand") {
+        event.addModifier("exsanguination:ranged_damage", NULLNERF_BOW)
+    }
+})
+
+
+
+

@@ -9,6 +9,7 @@
 )
 
 ServerEvents.recipes(event => {
+    event.remove({ output: "trials:mace" })
     event.remove({ output: "spartanweaponry:wooden_club"})
     event.remove({ output: 'deeperdarker:resonarium'})
     event.remove({ output: 'spartanweaponry:leather_longbow'})
@@ -1074,8 +1075,6 @@ ServerEvents.recipes(event => {
 )
 })
 
-
-
 ServerEvents.recipes(event => {
   event.replaceInput(
   { id: 'luminous_nether:soulcauldronrec_2' }, // Arg 1: the filter
@@ -1956,6 +1955,18 @@ event.shaped('minecraft:furnace',[
      }
    )
 
+
+ServerEvents.recipes(event => {
+  event.shaped('trials:mace_2', [
+    'B',
+    'A'
+  ], {
+    A: 'trials:breeze_rod',
+    B: 'trials:heavy_core'
+  }
+  )
+}
+)
 
 ServerEvents.recipes(event => {
 event.shapeless(

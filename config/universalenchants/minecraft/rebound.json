@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 2,
+  "items": [
+{
+  "id": "minecraft:stone_shovel",
+  "exclude": false
+},
+{
+  "id": "minecraft:iron_shovel",
+  "exclude": false
+},
+{
+  "id": "alexscaves_torpedoes:scarlet_shovel",
+  "exclude": false
+},
+{
+  "id": "deeperdarker:warden_shovel",
+  "exclude": false
+},
+{
+  "id": "oreganized:silver_shovel",
+  "exclude": false
+},
+{
+  "id": "cataclysm:black_steel_shovel",
+  "exclude": false
+},
+{
+  "id": "alexscaves_torpedoes:azure_shovel",
+  "exclude": false
+},
+{
+  "id": "minecraft:golden_shovel",
+  "exclude": false
+},
+{
+  "id": "minecraft:diamond_shovel",
+  "exclude": false
+},
+{
+  "id": "alexscaves_torpedoes:shadow_shovel",
+  "exclude": false
+},
+{
+  "id": "sculkhorde:diascite_shovel",
+  "exclude": false
+},
+{
+  "id": "archeological:rusty_shovel",
+  "exclude": false
+},
+{
+  "id": "create:bronze_shovel",
+  "exclude": false
+},
+{
+  "id": "minecraft:netherite_shovel",
+  "exclude": false
+},
+{
+  "id": "minecraft:copper_shovel",
+  "exclude": false
+},
+{
+  "id": "deeperdarker:resonarium_shovel",
+  "exclude": false
+},
+{
+  "id": "oreganized:electrum_shovel",
+  "exclude": false
+}
+  ],
+  "incompatible": [
+    "extra_enchantments:incompatibility_curse",
+    "minecraft:efficiency"
+  ]
+}

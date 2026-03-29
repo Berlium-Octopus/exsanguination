@@ -119,7 +119,7 @@
     },
     { 
        "dimension": "lostcities:lostcity",
-       "mob":["corpse:corpse", "alexsmobs:mimicube", "create:contraption","minecraft:chest_boat","minecraft:spawner_minecart", "minecraft:hopper_minecart", "minecraft:chest_minecart","minecraft:tnt_minecart", "oreganized:shrapnel_bomb_minecart","minecraft:minecart", "minecraft:boat", "dummmmmmy:target_dummy", "minecraft:warden", "whiteenderman:white_enderman","biomemakeover:ghost","minecraft:vex","doom_and_gloom:holler","alexsmobs:skreecher","alexsmobs:farseer","minecraft:allay"],
+       "mob":["minecraft:phantom","corpse:corpse", "alexsmobs:mimicube", "create:contraption","minecraft:chest_boat","minecraft:spawner_minecart", "minecraft:hopper_minecart", "minecraft:chest_minecart","minecraft:tnt_minecart", "oreganized:shrapnel_bomb_minecart","minecraft:minecart", "minecraft:boat", "dummmmmmy:target_dummy", "minecraft:warden", "whiteenderman:white_enderman","biomemakeover:ghost","minecraft:vex","doom_and_gloom:holler","alexsmobs:skreecher","alexsmobs:farseer","minecraft:allay"],
        "when": "onjoin",
        "result": "allow"
     },

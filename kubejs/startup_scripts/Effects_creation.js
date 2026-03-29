@@ -1,5 +1,5 @@
 StartupEvents.init(event => {
-    const courage = new $MobEffectBuilder("lostcities:courage").modifyAttribute("forge:entity_reach", "6ce7cee7-13f1-45b2-bc5c-81d8a583a0cb", 0.5, 'addition').color(0xbdd4c6).beneficial()
+    const courage = new $MobEffectBuilder("lostcities:courage").modifyAttribute("forge:entity_reach", "8566954c-0b07-43e3-851f-ea58602ab0fe", 0.5, 'addition').color(0xbdd4c6).beneficial()
     const courage_effect = MOB_EFFECTS.register("courage", () => courage.createObject())
 
     // Normal
@@ -28,34 +28,34 @@ StartupEvents.registry('mob_effect', event => {
     event.create('lostcities:unlisted') // Create the effect under "kubejs:custom_effect"
         .color(0xA1BF33)
         .harmful()
-        .modifyAttribute("forge:entity_gravity", "562e606d-278c-45a7-9f48-655e1787b75f", -0.0001, 'addition')
+        .modifyAttribute("forge:entity_gravity", "562e606d-278c-45a7-9f48-655e1787b75f", -0.001, 'addition')
         .effectTick((entity, level) => {
             if (!entity || entity.level.isClientSide() || !entity.isPlayer()) return;
             const { server } = entity
-            const player = entity.player
+            if (!entity.isPlayer) return
             server.scheduleInTicks(0, () => {
                 if (!entity.potionEffects.isActive('lostcities:unlisted')) {
-                    let respawnLevel = server.getLevel(player.getRespawnDimension().location());
-                    let respawnPosition = player.getRespawnPosition();
+                    let respawnLevel = server.getLevel(entity.getRespawnDimension().location());
+                    let respawnPosition = entity.getRespawnPosition();
                     let bed = respawnLevel.getBlock(respawnPosition);
-                    if (player.level.dimension != "lostcities:lostcity") return
+                    if (level.dimension != "lostcities:lostcity") return
                     // If The Player Doesn't Have A Spawn Point/Bed + Gets Yeeted To 0.0
                     if (!respawnPosition || !respawnLevel || !bed) {
-                        player.removeAllEffects();
-                        player.potionEffects.add("minecraft:slow_falling", 700, 1, false, true)
-                        player.potionEffects.add("toughasnails:climate_clemency", 300, 1, false, true)
-                        player.potionEffects.add("minecraft:fire_resistance", 300, 1, false, true)
-                        player.statusMessage = Text.of("It's just A Dream")
-                        player.extinguish()
-                        player.teleportTo("minecraft:overworld", 0, 120, 0, [], 0.0, 0.0)
+                        entity.removeAllEffects();
+                        entity.potionEffects.add("minecraft:slow_falling", 700, 1, false, true)
+                        entity.potionEffects.add("toughasnails:climate_clemency", 300, 1, false, true)
+                        entity.potionEffects.add("minecraft:fire_resistance", 300, 1, false, true)
+                        entity.statusMessage = Text.of("It's just A Dream")
+                        entity.extinguish()
+                        entity.teleportTo("minecraft:overworld", 0, 120, 0, [], 0.0, 0.0)
                     } else {
                         // If Player Dies And Has A Spawn Point
-                        player.removeAllEffects();
-                        player.potionEffects.add("toughasnails:climate_clemency", 300, 1, false, true)
-                        player.potionEffects.add("minecraft:fire_resistance", 300, 1, false, true)
-                        player.statusMessage = Text.of("It's just A Dream")
-                        player.extinguish()
-                        player.teleportTo(respawnLevel, respawnPosition.x, respawnPosition.y, respawnPosition.z, [], 0.0, 0.0)
+                        entity.removeAllEffects();
+                        entity.potionEffects.add("toughasnails:climate_clemency", 300, 1, false, true)
+                        entity.potionEffects.add("minecraft:fire_resistance", 300, 1, false, true)
+                        entity.statusMessage = Text.of("It's just A Dream")
+                        entity.extinguish()
+                        entity.teleportTo(respawnLevel, respawnPosition.x, respawnPosition.y, respawnPosition.z, [], 0.0, 0.0)
                     }
                 }
             });

@@ -1,0 +1,12 @@
+{
+  "palette": [
+    {
+      "char": "-",
+      "block": "minecraft:spruce_pressure_plate"
+    },
+    {
+      "char": ".",
+      "block": "minecraft:spruce_fence"
+    }
+  ]
+}

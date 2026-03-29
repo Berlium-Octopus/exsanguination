@@ -27,7 +27,7 @@
     "advantage": "jeg:fire",
     "damage": 16,
     "damageReduceOverLife": true,
-    "headshotMultiplier": 2,
+    "headshotMultiplier": 2.5,
     "hideTrail": true,
     "hitsRubberFruit": true,
     "item": "jeg:water_bomb",

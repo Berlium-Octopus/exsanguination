@@ -1,0 +1,12 @@
+{
+  "palette": [
+    {
+      "char": "-",
+      "block": "minecraft:birch_pressure_plate"
+    },
+    {
+      "char": ".",
+      "block": "minecraft:birch_fence"
+    }
+  ]
+}

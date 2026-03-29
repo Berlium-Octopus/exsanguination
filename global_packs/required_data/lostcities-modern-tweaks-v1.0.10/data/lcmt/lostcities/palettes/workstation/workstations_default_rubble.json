@@ -1,0 +1,29 @@
+{
+  "palette": [
+    {
+      "char": "F",
+      "blocks": [
+        {
+          "random": 10,
+          "block": "minecraft:furnace[facing=north]"
+        },
+        {
+          "random": 10,
+          "block": "minecraft:crafting_table"
+        },
+        {
+          "random": 10,
+          "block": "minecraft:barrel[facing=up]"
+        },
+        {
+          "random": 30,
+          "block": "minecraft:iron_bars"
+        },
+        {
+          "random": 1000,
+          "block": "minecraft:cobweb"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "palette": [
+    {
+      "char": "F",
+      "blocks": [
+        {
+          "random": 15,
+          "block": "minecraft:furnace[facing=north]"
+        },
+        {
+          "random": 15,
+          "block": "minecraft:crafting_table"
+        },
+        {
+          "random": 20,
+          "block": "minecraft:powder_snow_cauldron[level=3]"
+        },
+        {
+          "random": 15,
+          "block": "minecraft:barrel[facing=up]"
+        },
+        {
+          "random": 10,
+          "block": "minecraft:brewing_stand"
+        },
+        {
+          "random": 4,
+          "block": "minecraft:blue_ice"
+        },
+        {
+          "random": 1000,
+          "block": "minecraft:cobweb"
+        }
+      ]
+    }
+  ]
+}

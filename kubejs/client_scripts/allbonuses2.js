@@ -12,7 +12,7 @@ global.tooltipModifiers.push(
         leggings: ['kubejs:none'],
         boots: ['alexscaves_torpedoes:ferrousslime_boots'],
         offhand: ['alexscaves:resistor_shield'],
-        mainhand: ['#alexscaves_torpedoes:magnet_bonus_damage'],
+        mainhand: ['kubejs:none'],
         curios: ['alexscaves_torpedoes:pocket_magnet']
 
     },

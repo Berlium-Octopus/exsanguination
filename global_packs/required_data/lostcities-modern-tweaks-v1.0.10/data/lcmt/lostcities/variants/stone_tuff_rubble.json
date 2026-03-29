@@ -1,0 +1,28 @@
+{
+  "blocks": [
+    {
+      "random": 40,
+      "block": "minecraft:andesite_slab[type=bottom]"
+    },
+    {
+      "random": 40,
+      "block": "minecraft:andesite_stairs[facing=east,half=bottom]"
+    },
+    {
+      "random": 10,
+      "block": "minecraft:light_gray_concrete"
+    },
+    {
+      "random": 10,
+      "block": "minecraft:mossy_cobblestone_slab[type=bottom]"
+    },
+    {
+      "random": 10,
+      "block": "minecraft:mossy_cobblestone_stairs[facing=east,half=bottom]"
+    },
+    {
+      "random": 1000,
+      "block": "minecraft:tuff"
+    }
+  ]
+}

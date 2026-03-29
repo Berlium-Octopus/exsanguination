@@ -3,7 +3,10 @@
   "items": [
     "$minecraft:weapon",
     "#minecraft:axes",
-    "trials:mace",
+        {
+      "id": "trials:mace_2",
+      "exclude": false
+    },
     "alexscavesdelight:azure_neodymium_knife",
     "alexscavesdelight:scarlet_neodymium_knife",
     "alexscavesdelight:uranium_knife",

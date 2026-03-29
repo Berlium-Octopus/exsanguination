@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#lcbiomes:is_lostcities",
+  "features": "lostcities:lostcities",
+  "step": "raw_generation"
+}

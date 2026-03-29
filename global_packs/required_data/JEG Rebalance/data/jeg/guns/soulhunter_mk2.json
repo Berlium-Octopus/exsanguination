@@ -39,9 +39,9 @@
   },
   "projectile": {
     "advantage": "jeg:very_heavy",
-    "damage": 6.7,
+    "damage": 7,
     "ejectsCasing": true,
-    "headshotMultiplier": 1.5,
+    "headshotMultiplier": 2,
     "hitsRubberFruit": true,
     "item": "jeg:blaze_round",
     "life": 100,

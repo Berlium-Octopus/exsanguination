@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    {
+      "id": "trials:mace_2",
+      "exclude": false
+    },
+    {
+      "id": "minecraft:golden_pickaxe",
+      "exclude": false
+    },
+    {
+      "id": "minecraft:wooden_pickaxe",
+      "exclude": false
+    },
+    {
+      "id": "minecraft:stone_pickaxe",
+      "exclude": false
+    },
+    {
+      "id": "minecraft:copper_pickaxe",
+      "exclude": false
+    },
+    {
+      "id": "minecraft:iron_pickaxe",
+      "exclude": false
+    },
+    {
+      "id": "sculkhorde:ferriscite_pickaxe",
+      "exclude": false
+    },
+    {
+      "id": "deeperdarker:resonarium_pickaxe",
+      "exclude": false
+    },
+    {
+      "id": "sculkhorde:diascite_pickaxe",
+      "exclude": false
+    },
+    {
+      "id": "alexscaves_torpedoes:scarlet_pickaxe",
+      "exclude": false
+    },
+    {
+      "id": "alexscaves_torpedoes:azure_pickaxe",
+      "exclude": false
+    },
+    {
+      "id": "minecraft:diamond_pickaxe",
+      "exclude": false
+    },
+    {
+      "id": "oreganized:electrum_pickaxe",
+      "exclude": false
+    },
+    {
+      "id": "minecraft:netherite_pickaxe",
+      "exclude": false
+    },
+    {
+      "id": "deeperdarker:warden_pickaxe",
+      "exclude": false
+    },
+    {
+      "id": "alexsmobs:ghostly_pickaxe",
+      "exclude": false
+    },
+    {
+      "id": "alexsmobs:ghostly_pickaxe",
+      "exclude": false
+    },
+    {
+      "id": "alexsmobs:ghostly_pickaxe",
+      "exclude": false
+    },
+    {
+      "id": "alexsmobs:ghostly_pickaxe",
+      "exclude": false
+    }
+  ],
+  "incompatible": [
+    "extra_enchantments:incpompatibility_curse",
+    "minecraft:efficiency"
+  ]
+}

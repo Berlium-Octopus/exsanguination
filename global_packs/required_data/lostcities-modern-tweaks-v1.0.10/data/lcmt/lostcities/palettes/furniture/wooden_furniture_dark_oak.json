@@ -1,0 +1,12 @@
+{
+  "palette": [
+    {
+      "char": "-",
+      "block": "minecraft:dark_oak_pressure_plate"
+    },
+    {
+      "char": ".",
+      "block": "minecraft:dark_oak_fence"
+    }
+  ]
+}

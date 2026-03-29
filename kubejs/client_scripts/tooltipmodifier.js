@@ -116,12 +116,23 @@ function addArmorSetTooltip(stacks, validPieces, setName, setBonus) {
                 }
                 missingPieces.push(text);
             });
-            missingPieces.push(Text.of("Set Bonus: ").gold())
-            setBonus.forEach(line => {
-                missingPieces.push(line);
-            });
+
+            let isSetComplete = missingList.length === 0;
+            if (isSetComplete) {
+                missingPieces.push(Text.of("Set Bonus: ").gold());
+                setBonus.forEach(line => {
+                    if (line.getStyle().getColor() === "green"){
+                    missingPieces.push(line);
+                    }
+                    if (line.getStyle().getColor() === "blue") {
+                        missingPieces.push(line);
+                    }
+                });
+            }
             return missingPieces;
         })
+
+        
         .addSimpleFunction(1, (shift) => {
             let shiftText = shift ? Text.of('Shift').white() : Text.of('Shift').gray();
             let arr = [

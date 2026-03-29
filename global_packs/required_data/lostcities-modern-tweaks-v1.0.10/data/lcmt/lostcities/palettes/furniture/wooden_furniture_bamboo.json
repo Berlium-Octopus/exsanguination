@@ -1,0 +1,12 @@
+{
+  "palette": [
+    {
+      "char": "-",
+      "block": "minecraft:bamboo_pressure_plate"
+    },
+    {
+      "char": ".",
+      "block": "minecraft:bamboo_fence"
+    }
+  ]
+}

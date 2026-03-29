@@ -6974,5 +6974,13 @@
   "item.minecraft.tipped_arrow.effect.escapee_feast": "Arrow of Escapee's Feast",
   "item.minecraft.lingering_potion.effect.escapee_feast": "Escapee's Feast Lingering Potion",
   "item.minecraft.potion.effect.escapee_feast": "Potion Of Escapee's Feast",
-  "item.minecraft.splash_potion.effect.escapee_feast": "Splash Potion of Escapee's Feast"
+  "item.minecraft.splash_potion.effect.escapee_feast": "Splash Potion of Escapee's Feast",
+  "item.minecraft.tipped_arrow.effect.escapee_feast_strong": "Arrow of Escapee's Feast",
+  "item.minecraft.lingering_potion.effect.escapee_feast_strong": "Escapee's Feast Lingering Potion",
+  "item.minecraft.potion.effect.escapee_feast_strong": "Potion Of Escapee's Feast",
+  "item.minecraft.splash_potion.effect.escapee_feast_strong": "Splash Potion of Escapee's Feast",
+  "item.minecraft.tipped_arrow.effect.courage": "Arrow of Courage",
+  "item.minecraft.lingering_potion.effect.courage": "Courage Lingering Potion",
+  "item.minecraft.potion.effect.courage": "Potion Of Courage",
+  "item.minecraft.splash_potion.effect.courage": "Splash Potion of Courage"
 }

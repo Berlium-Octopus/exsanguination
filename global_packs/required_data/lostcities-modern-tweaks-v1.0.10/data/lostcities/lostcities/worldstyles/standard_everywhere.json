@@ -1,0 +1,119 @@
+{
+  "outsidestyle": "lcmt:outside",
+  "multisettings": {
+    "areasize": 10,
+    "minimum": 1,
+    "maximum": 5
+  },
+  "scattered": {
+    "areasize": 8,
+    "chance": 0.1,
+    "weightnone": 20,
+    "list": [
+      {
+        "name": "radiotower",
+        "weight": 15,
+        "maxheightdiff": 3,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "oilrig",
+        "weight": 1,
+        "maxheightdiff": 100,
+        "biomes": {
+          "if_any": [
+            "#minecraft:is_deep_ocean"
+          ]
+        }
+      },
+      {
+        "name": "lcmt:cabin",
+        "weight": 10,
+        "maxheightdiff": 2,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      }
+    ]
+  },
+  "parts": {
+    "monorails": {
+      "both": "lcmt:railway/monorails_both",
+      "station": "lcmt:railway/monorails_station",
+      "vertical": "lcmt:railway/monorails_vertical"
+    },
+    "highways": {
+      "tunnel": ["lcmt:highway/highway_tunnel"],
+      "open": ["lcmt:highway/highway_open"],
+      "bridge": ["lcmt:highway/highway_bridge"],
+      "tunnel_bi": ["lcmt:highway/highway_tunnel_bi"],
+      "open_bi": ["lcmt:highway/highway_open_bi"],
+      "bridge_bi": ["lcmt:highway/highway_bridge_bi"]
+    },
+    "railways": {
+      "stationopen": [
+        "lcmt:railway/station_open",
+        "lcmt:railway/station_open_board",
+        "lcmt:railway/station_open_chairs"
+      ],
+      "stationopenroof": ["lcmt:railway/station_openroof"],
+      "stationstaircase": ["lcmt:railway/station_staircase"],
+      "stationstaircasesurface": ["lcmt:railway/station_staircase_surface"],
+      "stationunderground": ["lcmt:railway/station_underground"],
+      "stationundergroundstairs": ["lcmt:railway/station_underground_stairs"],
+      "rails3split": ["lcmt:railway/rails_3split"],
+      "railsbend": ["lcmt:railway/rails_bend"],
+      "railsdown1": ["lcmt:railway/rails_down1"],
+      "railsdown2": ["lcmt:railway/rails_down2"],
+      "railsflat": ["lcmt:railway/rails_flat"],
+      "railshorizontal": ["lcmt:railway/rails_horizontal"],
+      "railshorizontalend": ["lcmt:railway/rails_horizontal_end"],
+      "railshorizontalwater": ["lcmt:railway/rails_horizontal_water"],
+      "railsvertical": ["lcmt:railway/rails_vertical"],
+      "railsverticalwater": ["lcmt:railway/rails_vertical_water"]
+    }
+  },
+  "citystyles": [
+    {
+      "factor": 0.5,
+      "citystyle": "lcmt:citystyle_standard"
+    },
+    {
+      "factor": 9.0,
+      "biomes": {
+        "if_any": [
+          "#lcmt:desert_city_biomes"
+        ]
+      },
+      "citystyle": "lcmt:citystyle_desert"
+    },
+    {
+      "factor": 9.0,
+      "biomes": {
+        "if_any": [
+          "#lcmt:jungle_city_biomes"
+        ]
+      },
+      "citystyle": "lcmt:citystyle_jungle"
+    },
+    {
+      "factor": 9.0,
+      "biomes": {
+        "if_any": [
+          "#lcmt:snowy_city_biomes"
+        ]
+      },
+      "citystyle": "lcmt:citystyle_snowy"
+    }
+  ]
+}

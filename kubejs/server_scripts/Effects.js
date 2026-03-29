@@ -350,15 +350,13 @@ PlayerEvents.loggedIn(event => {
     event.player.stages.add('new_join')
     event.server.runCommandSilent(`/effect give @p exsanguination:reincarnatus 40 0`)
     event.server.runCommandSilent(`/difficulty hard`)
+    event.server.runCommandSilent('/gamerule reducedDebugInfo true')
   }
 });
 
 PlayerEvents.loggedIn((event) => {
   event.server.scheduleInTicks(10, () => {
     event.server.runCommandSilent('/kubejs reload client_scripts')
-  })
-  event.server.scheduleInTicks(180, () => {
-    event.server.runCommandSilent('/gamerule reducedDebugInfo true')
   })
 });
 
@@ -661,4 +659,54 @@ chests_and_such.forEach(block => {
     player.statusMessage = Text.of(multiplier)
   } */
 })
+})
+
+
+let bows_and_such = [
+  "spartanweaponry:wooden_longbow",
+  "spartanweaponry:wooden_heavy_crossbow",
+  "spartanweaponry:golden_heavy_crossbow",
+  "spartanweaponry:golden_longbow",
+  "spartanweaponry:copper_heavy_crossbow",
+  "spartanweaponry:copper_longbow",
+  "spartanweaponry:silver_heavy_crossbow",
+  "spartanweaponry:silver_longbow",
+  "spartanweaponry:iron_heavy_crossbow",
+  "spartanweaponry:iron_longbow",
+  "spartanweaponry:bronze_heavy_crossbow",
+  "spartanweaponry:bronze_longbow",
+  "spartanweaponry:steel_heavy_crossbow",
+  "spartanweaponry:steel_longbow",
+  "spartanweaponry:diamond_heavy_crossbow",
+  "spartanweaponry:diamond_longbow",
+  "spartandeeperdarker:resonarium_heavy_crossbow",
+  "spartandeeperdarker:resonarium_longbow",
+  "spartanweaponry:netherite_heavy_crossbow",
+  "spartanweaponry:netherite_longbow",
+  "spartanweaponry:electrum_heavy_crossbow",
+  "spartanweaponry:electrum_longbow",
+  "cataclysm:cursed_bow",
+  "spartandeeperdarker:warden_longbow",
+  "spartandeeperdarker:warden_heavy_crossbow",
+  "alexscaves:dreadbow",
+  "minecraft:bow",
+  "minecraft:crossbow"
+]
+
+
+
+// Bows Can't Be Fired in offhand HAHA exept......
+bows_and_such.forEach(Items => {
+  ItemEvents.rightClicked(Items, event => {
+    const { player, server} = event
+    try {
+      if (player.offHandItem.getId() != Items || player.hasEffect("lostcities:courage")) return
+    } catch (err) {
+      console.error("Right Click Error: " + err);
+    }
+    server.scheduleInTicks(2, () => {
+    server.runCommandSilent(`playsound minecraft:item.armor.equip_leather block @a ${player.x} ${player.y} ${player.z} 1 1`)
+    });
+    event.cancel();
+  })
 })

@@ -100,6 +100,7 @@ JEIEvents.information(event => {
 
 JEIEvents.hideItems(event => {
   event.hide([
+    'trials:mace',
     'luminous_nether:ash_wall_candle',
     'luminous_nether:nether_wall_candle',
     'jeg:minigun',
@@ -356,16 +357,7 @@ ItemEvents.tooltip(event => {
 })
 
 ItemEvents.tooltip(event => {
-  event.addAdvanced('#spartanweaponry:longbows', (item, advanced, text) => {
-    let text_to_remove2 = "D"
-    text.remove(1)
-    text.removeIf(tip => tip.toString().indexOf(text_to_remove2) != -1)
-  })
-  event.addAdvanced('#spartanweaponry:heavy_crossbows', (item, advanced, text) => {
-    let text_to_remove2 = "D"
-    text.remove(1)
-    text.removeIf(tip => tip.toString().indexOf(text_to_remove2) != -1)
-  })
+
   event.addAdvanced('#spartanweaponry:netherite_weapons', (item, advanced, text) => {
     text.remove(1)
     text.remove(1)
@@ -386,8 +378,14 @@ ItemEvents.tooltip(event => {
   event.addAdvanced(['#spartanweaponry:longbows', '#spartanweaponry:heavy_crossbows'], (item, advanced, text) => {
     text.remove(1)
     text.remove(1)
-    text.remove(1)
-    text.remove(1)
+    if (!event.shift) {
+      text.remove(1)
+      text.remove(1)
+      text.remove(1)
+    } else {
+      text.remove(1)
+      text.remove(1)
+    }
   })
   event.addAdvanced(['spartanweaponry:netherite_longbow'], (item, advanced, text) => {
     if (event.shift) {
@@ -401,7 +399,10 @@ ItemEvents.tooltip(event => {
       text.remove(1)
     }
   })
-
+  event.addAdvanced(['cataclysm:cursed_bow'], (item, advanced, text) => {
+      text.remove(1)
+      text.remove(1)
+  })
   event.addAdvanced(["#spartanweaponry:throwing_knives","#spartanweaponry:tomahawks","#spartanweaponry:javelins"], (item, advanced, text) => {
     text.remove(1)
     text.remove(1)
@@ -427,7 +428,6 @@ ItemEvents.tooltip(event => {
 
 ItemEvents.tooltip(event => {
   event.addAdvanced(['cataclysm:blazing_grips',
-    'cataclysm:cursed_bow',
     'cataclysm:wrath_of_the_desert',
     'cataclysm:gauntlet_of_guard',
     'cataclysm:gauntlet_of_bulwark',

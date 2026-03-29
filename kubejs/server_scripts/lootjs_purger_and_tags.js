@@ -40,8 +40,16 @@ ServerEvents.tags('item', event => {
       'minecraft:netherite_ingot',
       'minecraft:diamond_ingot',
       'alexsmobs:mimicream'
-    ]
-  )
+    ])
+
+  event.add("minecraft:weapons",
+    [
+      'trials:mace_2'
+    ])
+  event.add("minecraft:breaks_decorated_pots",
+    [
+      'trials:mace_2'
+    ])
   event.add('storms_of_the_wild:conductive_item', ["cataclysm:ignitium_helmet",
     "cataclysm:ignitium_chestplate",
     "cataclysm:ignitium_leggings",

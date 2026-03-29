@@ -91,11 +91,13 @@ if (!m_9236_().m_5776_() && m_9236_().m_46749_(m_20183_()) && !m_20072_()) {
  */
 global.assbeating = context => {
     let { damageSource, entity, damageAmount, amount } = context
-    if (damageSource != entity.level.damageSources().onFire() && damageSource != entity.level.damageSources().fellOutOfWorld() && damageSource != entity.level.damageSources().lava() && damageSource != entity.level.damageSources().inFire()) {
+    if (damageSource != entity.level.damageSources().onFire()) {
         entity.triggerAnimation("trigger_anims", "weakling")
         entity.playSound("rootoffear:entity.wilted.sway")
+      return false
     } else {
         entity.triggerAnimation("trigger_anims", "hurt")
+        return true
     }
 }
 

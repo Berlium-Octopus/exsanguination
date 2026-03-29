@@ -76,7 +76,7 @@ global.tick = entity => {
             entity.setYBodyRot(newYaw)
             entity.lerpHeadTo(look.x(), look.z())
         }
-        if (entity.inWater) {
+        if (entity.inFluidType) {
             entity.setSyncedData("swim", "swimming")
         } else {
             entity.setSyncedData("swim", "walking")
@@ -134,15 +134,15 @@ global.moveControlTick = entity => {
     try {
         var target = entity.target;
 
-        if (wantsToSwim(entity) && entity.inWater) {
+        if (wantsToSwim(entity) && entity.inFluidType) {
 
             // If The Victim Is Above The Entity
-            if (target != null && target.getY() > entity.getY() && target.inWater) {
+            if (target != null && target.getY() > entity.getY() && target.inFluidType) {
                 entity.setDeltaMovement(entity.getDeltaMovement().add(0.0, 0.01, 0.0));
             }
 
             // Does Jumps/Leaps When Victim Is In Land
-            if (target != null && target.getY() > entity.getY() && !target.inWater) {
+            if (target != null && target.getY() > entity.getY() && !target.inFluidType) {
                 let dx = target.getX() - entity.getX();
                 let dz = target.getZ() - entity.getZ();
                 let horizontalDist = Math.sqrt(dx * dx + dz * dz);
@@ -208,7 +208,7 @@ function wantsToSwim(entity) {
         return true;
     } else {
         var target = entity.getTarget();
-        return target != null && target.InWater;
+        return target != null && target.inFluidType;
     }
 }
 

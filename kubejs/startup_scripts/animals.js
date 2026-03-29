@@ -1,6 +1,7 @@
 // priority: 100
 // Make Silver Armor + Bronze Armor From Leather
-// Replace Cast Iron With Black Steel
+// Replace Cast Iron With Black Steel? By Black steel duplication with iron or by ferroslime stuff
+// Wraith Cetuses As A Real Item
 Platform.mods.kubejs.name = 'Exsanguination Originals'
 
 StartupEvents.modifyCreativeTab("kubejs:tab", event => {
@@ -81,11 +82,22 @@ StartupEvents.registry('item', e => {
   e.create('domesticationinnovation:amoy_collar').texture('kubejs:item/lightnodago_tag').displayName("Amoy's Collar").rarity('alexscaves:nuclear')
   e.create('minecraft:nether_star_shard').texture('kubejs:item/nether_star_shard').displayName("Nether Star Shard").rarity('UNCOMMON').fireResistant()
 })
-
 StartupEvents.registry('item', e => {
   e.create('rootoffear:agitated_primitive_heart').texture('kubejs:item/heart_crystal').displayName("Agitated Primitive Heart").rarity('RARE')
   e.create('alexscaves:brainiac_greymatter').texture('kubejs:item/heart_crystal').displayName("Brainiac Greymatter")
+  e.create('trials:mace_2', 'shovel').texture('trials:item/mace').displayName("Mace").rarity('EPIC').modelJson('trials:item/mace').tier('mace')
+})
 
+
+ItemEvents.toolTierRegistry((event) => {
+  event.add("mace", (tier) => {
+    tier.level = 2
+    tier.uses = 250
+    tier.speed = 4.5
+    tier.attackDamageBonus = 3.5
+    tier.enchantmentValue = 18
+    tier.repairIngredient = "trials:breeze_rod"
+  })
 })
 
 StartupEvents.registry('item', event => {
@@ -188,29 +200,6 @@ StartupEvents.registry('item', e => {
 })
 
 
-
-// I Broke It SOmehow
-/*
-StartupEvents.registry('item', event => {
-  event.create('scalinghealth:enchanted_medkit')
-    .texture('scalinghealth:item/enchanted_medkit')
-    .unstackable()
-    .displayName('Enchanted Medkit')
-    .useAnimation('bow')
-    .useDuration(itemstack => 64)
-    .maxDamage(8)
-    // Use If Health Is Lower Then Max 
-    .use((level, player, hand) => true)
-    // .use((level, player, hand) => player.health < player.maxHealth)
-    .finishUsing((itemstack, level, entity) => {
-      const effects = entity.potionEffects
-      effects.add("minecraft:regeneration", 80)
-      effects.add("minecraft:absorption", 400)
-      itemstack.setDamageValue(itemstack.damageValue + 1)
-      return itemstack
-    })
-})
-*/
 StartupEvents.registry("item", event => {
   event.create('scalinghealth:enchanted_medkit')
     .texture('scalinghealth:item/enchanted_medkit')
@@ -787,7 +776,7 @@ StartupEvents.registry('item', e => {
       if (slot == "head") {
         renderer.setBoneVisible(renderer.getHeadBone(), true);
       }
-    }).tier("headwear").texture('kubejs:item/gazelle_horns');
+    }).tier("headwear").texture('kubejs:item/gazelle_horns')
 })
 
 

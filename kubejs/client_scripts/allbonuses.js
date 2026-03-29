@@ -168,7 +168,7 @@ global.tooltipModifiers.push(
     },
     "Slow Reverb",
     [
-        Text.of(" \u2507 +50% Armor Shred On Resonarium Tools.").green(),
+        Text.of(" \u2507 +20% Armor Shred On Resonarium Tools.").green(),
         Text.of(" \u2507 Grants Sculk Affinity.").blue(),
         Text.of(" \u2507 More Armor On Sonorus Staff").blue()
     ])

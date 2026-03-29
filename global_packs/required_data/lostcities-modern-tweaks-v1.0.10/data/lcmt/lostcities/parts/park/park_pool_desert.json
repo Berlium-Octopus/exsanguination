@@ -5,7 +5,7 @@
     "palette": [
       {
         "char": "f",
-        "block": "minecraft:grass_block"
+        "block": "biomesoplenty:origin_grass_block"
       },
       {
         "char": "G",

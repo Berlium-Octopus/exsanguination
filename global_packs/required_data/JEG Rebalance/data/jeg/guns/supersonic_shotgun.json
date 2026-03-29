@@ -46,7 +46,7 @@
     "damage": 17,
     "damageReduceOverLife": true,
     "ejectsCasing": true,
-    "headshotMultiplier": 4,
+    "headshotMultiplier": 4.5,
     "hideTrail": true,
     "item": "deeperdarker:reinforced_echo_shard",
     "life": 2,

@@ -1,0 +1,12 @@
+{
+  "blocks": [
+    {
+      "random": 20,
+      "block": "minecraft:smooth_sandstone_slab"
+    },
+    {
+      "random": 1000,
+      "block": "minecraft:cut_sandstone_slab"
+    }
+  ]
+}

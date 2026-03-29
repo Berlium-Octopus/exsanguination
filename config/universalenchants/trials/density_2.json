@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    {
+      "id": "trials:mace_2",
+      "exclude": false
+    }
+  ],
+  "incompatible": [
+    "extra_enchantments:incompatibility_curse",
+    "trials:density_2",
+    "deeperdarker:sculk_smite",
+    "minecraft:bane_of_arthropods",
+    "extra_enchantments:illagers_bane",
+    "minecraft:smite",
+    "minecraft:sharpness"
+  ]
+}

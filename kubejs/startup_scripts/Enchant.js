@@ -1,3 +1,21 @@
+// From ZAP
+ForgeEvents.onEvent('net.minecraftforge.event.ItemAttributeModifierEvent', event => {
+    // Might Make A New Function For Other Slot Types Or Maybe Code In A Slot Finder Feature :/
+    function enchantmentAttributeHand(enchantment, attribute, operation, increment, uuid, name, item) {
+        if (item.getEnchantmentLevel(enchantment) > 0 && event.getSlotType() == 'mainhand') {
+            let value = item.getEnchantmentLevel(enchantment) * increment
+            event.addModifier(attribute, new $AttributeModifier(uuid, name, value, operation));
+        }
+    }
+    //examples:           enchantment       attribute                         operation       increment     uuid                            name        item
+    enchantmentAttributeHand('trials:breach_2', 'puffish_attributes:armor_shred', 'multiply_total', 0.15, '680f0129-9a7f-4315-849a-34b86b140246', 'breach', event.itemStack)
+    enchantmentAttributeHand('minecraft:smite', 'exsanguination:fake_smite', 'addition', 2.5, '49f32b81-f66c-45eb-8c45-a16526d0deef', 'breach', event.itemStack)
+    enchantmentAttributeHand('deeperdarker:sculk_smite', 'exsanguination:sculk_smite', 'addition', 2.5, 'a9d055d2-121d-4c76-85f3-996275c89734', 'breach', event.itemStack)
+    enchantmentAttributeHand('extra_enchantments:illagers_bane', 'exsanguination:bane_of_builders', 'addition', 2.5, '2447bf1c-9ae1-481e-b898-7f13ad3e7f98', 'breach', event.itemStack)
+    enchantmentAttributeHand('minecraft:bane_of_arthropods', 'exsanguination:bane_of_animals', 'addition', 2.5, '5329927b-88ad-4e9c-88f9-2224918b662a', 'breach', event.itemStack)
+    enchantmentAttributeHand('extra_enchantments:reeling', 'forge:entity_reach', 'addition', 0.5, 'bd0f662e-a6de-4298-8784-d0004994c0f1', 'breach', event.itemStack)
+
+})
 const EnchantmentCategory = Java.loadClass('net.minecraft.world.item.enchantment.EnchantmentCategory');
 StartupEvents.registry('enchantment', event => {
     event.create('exsanguination:awakening')
@@ -6,6 +24,52 @@ StartupEvents.registry('enchantment', event => {
         .category(EnchantmentCategory.ARMOR)
         .displayName('Awakening')
         .rarity('UNCOMMON')
+});
+
+
+StartupEvents.registry('enchantment', event => {
+    event.create('extra_enchantments:reeling')
+        .minLevel(1)
+        .maxLevel(2)
+        .category(EnchantmentCategory.DIGGER)
+        .displayName('Reeling')
+        .rarity('UNCOMMON')
+});
+
+StartupEvents.registry('enchantment', event => {
+    event.create('minecraft:rebound')
+        .minLevel(1)
+        .maxLevel(2)
+        .category(EnchantmentCategory.DIGGER)
+        .displayName('Rebound')
+        .rarity('UNCOMMON')
+});
+
+StartupEvents.registry('enchantment', event => {
+    event.create('trials:density_2')
+        .minLevel(1)
+        .maxLevel(5)
+        .category(EnchantmentCategory.DIGGER)
+        .displayName('Density')
+        .rarity('COMMON')
+});
+
+StartupEvents.registry('enchantment', event => {
+    event.create('trials:breach_2')
+        .minLevel(1)
+        .maxLevel(3)
+        .category(EnchantmentCategory.DIGGER)
+        .displayName('Breach')
+        .rarity('UNCOMMON')
+});
+
+StartupEvents.registry('enchantment', event => {
+    event.create('trials:wind_burst_2')
+        .minLevel(1)
+        .maxLevel(3)
+        .category(EnchantmentCategory.DIGGER)
+        .displayName('Wind Burst')
+        .rarity('RARE')
 });
 
 StartupEvents.registry("enchantment", event => {
@@ -18,11 +82,6 @@ StartupEvents.registry("enchantment", event => {
 
 //Liopyu's Cheese For Sculk Smitez I am forever grateful for your scrips
 ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", event => global.hurt(event))
-/**
- *
- * @param {Internal.LivingHurtEvent} event
- */
-
 let listSculk = [
     'sculkhorde:sculk_enderman',
     'sculkhorde:sculk_spore_spewer',
@@ -142,6 +201,11 @@ let bulletsources = [
     "jeg.bullet.decimated"
 
 ]
+let arrowsources = [
+    "arrow",
+    "cataclysm.maledictio_sagitta"
+]
+
 // "All Technology Is Magic" - Kurt Vonni
 let magician = [
     "indirectMagic",
@@ -207,7 +271,7 @@ let magic = ["magic", "indirectMagic"]
 let wiltednerf = ["onFire", "inFire", "create:fan_fire", "minecraft:lava"]
 let doubledamage = ["explosion", "explosion.player"]
 let cramming = ["cramming", "inWall"]
-let animalBlacklist = ['minecraft:iron_golem', 'vinery:wandering_winemaker', 'minecraft:wandering_trader', 'minecraft:villager', 'minecraft:allay', 'guardvillagers:guard']
+let animalBlacklist = ['dummmmmmy:target_dummy','minecraft:iron_golem', 'vinery:wandering_winemaker', 'minecraft:wandering_trader', 'minecraft:villager', 'minecraft:allay', 'guardvillagers:guard']
 let animalWhitelist = ['minecraft:hoglin', 'luminous_beasts:rare_sea_viper', 'luminous_beasts:sea_viper', 'luminous_beasts:rare_yeti', 'luminous_beasts:yeti', 'luminous_beasts:rare_phoenix_bird', 'luminous_beasts:baby_phoenix', 'alexsmobs:sunbird', 'luminous_beasts:rare_vile_gator', 'luminous_beasts:vile_gator', 'alexscaves:vesper', 'alexscaves:underzealot', 'alexscaves:corrodent']
 // let rabies = ['rabial_end','drown']
 // Based Of vomiter's Script
@@ -283,9 +347,9 @@ global.hurt = event => {
 
     /*
         if (entity.isAlive()) {
-        Utils.server.runCommandSilent(`say ${attacker}`)
-         Utils.server.runCommandSilent(`say ${source}`)
-         Utils.server.runCommandSilent(`say ${amount}`)
+            Utils.server.runCommandSilent(`say ${attacker}`)
+            Utils.server.runCommandSilent(`say ${source}`)
+            Utils.server.runCommandSilent(`say ${amount}`)
         }
     */
     if (entity.level.isClientSide()) return
@@ -420,15 +484,6 @@ global.hurt = event => {
             }
             // attacker.tell("Smite damage: " + smiteDamage + ", original damage: " + amount + ", final damage: " + (amount + smiteDamage))
         }
-        if (attacker.offHandItem.getEnchantmentLevel("deeperdarker:sculk_smite") > 0) {
-            let smiteDamage = (smiteLvl * 2.5);
-            let Highnumber = (2 * smiteLvl);
-            event.setAmount((amount + smiteDamage))
-            if (Math.random() < 0.6) {
-                entity.potionEffects.add("potioncore:broken_armor", Highnumber, 2, false, true)
-            }
-            //attacker.tell("Offhand Smite damage: " + smiteDamage + ", original damage: " + amount + ", final damage: " + (amount + smiteDamage))
-        }
 
         // Error: dev.latvian.mods.rhino.EcmaError: TypeError: Cannot call method "getEnchantmentLevel" of undefined (startup_scripts:Enchant.js#232)
     }
@@ -446,15 +501,6 @@ global.hurt = event => {
             }
             //  attacker.tell("Builder Bane damage: " + baneDamage + ", original damage: " + amount + ", final damage: " + (amount + baneDamage))
         }
-        if (attacker.offHandItem.getEnchantmentLevel("extra_enchantments:illagers_bane") > 0) {
-            let baneDamage = (BaneLvl * 2.5);
-            let Highnumber = (2 * BaneLvl);
-            event.setAmount((amount + baneDamage))
-            if (Math.random() < 0.6) {
-                entity.potionEffects.add("minecraft:weakness", Highnumber, 2, false, true)
-            }
-            //attacker.tell("Offhand Builder Bane damage: " + baneDamage + ", original damage: " + amount + ", final damage: " + (amount + baneDamage))
-        }
     }
     if (entity.isAnimal()) {
         if (!attacker) return
@@ -469,15 +515,6 @@ global.hurt = event => {
             }
             //attacker.tell("Animal Bane damage: " + baneDamage + ", original damage: " + amount + ", final damage: " + (amount + baneDamage))
         }
-        if (attacker.offHandItem.getEnchantmentLevel("minecraft:bane_of_arthropods") > 0) {
-            let baneDamage = (Greaterbane * 2.5);
-            let Highnumber = (2 * Greaterbane);
-            event.setAmount((amount + baneDamage))
-            if (Math.random() < 0.6) {
-                entity.potionEffects.add("minecraft:slowness", Highnumber, 2, false, true)
-            }
-            //attacker.tell("Offhand Animal Bane damage: " + baneDamage + ", original damage: " + amount + ", final damage: " + (amount + baneDamage))
-        }
     }
 
     // Thanks to my 1 IQ I could mitigate the animal damage yippie it weakens damage if it has hm forget it
@@ -490,12 +527,6 @@ global.hurt = event => {
             let baneDamage = (BaneLvl2 * 2.5);
             event.setAmount((amount + baneDamage - baneDamage2))
             //      attacker.tell("Anti Animal Bane damage: " + baneDamage2 + ", original damage: " + (amount + baneDamage) + ", final damage: " + (amount + baneDamage - baneDamage2))
-        }
-        if (attacker.offHandItem.getEnchantmentLevel("minecraft:bane_of_arthropods") > 0) {
-            let baneDamage2 = (BaneLvl2 * 2.5);
-            let baneDamage = (BaneLvl2 * 2.5);
-            event.setAmount((amount + baneDamage - baneDamage2))
-            //      attacker.tell("Offhand Anti Animal Bane damage: " + baneDamage2 + ", original damage: " + (amount + baneDamage) + ", final damage: " + (amount + baneDamage - baneDamage2))
         }
     }
     if (animalWhitelist.toString().includes(entity.type)) {
@@ -511,15 +542,6 @@ global.hurt = event => {
             }
             //    attacker.tell("Anti Bane damage: " + baneDamage2 + ", original damage: " + amount + ", final damage: " + (amount + baneDamage2))
         }
-        if (attacker.offHandItem.getEnchantmentLevel("minecraft:bane_of_arthropods") > 0) {
-            let baneDamage = (BaneLvl3 * 2.5);
-            let Highnumber = (2 * BaneLvl3);
-            event.setAmount((amount + baneDamage))
-            if (Math.random() < 0.6) {
-                entity.potionEffects.add("minecraft:slowness", Highnumber, 2, false, true)
-            }
-            //    attacker.tell("Offhand  Animal Bane damage: " + baneDamage2 + ", original damage: " + amount + ", final damage: " + (amount + baneDamage2))
-        }
     }
 
     if (entity.isUndead()) {
@@ -532,13 +554,6 @@ global.hurt = event => {
                 entity.potionEffects.add("potioncore:fire", Highnumber, 1, false, true)
             }
             //    attacker.tell("Anti Bane damage: " + baneDamage2 + ", original damage: " + amount + ", final damage: " + (amount + baneDamage2))
-        }
-        if (attacker.offHandItem.getEnchantmentLevel("minecraft:smite") > 0) {
-            let Highnumber = (2 * Smittens);
-            if (Math.random() < 0.6) {
-                entity.potionEffects.add("potioncore:fire", Highnumber, 1, false, true)
-            }
-            //    attacker.tell("Offhand  Animal Bane damage: " + baneDamage2 + ", original damage: " + amount + ", final damage: " + (amount + baneDamage2))
         }
 
     }
@@ -568,7 +583,8 @@ ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", (e
     }
 })
 
-ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", (event) => {
+ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", event => global.rangedweapon(event))
+global.rangedweapon = event => {
     let { entity, source, amount } = event
     let attacker = source.actual
     if (entity.level.isClientSide()) return
@@ -579,14 +595,32 @@ ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", (e
         if (pazazz > 0) {
             let tiyfixes = (pazazz + 1)
             event.setAmount(amount * tiyfixes)
-            //    attacker.tell("PAINPOWER: " + pazazz + ", DAMAGE: " + amount + ", FINALDAMAGE: " + (amount * pazazz))
+            //  attacker.tell("PAINPOWER: " + pazazz + ", DAMAGE: " + amount + ", FINALDAMAGE: " + (amount * pazazz))
         }
     }
 
-})
+    if (arrowsources.includes(source.getType())) {
+        if (!attacker) return
+        let pazazz = (attacker.attributes.getValue("exsanguination:ranged_damage"));
+        if (pazazz > 0) {
+            // EVIL ATTRIBUTE
+            // Dont Change The DMG amount if the tiyfixes is 0??
+            if (pazazz === 0) {
+                pazazz === 1
+            }
+            // Screw You!
+            if (pazazz > 1) {
+                pazazz === 0.5
+            }
+            event.setAmount(amount * pazazz)
+           // attacker.tell("CHEESED: " + pazazz + ", DAMAGE: " + amount + ", FINALDAMAGE: " + (amount * pazazz))
+        }
+    }
+
+}
 
 ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", (event) => {
-    let { entity, source, amount } = event
+    let { entity, source } = event
     if (magic.includes(source.getType())) {
         if (entity.level.isClientSide()) return
         if (!entity.isLiving()) return
@@ -617,6 +651,7 @@ ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", ev
 /**
 * @param {Internal.LivingHurtEvent} event 
 */
+
 global.RangedNerf = event => {
     let { entity, source, amount } = event
     if (entity.level.isClientSide()) return
@@ -626,6 +661,12 @@ global.RangedNerf = event => {
     if (entity.level.isClientSide()) return
     if (source.getType() != 'player') return
 
+    // Mimics Skada's Uncharged Penalty
+    let charge = attacker.getAttackStrengthScale(1)
+    let reelLevel = attacker.mainHandItem.getEnchantmentLevel("extra_enchantments:reeling")
+    if (charge < 1 && reelLevel < 0){
+        entity.potionEffects.add("potioncore:solid_core", 2, 2, false, false)
+    }
     // Distance
     let dx = attacker.x - entity.x
     let dy = attacker.y - entity.y
@@ -646,7 +687,8 @@ global.RangedNerf = event => {
     let multiplier_highdmg = t_highdmg * 0.9
     let multiplier_dagger = Math.max(1, 1.5 - t_dagger)
 
-    if (attacker.creative) return
+    // if (attacker.creative) return
+    if (attacker.getMainHandItem() == "trials:mace_2") return
     if (attacker.getMainHandItem() == "minecraft:air") return
     if (distance <= innereach && reach > 3) {
         let newDamage = amount * multiplier
@@ -657,6 +699,7 @@ global.RangedNerf = event => {
         // Damage Capped If Damage is Greater then 10, This Is To Make
         // Combat Less Trivial + INDIRECT Spartan Nerf
     } else if (distance <= innereach_highdmg && reach == 3) {
+        if (attacker.mainHandItem.id === "trials:mace_2") return
         if (attacker.potionEffects.isActive("lostcities:courage")) return
         let newDamage = amount * multiplier_highdmg
         let newDamage2 = amount * multiplier
@@ -667,8 +710,8 @@ global.RangedNerf = event => {
         }
         if (amount < 10) {
             event.setAmount(newDamage)
-            //attacker.tell("NormDMG Triggered: " + newDamage + " t: " + t)
-            //attacker.tell("Distance: " + distance + ", Reach: " + reach)
+            // attacker.tell("NormDMG Triggered: " + newDamage + " t: " + t)
+            // attacker.tell("Distance: " + distance + ", Reach: " + reach)
         }
 
 
@@ -767,6 +810,203 @@ ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", (e
             }
         }
     } catch (err) {
-    console.error("Backstab Logic Error: " + err);
+        console.error("Backstab Logic Error: " + err);
     }
 })
+
+ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", event => global.thonking(event))
+global.thonking = event => {
+    let { entity, source, amount } = event
+    let attacker = source.actual
+    if (source.getType() != 'player') return
+    if (entity.level.isClientSide()) return
+    if (!attacker) return
+
+    let dx = attacker.x - entity.x
+    let dy = attacker.y - entity.y
+    let dz = attacker.z - entity.z
+
+    // Bounce Enchant 
+    let charge = attacker.getAttackStrengthScale(1)
+    if (charge < 1) return
+    let bounceLevel = attacker.mainHandItem.getEnchantmentLevel("minecraft:rebound")
+    if (bounceLevel > 0) {
+        let currentVelocity = attacker.getDeltaMovement()
+        let velocity = new Vec3d(currentVelocity.x() + (dx * bounceLevel) * 0.2, currentVelocity.y() + (dy * bounceLevel) * 0.15, currentVelocity.z() + (dz * bounceLevel) * 0.2)
+        attacker.setDeltaMovement(velocity)
+        attacker.hurtMarked = true
+        attacker.level.playSound(
+            null,
+            attacker.getX(),
+            attacker.getY(),
+            attacker.getZ(),
+            "netherexp:item.jackhammer_fist.hit",
+            "players",
+            0.2,
+            0.1, // Use lower pitch
+
+        );
+        // attacker.tell(charge)
+        //attacker.tell(velocity)
+        // attacker.tell(((dx * bounceLevel) * 0.2 + (amount * 0.1)))
+        if (!attacker.creative) {
+            attacker.mainHandItem.setDamageValue(attacker.mainHandItem.damageValue + (1 + bounceLevel))
+        }
+    }
+}
+
+
+
+ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", event => global.reeling(event))
+global.reeling = event => {
+    let { entity, source, amount } = event
+    let attacker = source.actual
+    if (source.getType() != 'player') return
+    if (entity.level.isClientSide()) return
+    if (!attacker) return
+
+    let dx = attacker.x - entity.x
+    let dy = attacker.y - entity.y
+    let dz = attacker.z - entity.z
+
+    // Reel Enchant 
+    let charge = attacker.getAttackStrengthScale(1)
+    if (charge < 1) return
+    let reelLevel = attacker.mainHandItem.getEnchantmentLevel("extra_enchantments:reeling")
+    if (reelLevel > 0) {
+        let currentVelocity = attacker.getDeltaMovement()
+        let velocity = new Vec3d(currentVelocity.x() - ((dx * reelLevel) * 0.1), currentVelocity.y() - ((dy * reelLevel) * 0.1), currentVelocity.z() - ((dz * reelLevel) * 0.1))
+        attacker.setDeltaMovement(velocity)
+
+        attacker.hurtMarked = true
+        entity.potionEffects.add("alexscaves:stunned", 1, 1, false, true)
+        entity.potionEffects.add("oreganized:stunning", 5, 1, false, true)
+        attacker.level.playSound(
+            null,
+            attacker.getX(),
+            attacker.getY(),
+            attacker.getZ(),
+            "oreganized:entity.bolt_hit_armor",
+            "players",
+            0.7,
+            3, // Use lower pitch
+
+        );
+        // attacker.tell(charge)
+        //attacker.tell(velocity)
+        // attacker.tell(((dx * bounceLevel) * 0.2 + (amount * 0.1)))
+        if (!attacker.creative) {
+            attacker.mainHandItem.setDamageValue(attacker.mainHandItem.damageValue + (1 + reelLevel))
+        }
+    }
+}
+// EyesEyes, used to fix the mace not working due to the crit mod
+ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", event => global.macefix(event))
+/**
+* @param {Internal.LivingHurtEvent} event 
+*/
+global.macefix = event => {
+    const { entity, source, amount } = event;
+    let attacker = source.getActual();
+    if (source.getType() != 'player') return
+    if (attacker == null || entity == null) return
+    if (attacker.mainHandItem.id != "trials:mace_2") return
+    let fallDist = attacker.fallDistance
+    let density = attacker.mainHandItem.getEnchantmentLevel("trials:density_2")
+    let dmgbonus = 1
+    if (density > 0) {
+        dmgbonus = 1 + (0.05 * density)
+    }
+    let windBurst = attacker.mainHandItem.getEnchantmentLevel("trials:wind_burst_2")
+    let windBurstLevel = 0
+    if (windBurst > 0) {
+        windBurstLevel = (windBurst * 0.3);
+    }
+
+    if (fallDist > 3 && fallDist < 15) {
+        // Based Of 
+        // https://github.com/MaxTechnik3796/newtrials/blob/1aa44d16c6d78fa1d58bfc957b37ea355fcf210f/src/main/java/cz/maxtechnik/ntrials/event/MaceEventHandler.java#L55
+        let currentVelocity = attacker.getDeltaMovement()
+        let velocity = new Vec3d(currentVelocity.x(), 0.8 + windBurstLevel, currentVelocity.z())
+        attacker.setDeltaMovement(velocity)
+        attacker.hurtMarked = true
+
+        //  Liopyu's arrow.spawn script
+        if (windBurstLevel > 0) {
+            let wind_charge = entity.level.getBlock(entity.x, entity.y, entity.z).createEntity("trials:wind_charge")
+            let motionVec3 = new Vec3d(0, -2, 0);
+            wind_charge.setDeltaMovement(motionVec3)
+            wind_charge.spawn()
+        }
+
+        attacker.level.playSound(
+            null,
+            attacker.getX(),
+            attacker.getY(),
+            attacker.getZ(),
+            "trials:mace_smash_air",
+            "players",
+            1.0,
+            1, // Use lower pitch
+        );
+        attacker.level.spawnParticles(
+            "minecraft:entity.arrow.hit",
+            true,
+            entity.getX(),
+            entity.getY() + 1,
+            entity.getZ(),
+            0.1,
+            0.1,
+            0.1,
+            5,
+            0.02,
+        );
+        // Negate fall damage
+        attacker.resetFallDistance();
+        // Return final damage
+        // attacker.tell("DAMAGES: " + amount * fallDist * (dmgbonus - 0.7) + "NUSNUS: " + dmgbonus)
+        event.setAmount(amount * fallDist * (dmgbonus - 0.7))
+    } else if (fallDist > 3 && fallDist >= 15) {
+        // Based Of 
+        // https://github.com/MaxTechnik3796/newtrials/blob/1aa44d16c6d78fa1d58bfc957b37ea355fcf210f/src/main/java/cz/maxtechnik/ntrials/event/MaceEventHandler.java#L55
+        let currentVelocity = attacker.getDeltaMovement();
+        let velocity = new Vec3d(currentVelocity.x(), 1.6 + windBurstLevel, currentVelocity.z())
+        attacker.setDeltaMovement(velocity)
+        attacker.hurtMarked = true
+
+        if (windBurstLevel > 0) {
+            let wind_charge = entity.level.getBlock(entity.x, entity.y, entity.z).createEntity("trials:wind_charge")
+            let motionVec3 = new Vec3d(0, -2, 0);
+            wind_charge.setDeltaMovement(motionVec3)
+            wind_charge.spawn()
+        }
+
+        attacker.level.playSound(
+            null,
+            attacker.getX(),
+            attacker.getY(),
+            attacker.getZ(),
+            "trials:mace_smash_ground_heavy",
+            "players",
+            1.0,
+            1, // Use lower pitch
+        );
+        attacker.level.spawnParticles(
+            "minecraft:entity.arrow.hit",
+            true,
+            entity.getX(),
+            entity.getY() + 1,
+            entity.getZ(),
+            0.1,
+            0.1,
+            0.1,
+            10,
+            0.02,
+        );
+        attacker.resetFallDistance();
+        // attacker.tell("DAMAGES R: " + (amount * fallDist * (dmgbonus - 0.7) * 0.5) + "FALL: " + fallDist)
+        event.setAmount((amount * fallDist * (dmgbonus - 0.7)) * 0.5)
+    } else if (fallDist <= 3) {
+        event.setAmount(amount)
+    }
+}

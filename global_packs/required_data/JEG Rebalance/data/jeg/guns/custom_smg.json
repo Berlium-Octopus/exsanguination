@@ -43,7 +43,7 @@
     "damage": 2.8,
     "ejectsCasing": true,
     "gravity": true,
-    "headshotMultiplier": 1.5,
+    "headshotMultiplier": 2,
     "item": "jeg:pistol_ammo",
     "life": 60,
     "size": 0.05,

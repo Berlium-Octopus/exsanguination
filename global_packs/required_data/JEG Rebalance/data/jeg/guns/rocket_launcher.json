@@ -31,7 +31,7 @@
     "damage": 20,
     "ejectsCasing": true,
     "gravity": true,
-    "headshotMultiplier": 1.5,
+    "headshotMultiplier": 2,
     "hideTrail": true,
     "item": "jeg:rocket",
     "life": 600,

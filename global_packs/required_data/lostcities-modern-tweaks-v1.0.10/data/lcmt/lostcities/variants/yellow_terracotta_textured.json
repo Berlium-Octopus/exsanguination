@@ -1,0 +1,12 @@
+{
+  "blocks": [
+    {
+      "random": 8,
+      "block": "minecraft:yellow_concrete"
+    },
+    {
+      "random": 1000,
+      "block": "minecraft:yellow_terracotta"
+    }
+  ]
+}

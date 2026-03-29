@@ -1,0 +1,24 @@
+{
+  "palette": [
+    {
+      "char": "X",
+      "block": "minecraft:light_blue_concrete",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "$",
+      "block": "minecraft:blue_concrete",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "#",
+      "variant": "lcmt:light_blue_concrete_with_ice",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "}",
+      "variant": "lcmt:light_blue_concrete_with_ice",
+      "damaged": "minecraft:iron_bars"
+    }
+  ]
+}

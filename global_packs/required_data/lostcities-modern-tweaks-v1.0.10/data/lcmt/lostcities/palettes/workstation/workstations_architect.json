@@ -1,0 +1,41 @@
+{
+  "palette": [
+    {
+      "char": "F",
+      "blocks": [
+        {
+          "random": 20,
+          "block": "minecraft:crafting_table"
+        },
+        {
+          "random": 15,
+          "block": "minecraft:loom[facing=north]"
+        },
+        {
+          "random": 10,
+          "block": "minecraft:stonecutter[facing=north]"
+        },
+        {
+          "random": 10,
+          "block": "minecraft:stonecutter[facing=east]"
+        },
+        {
+          "random": 8,
+          "block": "minecraft:grindstone[face=floor,facing=north]"
+        },
+        {
+          "random": 8,
+          "block": "minecraft:grindstone[face=floor,facing=east]"
+        },
+        {
+          "random": 10,
+          "block": "minecraft:scaffolding"
+        },
+        {
+          "random": 1000,
+          "block": "minecraft:cobweb"
+        }
+      ]
+    }
+  ]
+}

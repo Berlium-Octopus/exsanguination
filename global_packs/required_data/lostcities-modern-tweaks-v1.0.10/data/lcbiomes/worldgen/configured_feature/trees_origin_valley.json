@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "lcbiomes:origin_tree",
+    "features": [
+      {
+        "chance": 0.5,
+        "feature": "lcbiomes:big_origin_tree"
+      }
+    ]
+  }
+}

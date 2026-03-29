@@ -1,0 +1,12 @@
+{
+  "palette": [
+    {
+      "char": "-",
+      "block": "minecraft:acacia_pressure_plate"
+    },
+    {
+      "char": ".",
+      "block": "minecraft:acacia_fence"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 2,
+  "items": [
+        {
+      "id": "trials:mace_2",
+      "exclude": false
+    }
+  ],
+  "incompatible": [
+    "extra_enchantments:incompatibility_curse",
+    "trials:density_2"
+
+  ]
+}

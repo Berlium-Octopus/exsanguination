@@ -1,0 +1,32 @@
+{
+  "blocks": [
+    {
+      "random": 16,
+      "block": "minecraft:cracked_stone_bricks"
+    },
+    {
+      "random": 16,
+      "block": "minecraft:stone_bricks"
+    },
+    {
+      "random": 16,
+      "block": "minecraft:smooth_stone_slab[type=bottom]"
+    },
+    {
+      "random": 16,
+      "block": "minecraft:stone_stairs[facing=east,half=bottom]"
+    },
+    {
+      "random": 8,
+      "block": "minecraft:stone_slab[type=bottom]"
+    },
+    {
+      "random": 16,
+      "block": "minecraft:andesite_slab[type=bottom]"
+    },
+    {
+      "random": 1000,
+      "block": "minecraft:stone"
+    }
+  ]
+}

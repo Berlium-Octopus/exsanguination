@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    {
+      "id": "minecraft:stone_hoe",
+      "exclude": false
+    },
+    {
+      "id": "minecraft:iron_hoe",
+      "exclude": false
+    },
+    {
+      "id": "minecraft:golden_hoe",
+      "exclude": false
+    },
+    {
+      "id": "minecraft:diamond_hoe",
+      "exclude": false
+    },
+    {
+      "id": "minecraft:netherite_hoe",
+      "exclude": false
+    },
+    {
+      "id": "minecraft:copper_hoe",
+      "exclude": false
+    },
+    {
+      "id": "alexscaves_torpedoes:scarlet_hoe",
+      "exclude": false
+    },
+    {
+      "id": "alexscaves_torpedoes:azure_hoe",
+      "exclude": false
+    },
+    {
+      "id": "alexscaves_torpedoes:shadow_hoe",
+      "exclude": false
+    },
+    {
+      "id": "deeperdarker:warden_hoe",
+      "exclude": false
+    },
+    {
+      "id": "sculkhorde:ferriscite_hoe",
+      "exclude": false
+    },
+    {
+      "id": "sculkhorde:diascite_hoe",
+      "exclude": false
+    },
+    {
+      "id": "create:bronze_hoe",
+      "exclude": false
+    },
+    {
+      "id": "deeperdarker:resonarium_hoe",
+      "exclude": false
+    },
+    {
+      "id": "oreganized:electrum_hoe",
+      "exclude": false
+    },
+    {
+      "id": "archeological:rusty_hoe",
+      "exclude": false
+    },
+    {
+      "id": "oreganized:silver_hoe",
+      "exclude": false
+    },
+    {
+      "id": "cataclysm:black_steel_hoe",
+      "exclude": false
+    }
+  ],
+  "incompatible": [
+    "extra_enchantments:incompatibility_curse"
+  ]
+}

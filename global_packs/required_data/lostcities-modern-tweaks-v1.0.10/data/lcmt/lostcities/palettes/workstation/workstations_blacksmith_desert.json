@@ -1,0 +1,53 @@
+{
+  "palette": [
+    {
+      "char": "F",
+      "blocks": [
+        {
+          "random": 15,
+          "block": "minecraft:blast_furnace[facing=north]"
+        },
+        {
+          "random": 15,
+          "block": "minecraft:smithing_table"
+        },
+        {
+          "random": 10,
+          "block": "minecraft:fletching_table"
+        },
+        {
+          "random": 5,
+          "block": "minecraft:grindstone[face=floor,facing=north]"
+        },
+        {
+          "random": 5,
+          "block": "minecraft:grindstone[face=floor,facing=east]"
+        },
+        {
+          "random": 5,
+          "block": "minecraft:cauldron"
+        },
+        {
+          "random": 10,
+          "block": "minecraft:lava_cauldron"
+        },
+        {
+          "random": 10,
+          "block": "minecraft:anvil"
+        },
+        {
+          "random": 10,
+          "block": "minecraft:chipped_anvil"
+        },
+        {
+          "random": 5,
+          "block": "minecraft:damaged_anvil"
+        },
+        {
+          "random": 1000,
+          "block": "minecraft:cobweb"
+        }
+      ]
+    }
+  ]
+}

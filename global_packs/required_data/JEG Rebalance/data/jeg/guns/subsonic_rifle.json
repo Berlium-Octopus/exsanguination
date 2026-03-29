@@ -38,7 +38,7 @@
     "advantage": "jeg:very_heavy",
     "damage": 14,
     "ejectsCasing": true,
-    "headshotMultiplier": 2,
+    "headshotMultiplier": 2.5,
     "hideTrail": true,
     "hitsRubberFruit": true,
     "ignoresBlocks": true,

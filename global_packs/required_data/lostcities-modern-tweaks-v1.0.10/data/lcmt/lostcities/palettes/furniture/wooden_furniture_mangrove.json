@@ -1,0 +1,12 @@
+{
+  "palette": [
+    {
+      "char": "-",
+      "block": "minecraft:mangrove_pressure_plate"
+    },
+    {
+      "char": ".",
+      "block": "minecraft:mangrove_fence"
+    }
+  ]
+}

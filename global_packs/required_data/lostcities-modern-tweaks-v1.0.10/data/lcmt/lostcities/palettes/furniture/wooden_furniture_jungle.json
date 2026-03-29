@@ -1,0 +1,12 @@
+{
+  "palette": [
+    {
+      "char": "-",
+      "block": "minecraft:jungle_pressure_plate"
+    },
+    {
+      "char": ".",
+      "block": "minecraft:jungle_fence"
+    }
+  ]
+}

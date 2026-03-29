@@ -1,0 +1,12 @@
+{
+  "palette": [
+    {
+      "char": "-",
+      "block": "minecraft:cherry_pressure_plate"
+    },
+    {
+      "char": ".",
+      "block": "minecraft:cherry_fence"
+    }
+  ]
+}

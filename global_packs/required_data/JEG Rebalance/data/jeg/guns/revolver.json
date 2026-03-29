@@ -34,7 +34,7 @@
     "advantage": "jeg:none",
     "damage": 3.5,
     "gravity": true,
-    "headshotMultiplier": 2,
+    "headshotMultiplier": 4,
     "item": "jeg:pistol_ammo",
     "life": 40,
     "size": 0.05,

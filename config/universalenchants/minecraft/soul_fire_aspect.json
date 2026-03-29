@@ -3,7 +3,10 @@
   "items": [
     "#minecraft:axes",
     "$minecraft:weapon",
-    "trials:mace",
+        {
+      "id": "trials:mace_2",
+      "exclude": false
+    },
     "farmersdelight:skillet",
     "cataclysm:gauntlet_of_guard",
     "cataclysm:gauntlet_of_bulwark",

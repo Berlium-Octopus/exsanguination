@@ -45,7 +45,7 @@
         }
     },
        {
-        "mob": ["alexsmobs:farseer"],
+        "mob": ["alexsmobs:farseer", "minecraft:phantom"],
         "persecond": 0.5,
         "attempts": 1,
         "amount": {
