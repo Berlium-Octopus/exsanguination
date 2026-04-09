@@ -1,5 +1,7 @@
 // Midnighttiger and Co's script (Modiffied)
 //discord.com/channels/303440391124942858/1457007022510833748/1458965458991583416 in discord.gg/lat
+let $AttributeModifier = Java.loadClass("net.minecraft.world.entity.ai.attributes.AttributeModifier")
+
 const piglinEvilTimeRange = [120, 200];
 const piglinCureTimeRange = [1500, 2500];
 const spawnPool = ["minecraft:piglin", "minecraft:zombified_piglin", "minecraft:piglin",]
@@ -136,12 +138,13 @@ BlockEvents.broken(event => {
 
 //  TRYING TO MAKE GOLDEN OSMOSIS, Thanks To Liopyu YIPPIE
 PlayerEvents.tick(event => {
-  const { player, player: { mainHandItem, offHandItem, headArmorItem, chestArmorItem, legsArmorItem, feetArmorItem } } = event
+  const { player, player: { mainHandItem, offHandItem, headArmorItem, chestArmorItem, legsArmorItem, feetArmorItem } } = event;
+  if (player.age % 10 !== 0) return
 
-  let items = [mainHandItem, offHandItem, headArmorItem, chestArmorItem, legsArmorItem, feetArmorItem]
+  let items = [mainHandItem, offHandItem, headArmorItem, chestArmorItem, legsArmorItem, feetArmorItem];
   for (let item of items) {
     if (player.xp > 0 && testForRepairableGold(item)) {
-      repairItem(player, item)
+      repairItem(player, item);
     }
   }
 });
@@ -151,57 +154,24 @@ function testForRepairableGold(item) {
 function repairItem(player, itemStack) {
   const currentDurability = itemStack.damageValue
   if (currentDurability <= 0) return
-  const repairAmount = 4
-  const xpCostPerPoint = 0.5
-  if (player.age % 20 == 0)
-    // console.log(player.experienceLevel + ", " + player.xp)
-    const maxRepairableDamage = Math.min(currentDurability, Math.floor(player.xp / xpCostPerPoint) * repairAmount)
+  const repairAmount = 1
+  const xpCostPerPoint = 0.2
+  // console.log()
+  const maxRepairableDamage = Math.min(currentDurability, Math.floor(player.xp / xpCostPerPoint) * repairAmount)
   if (maxRepairableDamage > 0) {
     const xpSpent = Math.ceil(maxRepairableDamage / repairAmount) * xpCostPerPoint
     player.addXP(-xpSpent)
+    // player.tell(player.experienceLevel + ", " + player.xp)
     itemStack.damageValue = Math.max(0, currentDurability - maxRepairableDamage)
   }
 }
 
-// By Arsenic and EricBatista on kubejs discord
-PlayerEvents.tick(e => {
-  const { player } = e;
-
-  // Reset logic if effect is not active
-  if (!player.potionEffects.isActive('exsanguination:dimentional_sickness')) {
-    player.modifyAttribute("minecraft:generic.max_health", //Select max_health attribute
-      "bf435515-2a7b-4790-a937-bfbd843db62b", //Identifier (UUID)
-      1 //reset
-      , "multiply_base") //Operation
-
-    //Update player health
-    player.setHealth(player.getHealth())
-    return;
-  }
-  else {
-
-    let amplifier = player.getEffect('exsanguination:dimentional_sickness').getAmplifier();
-    player.modifyAttribute("minecraft:generic.max_health", //Select max_health attribute
-      "bf435515-2a7b-4790-a937-bfbd843db62b", //Identifier (UUID)
-      -hpModifierCalc(player, amplifier) //Modify attribute to be at least 1 hp
-      , "addition") //Operation
-
-    //Update player health
-    player.setHealth(Math.min(player.getHealth(), player.getMaxHealth()))
-  }
-
-});
-
-function hpModifierCalc(player, amplifier) {
-  return Math.min(1 + amplifier * 2, player.getAttributeBaseValue("minecraft:generic.max_health") - 5)
-}
-
 PlayerEvents.tick(event => {
   let { player } = event
+  if (!player.potionEffects.isActive('exsanguination:reincarnatus')) return
+  if (player.maxHealth == player.health) return
   if (player.age % 20 !== 0) return
-  if (player.potionEffects.isActive('exsanguination:reincarnatus')) {
-    player.heal(100)
-  }
+  player.heal(100)
 })
 
 let attackstun = [
@@ -222,7 +192,7 @@ let attackstun = [
   "minecraft:golden_axe",
   "minecraft:diamond_axe",
   "oreganized:electrum_axe",
-  "minecraft:netherite_axe"
+  "minecraft:netherite_axe",
 ]
 
 // Based of dob3a's stick script
@@ -232,8 +202,8 @@ attackstun.forEach(w => {
     const aabb = player.boundingBox.inflate(4);
     player.level.getEntitiesWithin(aabb).forEach(entity => {
       if (!entity) return
-      if (!player.getMainHandItem().hasEnchantment("fire_aspect", 1)) return
-      if (entity.type == "rootoffear:wilted") {
+      if (!player.getMainHandItem().hasEnchantment("fire_aspect", 1) || !player.getMainHandItem().hasEnchantment("minecraft:soul_fire_aspect", 1)) return
+      if (entity.type == "rootoffear:wilted" || entity.type == "rootoffear:wiltling") {
         let sources = entity.damageSources()
         entity.attack(sources.fellOutOfWorld(), 1)
         entity.potionEffects.add("alexscaves:stunned", 160, 0, false, true)
@@ -244,6 +214,24 @@ attackstun.forEach(w => {
         player.damageHeldItem("main_hand", 10)
       }
     })
+  })
+})
+
+ItemEvents.rightClicked("minecraft:flint_and_steel", event => {
+  const { player, item, target: { entity } } = event;
+  const aabb = player.boundingBox.inflate(4);
+  player.level.getEntitiesWithin(aabb).forEach(entity => {
+    if (!entity) return
+    if (entity.type == "rootoffear:wilted" || entity.type == "rootoffear:wiltling") {
+      let sources = entity.damageSources()
+      entity.potionEffects.add("potioncore:fire", 400, 0, true, true)
+      entity.potionEffects.add("alexscaves:stunned", 160, 0, false, true)
+      entity.playSound("minecraft:entity.player.attack.strong", 1, 10);
+      entity.playSound("minecraft:item.axe.strip", 1, 10);
+      player.swing();
+      player.addItemCooldown(item, 400)
+      player.damageHeldItem("main_hand", 10)
+    }
   })
 })
 
@@ -274,25 +262,6 @@ knifes.forEach(w => {
   })
 })
 
-// Every 300 Tiks The Wilted Gives This Effect
-// Based of dob3a's stick script
-// Hmm might be laggy i dont wanna add this
-/*
-  PlayerEvents.tick(event=>{
-    let {player, player:{pos, age, block:{pos:{x, y, z}}}, level} = event
-    if(age % 20 != 0) return; // Run every second
-    const aabb = player.boundingBox.inflate(8);
-    player.level.getEntitiesWithin(aabb).forEach(ent => {
-      if (!ent) { return; };
-      if (ent.isPlayer()) { return; };
-      if (ent.type != "rootoffear:wilted") return
-        player.potionEffects.add("lostcities:courage", 500, 0, false, true)
-  })
-  })
-*/
-
-
-// laggy 
 
 const scanRadius = 3 * 16
 const typeToScan = "corpse:corpse"
@@ -301,7 +270,7 @@ const Jumppool = ["minecraft:zombie", "minecraft:skeleton"]
 
 PlayerEvents.tick(event => {
   let { player, player: { pos, age, block: { pos: { x, y, z } } }, level } = event
-  if (age % 6000 != 0) return; // Run every 1.5 mins
+  if (age % 10000 != 0) return; // Run every ?? mins
   let aabb = AABB.of(x + scanRadius, y + scanRadius, z + scanRadius, x - scanRadius, y - scanRadius, z - scanRadius)
   let entities = level.getEntities(player, aabb, e => e.type == typeToScan)
   entities = entities.filter(entity => entity.pos.distanceTo(pos) <= scanRadius)
@@ -365,21 +334,15 @@ PlayerEvents.loggedIn((event) => {
 // My code to fix scalinghealth hearts or vanilla? bs
 // Fixes the respawn bug with the max health thing hopefully max health fix solves the relog part
 PlayerEvents.respawned((event) => {
+  event.player.modifyAttribute("minecraft:generic.max_health", "bf435515-2a7b-4790-a937-bfbd843db62b", 1, "multiply_base")
   event.server.runCommandSilent('/kubejs reload client_scripts')
-  event.server.runCommandSilent('/effect give @p exsanguination:reincarnatus 30 0')
+  event.server.runCommandSilent('/effect give @p exsanguination:reincarnatus 10 0')
   event.server.scheduleInTicks(20, () => {
-    event.server.runCommandSilent('/gamerule reducedDebugInfo true')
     event.server.runCommandSilent('/effect clear @p minecraft:mining_fatigue')
     event.server.runCommandSilent('/effect clear @p cataclysm:bone_fracture')
     event.server.runCommandSilent('/effect clear @p minecraft:weakness')
   })
-  event.server.scheduleInTicks(45, () => {
-    event.server.runCommandSilent('/effect clear @p exsanguination:reincarnatus')
-  })
-  event.server.scheduleInTicks(180, () => {
-    event.server.runCommandSilent('/effect clear @p exsanguination:reincarnatus')
-  })
-});
+})
 
 
 
@@ -568,24 +531,7 @@ ItemEvents.rightClicked('spelunkery:tuning_fork', event => {
   }
 });
 
-// Not Working In Surival
-ItemEvents.rightClicked('scalinghealth:power_crystal_shard', event => {
-  const { player, server, hand } = event
-  if (hand == "MAIN_HAND") {
-    //event.player.addItemCooldown(event.item, 60000)
-    // Idk If This works
-    server.runCommand(`/execute as ${player.username} run rootoffear spawnday getrelative`)
-    player.damageHeldItem("main_hand", 1)
-  }
-
-  else if (hand == "OFF_HAND") {
-    //event.player.addItemCooldown(event.item, 60000)
-    // Idk If This works
-    server.runCommand(`/execute as ${player.username} run rootoffear spawnday getrelative`)
-    player.damageHeldItem("off_hand", 1)
-  }
-});
-
+// Yea Optimize This Its Soo Large Turn It Into Tags 
 let chests_and_such = [
   "minecraft:chest",
   "minecraft:ender_chest",
@@ -639,26 +585,26 @@ let chests_and_such = [
 
 chests_and_such.forEach(block => {
   BlockEvents.rightClicked(block, event => {
-  const { player, block, server } = event
-  let dx = player.x - block.x
-  let dy = player.y - block.y
-  let dz = player.z - block.z
-  let reach = player.getEntityReach()
-  let distance = Math.sqrt(dx * dx + dy * dy + dz * dz)
-  let innereach = reach * Math.max(0, 1.0 - 0.19)
-  let multiplier = distance / innereach
-  if (multiplier > 0.7){
-    multiplier = 0.7
-  }
-  let chance = Math.random() < multiplier
-  if (player.creative) return
-  if (reach > 3 && chance) {
-    server.runCommandSilent(`playsound minecraft:block.chest.locked block @a ${block.x} ${block.y} ${block.z} 1 1`)
-    event.cancel()
-  } /* else {
+    const { player, block, server } = event
+    let dx = player.x - block.x
+    let dy = player.y - block.y
+    let dz = player.z - block.z
+    let reach = player.getEntityReach()
+    let distance = Math.sqrt(dx * dx + dy * dy + dz * dz)
+    let innereach = reach * Math.max(0, 1.0 - 0.19)
+    let multiplier = distance / innereach
+    if (multiplier > 0.7) {
+      multiplier = 0.7
+    }
+    let chance = Math.random() < multiplier
+    if (player.creative) return
+    if (reach > 3 && chance) {
+      server.runCommandSilent(`playsound minecraft:block.chest.locked block @a ${block.x} ${block.y} ${block.z} 1 1`)
+      event.cancel()
+    } /* else {
     player.statusMessage = Text.of(multiplier)
   } */
-})
+  })
 })
 
 
@@ -671,6 +617,7 @@ let bows_and_such = [
   "spartanweaponry:copper_longbow",
   "spartanweaponry:silver_heavy_crossbow",
   "spartanweaponry:silver_longbow",
+  "spartanweaponry:silver_longsword",
   "spartanweaponry:iron_heavy_crossbow",
   "spartanweaponry:iron_longbow",
   "spartanweaponry:bronze_heavy_crossbow",
@@ -698,15 +645,111 @@ let bows_and_such = [
 // Bows Can't Be Fired in offhand HAHA exept......
 bows_and_such.forEach(Items => {
   ItemEvents.rightClicked(Items, event => {
-    const { player, server} = event
+    const { player, server } = event
     try {
       if (player.offHandItem.getId() != Items || player.hasEffect("lostcities:courage")) return
     } catch (err) {
       console.error("Right Click Error: " + err);
     }
     server.scheduleInTicks(2, () => {
-    server.runCommandSilent(`playsound minecraft:item.armor.equip_leather block @a ${player.x} ${player.y} ${player.z} 1 1`)
+      server.runCommandSilent(`playsound minecraft:item.armor.equip_leather block @a ${player.x} ${player.y} ${player.z} 1 1`)
     });
     event.cancel();
   })
 })
+
+const silver_weapons = [
+  "oreganized:silver_sword",
+  "oreganized:silver_axe",
+  "oreganized:silver_pickaxe",
+  "oreganized:silver_hoe",
+  "oreganized:silver_shovel",
+  "spartanweaponry:silver_scythe",
+  "spartanweaponry:silver_quarterstaff",
+  "spartanweaponry:silver_glaive",
+  "spartanweaponry:silver_flanged_mace",
+  "spartanweaponry:silver_battleaxe",
+  "spartanweaponry:silver_longbow",
+  "spartanweaponry:silver_throwing_knife",
+  "spartanweaponry:silver_tomahawk",
+  "spartanweaponry:silver_javelin",
+  "spartanweaponry:silver_boomerang",
+  "spartanweaponry:silver_lance",
+  "spartanweaponry:silver_pike",
+  "spartanweaponry:silver_halberd",
+  "spartanweaponry:silver_spear",
+  "spartanweaponry:silver_warhammer",
+  "spartanweaponry:silver_battle_hammer",
+  "spartanweaponry:silver_parrying_dagger",
+  "spartanweaponry:silver_katana",
+  "spartanweaponry:silver_saber",
+  "spartanweaponry:silver_rapier",
+  "spartanweaponry:silver_greatsword",
+  "spartanweaponry:silver_dagger"
+]
+
+let currentMoonPhase = 0
+let TickFixer = 0
+let Nullifier = 0
+
+// Laggiaya
+LevelEvents.tick("overworld", event => {
+  let { level } = event
+  let newPhase = level.getMoonPhase()
+  if (newPhase === currentMoonPhase) return
+  currentMoonPhase = newPhase
+  // console.log("howl")
+});
+
+PlayerEvents.tick(event => {
+  let player = event.player;
+  Nullifier = player.level.isDay() ? 1 : 0
+  let distance = Math.min(currentMoonPhase, 8 - currentMoonPhase)
+  let basePower = Math.floor(6 * (4 - distance) / 4)
+  TickFixer = Math.max(0, basePower - Nullifier)
+})
+
+
+// oreganized:lunar_power
+// Thanks to ZAP and Squoshi for the base script
+global.lunarcycles = event => {
+  function LunarBonus(attribute, operation, increment, uuid, name, condition) {
+    if (event.getSlotType() === 'mainhand' && condition) {
+      let value = TickFixer * increment
+      event.addModifier(attribute, new $AttributeModifier(uuid, name, value, operation));
+    }
+  }
+  try {
+    silver_weapons.forEach(silver => {
+      LunarBonus('minecraft:generic.attack_damage', 'addition', 0.05, '18f56cdd-39b8-4812-991a-e46279964758', 'l_sword', event.itemStack.id == silver)
+      LunarBonus('puffish_attributes:breaking_speed', 'addition', 0.05, '28ce26d6-2fb2-4154-93cb-e7331cafe3b0', 'l_sword', event.itemStack.id == silver)
+    })
+  } catch (err) {
+    console.error("LUNAR BUG! BEGONE: " + err);
+  }
+}
+
+// By Arsenic and EricBatista on kubejs discord + Optimised Most Tick Events YIPPIE
+PlayerEvents.tick(e => {
+  const { player } = e;
+
+  // Reset logic if effect is not active + when value is not base
+  if (!player.potionEffects.isActive('exsanguination:dimentional_sickness')) {
+    player.modifyAttribute("minecraft:generic.max_health", "bf435515-2a7b-4790-a937-bfbd843db62b", 1, "multiply_base")
+    if (player.getAttributeBaseValue("minecraft:generic.max_health")) return
+    player.setHealth(player.getHealth())
+    return;
+  }
+  else {
+    if (player.age % 20 != 0) return
+    let amplifier = player.getEffect('exsanguination:dimentional_sickness').getAmplifier();
+    player.modifyAttribute("minecraft:generic.max_health", "bf435515-2a7b-4790-a937-bfbd843db62b", -hpModifierCalc(player, amplifier), "addition")
+    player.setHealth(Math.min(player.getHealth(), player.getMaxHealth()))
+  }
+
+});
+
+function hpModifierCalc(player, amplifier) {
+  return Math.min(1 + amplifier * 2, player.getAttributeBaseValue("minecraft:generic.max_health") - 2)
+}
+

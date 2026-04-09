@@ -1,0 +1,40 @@
+{
+  "requirements": [
+    {
+      "type": "questlog:quest_complete",
+      "total": 1,
+      "quest": "questlog:woods"
+    }
+  ],
+  "objectives": [
+    {
+      "type": "questlog:item_obtain",
+      "total": 1,
+      "item": "minecraft:flint",
+      "display": {
+        "name": "Flint Facination",
+        "icon": {
+          "item": "minecraft:flint"
+        }
+      }
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "level": false,
+      "experience": 20
+    }
+  ],
+  "title": "Flint Fascination",
+  "description": "Flint when combined with ferns and grasses can be made into primitive tools. To get flint one must find gravel, lakes and aquafirs are typically places where gravel forms. To process the gravel one must use a cutting board and then club or shovel it into shards.",
+  "sort_order": "6",
+  "icon": {
+    "item": "minecraft:flint"
+  },
+  "chapter": "main",
+  "toast_on_unlock": true,
+  "toast_on_complete": false,
+  "show_popup_on_unlock": false,
+  "completed_sound": "minecraft:entity.arrow.hit_player"
+}

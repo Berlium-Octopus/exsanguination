@@ -1,8 +1,9 @@
 // priority: 100
-// Make Silver Armor + Bronze Armor From Leather
+// Make Silver Armor + Molybdochalkos Armor From Leather
 // Replace Cast Iron With Black Steel? By Black steel duplication with iron or by ferroslime stuff
 // Wraith Cetuses As A Real Item
 Platform.mods.kubejs.name = 'Exsanguination Originals'
+// Platform.setModName("spartandeeperdarker", "Spartan Deeper and Darker")
 
 StartupEvents.modifyCreativeTab("kubejs:tab", event => {
   event.icon = "biomesoplenty:cooked_flesh_chunk"
@@ -22,6 +23,7 @@ StartupEvents.registry('item', item => {
 */
 
 // Xeru and IIIAP (FOR SUS GRIME)
+const $SwordBaseItem = Java.loadClass("com.oblivioussp.spartanweaponry.item.SwordBaseItem")
 const $DoorBlock = Java.loadClass('net.minecraft.world.level.block.DoorBlock')
 const $TrapDoorBlock = Java.loadClass('net.minecraft.world.level.block.TrapDoorBlock')
 const $Blocks = Java.loadClass('net.minecraft.world.level.block.Blocks')
@@ -29,18 +31,14 @@ const $Properties = Java.loadClass('net.minecraft.world.level.block.state.BlockB
 const $BlockItem = Java.loadClass('net.minecraft.world.item.BlockItem')
 const $IProperties = Java.loadClass('net.minecraft.world.item.Item$Properties')
 const $BlockSetType = Java.loadClass('net.minecraft.world.level.block.state.properties.BlockSetType')
-const $Atlas = Java.loadClass('pepjebs.mapatlases.item.MapAtlasItem')
 const $SoundEvents = Java.loadClass('net.minecraft.sounds.SoundEvents')
 const $SOULSAND = Java.loadClass('net.jadenxgamer.netherexp.registry.block.custom.JNEBrushableBlock')
 const $DDBlocks = Java.loadClass('com.kyanite.deeperdarker.content.DDBlocks')
 const $SculkSound = Java.loadClass("com.github.sculkhorde.core.ModSounds")
-//  [21:01:09] [ERROR] ! net.minecraft.ResourceLocationException: Non [a-z0-9/._-] character in path of location: minecraft:net.minecraftforge.registries.RegistryObject@9f752c5f
 
 let door
 let trapDoor
 let sands
-
-// [22:01:11] [ERROR] ! Error in 'StartupEvents.registry': Registry Object not present: sculkhorde:soul_harvester_finished
 
 StartupEvents.registry('block', e => {
   trapDoor = e.createCustom('rootoffear:faded_oak_trapdoor', () => new $TrapDoorBlock($Properties.copy($Blocks.OAK_TRAPDOOR), $BlockSetType.OAK))
@@ -59,11 +57,10 @@ BlockEvents.modification(event => {
 StartupEvents.registry('item', e => {
   e.createCustom('rootoffear:faded_oak_trapdoor', () => new $BlockItem(trapDoor.get(), new $IProperties()))
   e.createCustom('rootoffear:faded_oak_door', () => new $BlockItem(door.get(), new $IProperties()))
-  e.createCustom('map_atlases:soulbound_atlas', () => new $Atlas(new $IProperties()))
   e.createCustom('deeperdarker:suspicious_sculk_grime', () => new $BlockItem(sands.get(), new $IProperties()))
 })
 
-// Add Electrum, Warden, Resonarium, Netherite, Silver, Bronze Horse Armor
+// Add Electrum, Warden, Resonarium, Netherite, Silver, Molybdochalkos Horse Armor
 // From Reveter
 const $HorseArmorItem = Java.loadClass('net.minecraft.world.item.HorseArmorItem')
 
@@ -74,7 +71,7 @@ StartupEvents.registry('item', event => {
   event.createCustom('oreganized:electrum_horse_armor', () => new $HorseArmorItem['(int,net.minecraft.resources.ResourceLocation,net.minecraft.world.item.Item$Properties)'](11, 'kubejs:textures/entity/horse/armor/horse_armor.png', (new $IProperties()).stacksTo(1)))
   event.createCustom('minecraft:copper_horse_armor', () => new $HorseArmorItem['(int,net.minecraft.resources.ResourceLocation,net.minecraft.world.item.Item$Properties)'](11, 'kubejs:textures/entity/horse/armor/horse_armor.png', (new $IProperties()).stacksTo(1)))
   event.createCustom('oreganized:silver_horse_armor', () => new $HorseArmorItem['(int,net.minecraft.resources.ResourceLocation,net.minecraft.world.item.Item$Properties)'](11, 'kubejs:textures/entity/horse/armor/horse_armor.png', (new $IProperties()).stacksTo(1)))
-  event.createCustom('create:bronze_horse_armor', () => new $HorseArmorItem['(int,net.minecraft.resources.ResourceLocation,net.minecraft.world.item.Item$Properties)'](11, 'kubejs:textures/entity/horse/armor/horse_armor.png', (new $IProperties()).stacksTo(1)))
+  event.createCustom('createbigcannons:bronze_horse_armor', () => new $HorseArmorItem['(int,net.minecraft.resources.ResourceLocation,net.minecraft.world.item.Item$Properties)'](11, 'kubejs:textures/entity/horse/armor/horse_armor.png', (new $IProperties()).stacksTo(1)))
 })
 StartupEvents.registry('item', e => {
   e.create('domesticationinnovation:brenda_collar').texture('kubejs:item/corrupted_tag').displayName("Brenda's Collar").rarity('alexscaves:demonic')
@@ -82,9 +79,13 @@ StartupEvents.registry('item', e => {
   e.create('domesticationinnovation:amoy_collar').texture('kubejs:item/lightnodago_tag').displayName("Amoy's Collar").rarity('alexscaves:nuclear')
   e.create('minecraft:nether_star_shard').texture('kubejs:item/nether_star_shard').displayName("Nether Star Shard").rarity('UNCOMMON').fireResistant()
 })
+// public static final RegistryObject<SwordBaseItem> STUDDED_CESTUS = REGISTRY.register("studded_cestus", () -> new SwordBaseItem(new Item.Properties(), WeaponMaterial.IRON, WeaponArchetype.CESTUS, Defaults.DamageBaseCestus, Defaults.DamageMultiplierCestus, Defaults.SpeedCestus));
+
 StartupEvents.registry('item', e => {
+  e.create('minecraft:flint_shard').texture('kubejs:item/flint_shard').displayName("Flint Shards")
   e.create('rootoffear:agitated_primitive_heart').texture('kubejs:item/heart_crystal').displayName("Agitated Primitive Heart").rarity('RARE')
   e.create('alexscaves:brainiac_greymatter').texture('kubejs:item/heart_crystal').displayName("Brainiac Greymatter")
+  e.createCustom('spartanweaponry:wraith_cestus', () => new $SwordBaseItem(new $IProperties().stacksTo(1), $MATERIAL.DIAMOND, $WeaponArchetype.CESTUS, $Defaults.DamageBaseCestus, $Defaults.DamageMultiplierCestus, $Defaults.SpeedCestus))
   e.create('trials:mace_2', 'shovel').texture('trials:item/mace').displayName("Mace").rarity('EPIC').modelJson('trials:item/mace').tier('mace')
 })
 
@@ -273,18 +274,6 @@ StartupEvents.registry('block', event => {
 })
 
 StartupEvents.registry('block', event => {
-  event.create('create:bronze_block')
-    .displayName('Block Of Bronze')
-    .soundType('metal')
-    .hardness(3.5)
-    .resistance(2)
-    .requiresTool(true)
-    .tagBlock("mineable/pickaxe")
-    .textureAll('kubejs:block/bronze_block')
-})
-
-
-StartupEvents.registry('block', event => {
   event.create('rootoffear:faded_oak_leaves')
     .displayName('Faded Oak Leaves')
     .soundType('CHERRY_LEAVES')
@@ -337,6 +326,16 @@ StartupEvents.registry('block', event => {
     .speedFactor(0.8)
     .tagBlock("mineable/axe")
     .textureAll('kubejs:block/faded_oak_planks')
+})
+
+StartupEvents.registry('block', event => {
+  event.create('biomesoplenty:birch_eyeball')
+    .displayName('Birch Eyeball')
+    .soundType('wood')
+    .hardness(2)
+    .resistance(2)
+    .tagBlock("mineable/axe")
+    .textureAll('kubejs:block/birch_eyeball')
 })
 
 StartupEvents.registry('block', event => {
@@ -744,6 +743,9 @@ StartupEvents.registry('block', event => {
 
 /*
 BlockEvents.modification((event) => {
+  // birch eyeball flamibility
+  let Blocks = Java.loadClass('net.minecraft.world.level.block.Blocks')
+  Blocks.FIRE.invokeSetFlammable('biomesoplenty:birch_eyeball', 10, 60)
   Blocks.FIRE.invokeSetFlammable('rootoffear:faded_oak_log', 10, 60)
   Blocks.FIRE.invokeSetFlammable('rootoffear:faded_oak_slab', 10, 60)
   Blocks.FIRE.invokeSetFlammable('rootoffear:faded_oak_stairs', 10, 60)
@@ -840,16 +842,6 @@ StartupEvents.registry('item', e => {
 })
 
 StartupEvents.registry('item', e => {
-  e.create('create:bronze_ingot').texture('kubejs:item/bronze_ingot').displayName('Bronze Ingot')
-    .rarity('COMMON')
-})
-
-StartupEvents.registry('item', e => {
-  e.create('create:bronze_nugget').texture('kubejs:item/bronze_nugget').displayName('Bronze Nugget')
-    .rarity('COMMON')
-})
-
-StartupEvents.registry('item', e => {
   e.create('alexscaves:totem_of_regeneration').texture('kubejs:item/totem_of_regeneration').displayName('Amulet Of Regeneration')
     .rarity('EPIC')
 })
@@ -866,8 +858,37 @@ StartupEvents.registry('item', e => {
     .tooltip(' §9Resonarium Plate')
 })
 
+
 StartupEvents.registry('item', e => {
-  e.create('minecraft:nether_brick_template').texture('kubejs:item/netherwart_trim').displayName('Nether Smithing Template')
+  e.create('createbigcannons:bronze_upgrade_smithing_template').texture('kubejs:item/bronze_upgrade').displayName('Smithing Template')
+    .rarity('COMMON')
+    .tooltip('§7Molybdochalkos Upgrade')
+    .tooltip('')
+    .tooltip('§7Applies To:')
+    .tooltip(' §9Copper Equipment')
+    .tooltip('§7Ingredient:')
+    .tooltip(' §9Molybdochalkos Ingot')
+})
+
+StartupEvents.registry('item', e => {
+  e.create('oreganized:silver_upgrade_smithing_template').texture('kubejs:item/silver_upgrade').displayName('Smithing Template')
+    .rarity('COMMON')
+    .tooltip('§7Silver Upgrade')
+    .tooltip('')
+    .tooltip('§7Applies To:')
+    .tooltip(' §9Iron Equipment')
+    .tooltip('§7Ingredient:')
+    .tooltip(' §9Silver Ingot')
+})
+
+StartupEvents.registry('item', e => {
+  e.create('minecraft:stone_trim_template').texture('kubejs:item/stone_trim').displayName('Smithing Template')
+    .rarity('COMMON')
+    .tooltip('§7Stone Trim Template')
+})
+
+StartupEvents.registry('item', e => {
+  e.create('minecraft:nether_brick_template').texture('kubejs:item/netherwart_trim').displayName('Smithing Template')
     .rarity('COMMON')
     .tooltip('§7Brick Trim Template')
 })
@@ -877,9 +898,8 @@ StartupEvents.registry('item', e => {
     .tooltip('§7Deepslate Trim Template')
 })
 StartupEvents.registry('item', e => {
-  e.create('minecraft:stone_trim_template').texture('kubejs:item/stone_trim').displayName('Smithing Template')
+  e.create('minecraft:builder_fragments').texture('kubejs:item/builder_fragments')
     .rarity('COMMON')
-    .tooltip('§7Stone Trim Template')
 })
 StartupEvents.registry('item', e => {
   e.create('minecraft:terracotta_trim_template').texture('kubejs:item/terracota_trim').displayName('Smithing Template')

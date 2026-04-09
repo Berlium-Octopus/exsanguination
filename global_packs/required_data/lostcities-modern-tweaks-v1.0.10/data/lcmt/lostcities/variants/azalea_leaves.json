@@ -2,11 +2,11 @@
   "blocks": [
     {
       "random": 64,
-      "block": "minecraft:flowering_azalea_leaves[persistent=true]"
+      "block": "biomesoplenty:origin_leaves[persistent=true]"
     },
     {
       "random": 1000,
-      "block": "minecraft:azalea_leaves[persistent=true]"
+      "block": "biomesoplenty:origin_leaves[persistent=true]"
     }
   ]
 }

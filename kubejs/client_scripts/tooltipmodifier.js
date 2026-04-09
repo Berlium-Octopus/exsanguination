@@ -68,20 +68,21 @@ const $ChatFormatting = Java.loadClass('net.minecraft.ChatFormatting')
 function addArmorSetTooltip(stacks, validPieces, setName, setBonus) {
     return new TooltipModifier(stacks)
         .addAdvancedFunction(3, () => {
+            // If something breaks put it back into the missing list {
+            let player = $Minecraft.getInstance().player;
+            if (player == null) return [];
             let missingList = () => {
                 try {
-                    let player = $Minecraft.getInstance().player;
-                    if (player == null) return [];
                     let missingPieces = [];
                     // This Part Of The Code Makes An Array
-                    let helmetPieces = validPieces.helmet;
-                    let chestplatePieces = validPieces.chestplate;
-                    let leggingsPieces = validPieces.leggings;
-                    let bootsPieces = validPieces.boots;
-                    let offhandPieces = validPieces.offhand;
-                    let curiosPieces = validPieces.curios;
-                    let mainhandPieces = validPieces.mainhand;
-                    let curios = player.nbt.ForgeCaps['curios:inventory']
+                    let helmetPieces = validPieces.helmet || []
+                    let chestplatePieces = validPieces.chestplate || []
+                    let leggingsPieces = validPieces.leggings || []
+                    let bootsPieces = validPieces.boots || []
+                    let offhandPieces = validPieces.offhand || []
+                    let curiosPieces = validPieces.curios || []
+                    let mainhandPieces = validPieces.mainhand || []
+                    let curios = player.nbt.ForgeCaps['curios:inventory'] || []
                     // Makes The Armor Piece Green When kubejs:none + curios support
                     if (!helmetPieces.includes("kubejs:none") && !helmetPieces.some(piece => player.headArmorItem.getItem().id === piece)) missingPieces.push("Helmet")
                     if (!chestplatePieces.includes("kubejs:none") && !chestplatePieces.some(piece => player.chestArmorItem.getItem().id === piece)) missingPieces.push("Chestplate");
@@ -115,8 +116,7 @@ function addArmorSetTooltip(stacks, validPieces, setName, setBonus) {
                     text = text.green()
                 }
                 missingPieces.push(text);
-            });
-
+            }); 
             let isSetComplete = missingList.length === 0;
             if (isSetComplete) {
                 missingPieces.push(Text.of("Set Bonus: ").gold());

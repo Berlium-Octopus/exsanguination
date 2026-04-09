@@ -1,0 +1,36 @@
+{
+  "requirements": [
+    {
+      "type": "questlog:quest_complete",
+      "total": 1,
+      "quest": "questlog:iron_age"
+    }
+  ],
+  "objectives": [
+    {
+      "name": "Forge Diamond Ingots",
+      "icon": "minecraft:diamond_ingot",
+      "type": "questlog:item_obtain",
+      "total": 1,
+      "item": "minecraft:diamond_ingot"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "level": false,
+      "experience": 20
+    }
+  ],
+  "title": "Metallic Diamonds",
+  "description": "Diamond.",
+  "sort_order": "1",
+  "icon": {
+    "item": "minecraft:diamond_ingot"
+  },
+  "chapter": "main",
+  "toast_on_unlock": true,
+  "toast_on_complete": false,
+  "show_popup_on_unlock": false,
+  "completed_sound": "minecraft:entity.arrow.hit_player"
+}

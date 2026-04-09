@@ -5,12 +5,12 @@
       "value": "whiteenderman:white_enderman"
     },
     {
-      "factor": 1,
+      "factor": 2,
       "value": "alexsmobs:skreecher"
     },
     {
-      "factor": 8,
-      "value": "alexsmobs:farseer"
+      "factor": 4,
+      "value": "lostcities:escapee"
     }
   ]
 }

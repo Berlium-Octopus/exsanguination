@@ -696,8 +696,8 @@ ServerEvents.recipes(event => {
   event.shaped(
     Item.of('minecraft:iron_pickaxe', 1), // arg 1: output
   [
-    'AA ',
-    'AE ', // arg 2: the shape (array of strings)
+    'AAA',
+    ' E ', // arg 2: the shape (array of strings)
     ' C '
   ],
   {
@@ -805,7 +805,7 @@ ServerEvents.recipes(event => {
   ],
   {
     B: ['minecraft:string','minecraft:grass','minecraft:fern','minecraft:seagrass'],
-    A: 'minecraft:flint',
+    A: 'minecraft:flint_shard',
     R: 'spelunkers_charm:rock',
     C: 'spartanweaponry:simple_handle'//arg 3: the mapping object
   }
@@ -823,7 +823,7 @@ ServerEvents.recipes(event => {
   ],
   {
     B: ['minecraft:string','minecraft:grass','minecraft:fern','minecraft:seagrass'],
-    A: 'minecraft:flint',
+    A: 'minecraft:flint_shard',
     R: 'spelunkers_charm:rock',
     C: 'spartanweaponry:simple_handle'//arg 3: the mapping object
   }
@@ -841,7 +841,7 @@ ServerEvents.recipes(event => {
   ],
   {
     B: ['minecraft:string','minecraft:grass','minecraft:fern','minecraft:seagrass'],
-    A: 'minecraft:flint',
+    A: 'minecraft:flint_shard',
     R: 'spelunkers_charm:rock',
     C: 'spartanweaponry:simple_handle'//arg 3: the mapping object
   }
@@ -860,7 +860,7 @@ ServerEvents.recipes(event => {
   ],
   {
     B: ['minecraft:string','minecraft:grass','minecraft:fern','minecraft:seagrass'],
-    A: 'minecraft:flint',
+    A: 'minecraft:flint_shard',
     R: 'spelunkers_charm:rock',
     C: 'spartanweaponry:simple_handle'//arg 3: the mapping object
   }
@@ -880,7 +880,7 @@ ServerEvents.recipes(event => {
   ],
   {
     B: ['minecraft:string','minecraft:grass','minecraft:fern','minecraft:seagrass'],
-    A: 'minecraft:flint',
+    A: 'minecraft:flint_shard',
     R: 'spelunkers_charm:rock',
     C: 'spartanweaponry:simple_handle'//arg 3: the mapping object
   }

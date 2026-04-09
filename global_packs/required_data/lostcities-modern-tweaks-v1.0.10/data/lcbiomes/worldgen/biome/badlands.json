@@ -10,7 +10,12 @@
     "grass_color": 9470285,
     "foliage_color": 10387789,
     "mood_sound": {},
-    "music": {}
+    "music": {
+"max_delay": 24000,
+"min_delay": 12000,
+"replace_current_music": false,
+"sound": "deeperdarker:music.otherside.deeplands"
+    }
   },
   "spawners": {
     "ambient": [
@@ -134,7 +139,7 @@
       "minecraft:ore_gold_extra",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "biomesoplenty:origin_gravel_cliffs"
     ],
     [],
     [

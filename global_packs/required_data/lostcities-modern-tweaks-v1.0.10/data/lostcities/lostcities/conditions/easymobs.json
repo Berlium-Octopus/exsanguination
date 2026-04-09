@@ -1,20 +1,12 @@
 {
   "values": [
     {
-      "factor": 5,
-      "value": "biomemakeover:ghost"
-    },
-    {
       "factor": 3,
       "value": "minecraft:vex"
     },
-    {
-      "factor": 2,
-      "value": "doom_and_gloom:holler"
-    },
       {
-      "factor": 1,
-      "value": "whiteenderman:white_enderman"
+      "factor": 2,
+      "value": "lostcities:escapee"
     }
   ]
 }

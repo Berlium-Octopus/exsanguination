@@ -22,6 +22,7 @@
     "extra_enchantments:enigma_resonator",
     "extra_enchantments:guarding_strike",
     "extra_enchantments:pain_cycle",
-    "extra_enchantments:incompatibility_curse"
+    "extra_enchantments:incompatibility_curse",
+    "minecraft:mending"
   ]
 }

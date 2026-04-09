@@ -1,5 +1,5 @@
-// From YukkuriC, modified
 ClientEvents.tick(e => {
+  // From YukkuriC, modified
   if (!Client.player.potionEffects.isActive('lostcities:unlisted')) return
   if (!Client.paused && Client.player.age % 1) return
 
@@ -10,7 +10,7 @@ ClientEvents.tick(e => {
   if (Client.currentScreen?.class == 'class net.minecraft.client.gui.screens.PauseScreen') {
     Client.forceSetScreen(null)
   }
-  if (Client.currentScreen?.class == 'class betteradvancements.common.gui.BetterAdvancementsScreen') {
+  if (Client.currentScreen?.class == 'class org.infernalstudios.questlog.client.gui.screen.QuestlogScreen') {
     Client.forceSetScreen(null)
   }
   if (Client.currentScreen?.class == 'class fuzs.easyanvils.client.gui.screens.inventory.NameTagEditScreen') {
@@ -28,7 +28,6 @@ ClientEvents.lang('en_us', event => {
   }
 })
 
-
 JEIEvents.information(event => {
   event.addItem(["sculkhorde:calcite_clump"], ["Due to how delicate this ore is, only Resonarium and Warden tools can extract the Calcite in the ore"])
   event.addItem(["minecraft:compass", "alexsmobs:dimensional_carver"], ["When a compass that is loaded with a lodestone's location is on the offhand and a dimensional carver is on the mainhand, you can create a proto-waystone that consumes the compass after use"])
@@ -44,7 +43,7 @@ JEIEvents.information(event => {
   event.addItem('luminous_beasts:jungle_pendant', ['When on offhand, grants a 50% chance to give resistance when killing a target but when worn as a belt-piece it prevents stunning'])
   event.addItem('spelunkers_charm:deepslate_rock', ['Obtained from deepslate and cobbled deepslate.'])
   event.addItem('minecraft:arrow_fletching', ['Right click feathers on a fletching table.'])
-  event.addItem('#immersive_weathering:bark', ['Some logs are weak enough to extract their bark with only a wooden knife.'])
+  event.addItem('#immersive_weathering:bark', ['Some logs are weak enough to extract their bark with only a wooden club.'])
   event.addItem('biomesoplenty:glowworm_silk', ['Provides immunity to Poison and Wither.'])
   event.addItem('alexscaves:game_controller', ['Provides immunity to Fear and Vulnerablility.'])
   event.addItem('rootoffear:agitated_primitive_heart', ['Provides Internal Warmth.'])
@@ -99,6 +98,9 @@ JEIEvents.information(event => {
 });
 
 JEIEvents.hideItems(event => {
+  event.hide(Item.of('minecraft:potion', '{Potion:"luminous_nether:antidote_potion"}').strongNBT())
+  event.hide(Item.of('minecraft:splash_potion', '{Potion:"luminous_nether:antidote_potion"}').strongNBT())
+  event.hide("create:potions")
   event.hide([
     'trials:mace',
     'luminous_nether:ash_wall_candle',
@@ -134,6 +136,10 @@ JEIEvents.hideItems(event => {
     "spartanweaponry:wooden_flanged_mace"
   ])
   event.hide('jeg:combat_rifle')
+  event.hide([
+"spartanshields:lead_basic_shield",
+"spartanshields:lead_tower_shield"
+  ])
   event.hide([
     "minecraft:wooden_sword",
     "spartanweaponry:wooden_dagger",
@@ -338,6 +344,17 @@ ItemEvents.tooltip(event => {
     let text_to_remove2 = "-"
     text.removeIf(tip => tip.toString().indexOf(text_to_remove) != -1)
     text.removeIf(tip => tip.toString().indexOf(text_to_remove2) != -1)
+  })
+})
+
+ItemEvents.tooltip(event => {
+  event.addAdvanced("#spartanweaponry:cestusae", (item, advanced, text) => {
+    if (event.shift) {
+      text.remove(1)
+      text.remove(1)
+      text.remove(1)
+      text.remove(1)
+    }
   })
 })
 
@@ -557,9 +574,6 @@ ItemEvents.tooltip(event => {
   event.add(['jeg:advanced_firearm_blueprint'], '§7Used to create specilized firearms from basic ones')
   event.add(['jeg:firearm_blueprint'], '§7Used to create basic firearms')
   event.add(['exsanguination:disc_fragment_void'], '§7Music Disc - Under The Voidlit Nether')
-
-  //event.add([Item.of('patchouli:guide_book', '{"patchouli:book":"alexsmobsinteraction:ami_interaction_wiki"}')], 'Interactions Encyclopedia')
-  //event.add([Item.of('patchouli:guide_book', '{"patchouli:book":"alexsmobsinteraction:ami_interaction_wiki"}')], '§7By The AMI Initiative')
 });
 
 

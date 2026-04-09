@@ -1,0 +1,18 @@
+{
+	"disableMod": false,
+	"disabledDimensions": [],
+	"disableRaininessEffect": false,
+	"disableUndergroundFogMultiplier": false,
+	"disableBiomeFogColour": false,
+	"disableCloudWhitening": false,
+	"initialFogStart": 0.0,
+	"initialFogEnd": 0.6,
+	"raininessTransitionSpeed": 0.005,
+	"undergroundnessTransitionSpeed": 0.005,
+	"fogStartTransitionSpeed": 0.005,
+	"fogEndTransitionSpeed": 0.005,
+	"darknessTransitionSpeed": 0.005,
+	"fogColorTransitionSpeed": 0.005,
+	"startMultiplierTransitionSpeed": 0.007,
+	"endMultiplierTransitionSpeed": 0.007
+}

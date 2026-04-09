@@ -1,0 +1,36 @@
+{
+  "requirements": [
+    {
+      "type": "questlog:quest_complete",
+      "total": 1,
+      "quest": "questlog:diamond_metals"
+    }
+  ],
+  "objectives": [
+    {
+      "name": "Forge Electrum Ingots",
+      "icon": "oreganized:electrum_ingot",
+      "type": "questlog:item_obtain",
+      "total": 1,
+      "item": "oreganized:electrum_ingot"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "level": false,
+      "experience": 20
+    }
+  ],
+  "title": "Electrum Sidegrade",
+  "description": "This metal unlike Netherite is less tougher and is much weaker equipment wise. A noticeable diffrence between it and other Diamond variants is that this alloy makes the user faster and it's tools has higher kinetic damage output",
+  "sort_order": "1",
+  "icon": {
+    "item": "oreganized:electrum_ingot"
+  },
+  "chapter": "main",
+  "toast_on_unlock": true,
+  "toast_on_complete": false,
+  "show_popup_on_unlock": false,
+  "completed_sound": "minecraft:entity.arrow.hit_player"
+}

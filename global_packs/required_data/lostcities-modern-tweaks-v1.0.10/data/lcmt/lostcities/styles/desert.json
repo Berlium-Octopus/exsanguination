@@ -2,7 +2,7 @@
   "randompalettes": [
     [
       {
-        "factor": 1.0,
+        "factor": 4.0,
         "palette": "lcmt:common"
       }
     ],

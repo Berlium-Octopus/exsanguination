@@ -170,7 +170,7 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:trees_water",
+      "biomesoplenty:trees_origin_city_oak",
       "minecraft:flower_default",
       "minecraft:patch_grass_badlands",
       "minecraft:brown_mushroom_normal",

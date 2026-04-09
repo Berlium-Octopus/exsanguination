@@ -50,7 +50,7 @@
 	#Range: 1 ~ 127
 	slime_growth_chance = 10
 	#Range: 1 ~ 127
-	slime_growth_max = 5
+	slime_growth_max = 4
 
 [worldgen]
 	stone_stripe_features = true

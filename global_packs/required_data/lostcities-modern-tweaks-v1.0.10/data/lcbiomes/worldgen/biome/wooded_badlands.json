@@ -141,7 +141,7 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:trees_badlands",
+      "biomesoplenty:trees_origin_city",
       "minecraft:patch_grass_badlands",
       "minecraft:patch_dead_bush_badlands",
       "minecraft:brown_mushroom_normal",

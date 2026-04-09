@@ -3,12 +3,7 @@
 // TODO V2:
 // CUSTOM ESCAPEE HEADS + Head DROPS
 // CUSTOM MUSIC + DISC DROPS
-// CHANGING TRIGGER ANIMS TO ENTITY.SWING?
 
-// TODO FOR EXAMPLE SCRIPT:
-// ADD ITEM PHYSICS
-// ADD LOST CITIES SPAWNER DATAPACK
-// 
 const $RenderType = Platform.isClientEnvironment() ? Java.loadClass("net.minecraft.client.renderer.RenderType") : null
 const $ResourceLocation2 = Java.loadClass("net.minecraft.resources.ResourceLocation");
 const Mth = Java.loadClass("net.minecraft.util.Mth")
@@ -27,6 +22,11 @@ global.geoLayerRender = context => {
         poseStack.scale(0.01, 0.01, 0.01)
     }
 }
+
+StartupEvents.registry("sound_event", event => {
+    event.create("lostcities:entity.escapee.hurt")
+    event.create("lostcities:entity.escapee.eat")
+})
 
 // I Want It To Be Like The Bedrock Drowned (swimming animations + fish-like? navigation)
 
@@ -58,7 +58,7 @@ global.tick = entity => {
         entity.setPathfindingMalus(BlockPathTypes.WATER, 0.0)
         entity.setPathfindingMalus(BlockPathTypes.WATER_BORDER, 0.0)
         entity.setPathfindingMalus(BlockPathTypes.UNPASSABLE_RAIL, 0.0)
-        
+
         // There is a small rotation problem as it can't rotate in it's x? axis 
         // so the random look, looks wierd and idk what i am doing
         if (entity.level.clientSide) {
@@ -82,7 +82,7 @@ global.tick = entity => {
             entity.setSyncedData("swim", "walking")
         }
         if (entity.age > 100)
-        UpdateNavy(entity)
+            UpdateNavy(entity)
     } catch (error) {
         console.log(error)
     }
@@ -198,7 +198,7 @@ function rotlerp(pSourceAngle, pTargetAngle, pMaximumChange) {
     return f1;
 }
 
-/**
+/** ""
  * 
  * @param {Internal.Mob} entity 
  * @returns 
@@ -238,10 +238,14 @@ global.normal = event => {
     return true
 }
 
+/**
+ * @param {Internal.ContextUtils$LineOfSightContext} context
+ */
 global.hungerdepletion = context => {
     const { entity, targetEntity } = context
     let $ExplosionInteraction3 = Java.loadClass('net.minecraft.world.level.Level$ExplosionInteraction');
     let level = entity.level.getDifficulty().id
+    // This is undefined
     if (targetEntity.isPlayer()) {
         let foodlevel = targetEntity.getFoodData().getFoodLevel()
         if (Math.random() < 0.5) {
@@ -251,7 +255,7 @@ global.hungerdepletion = context => {
                 entity.triggerAnimation('attacking', 'left_bite')
             }
             // If The Food Level is -6 or -3 bars (Added for creating tension)
-            if (foodlevel <= -6) {
+            if (foodlevel < -6) {
                 if (entity.getSyncedData("powered")) {
                     targetEntity.block.createExplosion().explosionMode($ExplosionInteraction3.NONE).strength(1).explode()
                 } else {
@@ -260,6 +264,7 @@ global.hungerdepletion = context => {
                 }
                 // If The Food Level Is Higher Then -6
             } else {
+                targetEntity.level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), "lostcities:entity.escapee.eat", "players", 0.8, 0.9,);
                 if (entity.getSyncedData("powered")) {
                     targetEntity.setFoodLevel(foodlevel - ((3 * level)))
                     targetEntity.block.createExplosion().explosionMode($ExplosionInteraction3.NONE).strength(0).explode()
@@ -277,13 +282,15 @@ global.hungerdepletion = context => {
                 entity.triggerAnimation('attacking', 'right_bite')
             }
             // If The Food Level is -6 or -3 bars
-            if (foodlevel <= -6) {
+            if (foodlevel < -6) {
+                // Sounds Go here
                 if (entity.getSyncedData("powered")) {
                     targetEntity.block.createExplosion().explosionMode($ExplosionInteraction3.NONE).strength(1).explode()
                 } else {
                     targetEntity.potionEffects.add("minecraft:instant_damage", 1, 0, false, true)
                 }
             } else {
+                targetEntity.level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), "lostcities:entity.escapee.eat", "players", 0.8, 0.9,);
                 if (entity.getSyncedData("powered")) {
                     targetEntity.setFoodLevel(foodlevel - (1 + (level * 3)))
                     entity.heal(8)
@@ -461,7 +468,7 @@ StartupEvents.registry("entity_type", event => {
     builder.mobCategory("monster")
     builder.clientTrackingRange(20)
     builder.setRenderType("translucent")
-    builder.biomeSpawn(["minecraft:cherry_grove"], 1, 0, 1)
+    builder.biomeSpawn(["minecraft:cherry_grove", "lcbiomes:plains", "lcbiomes:snowy_plains", "lcbiomes:birch_forest", "lcbiomes:forest"], 2, 0, 5)
     /* For Escapee V2
     builder.aiStep(entity => {
         // Custom logic to be executed during the living entity's AI step
@@ -483,6 +490,10 @@ StartupEvents.registry("entity_type", event => {
         }
     })
 */
+    builder.onHurt(context => {
+        let { entity } = context
+        entity.triggerAnimation("hurting", "hurt")
+    })
     builder.onHurtTarget(context => global.hungerdepletion(context))
     builder.createNavigation(context => global.createNavigation(context))
     builder.canJump(true)
@@ -490,7 +501,7 @@ StartupEvents.registry("entity_type", event => {
     builder.tick(entity => global.tick(entity))
     builder.canBreatheUnderwater(true)
     builder.sized(0.7, 0.9)
-    builder.eggItem(i =>{
+    builder.eggItem(i => {
         i.highlightColor(0x9c2f6c)
         i.backgroundColor(0x110000)
     })
@@ -500,14 +511,16 @@ StartupEvents.registry("entity_type", event => {
     })
     // Geckolib's Wiki Claims That Animations Can Be Layered, This Is True I Think It Worked
     builder.addAnimationController("escapee", 4, event => global.normal(event))
+    // originally 4
     builder.addAnimationController("attacking", 4, event => {
-        if (event.entity.hurtTime > 8) {
-            event.thenPlay('hurt')
-        }
         event.addTriggerableAnimation("left_attack", "left_bite", "play_once")
         event.addTriggerableAnimation("formshift_attack_left", "formshift_bite_left", "play_once")
         event.addTriggerableAnimation("formshift_attack_right", "formshift_bite_right", "play_once")
         event.addTriggerableAnimation("right_attack", "right_bite", "play_once")
+        return true
+    })
+    builder.addAnimationController("hurting", 0, event => {
+        event.addTriggerableAnimation('hurt', 'hurt', 'play_once')
         return true
     })
     builder.addAnimationController("headturning", 4, event => global.animation(event))
@@ -518,7 +531,7 @@ StartupEvents.registry("entity_type", event => {
         const { entity, damageSource } = context;
         switch (damageSource.getType()) {
             default:
-                return "minecraft:entity.creeper.hurt"
+                return "lostcities:entity.escapee.hurt"
         }
     })
     builder.experienceReward(killedEntity => {
@@ -546,7 +559,7 @@ EntityJSEvents.attributes(event => {
     event.modify("lostcities:escapee", attribute => {
         attribute.add("minecraft:generic.attack_damage", 2)
         attribute.add("biomemakeover:projectile_resistance", 18)
-        attribute.add("minecraft:generic.movement_speed", 0.28)
+        attribute.add("minecraft:generic.movement_speed", 0.32)
         attribute.add("minecraft:generic.knockback_resistance", 0.2)
         attribute.add("minecraft:generic.follow_range", 40)
         attribute.add("forge:swim_speed", 0.4)
@@ -574,6 +587,14 @@ ForgeEvents.onEvent(`net.minecraftforge.event.entity.EntityStruckByLightningEven
     }
 })
 
+ForgeEvents.onEvent(`net.minecraftforge.event.entity.EntityStruckByLightningEvent`, event => {
+    let { entity, lightning } = event
+    if (entity.type == "minecraft:iron_golem") {
+        lightning.setVisualOnly(true)
+        event.setCanceled(true)
+    }
+})
+
 
 StartupEvents.registry("item", (e) => {
     e.create("lostcities:escapee_stylet")
@@ -594,7 +615,7 @@ POTIONS.register(ForgeModEvents.eventBus())
 StartupEvents.init(event => {
     const escapee_feast = new $MobEffectBuilder("lostcities:escapee_feast").displayName("Escapee's Feast").color(0xa4012c)
     const escapee_feast_effect = MOB_EFFECTS.register("escapee_feast", () => escapee_feast.createObject())
-    
+
     const escapee_feast_potion = Utils.lazy(() => new $PotionBuilder("lostcities:escapee_feast").effect(escapee_feast_effect.get(), 3600, 0))
     const escapee_potion = POTIONS.register("escapee_feast", () => escapee_feast_potion.get().createObject())
 

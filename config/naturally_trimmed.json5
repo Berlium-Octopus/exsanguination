@@ -5,63 +5,64 @@
 	enable_trim_loot_tables: true,
 	// Enables the equipment from villager trades to be trimmed
 	enable_trim_trades: true,
+	// Use vanilla-only trim materials and patterns.
+	// 
+	// The intended use for this is to easily work around edge-cases caused by other mods' trims, that result in missing-texture trims.
+	// For more advanced workarounds, without having to blacklist all non-vanilla trims, see material_blacklist and pattern_blacklist.
+	vanilla_only: false,
+	// Blacklist for trim materials.
+	// 
+	// The intended use for this and the other blacklist is to work around edge-cases caused by other mods, that result in missing-texture trims.
+	// For an easier workaround, see vanilla_only.
+	// 
+	// For example, combining newer elytra trims versions with an older version of this mod, results in frequent missing-texture trims.
+	// This and the other blacklist allows blacklisting all the individual problematic materials/patterns in order to get rid of the missing-texture trims.
+	// However, please also report the edge-cases, causing the missing-texture trims, to the mods issue tracker,
+	// so that the edge-cases can potentially be fixed directly inside this mod and can be fixed it for once and for all/for all users.
+	// 
+	// This uses regex, allowing for more advanced configuration.
+	// To ease the configuration of the blacklist, theres a util tab inside the config screen, which contains a button to validate the blacklist.
+	// 
+	// Example configuration, blacklisting the amethyst and all of biomes_o_plenty's materials:
+	// material_blacklist: ["minecraft:amethyst", "biomes_o_plenty:"],
+	material_blacklist: [],
 	// Blacklist for trim patterns.
-	//
-	// This uses regex. This means, if you want to check for a specific pattern, you need to use "^[pattern$]" instead of just "[pattern]".
-	// By default, all patterns from the Trimmable Tools mod are blacklisted, since they only work for tools and not armor
-	//
-	// To ease the configuration of the blacklist, theres a utils tab inside the config screen, which contains a button to validate the blacklist.
-	blacklist: [
-		"^tooltrims:.*"
+	// 
+	// Read material_blacklist's comment for more context and information.
+	// 
+	// Example configuration, blacklisting the wild trim pattern and all of more_armor_trims's patterns:
+	// patterns_blacklist: ["minecraft:wild", "more_armor_trims:"],
+	pattern_blacklist: [
+		"tooltrims"
 	],
 	// Settings for trimming a mob's equipment
 	trim_mobs: {
-		// Select the system of how to select, what trims to give mobs.
-		// - RANDOM_TRIMS: Randomly chooses the trim, while also considering the previous trim of the armor
-		// - CUSTOM_TRIMS: Chooses the trim from a list of trims. You can manage the list of trims yourself
-		trim_system: "CUSTOM_TRIMS",
+		// Select the trim system. Trim systems define how the mod chooses what trims to use.
+		// - RANDOM_TRIMS: Randomly chooses the trim to apply to the mob.
+		// - PREDEFINED_TRIMS: Chooses the trim from a list of predefined trims. You can manage the list of trims under the predefined_trims config entry.
+		trim_system: "RANDOM_TRIMS",
 		// Chance of the mob having no trims at all
-		no_trims_chance: 95.5,
-		// Settings for the Random Trims system.
-		// These settings will only matter if the RANDOM_TRIMS system is enabled
-		random_trims: {
-			// Chance of each armor piece from a mob having an armor trim
-			trim_chance: 10,
-			// Chance of each armor piece having a similar armor trim as the previous armor piece
-			similar_trim_chance: 75
-		},
-		// List of custom trim combinations.
-		//
-		// A trim combination consists of a list of allowed armor materials and four trims.
-		// The trim combination will only be applied to armor that consists of one of the allowed armor materials.
-		// The four trims consist of a helmet trim, a chestplate trim, a leggings trim and a boots trim.
-		// You don't need to add the "_armor_trim_smithing_template" suffix of a pattern, it will be added automatically if its needed.
-		//
-		// To ease the configuration of trim combinations, theres a utils tab inside the config screen.
-		// You can use the buttons inside the tab to reload the config from the config file without having to restart the game and to validate the trim combinations.
-		//
-		// Example of a trim combination:
-		// {
-		//     allowed_armor_materials: ["gold"],
-		//     helmet_trim: {material: "diamond", pattern: "silence"},
-		//     chestplate_trim: {material: "diamond", pattern: "silence"},
-		//     leggings_trim: {material: "netherite_ingot", pattern: "vex"},
-		//     boots_trim: {material: "netherite_ingot", pattern: "vex"}
-		// },
-		trim_combinations: [
-			allowed_armor_materials: ["oreganized:lead","oreganized:silver","oreganized:electrum","biomesoplenty:rose_quartz_chunk","emerald","copper","redstone","quartz","diamond","gold","amethyst_shard"]
-		]
+		no_trims_chance: 25,
+		// Chance of each individual armor piece having a trim
+		trim_chance: 75,
+		// List of predefined trims.
+		// 
+		// A predefined trim consists of a trim material and a trim pattern.
+		// 
+		// Example-Configuration:
+		// predefined_trims: [{material: "resin", pattern: "silence"}, {material: "netherite", pattern: "vex"}, {material: "minecraft:amethyst", pattern: "minecraft:silence"}]
+		predefined_trims: []
 	},
 	// Settings for trimming equipment generated by loot tables
 	trim_loot_tables: {
 		// Chance of an item generated by a loot table of having a trim applied
-		trim_chance: 1
+		trim_chance: 33
 	},
 	// Settings for trimming equipment from villager trades
 	trim_trades: {
 		// Chance of a villager trade of having a trim applied
-		trim_chance: 5,
+		trim_chance: 33,
 		// The minimum villager trading level an item needs to be in, to have a chance of being trimmed
-		min_level: 4
+		min_level: 3
 	}
 }

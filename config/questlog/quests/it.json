@@ -1,0 +1,35 @@
+{
+  "requirements": [
+    {
+      "type": "questlog:quest_complete",
+      "total": 1,
+      "quest": "questlog:haunting_me"
+    }
+  ],
+  "objectives": [
+    {
+      "type": "questlog:entity_approach",
+      "entity": "rootoffear:wilted",
+      "range": 15
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "level": false,
+      "experience": 20
+    }
+  ],
+  "title": "The Wilted One",
+  "description": "'An entity that is attracted to light and places with high experience energies, it seeks us out because our ancestors made a big mistake by buring It's garden. The best way to counter this thing is to light up your surroundings. If you can't flee and you come in physcial contact with this thing, click then burn it.' - Old Handbook",
+  "sort_order": "5",
+  "icon": {
+    "item": "scalinghealth:heart_crystal_shard"
+  },
+  "chapter": "overworld",
+  "toast_on_unlock": true,
+  "toast_on_complete": false,
+  "show_popup_on_unlock": false,
+  "background_texture": "questlog:textures/gui/quest_page_overworld.png",
+  "completed_sound": "minecraft:entity.arrow.hit_player"
+}

@@ -32,7 +32,7 @@ ServerEvents.recipes(event => {
   ],
   {
     A: 'farmersdelight:flint_knife',
-    B: 'minecraft:flint',
+    B: 'minecraft:flint_shard',
     E: 'spartanweaponry:simple_handle'
   }
 )
@@ -48,7 +48,7 @@ ServerEvents.recipes(event => {
     ' E '// arg 2: the shape (array of strings)
   ],
   {
-    A: 'minecraft:flint',
+    A: 'minecraft:flint_shard',
     E: 'spartanweaponry:simple_handle',
     R: 'spelunkers_charm:rock',
     B: ['minecraft:string','minecraft:grass','minecraft:fern','minecraft:seagrass']
@@ -66,7 +66,7 @@ ServerEvents.recipes(event => {
     'AB '// arg 2: the shape (array of strings)
   ],
   {
-    A: 'minecraft:flint',
+    A: 'minecraft:flint_shard',
     E: 'spartanweaponry:pole',
     R: 'spelunkers_charm:rock',
     B: ['minecraft:string','minecraft:grass','minecraft:fern','minecraft:seagrass']
@@ -121,7 +121,7 @@ ServerEvents.recipes(event => {
   ],
   {
     A: 'spartanweaponry:stone_dagger',
-    B: 'minecraft:flint'
+    B: 'minecraft:flint_shard'
   }
 )
   }
@@ -138,7 +138,7 @@ ServerEvents.recipes(event => {
   ],
   {
     A: 'spartanweaponry:stone_dagger',
-    P: 'minecraft:flint',
+    P: 'minecraft:flint_shard',
     E: 'spartanweaponry:pole',
     R: 'spelunkers_charm:rock',
     B: ['minecraft:string','minecraft:grass','minecraft:fern','minecraft:seagrass']
@@ -179,7 +179,7 @@ ServerEvents.recipes(event => {
   ],
   {
     A: 'minecraft:stone_axe',
-    P: 'minecraft:flint',
+    P: 'minecraft:flint_shard',
     E: 'spartanweaponry:pole',
   }
 )
@@ -197,7 +197,7 @@ ServerEvents.recipes(event => {
   ],
   {
     A: 'minecraft:stone_axe',
-    P: 'minecraft:flint',
+    P: 'minecraft:flint_shard',
     E: 'spartanweaponry:simple_handle'
   }
 )
@@ -215,7 +215,7 @@ ServerEvents.recipes(event => {
   ],
   {
     A: 'minecraft:stone_shovel',
-    P: 'minecraft:flint',
+    P: 'minecraft:flint_shard',
     E: 'spartanweaponry:simple_handle'
   }
 )
@@ -233,7 +233,7 @@ ServerEvents.recipes(event => {
   ],
   {
     A: 'minecraft:stone_shovel',
-    P: 'minecraft:flint',
+    P: 'minecraft:flint_shard',
     E: 'spartanweaponry:pole'
   }
 )
@@ -250,7 +250,7 @@ ServerEvents.recipes(event => {
 
   ],
   {
-    P: 'minecraft:flint',
+    P: 'minecraft:flint_shard',
     R: 'spelunkers_charm:rock',
     O: ['minecraft:string','minecraft:grass','minecraft:fern','minecraft:seagrass'],
     B: '#minecraft:planks',
@@ -327,7 +327,7 @@ ServerEvents.recipes(event => {
   {
     E: 'spartanweaponry:simple_handle',
     O: ['minecraft:string','minecraft:grass','minecraft:fern','minecraft:seagrass'],
-    Q: 'minecraft:flint'
+    Q: 'minecraft:flint_shard'
 
   }
 )
@@ -347,7 +347,7 @@ ServerEvents.recipes(event => {
   {
     P: 'minecraft:flint',
     E: 'minecraft:stone_sword',
-    F: 'create:gold_ingot'
+    F: 'minecraft:flint_shard'
   }
 )
   }
@@ -365,7 +365,7 @@ ServerEvents.recipes(event => {
   {
     P: 'minecraft:flint',
     E: 'minecraft:stone_sword',
-    F: 'minecraft:flint'
+    F: 'minecraft:flint_shard'
   }
 )
   }
@@ -383,7 +383,7 @@ ServerEvents.recipes(event => {
   {
     P: 'minecraft:flint',
     E: 'minecraft:stone_sword',
-    F: 'minecraft:flint',
+    F: 'minecraft:flint_shard',
     G: 'spartanweaponry:simple_handle'
   }
 )
@@ -402,7 +402,7 @@ ServerEvents.recipes(event => {
   {
     P: 'minecraft:flint',
     E: 'minecraft:stone_sword',
-    F: 'minecraft:flint'
+    F: 'minecraft:flint_shard'
   }
 )
   }
@@ -418,7 +418,7 @@ ServerEvents.recipes(event => {
 
   ],
   {
-    P: 'minecraft:flint',
+    P: 'minecraft:flint_shard',
     E: 'minecraft:stone_sword'
   }
 )

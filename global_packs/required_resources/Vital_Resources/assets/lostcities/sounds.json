@@ -1,0 +1,41 @@
+{
+  "entity.escapee.hurt": {
+    "sounds": [
+      {
+        "name": "lostcities:entity/escapee/hurt_1",
+        "weight": 2,
+        "volume": 1
+      },
+      {
+        "name": "lostcities:entity/escapee/hurt_2",
+        "weight": 2,
+        "volume": 3
+      },
+      {
+        "name": "lostcities:entity/escapee/hurt_3",
+        "stream": true,
+        "weight": 2,
+        "volume": 3
+      },
+      {
+        "name": "lostcities:entity/escapee/hurt_4",
+        "weight": 2,
+        "volume": 2
+      }
+    ]
+  },
+  "entity.escapee.eat": {
+    "sounds": [
+      {
+        "name": "lostcities:entity/escapee/eat_1",
+        "weight": 2,
+        "volume": 4
+      },
+      {
+        "name": "lostcities:entity/escapee/eat_2",
+        "weight": 2,
+        "volume": 4
+      }
+    ]
+  }
+}

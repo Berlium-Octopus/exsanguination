@@ -1,0 +1,37 @@
+{
+  "requirements": [
+    {
+      "type": "questlog:item_obtain",
+      "total": 1,
+      "item": "minecraft:obsidian"
+    }
+  ],
+  "objectives": [
+    {
+      "name": "Get The Crying One",
+      "icon": "minecraft:crying_obsidian",
+      "type": "questlog:item_obtain",
+      "total": 1,
+      "item": "minecraft:crying_obsidian"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "level": false,
+      "experience": 20
+    }
+  ],
+  "title": "Such Luminous Nether",
+  "description": "'To go to the Nether one must make a portal out of obsidian then lighting said portal with stange fluids,you can see the portal's dimensions by looking at a painting based of it' - Old Handbook",
+  "sort_order": "6",
+  "icon": {
+    "item": "spelunkery:portal_fluid_bottle"
+  },
+  "chapter": "nether",
+  "toast_on_unlock": true,
+  "toast_on_complete": false,
+  "show_popup_on_unlock": false,
+  "background_texture": "questlog:textures/gui/quest_page_nether.png",
+  "completed_sound": "minecraft:entity.arrow.hit_player"
+}

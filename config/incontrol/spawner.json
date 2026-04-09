@@ -30,7 +30,7 @@
         }
     },
         {
-        "mob": ["minecraft:vex", "biomemakeover:ghost"],
+        "mob": ["minecraft:vex"],
         "persecond": 0.4,
         "attempts": 1,
         "amount": {
@@ -46,7 +46,7 @@
     },
        {
         "mob": ["alexsmobs:farseer", "minecraft:phantom"],
-        "persecond": 0.5,
+        "persecond": 0.2,
         "attempts": 1,
         "amount": {
             "minimum": 1,
@@ -54,14 +54,14 @@
         },
         "conditions": {
             "dimension": "lostcities:lostcity",
-            "mindist": 60,
-            "maxdist": 100,
-            "maxheight": 123
+            "minheight": 60,
+            "maxheight": 150,
+            "maxthis": 40
         }
     },
            {
-        "mob": ["alexsmobs:mimicube", "lostcities:escapee"],
-        "persecond": 0.5,
+        "mob": "alexsmobs:mimicube",
+        "persecond": 0.6,
         "attempts": 1,
         "amount": {
             "minimum": 1,
@@ -70,10 +70,26 @@
         "conditions": {
             "dimension": "lostcities:lostcity",
             "minheight": -90,
-            "maxheight": 10,
-            "maxthis": 40
+            "maxheight": 55,
+            "mindist": 40
         }
     },
+        {
+            "mob": ["lostcities:escapee", "minecraft:endermite"],
+            "persecond": 0.6,
+            "attempts": 5,
+            "amount": {
+                "minimum": 1,
+                "maximum": 8
+            },
+            "conditions": {
+                "dimension": "lostcities:lostcity",
+                "minheight": 10,
+                "maxheight": 100,
+                "mindist": 20
+                
+            }
+        },
     {
         "mob": [
             "sculkhorde:sculk_bee_harvester",
@@ -140,7 +156,7 @@
       "inwater": true,
       "minheight": -45,
       "maxheight": 110,
-      "maxthis": 40
+      "mindist": 40
     }
   }
 ]

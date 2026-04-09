@@ -29,7 +29,7 @@ event.add(`minecraft:${copper_item}s`, [`minecraft:copper_${copper_item}`])
 
 ServerEvents.tags('item', event => {
 for (let bronze_item of vanilla_tools){
-event.add(`minecraft:${bronze_item}s`, [`create:bronze_${bronze_item}`])
+event.add(`minecraft:${bronze_item}s`, [`createbigcannons:bronze_${bronze_item}`])
 }
 })
 

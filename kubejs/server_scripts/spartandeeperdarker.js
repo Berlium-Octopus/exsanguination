@@ -1,4 +1,3 @@
-
 ServerEvents.recipes(event => {
   const resonarium =
     ['dagger',

@@ -1,0 +1,40 @@
+{
+  "requirements": [
+    {
+      "type": "questlog:quest_complete",
+      "total": 1,
+      "quest": "questlog:flint_facination"
+    }
+  ],
+  "objectives": [
+    {
+      "type": "questlog:item_obtain",
+      "total": 1,
+      "item": "minecraft:copper_ingot",
+      "display": {
+        "name": "Flint Facination",
+        "icon": {
+          "item": "minecraft:copper_ingot"
+        }
+      }
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "level": false,
+      "experience": 20
+    }
+  ],
+  "title": "Sumerian Copper",
+  "description": "The flint toolset is very weak, one might want to move on to copper. Unlike flint it can mine stones with ease but it has trouble with deepslate and it's variant, sadly it's just a bit faster then flint due to the impurities.",
+  "sort_order": "5",
+  "icon": {
+    "item": "minecraft:copper_ingot"
+  },
+  "chapter": "main",
+  "toast_on_unlock": true,
+  "toast_on_complete": false,
+  "show_popup_on_unlock": false,
+  "completed_sound": "minecraft:entity.arrow.hit_player"
+}

@@ -24,10 +24,11 @@
           }
         ]
       },
-      {
-        "char": "B",
-        "block": "minecraft:barrel[facing=north]"
-      },
+          {
+            "char": "B",
+            "block": "minecraft:chest[facing=north,type=single]",
+            "loot": "chestloot"
+          },
       {
         "char": "c",
         "blocks": [

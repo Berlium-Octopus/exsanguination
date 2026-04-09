@@ -82,11 +82,11 @@
         },
         {
           "random": 15,
-          "block": "minecraft:oak_sapling[stage=1]"
+          "block": "biomesoplenty:origin_sapling[stage=1]"
         },
         {
           "random": 15,
-          "block": "minecraft:spruce_sapling[stage=1]"
+          "block": "biomesoplenty:origin_sapling[stage=1]"
         },
         {
           "random": 15,
@@ -94,7 +94,7 @@
         },
         {
           "random": 1000,
-          "block": "minecraft:acacia_sapling[stage=1]"
+          "block": "biomesoplenty:origin_sapling[stage=1]"
         }
       ],
       "damaged": "minecraft:dead_bush"

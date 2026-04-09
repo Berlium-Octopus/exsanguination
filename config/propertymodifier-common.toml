@@ -75,7 +75,33 @@
 	#Set the max damage (durability) of an item. Only items that already have durability can have this value altered. Example (without the leading #):
 	#"minecraft:diamond_.*" = 5000
 	[items.max_damage]
-		test = 0
+		"minecraft:stone_hoe" = 80
+		"minecraft:stone_axe" = 70
+		"minecraft:stone_pickaxe" = 100
+		"minecraft:stone_shovel" = 75
+		"minecraft:stone_sword" = 65
+		"spartanweaponry:stone_throwing_knife" = 70
+		"spartanweaponry:stone_dagger" = 70
+		"spartanweaponry:stone_quarterstaff" = 90
+		"spartanweaponry:stone_spear" = 70
+		"spartanweaponry:stone_pike" = 90
+		"spartanweaponry:stone_parrying_dagger" = 70
+		"spartanweaponry:stone_glaive" = 90
+		"spartanweaponry:stone_javelin" = 70
+		"spartanweaponry:stone_halberd" = 90
+		"spartanweaponry:stone_battleaxe" = 90
+		"spartanweaponry:stone_flanged_mace" = 90
+		"spartanweaponry:stone_lance" = 95
+		"spartanweaponry:stone_boomerang" = 100
+		"spartanweaponry:stone_warhammer" = 100
+		"spartanweaponry:stone_battle_hammer" = 100
+		"spartanweaponry:stone_tomahawk" = 85
+		"spartanweaponry:stone_saber" = 55
+		"spartanweaponry:stone_katana" = 75
+		"spartanweaponry:stone_greatsword" = 90
+		"spartanweaponry:stone_rapier" = 70
+		"spartanweaponry:stone_longsword" = 70
+		"spartanweaponry:stone_scythe" = 60
 
 	#Set the max stack size of an item. Only values between 2 and 64 are supported. Items that have durability cannot have this value altered. Example (without the leading #):
 	#"minecraft:ender_pearl" = 64
@@ -101,6 +127,84 @@
 	#Set the repair material of an item. May be an item or a tag containing multiple items, with a # before the tag id. Example (without the leading #):
 	#"minecraft:wooden_.*" = "#minecraft:fishes"
 	[items.repair_material]
+		"sculkhorde:ferriscite_hoe" = "#exsanguination:misc_repair"
+		"sculkhorde:ferriscite_pickaxe" = "#exsanguination:misc_repair"
+		"sculkhorde:ferriscite_axe" = "#exsanguination:misc_repair"
+		"sculkhorde:ferriscite_shovel" = "#exsanguination:misc_repair"
+		"sculkhorde:diascite_hoe" = "#exsanguination:misc_repair"
+		"sculkhorde:diascite_pickaxe" = "#exsanguination:misc_repair"
+		"sculkhorde:diascite_axe" = "#exsanguination:misc_repair"
+		"sculkhorde:diascite_shovel" = "#exsanguination:misc_repair"
+		"cataclysm:black_steel_hoe" = "#exsanguination:black_steel_repair"
+		"cataclysm:black_steel_pickaxe" = "#exsanguination:black_steel_repair"
+		"cataclysm:black_steel_axe" = "#exsanguination:black_steel_repair"
+		"cataclysm:black_steel_shovel" = "#exsanguination:black_steel_repair"
+		"cataclysm:black_steel_sword" = "#exsanguination:black_steel_repair"
+		"spartanweaponry:steel_.*" = "#exsanguination:black_steel_repair"
+		"spartanshields:silver_.*" = "#exsanguination:silver_repair"
+		"spartanweaponry:silver_.*" = "#exsanguination:silver_repair"
+		"oreganized:silver_hoe" = "#exsanguination:silver_repair"
+		"oreganized:silver_pickaxe" = "#exsanguination:silver_repair"
+		"oreganized:silver_axe" = "#exsanguination:silver_repair"
+		"oreganized:silver_shovel" = "#exsanguination:silver_repair"
+		"oreganized:silver_sword" = "#exsanguination:silver_repair"
+		# SPARTAN PLACEHOLDER
+		"alexscaves_torpedoes:azure_hoe" = "#exsanguination:azure_repair"
+		"alexscaves_torpedoes:azure_pickaxe" = "#exsanguination:azure_repair"
+		"alexscaves_torpedoes:azure_axe" = "#exsanguination:azure_repair"
+		"alexscaves_torpedoes:azure_shovel" = "#exsanguination:azure_repair"
+		"alexscaves_torpedoes:azure_sword" = "#exsanguination:azure_repair"
+		# SPARTAN PLACEHOLDER
+		"alexscaves_torpedoes:scarlet_hoe" = "#exsanguination:scarlet_repair"
+		"alexscaves_torpedoes:scarlet_pickaxe" = "#exsanguination:scarlet_repair"
+		"alexscaves_torpedoes:scarlet_axe" = "#exsanguination:scarlet_repair"
+		"alexscaves_torpedoes:scarlet_shovel" = "#exsanguination:scarlet_repair"
+		"alexscaves_torpedoes:scarlet_sword" = "#exsanguination:scarlet_repair"
+		"minecraft:diamond_hoe" = "#exsanguination:diamond_repair"
+		"minecraft:diamond_pickaxe" = "#exsanguination:diamond_repair"
+		"minecraft:diamond_axe" = "#exsanguination:diamond_repair"
+		"minecraft:diamond_shovel" = "#exsanguination:diamond_repair"
+		"minecraft:diamond_sword" = "#exsanguination:diamond_repair"
+		"spartanshields:diamond_.*" = "#exsanguination:diamond_repair"
+		"spartanweaponry:diamond_.*" = "#exsanguination:diamond_repair"
+		"minecraft:copper_hoe" = "#exsanguination:copper_repair"
+		"minecraft:copper_pickaxe" = "#exsanguination:copper_repair"
+		"minecraft:copper_axe" = "#exsanguination:copper_repair"
+		"minecraft:copper_shovel" = "#exsanguination:copper_repair"
+		"minecraft:copper_sword" = "#exsanguination:copper_repair"
+		"spartanshields:copper_.*" = "#exsanguination:copper_repair"
+		"spartanweaponry:copper_.*" = "#exsanguination:copper_repair"
+		"create:bronze_hoe" = "#exsanguination:bronze_repair"
+		"create:bronze_pickaxe" = "#exsanguination:bronze_repair"
+		"create:bronze_axe" = "#exsanguination:bronze_repair"
+		"create:bronze_shovel" = "#exsanguination:bronze_repair"
+		"create:bronze_sword" = "#exsanguination:bronze_repair"
+		"spartanshields:bronze_.*" = "#exsanguination:bronze_repair"
+		"spartanweaponry:bronze_.*" = "#exsanguination:bronze_repair"
+		"spartanshields:electrum_.*" = "#exsanguination:electrum_repair"
+		"spartanweaponry:electrum_.*" = "#exsanguination:electrum_repair"
+		"oreganized:electrum_.*" = "#exsanguination:electrum_repair"
+		"deeperdarker:resonarium_.*" = "#exsanguination:resonarium_repair"
+		"spartandeeperdarker:resonarium_.*" = "#exsanguination:resonarium_repair"
+		"spartandeeperdarker:warden_.*" = "#exsanguination:resonarium_repair"
+		"deeperdarker:warden_hoe" = "#exsanguination:warden_repair"
+		"deeperdarker:warden_pickaxe" = "#exsanguination:warden_repair"
+		"deeperdarker:warden_axe" = "#exsanguination:warden_repair"
+		"deeperdarker:warden_shovel" = "#exsanguination:warden_repair"
+		"deeperdarker:warden_sword" = "#exsanguination:warden_repair"
+		"archeological:rusty_hoe" = "#exsanguination:iron_repair"
+		"archeological:rusty_pickaxe" = "#exsanguination:iron_repair"
+		"archeological:rusty_axe" = "#exsanguination:iron_repair"
+		"archeological:rusty_shovel" = "#exsanguination:iron_repair"
+		"archeological:rusty_sword" = "#exsanguination:iron_repair"
+		"spartanshields:iron_.*" = "#exsanguination:iron_repair"
+		"spartanweaponry:iron_.*" = "#exsanguination:iron_repair"
+		# FIX
+		"minecraft:iron_hoe" = "#exsanguination:iron_repair"
+		"minecraft:iron_pickaxe" = "#exsanguination:iron_repair"
+		"minecraft:iron_axe" = "#exsanguination:iron_repair"
+		"minecraft:iron_shovel" = "#exsanguination:iron_repair"
+		"minecraft:iron_sword" = "#exsanguination:iron_repair"
 		"minecraft:stone_hoe" = "#exsanguination:flint"
 		"minecraft:stone_pickaxe" = "#exsanguination:flint"
 		"minecraft:stone_axe" = "#exsanguination:flint"
@@ -219,20 +323,23 @@
 
 	#Set the values for tools, swords and tridents.
 	[items.tools]
+		#Set the attack speed of a tool or weapon. May not work on modded tools, please file an issue if that's the case. Example (without the leading #):
+		#"minecraft:netherite_pickaxe" = 2.5
+		attack_speed = {}
 
 		#Set the efficiency value of a tool. May not work on modded tools, please file an issue if that's the case. Also doesn't work on shears, due to internal problems with that. Example (without the leading #):
 		#"minecraft:iron_pickaxe" = 16
 		[items.tools.efficiency]
-			test = 0.0
+			"minecraft:stone_hoe" = 2
+			"minecraft:stone_axe" = 2
+			"minecraft:stone_pickaxe" = 1
+			"minecraft:stone_shovel" = 2
+			"minecraft:stone_sword" = 2
+			"spartanweaponry:stone_.*" = 2
 
 		#Set the attack damage of a tool or weapon. May not work on modded tools, please file an issue if that's the case. Example (without the leading #):
 		#"minecraft:netherite_sword" = 12
 		[items.tools.attack_damage]
-			test = 0.0
-
-		#Set the attack speed of a tool or weapon. May not work on modded tools, please file an issue if that's the case. Example (without the leading #):
-		#"minecraft:netherite_pickaxe" = 2.5
-		[items.tools.attack_speed]
 			test = 0.0
 
 #Set the values for enchantments.

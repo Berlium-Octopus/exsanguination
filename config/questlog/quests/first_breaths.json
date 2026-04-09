@@ -1,0 +1,36 @@
+{
+  "requirements": [
+    {
+      "type": "questlog:stat",
+      "stat": "minecraft:walk_one_cm",
+      "required_amount": 9
+    }
+  ],
+  "objectives": [
+    {
+      "name": "Take A Nice Walk",
+      "type": "questlog:stat",
+      "stat": "minecraft:walk_one_cm",
+      "required_amount": 100
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "level": false,
+      "experience": 10
+    }
+  ],
+  "title": "First Breaths",
+  "description": "Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up Wake Up",
+  "sort_order": "300",
+  "icon": {
+    "item": "minecraft:red_bed"
+  },
+  "include_in_main": false,
+  "toast_on_unlock": true,
+  "toast_on_complete": false,
+  "show_popup_on_unlock": false,
+  "background_texture": "questlog:textures/gui/quest_page.png",
+  "completed_sound": "minecraft:entity.arrow.hit_player"
+}

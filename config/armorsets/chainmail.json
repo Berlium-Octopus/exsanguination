@@ -47,15 +47,6 @@
             "modifierUUID": "2f4615c2-73b2-4d07-bbe6-1e03261a99c3"
         },
         {
-            "type": "effect",
-            "name": "potioncore:solid_core",
-            "value": 0.5,
-            "interactionType": "self",
-            "interactionDuration": 240,
-            "hideBonusDescription": true,
-            "onlyImmuneToNewEffects": false
-        },
-        {
             "type": "attribute",
             "name": "puffish_attributes:melee_resistance",
             "value": 0.3,

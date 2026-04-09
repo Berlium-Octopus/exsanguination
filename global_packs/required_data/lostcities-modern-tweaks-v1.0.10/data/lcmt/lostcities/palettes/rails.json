@@ -50,7 +50,7 @@
     },
     {
       "char": "o",
-      "block": "netherexp:ancient_lantern[hanging=false]",
+      "block": "minecraft:glowstone",
       "damaged": "minecraft:iron_bars"
     },
     {

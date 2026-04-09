@@ -164,7 +164,7 @@ global.tooltipModifiers.push(
         boots: ['deeperdarker:resonarium_boots'],
         mainhand: ['kubejs:none'],
         curios: ['deeperdarker:heart_of_the_deep'],
-        offhand: ['deeperdarker:sonorous_staff']
+        offhand: ['kubejs:none']
     },
     "Slow Reverb",
     [
@@ -313,7 +313,7 @@ global.tooltipModifiers.push(
         chestplate: ['alexscaves_torpedoes:tectonic_chestplate'],
         leggings: ['alexscaves_torpedoes:tectonic_leggings'],
         boots: ['alexscaves_torpedoes:tectonic_boots'],
-        mainhand: ['alexscaves:extinction_spear'],
+        mainhand: ['kubejs:none'],
         curios: ['kubejs:none'],
         offhand: ['kubejs:none']
 

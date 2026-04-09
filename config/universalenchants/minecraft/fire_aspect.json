@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "items": [
     "$minecraft:weapon",
-    "#minecraft:axes",
+    "$minecraft:universal_enchants_axe",
         {
       "id": "trials:mace_2",
       "exclude": false

@@ -4,7 +4,7 @@
        "char": "E",
       "blocks": [
         {
-          "random": 400,
+          "random": 300,
           "block": "minecraft:soul_lantern[hanging=true]"
         },
         {
@@ -15,7 +15,16 @@
     },
     {
       "char": "e",
-      "block": "minecraft:soul_lantern[hanging=false]",
+      "blocks": [
+        {
+          "random": 200,
+          "block": "minecraft:soul_lantern[hanging=false]"
+        },
+        {
+          "random": 1000,
+          "block": "minecraft:chain[axis=y]"
+        }
+      ],
       "damaged": "minecraft:iron_bars"
     }
   ]

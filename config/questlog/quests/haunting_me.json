@@ -1,0 +1,36 @@
+{
+  "requirements": [
+    {
+      "type": "questlog:stat",
+      "stat": "minecraft:play_time",
+      "required_amount": 15000
+    }
+  ],
+  "objectives": [
+    {
+      "name": "Prepare To Hide",
+      "type": "questlog:stat",
+      "stat": "minecraft:play_time",
+      "required_amount": 23000
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "level": false,
+      "experience": 40
+    }
+  ],
+  "title": "Haunting Me",
+  "description": "Every night I see something In my periphiral vision.The woods creek with unholy noises, I think I understand now why my people fled underground.",
+  "sort_order": "5",
+  "icon": {
+    "item": "scalinghealth:bandages"
+  },
+  "chapter": "overworld",
+  "toast_on_unlock": true,
+  "toast_on_complete": false,
+  "show_popup_on_unlock": false,
+  "background_texture": "questlog:textures/gui/quest_page_overworld.png",
+  "completed_sound": "minecraft:entity.arrow.hit_player"
+}

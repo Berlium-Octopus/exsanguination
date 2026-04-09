@@ -1,0 +1,40 @@
+{
+  "requirements": [
+    {
+      "type": "questlog:quest_complete",
+      "total": 1,
+      "quest": "questlog:iron_age"
+    }
+  ],
+  "objectives": [
+    {
+      "type": "questlog:item_obtain",
+      "total": 1,
+      "item": "oreganized:silver_ingot",
+      "display": {
+        "name": "Flint Facination",
+        "icon": {
+          "item": "oreganized:silver_ingot"
+        }
+      }
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "level": false,
+      "experience": 20
+    }
+  ],
+  "title": "Silver Moon",
+  "description": "A unique metal, weaker then it's predecesor but when the moon is out it gains magical properties. This metal grants the user the Lunar Power ability, this ability protects againts the undead and makes the tools faster and stronger depending on the lunar cycle.",
+  "sort_order": "3",
+  "icon": {
+    "item": "oreganized:silver_ingot"
+  },
+  "chapter": "main",
+  "toast_on_unlock": true,
+  "toast_on_complete": false,
+  "show_popup_on_unlock": false,
+  "completed_sound": "minecraft:entity.arrow.hit_player"
+}

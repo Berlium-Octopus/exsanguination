@@ -1,8 +1,11 @@
 // priority: 0
-// Convert This Into Bronze
+// public static final RegistryObject<SwordBaseItem> STUDDED_CESTUS = REGISTRY.register("studded_cestus", () -> new SwordBaseItem(new Item.Properties(), WeaponMaterial.IRON, WeaponArchetype.CESTUS, Defaults.DamageBaseCestus, Defaults.DamageMultiplierCestus, Defaults.SpeedCestus));
 
 
 // Make Archeological + Alexscaves Torpedoes Spartan Weapons :)
+
+const $Defaults = Java.loadClass('com.oblivioussp.spartanweaponry.util.Defaults')
+const $WeaponArchetype = Java.loadClass('com.oblivioussp.spartanweaponry.util.WeaponArchetype')
 const $TierSortingRegistry = Java.loadClass('net.minecraftforge.common.TierSortingRegistry')
 const $Tiers = Java.loadClass('net.minecraft.world.item.Tiers')
 const $ForgeTier = Java.loadClass('net.minecraftforge.common.ForgeTier')
@@ -168,7 +171,7 @@ StartupEvents.registry("item", (e) => {
             tier.level = 1
             tier.uses = 50
             tier.speed = 0.2
-            tier.attackDamageBonus = 0.1
+            tier.attackDamageBonus = 1
             tier.enchantmentValue = 3
             tier.repairIngredient = "minecraft:netherite_ingot"
         })
@@ -178,10 +181,10 @@ StartupEvents.registry("item", (e) => {
 ItemEvents.toolTierRegistry((event) => {
     event.add("copper", (tier) => {
         tier.level = 1
-        tier.uses = 145
+        tier.uses = 150
         tier.speed = 2.5
         tier.attackDamageBonus = 1.5
-        tier.enchantmentValue = 20
+        tier.enchantmentValue = 7
         tier.repairIngredient = "#forge:ingots/copper"
     })
     const CopperTier = new $ForgeTier(0, 32, 12, 0, 22, $BlockTags.create("minecraft:needs_copper_tool"), () => Ingredient.of("#forge:ingots/copper"))
@@ -230,15 +233,15 @@ ItemEvents.modification(event => {
 
 ItemEvents.toolTierRegistry((event) => {
     event.add("silver", (tier) => {
-        tier.level = 2
-        tier.uses = 195
-        tier.speed = 1,5
-        tier.attackDamageBonus = 1.2
-        tier.enchantmentValue = 25
+        tier.level = 3
+        tier.uses = 400
+        tier.speed = 2
+        tier.attackDamageBonus = 0
+        tier.enchantmentValue = 15
         tier.repairIngredient = "#forge:ingots/silver"
     })
     const SilverTier = new $ForgeTier(0, 32, 12, 0, 22, $BlockTags.create("oreganized:needs_silver_tool"), () => Ingredient.of("#forge:ingots/silver"))
-    $TierSortingRegistry.registerTier(SilverTier, "silver", [$Tiers.WOOD], [])
+    $TierSortingRegistry.registerTier(SilverTier, "silver", [$Tiers.GOLD], [])
 })
 
 ItemEvents.modification(event => {
@@ -334,10 +337,10 @@ StartupEvents.registry("item", (e) => {
 ItemEvents.toolTierRegistry((event) => {
     event.add("bronze", (tier) => {
         tier.level = 0
-        tier.uses = 220
-        tier.speed = 1,5
-        tier.attackDamageBonus = 1.8
-        tier.enchantmentValue = 25
+        tier.uses = 1000
+        tier.speed = 6
+        tier.attackDamageBonus = 2.5
+        tier.enchantmentValue = 12
         tier.repairIngredient = "#forge:ingots/bronze"
     })
     const bronzeTier = new $ForgeTier(0, 32, 12, 0, 22, $BlockTags.create("create:needs_bronze_tool"), () => Ingredient.of("#forge:ingots/bronze"))
@@ -345,31 +348,31 @@ ItemEvents.toolTierRegistry((event) => {
 })
 
 ItemEvents.modification(event => {
-    event.modify("create:bronze_axe", item => {
+    event.modify("createbigcannons:bronze_axe", item => {
         item.tier = $TierSortingRegistry.byName("bronze")
     })
 })
 
 ItemEvents.modification(event => {
-    event.modify("create:bronze_pickaxe", item => {
+    event.modify("createbigcannons:bronze_pickaxe", item => {
         item.tier = $TierSortingRegistry.byName("bronze")
     })
 })
 
 ItemEvents.modification(event => {
-    event.modify("create:bronze_sword", item => {
+    event.modify("createbigcannons:bronze_sword", item => {
         item.tier = $TierSortingRegistry.byName("bronze")
     })
 })
 
 ItemEvents.modification(event => {
-    event.modify("create:bronze_shovel", item => {
+    event.modify("createbigcannons:bronze_shovel", item => {
         item.tier = $TierSortingRegistry.byName("bronze")
     })
 })
 
 ItemEvents.modification(event => {
-    event.modify("create:bronze_hoe", item => {
+    event.modify("createbigcannons:bronze_hoe", item => {
         item.tier = $TierSortingRegistry.byName("bronze")
     })
 })
@@ -382,43 +385,43 @@ ItemEvents.modification(event => {
 })
 
 StartupEvents.registry("item", (e) => {
-    e.create("create:bronze_axe", "axe")
+    e.create("createbigcannons:bronze_axe", "axe")
         .texture('kubejs:item/bronze_axe')
         .tier("bronze")
         .rarity("common")
-        .displayName("Bronze Axe");
+        .displayName("Molybdochalkos Axe");
 });
 
 StartupEvents.registry("item", (e) => {
-    e.create("create:bronze_sword", "sword")
+    e.create("createbigcannons:bronze_sword", "sword")
         .texture('kubejs:item/bronze_sword')
         .tier("bronze")
         .rarity("common")
-        .displayName("Bronze Sword");
+        .displayName("Molybdochalkos Sword");
 });
 
 StartupEvents.registry("item", (e) => {
-    e.create("create:bronze_shovel", "shovel")
+    e.create("createbigcannons:bronze_shovel", "shovel")
         .texture('kubejs:item/bronze_shovel')
         .tier("bronze")
         .rarity("common")
-        .displayName("Bronze Shovel");
+        .displayName("Molybdochalkos Shovel");
 });
 
 StartupEvents.registry("item", (e) => {
-    e.create("create:bronze_hoe", "hoe")
+    e.create("createbigcannons:bronze_hoe", "hoe")
       .texture('kubejs:item/bronze_hoe')
         .tier("bronze")
         .rarity("common")
-        .displayName("Bronze Hoe");
+        .displayName("Molybdochalkos Hoe");
 });
 
 StartupEvents.registry("item", (e) => {
-    e.create("create:bronze_pickaxe", "pickaxe")
+    e.create("createbigcannons:bronze_pickaxe", "pickaxe")
       .texture('kubejs:item/bronze_pickaxe')
         .tier("bronze")
         .rarity("common")
-        .displayName("Bronze Pickaxe");
+        .displayName("Molybdochalkos Pickaxe");
 });
 
 StartupEvents.registry("item", (e) => {
@@ -426,5 +429,5 @@ StartupEvents.registry("item", (e) => {
       .texture('kubejs:item/bronze_knife')
         .tier("bronze")
         .rarity("common")
-        .displayName("Bronze Knife");
+        .displayName("Molybdochalkos Knife");
 });

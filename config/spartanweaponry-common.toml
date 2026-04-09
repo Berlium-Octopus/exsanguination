@@ -354,10 +354,10 @@
 [bronze]
 	#Base Damage for bronze weapons
 	#Range: 0.1 ~ 100.0
-	base_damage = 1.8
+	base_damage = 2.5
 	#Durability for bronze weapons
 	#Range: 1 ~ 100000
-	durability = 180
+	durability = 800
 	#Set to true to disable bronze weapons
 	disable = false
 
@@ -367,17 +367,17 @@
 	base_damage = 2.8
 	#Durability for steel weapons
 	#Range: 1 ~ 100000
-	durability = 1000
+	durability = 750
 	#Set to true to disable steel weapons
 	disable = false
 
 [silver]
 	#Base Damage for silver weapons
 	#Range: 0.1 ~ 100.0
-	base_damage = 1.2
+	base_damage = 1
 	#Durability for silver weapons
 	#Range: 1 ~ 100000
-	durability = 195
+	durability = 400
 	#Set to true to disable silver weapons
 	disable = false
 

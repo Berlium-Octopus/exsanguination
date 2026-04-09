@@ -1,0 +1,36 @@
+{
+  "requirements": [
+    {
+      "type": "questlog:quest_complete",
+      "total": 1,
+      "quest": "questlog:sumerian_copper"
+    }
+  ],
+  "objectives": [
+    {
+      "name": "Forge Molybdochalkos Ingots",
+      "icon": "createbigcannons:bronze_ingot",
+      "type": "questlog:item_obtain",
+      "total": 1,
+      "item": "createbigcannons:bronze_ingot"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "level": false,
+      "experience": 20
+    }
+  ],
+  "title": "Age of Molybdochalkos",
+  "description": "Due to being forged with lead, the armors and tools are slow and sluggish but the bronze items gets faster each time it's used and reaches peak efficiency 30-40%-ish",
+  "sort_order": "2",
+  "icon": {
+    "item": "createbigcannons:bronze_ingot"
+  },
+  "chapter": "main",
+  "toast_on_unlock": true,
+  "toast_on_complete": false,
+  "show_popup_on_unlock": false,
+  "completed_sound": "minecraft:entity.arrow.hit_player"
+}

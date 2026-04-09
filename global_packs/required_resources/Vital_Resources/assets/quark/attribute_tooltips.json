@@ -25,6 +25,18 @@
         "texture": "quark:attribute/attack_speed",
         "compare": "higher_better"
     },
+        "minecraft:durability": {
+            "display": {
+                "mainhand": "flat",
+                "offhand": "flat",
+                "feet": "flat",
+                "legs": "flat",
+                "chest": "flat",
+                "head": "flat",
+                "potion": "flat"
+            },
+            "texture": "quark:attribute/durability"
+        },
     "puffish_attributes:life_steal": {
         "display": {
             "mainhand": "flat",
@@ -441,19 +453,6 @@
         "texture": "quark:attribute/night_vision",
         "compare": "higher_better"
     },
-    "combatroll:distance": {
-        "display": {
-            "mainhand": "difference",
-            "offhand": "difference",
-            "feet": "difference",
-            "legs": "difference",
-            "chest": "difference",
-            "head": "difference",
-            "potion": "difference"
-        },
-        "texture": "quark:attribute/distance",
-        "compare": "higher_better"
-    },
     "potioncore:damage_resistance": {
         "display": {
             "mainhand": "difference",
@@ -479,5 +478,18 @@
         },
         "texture": "quark:attribute/roll_count",
         "compare": "higher_better"
-    }
+    },
+        "oreganized:lunar_power": {
+            "display": {
+                "mainhand": "difference",
+                "offhand": "difference",
+                "feet": "difference",
+                "legs": "difference",
+                "chest": "difference",
+                "head": "difference",
+                "potion": "difference"
+            },
+            "texture": "quark:attribute/lunar_power",
+            "compare": "higher_better"
+        }
 }

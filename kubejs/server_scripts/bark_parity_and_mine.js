@@ -46,45 +46,48 @@ ServerEvents.recipes(event => {
 
 // katu's script
 BlockEvents.rightClicked(event => {
-    const { block, hand, item, world, level, player } = event;
+    const { block, hand, item, level, player } = event;
     if (hand != 'MAIN_HAND') return;
     if (item.id == 'minecraft:bone_meal' && block.hasTag('minecraft:real_small_flowers')) {
       player.swing();
-        item.count--
+      item.shrink(1);
         if(Math.random()<0.5){
           block.popItem(block.id)
         }
         event.server.runCommandSilent(`playsound minecraft:item.bone_meal.use block @a ${block.x} ${block.y} ${block.z}`)
         level.spawnParticles('minecraft:happy_villager', true, block.x, block.y, block.z, 0.5, 0.5, 0.5, 0.1, 20);
+        event.cancel()
     }
 });
 
 
 
 BlockEvents.rightClicked('minecraft:torchflower', event => {
-    const { block, hand, item, world, level, player } = event;
+    const { block, hand, item, server, level, player } = event;
+  if (hand != 'MAIN_HAND') return
     if (item.id == 'minecraft:bone_meal') {
-        event.block.set('minecraft:torchflower_crop');
+        block.set('minecraft:torchflower_crop');
         if(Math.random()<0.5){
         block.popItem('minecraft:torchflower')
         }
         player.swing();
-        event.server.runCommandSilent(`playsound minecraft:item.bone_meal.use block @a ${block.x} ${block.y} ${block.z}`)
+        server.runCommandSilent(`playsound minecraft:item.bone_meal.use block @a ${block.x} ${block.y} ${block.z}`)
         level.spawnParticles('minecraft:happy_villager', true, block.x, block.y, block.z, 2, 2, 2, 0.1, 20);
-        event.item.shrink(1);
-    } else {
-      event.block.set('minecraft:torchflower_crop');
-    }
+        item.shrink(1);
+        event.cancel()
+    } 
 });
-
+// Try Right Click Checks
 BlockEvents.rightClicked('minecraft:torchflower_crop', event => {
     const { block, hand, item, world, level, player } = event;
+    if (hand != 'MAIN_HAND') return
     if (item.id == 'minecraft:bone_meal') {
         event.block.set('minecraft:torchflower');
         player.swing();
         event.server.runCommandSilent(`playsound minecraft:item.bone_meal.use block @a ${block.x} ${block.y} ${block.z}`)
         level.spawnParticles('minecraft:happy_villager', true, block.x, block.y, block.z, 2, 2, 2, 0.1, 20);
         event.item.shrink(2);
+        event.cancel()
     }
 });
 
@@ -204,30 +207,16 @@ switch(event.player.mainHandItem.getId()){
 }
 });
 
-// By Eazy
-/*
-BlockEvents.rightClicked('minecraft:spawner', event => {
-  const { player, block, server, level, player: { mainHandItem } } = event
-switch(event.player.mainHandItem.getId()){
-  case 'sculkhorde:crying_souls':
-    event.block.popItem("6x spelunkers_charm:rock");
-    block.entityData.getCompound("ForgeCaps").remove();
-    event.block.set('minecraft:spawner', {ForgeCaps:{"temporary_spawners:spawner_data":{cd:0,ticks:0}}});
-    event.item.shrink(1)
-    event.cancel();
-    break;
-}
-});
-*/
 const Campfire = ["netherexp:ancient_campfire","minecraft:campfire","minecraft:soul_campfire"]
 Campfire.forEach(camp => {
   BlockEvents.rightClicked(camp, event => {
     const { player, block, server, level, player: { mainHandItem } } = event
+    if (event.hand != 'MAIN_HAND') return
     switch(event.player.mainHandItem.getId()){
     case 'create:cinder_flour':
       // Partially From Zek in discord
       if (block.properties.lit === false) {
-            block.set(block.id, { infinite: true, facing:block.properties.facing, runs_out: false, lit: false});
+            block.set(block.id, { infinite: true, facing:block.properties.facing, runs_out: false, lit: true});
             level.spawnParticles('smoke', true, block.x, block.y, block.z, 0, 0, 0, 3, 0.4);
             server.runCommandSilent(`playsound minecraft:item.firecharge.use block @a ${block.x} ${block.y} ${block.z} 1 1`)
             event.block.popItem("supplementaries:ash");
@@ -245,17 +234,18 @@ Campfire.forEach(camp => {
 Campfire.forEach(camp => {
   BlockEvents.rightClicked(camp, event => {
     const { player, block, server, level, player: { mainHandItem } } = event
+    if (event.hand != 'MAIN_HAND') return
     switch(event.player.mainHandItem.getId()){
     case "minecraft:stick":
       // Partially From Zek in discord
       if (block.properties.lit === false) {
         if(Math.random()>0.8){
           block.set(block.id, {lit: true});
-          event.block.popItem("supplementaries:ash");
+          block.popItem("supplementaries:ash");
             }
             level.spawnParticles('smoke', true, block.x, block.y, block.z, 0, 0, 0, 3, 0.4);
             server.runCommandSilent(`playsound minecraft:item.firecharge.use block @a ${block.x} ${block.y} ${block.z} 1 1`)
-            event.item.shrink(1);
+            item.shrink(1);
             player.swing();
             event.cancel();
             break;
@@ -266,12 +256,12 @@ Campfire.forEach(camp => {
 });
 
 
-
+""
 BlockEvents.broken('minecraft:mangrove_log', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
 switch(event.player.mainHandItem.getId()){
-  case 'farmersdelight:wooden_knife':
-  case 'farmersdelight:flint_knife':
+  case 'spartanweaponry:wooden_club':
+  case 'spartanweaponry:studded_club':
     event.block.popItem('immersive_weathering:mangrove_bark');
     event.block.set('minecraft:stripped_mangrove_log',block.properties);
     event.player.damageHeldItem('main_hand', 15);
@@ -287,8 +277,8 @@ event.recipes.farmersdelight.cutting("#minecraft:planks", "#minecraft:axes", ["2
 BlockEvents.broken('minecraft:jungle_log', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
 switch(event.player.mainHandItem.getId()){
-  case 'farmersdelight:wooden_knife':
-  case 'farmersdelight:flint_knife':
+  case 'spartanweaponry:wooden_club':
+  case 'spartanweaponry:studded_club':
     event.block.popItem('immersive_weathering:jungle_bark');
     event.block.set('minecraft:stripped_mangrove_log',block.properties);
     event.player.damageHeldItem('main_hand', 15);
@@ -300,8 +290,8 @@ switch(event.player.mainHandItem.getId()){
 BlockEvents.broken('biomesoplenty:mahogany_log', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
 switch(event.player.mainHandItem.getId()){
-  case 'farmersdelight:wooden_knife':
-  case 'farmersdelight:flint_knife':
+  case 'spartanweaponry:wooden_club':
+  case 'spartanweaponry:studded_club':
     event.block.popItem('immersive_weathering:biomesoplenty/mahogany_bark');
     event.block.set('biomesoplenty:stripped_mahogany_log',block.properties);
     event.player.damageHeldItem('main_hand', 15);
@@ -312,6 +302,7 @@ switch(event.player.mainHandItem.getId()){
 
 BlockEvents.rightClicked('minecraft:stripped_oak_wood', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
+if (event.hand != 'MAIN_HAND') return
 switch(event.player.mainHandItem.getId()){
   case 'scalinghealth:heart_dust':
     level.spawnParticles('minecraft:angry_villager', true, block.x, block.y, block.z, 0, 0, 0, 0, 0.5);
@@ -327,6 +318,7 @@ switch(event.player.mainHandItem.getId()){
 
 BlockEvents.rightClicked('rootoffear:faded_oak_wood_corrupt1', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
+if (event.hand != 'MAIN_HAND') return
 switch(event.player.mainHandItem.getId()){
   case 'scalinghealth:bandages':
     level.spawnParticles('minecraft:happy_villager', true, block.x, block.y, block.z, 0, 0, 0, 0, 0.5);
@@ -354,6 +346,7 @@ LootJS.modifiers((event) => {
 // Wilted Ceastus???
 BlockEvents.rightClicked('rootoffear:faded_oak_wood_corrupt2', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
+if (event.hand != 'MAIN_HAND') return
 switch(event.player.mainHandItem.getId()){
   case 'scalinghealth:bandages':
     level.spawnParticles('minecraft:happy_villager', true, block.x, block.y, block.z, 0, 0, 0, 0, 0.5);
@@ -440,6 +433,7 @@ LootJS.modifiers((event) => {
 
 BlockEvents.rightClicked('rootoffear:faded_oak_wood_corrupt3', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
+if (event.hand != 'MAIN_HAND') return
 switch(event.player.mainHandItem.getId()){
   case 'scalinghealth:bandages':
     level.spawnParticles('minecraft:happy_villager', true, block.x, block.y, block.z, 0, 0, 0, 0, 0.5);
@@ -461,6 +455,7 @@ LootJS.modifiers((event) => {
 
 BlockEvents.rightClicked('rootoffear:stripped_faded_oak_wood', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
+if (event.hand != 'MAIN_HAND') return
 switch(event.player.mainHandItem.getId()){
   case 'immersive_weathering:dark_oak_bark':
     level.spawnParticles('minecraft:happy_villager', true, block.x, block.y, block.z, 0, 0, 0, 0, 0.5);
@@ -474,6 +469,7 @@ switch(event.player.mainHandItem.getId()){
 
 BlockEvents.rightClicked('minecraft:stripped_oak_log', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
+if (event.hand != 'MAIN_HAND') return
 switch(event.player.mainHandItem.getId()){
   case 'scalinghealth:heart_dust':
     level.spawnParticles('minecraft:angry_villager', true, block.x, block.y, block.z, 0, 0, 0, 0, 0.5);
@@ -487,6 +483,7 @@ switch(event.player.mainHandItem.getId()){
 
 BlockEvents.rightClicked('rootoffear:faded_oak_log_phase1', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
+if (event.hand != 'MAIN_HAND') return
 switch(event.player.mainHandItem.getId()){
   case 'scalinghealth:bandages':
     event.server.scheduleInTicks(1, () => {
@@ -509,6 +506,7 @@ LootJS.modifiers((event) => {
 
 BlockEvents.rightClicked('rootoffear:faded_oak_log_phase2', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
+if (event.hand != 'MAIN_HAND') return
 switch(event.player.mainHandItem.getId()){
   case 'scalinghealth:bandages':
     event.server.scheduleInTicks(1, () => {
@@ -554,6 +552,7 @@ LootJS.modifiers((event) => {
 
 BlockEvents.rightClicked('rootoffear:stripped_faded_oak_log', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
+if (event.hand != 'MAIN_HAND') return
 switch(event.player.mainHandItem.getId()){
   case 'immersive_weathering:dark_oak_bark':
     level.spawnParticles('minecraft:happy_villager', true, block.x, block.y, block.z, 0, 0, 0, 0, 0.5);
@@ -569,8 +568,8 @@ switch(event.player.mainHandItem.getId()){
 BlockEvents.broken('biomesoplenty:magic_log', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
 switch(event.player.mainHandItem.getId()){
-  case 'farmersdelight:wooden_knife':
-  case 'farmersdelight:flint_knife':
+  case 'spartanweaponry:wooden_club':
+  case 'spartanweaponry:studded_club':
     event.block.popItem('immersive_weathering:biomesoplenty/magic_bark');
     event.block.set('biomesoplenty:stripped_magic_log',block.properties);
     event.player.damageHeldItem('main_hand', 15);
@@ -583,8 +582,8 @@ switch(event.player.mainHandItem.getId()){
 BlockEvents.broken('biomesoplenty:maple_log', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
 switch(event.player.mainHandItem.getId()){
-  case 'farmersdelight:wooden_knife':
-  case 'farmersdelight:flint_knife':
+  case 'spartanweaponry:wooden_club':
+  case 'spartanweaponry:studded_club':
     event.block.popItem('immersive_weathering:biomesoplenty/maple_bark');
     event.block.set('biomesoplenty:stripped_maple_log',block.properties);
     event.player.damageHeldItem('main_hand', 15);
@@ -595,8 +594,8 @@ switch(event.player.mainHandItem.getId()){
 BlockEvents.broken('biomemakeover:willow_log', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
 switch(event.player.mainHandItem.getId()){
-  case 'farmersdelight:wooden_knife':
-  case 'farmersdelight:flint_knife':
+  case 'spartanweaponry:wooden_club':
+  case 'spartanweaponry:studded_club':
     event.block.popItem('immersive_weathering:biomemakeover/willow_bark');
     event.block.set('biomemakeover:stripped_willow_log',block.properties);
     event.player.damageHeldItem('main_hand', 15);
@@ -608,8 +607,8 @@ switch(event.player.mainHandItem.getId()){
 BlockEvents.broken('biomesoplenty:palm_log', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
 switch(event.player.mainHandItem.getId()){
-  case 'farmersdelight:wooden_knife':
-  case 'farmersdelight:flint_knife':
+  case 'spartanweaponry:wooden_club':
+  case 'spartanweaponry:studded_club':
     event.block.popItem('immersive_weathering:biomesoplenty/palm_bark');
     event.block.set('biomesoplenty:stripped_palm_log',block.properties);
     event.player.damageHeldItem('main_hand', 15);
@@ -622,8 +621,8 @@ switch(event.player.mainHandItem.getId()){
 BlockEvents.broken('minecraft:birch_log', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
 switch(event.player.mainHandItem.getId()){
-  case 'farmersdelight:wooden_knife':
-  case 'farmersdelight:flint_knife':
+  case 'spartanweaponry:wooden_club':
+  case 'spartanweaponry:studded_club':
     event.block.popItem('immersive_weathering:biomesoplenty/palm_bark');
     event.block.set('minecraft:stripped_birch_log',block.properties);
     event.player.damageHeldItem('main_hand', 15);
@@ -636,8 +635,8 @@ switch(event.player.mainHandItem.getId()){
 BlockEvents.broken('minecraft:cherry_log', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
 switch(event.player.mainHandItem.getId()){
-  case 'farmersdelight:wooden_knife':
-  case 'farmersdelight:flint_knife':
+  case 'spartanweaponry:wooden_club':
+  case 'spartanweaponry:studded_club':
     event.block.popItem('immersive_weathering:cherry_bark');
     event.block.set('minecraft:stripped_cherry_log',block.properties);
     event.player.damageHeldItem('main_hand', 15);
@@ -649,8 +648,8 @@ switch(event.player.mainHandItem.getId()){
 BlockEvents.broken('vinery:dark_cherry_log', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
 switch(event.player.mainHandItem.getId()){
-  case 'farmersdelight:wooden_knife':
-  case 'farmersdelight:flint_knife':
+  case 'spartanweaponry:wooden_club':
+  case 'spartanweaponry:studded_club':
     event.block.popItem('immersive_weathering:vinery/dark_cherry_scales');
     event.block.set('vinery:stripped_dark_cherry_log',block.properties);
     event.player.damageHeldItem('main_hand', 10);
@@ -662,8 +661,8 @@ switch(event.player.mainHandItem.getId()){
 BlockEvents.broken('minecraft:acacia_log', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
 switch(event.player.mainHandItem.getId()){
-  case 'farmersdelight:wooden_knife':
-  case 'farmersdelight:flint_knife':
+  case 'spartanweaponry:wooden_club':
+  case 'spartanweaponry:studded_club':
     event.block.popItem('immersive_weathering:acacia_bark');
     event.block.set('minecraft:stripped_acacia_log',block.properties);
     event.player.damageHeldItem('main_hand', 15)
@@ -676,8 +675,8 @@ switch(event.player.mainHandItem.getId()){
 BlockEvents.broken('minecraft:spruce_log', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
 switch(event.player.mainHandItem.getId()){
-  case 'farmersdelight:wooden_knife':
-  case 'farmersdelight:flint_knife':
+  case 'spartanweaponry:wooden_club':
+  case 'spartanweaponry:studded_club':
     event.block.popItem('immersive_weathering:spruce_bark');
     event.block.set('minecraft:stripped_acacia_log',block.properties);
     event.player.damageHeldItem('main_hand', 15)
@@ -689,8 +688,8 @@ switch(event.player.mainHandItem.getId()){
 BlockEvents.broken('minecraft:oak_log', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
 switch(event.player.mainHandItem.getId()){
-  case 'farmersdelight:wooden_knife':
-  case 'farmersdelight:flint_knife':
+  case 'spartanweaponry:wooden_club':
+  case 'spartanweaponry:studded_club':
     event.block.popItem('immersive_weathering:oak_bark');
     event.block.set('minecraft:stripped_oak_log', block.properties);
     event.player.damageHeldItem('main_hand', 10)
@@ -702,8 +701,8 @@ switch(event.player.mainHandItem.getId()){
 BlockEvents.broken('quark:blossom_log', event => {
   const { player, block, server, level, player: { mainHandItem } } = event
 switch(event.player.mainHandItem.getId()){
-  case 'farmersdelight:wooden_knife':
-  case 'farmersdelight:flint_knife':
+  case 'spartanweaponry:wooden_club':
+  case 'spartanweaponry:studded_club':
     event.block.popItem('immersive_weathering:quark/blossom_bark');
     event.block.set('minecraft:stripped_oak_log', block.properties);
     event.player.damageHeldItem('main_hand', 10)
@@ -827,7 +826,7 @@ if (event.player.getMainHandItem().hasEnchantment('minecraft:efficiency', 1)) re
 switch(event.player.mainHandItem.getId()){
   case 'minecraft:stone_pickaxe':
   case 'minecraft:copper_pickaxe':
-  case 'create:bronze_pickaxe':
+  case 'createbigcannons:bronze_pickaxe':
     event.block.set('minecraft:cobbled_deepslate', event.block.properties);
     event.player.damageHeldItem('main_hand', 8)
     event.cancel()
@@ -936,7 +935,7 @@ if (event.player.getMainHandItem().hasEnchantment('minecraft:silk_touch', 1)) re
 if (event.player.getMainHandItem().hasEnchantment('minecraft:efficiency', 1)) return
 switch(event.player.mainHandItem.getId()){
   case 'minecraft:stone_pickaxe':
-  case 'create:bronze_pickaxe':
+  case 'createbigcannons:bronze_pickaxe':
     event.block.set("deeperdarker:cobbled_sculk_stone", event.block.properties);
     event.player.damageHeldItem('main_hand', 2)
     event.cancel()

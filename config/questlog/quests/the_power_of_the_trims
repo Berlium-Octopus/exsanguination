@@ -1,0 +1,37 @@
+{
+  "requirements": [
+    {
+      "type": "questlog:item_obtain",
+      "total": 1,
+      "item": "#minecraft:trim_templates"
+    }
+  ],
+  "objectives": [ 
+    {
+      "name": "Forge Trim Templates",
+      "icon": "minecraft:diamond_ingot",
+      "type": "questlog:item_obtain",
+      "total": 1,
+      "item": "#exsanguination:trim_templates"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "level": false,
+      "experience": 80
+    }
+  ],
+  "title": "The Power Of Trims",
+  "description": "Armor Trims now grant the wearer special abilities on the materials they use, one such example is the Silver Trim. This trim makes the wearer take less undead damage and makes them swim faster",
+  "sort_order": "20",
+  "icon": {
+    "item": "spartanweaponry:golden_dagger"
+  },
+  "chapter": "misc",
+  "include_in_main": false,
+  "toast_on_unlock": true,
+  "toast_on_complete": false,
+  "show_popup_on_unlock": false,
+  "completed_sound": "minecraft:entity.arrow.hit_player"
+}

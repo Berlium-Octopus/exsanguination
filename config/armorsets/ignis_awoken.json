@@ -62,7 +62,7 @@
         {
             "type": "attribute",
             "name": "puffish_attributes:armor_shred",
-            "value": 0.15,
+            "value": 0.05,
             "interactionType": "self",
             "attributeOperation": 1,
             "modifierUUID": "317d2ba7-6dd7-4bfa-8e79-9ffc46b6850b",

@@ -1,0 +1,49 @@
+{
+  "requirements": [
+    {
+      "type": "questlog:quest_complete",
+      "total": 1,
+      "quest": "questlog:first_breaths"
+    }
+  ],
+  "objectives": [
+    {
+      "name": "Get Sticks",
+      "icon": "minecraft:stick",
+      "type": "questlog:item_obtain",
+      "total": 1,
+      "item": "minecraft:stick"
+    },
+    {
+      "name": "Get Stones",
+      "icon": "spelunkers_charm:rock",
+      "type": "questlog:item_obtain",
+      "total": 1,
+      "item": "spelunkers_charm:rock"
+    },
+    {
+      "name": "Break Some Bones",
+      "icon": "minecraft:bone",
+      "type": "questlog:effect_added",
+      "effect": "cataclysm:bone_fracture"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "level": false,
+      "experience": 20
+    }
+  ],
+  "title": "Antiquity Age",
+  "description": "The earliest and most primitive tools are the ones made of sticks and rocks, to obtain sticks you must break down leaves, if a sapling drops you can turn them into sticks. For rocks one must bash the surface of the common stone with clubs until it turns into cobblestone, dropping the rock.",
+  "sort_order": "7",
+  "icon": {
+    "item": "spelunkers_charm:rock"
+  },
+  "chapter": "main",
+  "toast_on_unlock": true,
+  "toast_on_complete": false,
+  "show_popup_on_unlock": false,
+  "completed_sound": "minecraft:entity.arrow.hit_player"
+}

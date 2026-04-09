@@ -19,10 +19,15 @@ global.portalEvent = (/**@type {Internal.EntityTravelToDimensionEvent} */event) 
   let server = entity.server
   if (!entity.player) return;
   if (dimension == "lostcities:lostcity") {
-    entity.removeAllEffects()
-    entity.potionEffects.add("lostcities:unlisted", 6600, 0, false, false)
-    entity.potionEffects.add("doom_and_gloom:fog", -1, 0, false, false)
-    entity.statusMessage = Text.of("Survive Until Being Relisted")
+    server.scheduleInTicks(1, () => {
+      entity.removeAllEffects()
+      entity.potionEffects.add('minecraft:resistance', 500, 4, false, false)
+      entity.potionEffects.add("minecraft:slow_falling", 500, 0, false, false)
+      entity.potionEffects.add("toughasnails:climate_clemency", 500, 1, false, true)
+      entity.potionEffects.add("lostcities:unlisted", 6600, 0, false, false)
+      entity.potionEffects.add("doom_and_gloom:fog", -1, 0, false, false)
+      entity.statusMessage = Text.of("Survive Until Being Relisted")
+    })
   } else {
     entity.statusMessage = Text.of("Now Entering")
     // server.scheduleInTicks(20, () => {          
@@ -34,16 +39,12 @@ global.portalEvent = (/**@type {Internal.EntityTravelToDimensionEvent} */event) 
 
 global.nightmareEvents = (/**@type {Internal.PlayerSleepInBedEvent} */event) => {
   /** @type {Internal.Player} */
-  const entity = /** @type {any} */ (event.entity)
+  let entity = /** @type {any} */ (event.entity)
   let server = entity.server
   // 2% Chance Of Being Teleported Or When Dreaming
   if (entity.level.dimension != 'minecraft:overworld') return
-  if (Math.random() > 0.98 || entity.potionEffects.isActive("lostcities:dreaming")) {
-    const { x, z } = entity.onPos
-    server.scheduleInTicks(1, () => {
-      entity.potionEffects.add('minecraft:resistance', 500, 4, false, false)
-      entity.potionEffects.add("minecraft:slow_falling", 440, 0, false, false)
-    })
+  if (Math.random() > 0.97 || entity.potionEffects.isActive("lostcities:dreaming")) {
+    let { x, z } = entity.onPos
     server.scheduleInTicks(20, () => {
       entity.teleportTo("lostcities:lostcity", x, 160, z, entity.yaw, entity.pitch)
 
@@ -51,24 +52,22 @@ global.nightmareEvents = (/**@type {Internal.PlayerSleepInBedEvent} */event) => 
   }
 }
 
-// If Dead Or Dying TP and not dreaming them to the cities :)
 EntityEvents.death("minecraft:player", event => {
-  const { player, server } = event
-  const { x, z } = player.onPos
-  if (player.level.dimension == "lostcities:lostcity") return
-  if (Math.random() < 0.98 || !entity.potionEffects.isActive("lostcities:dreaming")) return
-  server.scheduleInTicks(1, () => {
-    player.potionEffects.add('minecraft:resistance', 500, 4, false, false)
-    player.potionEffects.add('exsanguination:reincarnatus', 40, 0, false, false)
-    player.potionEffects.add("minecraft:slow_falling", 440, 0, false, false)
-  })
-  server.scheduleInTicks(20, () => {
-    player.teleportTo("lostcities:lostcity", x, 160, z, player.yaw, player.pitch)
+  let entity = /** @type {any} */ (event.entity)
+  let server = event.server
+  let { x, z } = entity.onPos
+  if (entity.level.dimension === "lostcities:lostcity") return
+  if (Math.random() > 0.97) {
+    entity.setHealth(20)
+    entity.removeAllEffects()
+    entity.extinguish()
+    server.scheduleInTicks(1, () => {
+      entity.teleportTo("lostcities:lostcity", x, 160, z, entity.yaw, entity.pitch)
 
-  })
-  event.cancel();
+    })
+    event.cancel();
+  }
 })
-
 
 // FalAut + EAZY's script (Modified)
 EntityEvents.death("minecraft:player", event => {
@@ -79,25 +78,34 @@ EntityEvents.death("minecraft:player", event => {
   if (player.level.dimension != "lostcities:lostcity") return
   // If The Player Doesn't Have A Spawn Point/Bed + Gets Yeeted To 0.0
   if (!respawnPosition || !respawnLevel || !bed) {
-    player.removeAllEffects();
-    player.potionEffects.add("alexsmobsinteraction:skreeching", 3000, 1, false, true)
-    player.potionEffects.add("sculkhorde:sculk_infected", 1500, 1, false, true)
-    player.potionEffects.add("minecraft:slow_falling", 700, 1, false, true)
-    player.potionEffects.add("toughasnails:climate_clemency", 300, 1, false, true)
-    player.potionEffects.add("minecraft:fire_resistance", 300, 1, false, true)
-    player.statusMessage = Text.of("You had a bad dream")
+    player.setHealth(12)
+    player.removeAllEffects()
     player.extinguish()
-    player.teleportTo("minecraft:overworld", 0, 120, 0, [], 0.0, 0.0)
+    server.scheduleInTicks(4, () => {
+      player.potionEffects.add("alexsmobsinteraction:skreeching", 3000, 1, false, true)
+      player.potionEffects.add("sculkhorde:sculk_infected", 1500, 1, false, true)
+      player.potionEffects.add("minecraft:slow_falling", 700, 1, false, true)
+      player.potionEffects.add("toughasnails:climate_clemency", 300, 1, false, true)
+      player.potionEffects.add("minecraft:resistance", 300, 3, false, true)
+      player.statusMessage = Text.of("You had a bad dream")
+    })
+    player.teleportTo("minecraft:overworld", 0, 120, 0, [], 0.0)
   } else {
     // If Player Dies And Has A Spawn Point
+    player.setHealth(12)
     player.removeAllEffects();
-    player.potionEffects.add("alexsmobsinteraction:skreeching", 3000, 1, false, true)
-    player.potionEffects.add("sculkhorde:sculk_infected", 1500, 1, false, true)
-    player.potionEffects.add("toughasnails:climate_clemency", 300, 1, false, true)
-    player.potionEffects.add("minecraft:fire_resistance", 300, 1, false, true)
-    player.statusMessage = Text.of("You had a bad dream")
-    player.extinguish()
+
+
+    server.scheduleInTicks(4, () => {
+      player.potionEffects.add("alexsmobsinteraction:skreeching", 3000, 1, false, true)
+      player.potionEffects.add("sculkhorde:sculk_infected", 1500, 1, false, true)
+      player.potionEffects.add("toughasnails:climate_clemency", 300, 1, false, true)
+      player.potionEffects.add("minecraft:fire_resistance", 300, 1, false, true)
+      player.statusMessage = Text.of("You had a bad dream")
+      player.extinguish()
+    })
     player.teleportTo(respawnLevel, respawnPosition.x, respawnPosition.y, respawnPosition.z, [], 0.0, 0.0)
+
   }
   event.cancel();
 })
@@ -136,4 +144,4 @@ BlockEvents.rightClicked("minecraft:lodestone", event => {
     block.createExplosion().explosionMode($ExplosionInteraction.TNT).strength(8).explode()
     event.cancel();
   }
-});
+})

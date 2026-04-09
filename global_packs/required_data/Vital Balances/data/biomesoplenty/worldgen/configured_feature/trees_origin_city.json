@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "biomesoplenty:origin_city_tree",
+    "features": [
+      {
+        "chance": 0.4,
+        "feature": "biomesoplenty:origin_city_tree_large"
+      }
+    ]
+  }
+}

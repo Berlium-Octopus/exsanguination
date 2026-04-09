@@ -1,6 +1,6 @@
 #The Y value in which void fog takes effect. (Min World Height + Y Value)
 #Range: > 0
-y = 21
+y = 20
 #Defines how far away the fog should be from your player. Higher numbers mean further away.
 #Range: 0.0 ~ 1.7976931348623157E308
 distance = 30.0

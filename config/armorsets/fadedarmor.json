@@ -37,24 +37,6 @@
             }
         ]
     },
-    "mainHand": {
-        "itemKey": "spartanweaponry:studded_cestus",
-        "mustBeEmpty": false,
-        "enchantments": [
-            {
-                "enchantmentKey": "exsanguination:awakening"
-            }
-        ]
-    },
-    "offHand": {
-        "itemKey": "spartanweaponry:studded_cestus",
-        "mustBeEmpty": false,
-        "enchantments": [
-            {
-                "enchantmentKey": "exsanguination:awakening"
-            }
-        ]
-    },
     "partialBonusRequiredAmount": 1,
     "partialSetBonuses": [
         {

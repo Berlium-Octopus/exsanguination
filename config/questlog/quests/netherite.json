@@ -1,0 +1,44 @@
+{
+  "requirements": [
+    {
+      "type": "questlog:quest_complete",
+      "total": 1,
+      "quest": "questlog:diamond_metals"
+    }
+  ],
+  "objectives": [
+    {
+      "name": "Get A Smithing Template",
+      "icon": "minecraft:netherite_upgrade_smithing_template",
+      "type": "questlog:item_obtain",
+      "total": 1,
+      "item": "minecraft:netherite_upgrade_smithing_template"
+    },
+    {
+      "name": "Forge Netherite",
+      "icon": "minecraft:netherite_ingot",
+      "type": "questlog:item_obtain",
+      "total": 1,
+      "item": "minecraft:netherite_ingot"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "level": false,
+      "experience": 20
+    }
+  ],
+  "title": "Netherite Archeology",
+  "description": "YUP.",
+  "sort_order": "0",
+  "icon": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "chapter": "main",
+  "toast_on_unlock": true,
+  "toast_on_complete": false,
+  "show_popup_on_unlock": false,
+  "background_texture": "questlog:textures/gui/quest_page_nether.png",
+  "completed_sound": "minecraft:entity.arrow.hit_player"
+}

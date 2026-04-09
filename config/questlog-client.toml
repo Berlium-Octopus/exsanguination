@@ -1,0 +1,16 @@
+[button]
+enabled = true
+showBadge = true
+relativeToInventory = true
+x = 2
+y = -26
+badgeX = 24
+badgeY = 0
+bobbingBadge = true
+[gui]
+mainPanelX = 0
+mainPanelY = 0
+searchBarX = 0
+searchBarY = 0
+chapterButtonsX = 0
+chapterButtonsY = 0

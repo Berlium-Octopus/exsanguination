@@ -1,0 +1,51 @@
+{
+  "requirements": [
+    {
+      "type": "questlog:quest_complete",
+      "total": 1,
+      "quest": "questlog:first_breaths"
+    }
+  ],
+  "objectives": [
+    {
+      "name": "Kill A Zombie",
+      "icon": "minecraft:zombie_head",
+      "type": "questlog:entity_kill",
+      "total": 1,
+      "entity": "minecraft:zombie"
+    },
+    {
+      "name": "Kill A Skeleton",
+      "icon": "minecraft:skeleton_skull",
+      "type": "questlog:entity_kill",
+      "total": 1,
+      "entity": "minecraft:skeleton"
+    },
+    {
+      "name": "Kill A Creeper",
+      "icon": "minecraft:creeper_head",
+      "type": "questlog:entity_kill",
+      "total": 1,
+      "entity": "minecraft:creeper"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "level": false,
+      "experience": 40
+    }
+  ],
+  "title": "Diminishing Returns",
+  "description": "When in combat keep in mind that getting too close to the target will make your hits less effective, this is much worse with higher ranged and higher damage weapons. Also if you don't give your all in an attack, you will deal no knockback.\n\nBeing Couragious will remove this penalty letting you harm enemies freely.",
+  "sort_order": "20",
+  "icon": {
+    "item": "spartanweaponry:golden_dagger"
+  },
+  "chapter": "misc",
+  "include_in_main": false,
+  "toast_on_unlock": true,
+  "toast_on_complete": false,
+  "show_popup_on_unlock": false,
+  "completed_sound": "minecraft:entity.arrow.hit_player"
+}

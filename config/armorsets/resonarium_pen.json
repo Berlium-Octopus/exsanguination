@@ -8,17 +8,14 @@
     "chest": {
         "itemKey": "deeperdarker:resonarium_chestplate",
         "mustBeEmpty": false
-
     },
     "legs": {
         "itemKey": "deeperdarker:resonarium_leggings",
         "mustBeEmpty": false
-
     },
     "boots": {
         "itemKey": "deeperdarker:resonarium_boots",
         "mustBeEmpty": false
-
     },
     "mainHand": {
         "itemKey": "deeperdarker:resonarium_sword",
@@ -26,7 +23,31 @@
             "deeperdarker:resonarium_axe",
             "deeperdarker:resonarium_pickaxe",
             "deeperdarker:resonarium_shovel",
-            "deeperdarker:resonarium_hoe"
+            "deeperdarker:resonarium_hoe",
+            "spartandeeperdarker:resonarium_dagger",
+            "spartandeeperdarker:resonarium_parrying_dagger",
+            "spartandeeperdarker:resonarium_longsword",
+            "spartandeeperdarker:resonarium_katana",
+            "spartandeeperdarker:resonarium_saber",
+            "spartandeeperdarker:resonarium_rapier",
+            "spartandeeperdarker:resonarium_greatsword",
+            "spartandeeperdarker:resonarium_battle_hammer",
+            "spartandeeperdarker:resonarium_warhammer",
+            "spartandeeperdarker:resonarium_spear",
+            "spartandeeperdarker:resonarium_halberd",
+            "spartandeeperdarker:resonarium_pike",
+            "spartandeeperdarker:resonarium_lance",
+            "spartandeeperdarker:resonarium_longbow",
+            "spartandeeperdarker:resonarium_heavy_crossbow",
+            "spartandeeperdarker:resonarium_throwing_knife",
+            "spartandeeperdarker:resonarium_tomahawk",
+            "spartandeeperdarker:resonarium_javelin",
+            "spartandeeperdarker:resonarium_boomerang",
+            "spartandeeperdarker:resonarium_battleaxe",
+            "spartandeeperdarker:resonarium_flanged_mace",
+            "spartandeeperdarker:resonarium_glaive",
+            "spartandeeperdarker:resonarium_quarterstaff",
+            "spartandeeperdarker:resonarium_scythe"
         ],
         "mustBeEmpty": false
     },

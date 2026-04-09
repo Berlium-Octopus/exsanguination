@@ -5,15 +5,15 @@
       "blocks": [
         {
           "random": 30,
-          "block": "minecraft:oak_leaves[persistent=true]"
+          "block": "biomesoplenty:anomaly"
         },
         {
           "random": 30,
-          "block": "minecraft:acacia_leaves[persistent=true]"
+          "block": "biomesoplenty:origin_leaves[persistent=true]"
         },
         {
           "random": 1000,
-          "block": "minecraft:jungle_leaves[persistent=true]"
+          "block": "biomesoplenty:origin_leaves[persistent=true]"
         }
       ]
     }

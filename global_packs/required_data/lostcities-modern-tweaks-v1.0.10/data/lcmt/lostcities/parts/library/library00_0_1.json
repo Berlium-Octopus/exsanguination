@@ -14,11 +14,11 @@
         "blocks": [
           {
             "random": 64,
-            "block": "minecraft:oak_sapling[stage=1]"
+            "block": "biomesoplenty:origin_sapling[stage=1]"
           },
           {
             "random": 32,
-            "block": "minecraft:spruce_sapling[stage=1]"
+            "block": "biomesoplenty:origin_sapling[stage=1]"
           },
           {
             "random": 1000,

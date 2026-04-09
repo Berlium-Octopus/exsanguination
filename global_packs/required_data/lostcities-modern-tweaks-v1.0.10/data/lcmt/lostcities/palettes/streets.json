@@ -3,6 +3,10 @@
     {
       "char": "S",
       "blocks": [
+      {
+        "random": 10,
+        "block": "biomesoplenty:anomaly"
+      },
         {
           "random": 40,
           "block": "minecraft:polished_granite"

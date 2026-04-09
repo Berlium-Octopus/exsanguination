@@ -9,17 +9,12 @@
     "water_fog_color": 6141935,
     "grass_color": 11983713,
     "foliage_color": 11983713,
-    "mood_sound": {
-      "block_search_extent": 8,
-      "offset": 2.0,
-      "sound": "deeperdarker:ambient.otherside.additions",
-      "tick_delay": 6000
-    },
+    "mood_sound": {},
     "music": {
-      "max_delay": 24000,
-      "min_delay": 12000,
-      "replace_current_music": false,
-      "sound": "biomesoplenty:music.overworld.origin_valley"
+"max_delay": 24000,
+"min_delay": 12000,
+"replace_current_music": false,
+"sound": "deeperdarker:music.otherside.deeplands"
     }
   },
   "spawners": {

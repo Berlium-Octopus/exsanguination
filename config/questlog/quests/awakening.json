@@ -1,0 +1,52 @@
+{
+  "requirements": [
+    {
+      "type": "questlog:quest_complete",
+      "total": 1,
+      "quest": "questlog:first_breaths"
+    },
+    {
+      "type": "questlog:item_obtain",
+      "total": 1,
+      "item": "minecraft:book"
+    }
+  ],
+  "objectives": [
+    {
+      "name": "Awaken An Item",
+      "icon": "minecraft:enchanted_book",
+      "type": "questlog:or",
+      "objectives": [
+        {
+          "type": "questlog:enchant",
+          "enchantment": "exsanguination:awakening",
+          "level": 1
+        },
+        {
+          "type": "questlog:enchant",
+          "enchantment": "exsanguination:osmosis",
+          "level": 1
+        }
+      ]
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "level": false,
+      "experience": 40
+    }
+  ],
+  "title": "The Awakening",
+  "description": "Armor is a vital asset to survive in this world, there is a hierarchy of armor sets that make the lesser ones obsolete. The Awakening solves this issue as it grants more purposes to all armor sets, especially the lesser ones. Wearing a full set of Awakened armor will grant the Blue Effects on their tooltips.",
+  "sort_order": "20",
+  "icon": {
+    "item": "minecraft:lapis_lazuli"
+  },
+  "chapter": "misc",
+  "include_in_main": false,
+  "toast_on_unlock": true,
+  "toast_on_complete": false,
+  "show_popup_on_unlock": false,
+  "completed_sound": "minecraft:entity.arrow.hit_player"
+}

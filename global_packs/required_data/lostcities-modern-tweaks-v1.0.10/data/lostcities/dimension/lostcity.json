@@ -8,56 +8,29 @@
       "type": "minecraft:multi_noise",
       "biomes": [
         {
-          "biome": "lcbiomes:wintry_origin_valley",
-         "parameters": {
+          "biome": "lcbiomes:mushroom_fields",
+          "parameters": {
             "temperature": [
               -1,
-              -0.45
+              1
             ],
             "humidity": [
               -1,
-              -0.35
-            ],
-            "continentalness": [
-              0.3,
               1
             ],
+            "continentalness": [
+              -1.2,
+              -1.05
+            ],
             "erosion": [
-              -0.7799,
-              -0.375
+              -1,
+              1
             ],
             "weirdness": [
               -1,
-              -0.9333
-            ],
-            "depth": 1,
-            "offset": 0
-          }
-        },
-        {
-          "biome": "lcbiomes:origin_valley",
-         "parameters": {
-            "temperature": [
-              -1,
-              -0.45
-            ],
-            "humidity": [
-              -1,
-              -0.35
-            ],
-            "continentalness": [
-              0.3,
               1
             ],
-            "erosion": [
-              -0.7799,
-              -0.375
-            ],
-            "weirdness": [
-              -1,
-              -0.9333
-            ],
-            "depth": 1,
+            "depth": 0,
             "offset": 0
           }
         },

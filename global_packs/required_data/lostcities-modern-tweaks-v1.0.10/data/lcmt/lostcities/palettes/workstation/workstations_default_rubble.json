@@ -13,7 +13,8 @@
         },
         {
           "random": 10,
-          "block": "minecraft:barrel[facing=up]"
+          "block": "minecraft:chest[facing=north,type=single]",
+          "loot": "chestloot"
         },
         {
           "random": 30,

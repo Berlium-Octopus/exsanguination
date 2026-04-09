@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "items": [
-    "#minecraft:axes",
+    "$minecraft:universal_enchants_axe",
     "$minecraft:weapon",
     "farmersdelight:skillet",
     "cataclysm:gauntlet_of_guard",

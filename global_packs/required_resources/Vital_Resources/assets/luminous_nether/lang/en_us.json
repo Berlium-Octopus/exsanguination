@@ -1,4 +1,5 @@
 {
   "item.luminous_nether.crimson_flesh": "Glider Food",
-  "item.luminous_nether.ectoplasm_ball": "Steamy Ectoplasm"
+  "item.luminous_nether.ectoplasm_ball": "Steamy Ectoplasm",
+  "effect.luminous_nether.antidote": "Greater Antidote"
 }

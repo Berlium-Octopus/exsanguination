@@ -14,55 +14,126 @@ MoreJSEvents.registerPotionBrewing(event => {
     event.addPotionBrewing("luminous_nether:pale_melon_slice", "minecraft:awkward", "lostcities:courage");
     event.addPotionBrewing("minecraft:redstone", "lostcities:courage", "lostcities:courage_long");
 });
+/*
+class Animal {
+    private String name;
 
+    public Animal(String name) {
+        this.name = name;
+    }
 
+    public void move() {
+        // movement logic
+    }
+}
+
+// Cat can be pet
+class Cat extends Animal implements Pettable {
+    private String coat;
+
+    public Cat(String name, String coat) {
+        super(name);
+        this.coat = coat;
+    }
+
+    public void jump() {
+        // jump logic
+    }
+
+    @Override
+    public void pet() {
+        System.out.println("Purrrr...");
+    }
+}
+
+// And so can be RoboDog, it doesn't have to extend `Animal`!
+class RoboDog implements Pettable {
+    public RoboDog() {
+
+    }
+
+    @Override
+    public void pet() {
+        System.out.println("RoboDog is pretty happy!");
+    }
+}
+
+// This is the interface that guarantees that the class implementing that interface has the method `pet`.
+interface Pettable {
+    void pet();
+}
+
+class Scratch {
+    public static void main(String[] args) {
+        // Notice how we can have both a Cat and a RoboDog in this array, because Java knows both of these must contain `pet` method.
+        Pettable[] pettables = new Pettable[] {
+          new Cat("Minnie", "tuxedo"),
+          new RoboDog()
+        };
+
+        for (Pettable pettable : pettables) {
+            // We can **only** call methods that are available on that interface (and every method on Object of course, as every object extends Object)
+            pettable.pet();
+//          pettable.jump() // Can't do that, as the object is not guaranteed to have a `jump` method!
+        }
+    }
+}
+
+*/
 
 StartupEvents.registry('mob_effect', event => {
-    event.create('exsanguination:dimentional_sickness') // Create the effect under "kubejs:custom_effect"
-        .color(0xBE59E5) // Sets the color of the Effect's Particles.
-        .harmful() // Categorizes the Effect as Beneficial.
+    // Yada Yada
+    event.create('exsanguination:dimentional_sickness')
+        .color(0xBE59E5)
+        .harmful()
 })
 
-
 StartupEvents.registry('mob_effect', event => {
-    event.create('lostcities:unlisted') // Create the effect under "kubejs:custom_effect"
+    event.create('lostcities:unlisted')
         .color(0xA1BF33)
         .harmful()
         .modifyAttribute("forge:entity_gravity", "562e606d-278c-45a7-9f48-655e1787b75f", -0.001, 'addition')
         .effectTick((entity, level) => {
-            if (!entity || entity.level.isClientSide() || !entity.isPlayer()) return;
-            const { server } = entity
-            if (!entity.isPlayer) return
-            server.scheduleInTicks(0, () => {
-                if (!entity.potionEffects.isActive('lostcities:unlisted')) {
-                    let respawnLevel = server.getLevel(entity.getRespawnDimension().location());
-                    let respawnPosition = entity.getRespawnPosition();
-                    let bed = respawnLevel.getBlock(respawnPosition);
-                    if (level.dimension != "lostcities:lostcity") return
-                    // If The Player Doesn't Have A Spawn Point/Bed + Gets Yeeted To 0.0
-                    if (!respawnPosition || !respawnLevel || !bed) {
-                        entity.removeAllEffects();
-                        entity.potionEffects.add("minecraft:slow_falling", 700, 1, false, true)
-                        entity.potionEffects.add("toughasnails:climate_clemency", 300, 1, false, true)
-                        entity.potionEffects.add("minecraft:fire_resistance", 300, 1, false, true)
-                        entity.statusMessage = Text.of("It's just A Dream")
-                        entity.extinguish()
-                        entity.teleportTo("minecraft:overworld", 0, 120, 0, [], 0.0, 0.0)
+            // Only run on server for players
+            if (!entity || level.isClientSide() || !entity.isPlayer()) return;
+            const player = entity;
+            const activeEffect = player.getActiveEffect('lostcities:unlisted');
+            if (!activeEffect) return;
+
+            const remainingTicks = activeEffect.getDuration();
+            // When only 1 tick remains, schedule the teleport (runs after effect expires)
+            if (remainingTicks <= 1 && !player.persistentData.getBoolean('lostcities_teleport_scheduled')) {
+                player.persistentData.putBoolean('lostcities_teleport_scheduled', true);
+                player.server.scheduleInTicks(1, () => {
+                    // Safety check: effect should be gone now
+                    if (player.isRemoved() || player.getActiveEffect('lostcities:unlisted')) return;
+                    // Only teleport if player is in the lostcity dimension
+                    if (player.level.dimension != 'lostcities:lostcity') return;
+
+                    const respawnDim = player.getRespawnDimension();
+                    const respawnPos = player.getRespawnPosition();
+                    const hasValidSpawn = respawnPos != null && respawnDim != null;
+
+                    // Apply safe-fall & protection effects, clear status
+                    player.removeAllEffects();
+                    player.addEffect('minecraft:slow_falling', 700, 1, false, true);
+                    player.addEffect('toughasnails:climate_clemency', 300, 1, false, true);
+                    player.addEffect('minecraft:fire_resistance', 300, 1, false, true);
+                    player.tell(Text.of("It's just A Dream"));
+                    player.extinguish();
+
+                    // Teleport
+                    if (hasValidSpawn) {
+                        player.teleportTo(respawnDim.location(), respawnPos.x, respawnPos.y, respawnPos.z, 0.0, 0.0);
                     } else {
-                        // If Player Dies And Has A Spawn Point
-                        entity.removeAllEffects();
-                        entity.potionEffects.add("toughasnails:climate_clemency", 300, 1, false, true)
-                        entity.potionEffects.add("minecraft:fire_resistance", 300, 1, false, true)
-                        entity.statusMessage = Text.of("It's just A Dream")
-                        entity.extinguish()
-                        entity.teleportTo(respawnLevel, respawnPosition.x, respawnPosition.y, respawnPosition.z, [], 0.0, 0.0)
+                        player.teleportTo('minecraft:overworld', 0, 120, 0, 0.0, 0.0);
                     }
-                }
-            });
+
+                    player.persistentData.remove('lostcities_teleport_scheduled');
+                });
+            }
         });
 });
-
-
 StartupEvents.registry('mob_effect', event => {
     event.create('exsanguination:reincarnatus') // Create the effect under "kubejs:custom_effect"
         .color(0xF8D7780) // Sets the color of the Effect's Particles.
@@ -424,4 +495,5 @@ EntityJSEvents.modifyEntity(event => {
 })
 
 
-
+// Thank U Matt_ZSlayer
+ForgeEvents.onEvent("net.minecraftforge.event.entity.living.MobEffectEvent$Applicable", event => global.applyEffect(event))

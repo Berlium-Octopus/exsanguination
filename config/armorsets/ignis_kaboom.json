@@ -11,7 +11,7 @@
         "mustBeEmpty": false
     },
     "legs": {
-        "itemKey": "cataclysm:ignitium_chestplate",
+        "itemKey": "cataclysm:ignitium_leggings",
         "mustBeEmpty": false
     },
     "boots": {
@@ -28,15 +28,6 @@
             "attributeOperation": 1,
             "modifierUUID": "07a08f55-0786-444c-80b6-4b4a948a70a8",
             "description": "1240"
-        },
-        {
-            "type": "effect",
-            "name": "vinery:creeper_effect",
-            "value": 0,
-            "interactionType": "self",
-            "interactionDuration": 240,
-            "hideBonusDescription": true,
-            "onlyImmuneToNewEffects": false
         },
         {
             "type": "effect",

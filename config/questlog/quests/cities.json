@@ -1,0 +1,34 @@
+{
+  "requirements": [
+    {
+      "type": "questlog:visit_dimension",
+      "dimension": "lostcities:lostcity"
+    }
+  ],
+  "objectives": [
+    {
+      "name": "§kHIDE HIDE HIDE",
+      "icon": "biomesoplenty:anomaly",
+      "type": "questlog:visit_dimension",
+      "dimension": "lostcities:lostcity"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "questlog:experience",
+      "level": false,
+      "experience": 20
+    }
+  ],
+  "title": "Deeply Dreaming",
+  "description": "Sleep Sleep Sleep Sleep Sleep Sleep Sleep Sleep Sleep Sleep Sleep Sleep Sleep Sleep Sleep Sleep Sleep Sleep Sleep Sleep Sleep Sleep Sleep Sleep Sleep Sleep Sleep Sleep",
+  "sort_order": "1",
+  "icon": {
+    "item": "sleep_tight:dreamer_essence"
+  },
+  "chapter": "lostcity",
+  "toast_on_unlock": true,
+  "toast_on_complete": false,
+  "show_popup_on_unlock": false,
+  "completed_sound": "minecraft:entity.arrow.hit_player"
+}

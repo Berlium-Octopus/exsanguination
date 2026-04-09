@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "biomesoplenty:origin_birch_tree",
+    "features": [
+      {
+        "chance": 0.5,
+        "feature": "biomesoplenty:origin_tree"
+      },
+      {
+        "chance": 0.2,
+        "feature": "biomesoplenty:big_origin_birch_tree"
+      },
+      {
+        "chance": 0.2,
+        "feature": "biomesoplenty:big_origin_tree"
+      }
+    ]
+  }
+}

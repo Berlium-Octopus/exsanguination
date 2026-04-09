@@ -19,7 +19,7 @@ global.tooltipModifiers.push(
 [
     Text.of(" \u2507 Grants fire/lava based buffs.").green(),
     Text.of(" \u2507 Explodes the wearer and breaks bones.").green(),
-    Text.of(" \u2507 +15% Armor Shred.").blue(),
+    Text.of(" \u2507 +5% Armor Shred.").blue(),
     Text.of(" \u2507 Calms the armor's sentience.").blue()
 ])
 // EMM ERROR CONDE?
@@ -105,7 +105,7 @@ global.tooltipModifiers.push(
           Item.of('rootoffear:wraithwood_chestplate'),
           Item.of('rootoffear:wraithwood_leggings'),
           Item.of('rootoffear:wraithwood_boots'),
-          Item.of('spartanweaponry:studded_cestus'),
+          Item.of('spartanweaponry:wraith_cestus'),
 
       ],
 {
@@ -113,9 +113,9 @@ global.tooltipModifiers.push(
     chestplate: ['rootoffear:wraithwood_chestplate'],
     leggings: ['rootoffear:wraithwood_leggings'],
     boots: ['rootoffear:wraithwood_boots'],
-    mainhand: ['spartanweaponry:studded_cestus'],
+    mainhand: ['spartanweaponry:wraith_cestus'],
     curios: ['kubejs:none'],
-    offhand: ['spartanweaponry:studded_cestus']
+    offhand: ['spartanweaponry:wraith_cestus']
 },
 "Wilted's Might",
 [

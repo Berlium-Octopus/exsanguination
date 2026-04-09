@@ -4,9 +4,9 @@
 	# Select the System of how to select, what trims to give mobs.
 	# - RANDOM_TRIMS: Randomly choose the trim, but also take the previous trim highly into account.
 	# - CUSTOM_TRIMS: Choose the trim from a list of custom trims. You can manage the trims yourself
-	enabled_system = "RANDOM_TRIMS"
+	enabled_system = "CUSTOM_TRIMS"
 	# Chance of the mob having no trims at all
-	no_trims_chance = 25
+	no_trims_chance = 80
 
 # Settings for the Random Trims backend.
 # These settings will only make a difference, if the RANDOM_TRIMS backend is enabled
@@ -33,7 +33,7 @@
 	# In the second String, enter a valid Trim Pattern
 	# To not have to specify the whole trim pattern, you can leave out the "_armor_trim_smithing_template" part of the pattern, as it is the same for every pattern.
 	# For example: ["amethyst_shard", "silence"]
-	custom_trim_combinations = []
+	custom_trim_combinations = [["gold"],["amethyst_shard"], ["iron"], ["silver"]]
 
 # Settings for the Stacked Armor Trims Mod Compatibility.
 # These settings will only make a difference, if the STACKED_TRIMS backend is enabled and the stacked armor trims mod is used

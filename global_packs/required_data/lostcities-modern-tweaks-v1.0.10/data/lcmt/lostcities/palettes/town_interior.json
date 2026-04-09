@@ -74,6 +74,11 @@
       "block": "minecraft:tripwire_hook[attached=false,facing=east,powered=false]"
     },
     {
+      "char": "+",
+      "block": "minecraft:spawner",
+      "mob": "hardmobs"
+    },
+    {
       "char": "N",
       "block": "minecraft:iron_trapdoor[facing=north,half=bottom,open=false,powered=false,waterlogged=false]"
     },

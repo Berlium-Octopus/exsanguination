@@ -160,7 +160,7 @@
       "minecraft:underwater_magma",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
-      "minecraft:disk_gravel",
+      "biomesoplenty:origin_gravel_cliffs",
       "minecraft:ore_emerald"
     ],
     [
@@ -172,7 +172,7 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:trees_windswept_hills",
+      "biomesoplenty:trees_origin_city",
       "minecraft:flower_default",
       "minecraft:patch_grass_badlands",
       "minecraft:brown_mushroom_normal",

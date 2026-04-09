@@ -10,8 +10,6 @@ ServerEvents.tags('worldgen/structure', event => {
   event.add("minecraft:village", ['#repurposed_structures:collections/villages'])
 }
 )
-
-
 ServerEvents.tags('spartanweaponry:weapon_traits', event => {
   event.add('spartanweaponry:cestus', 'spartanweaponry:versatile_axe')
   // Soups as hot food
@@ -33,13 +31,88 @@ ServerEvents.tags('spartanweaponry:weapon_traits', event => {
 })
 
 
-
 ServerEvents.tags('item', event => {
-  event.add('exsanguination:netherite_repair',
+  
+  event.add('exsanguination:trim_templates',
+    ['minecraft:stone_trim_template',
+      'minecraft:terracotta_trim_template',
+      'alexscaves:galena_trim_template',
+      'minecraft:blackstone_trim_template',
+      'minecraft:sandstone_trim_template',
+      'minecraft:endstone_trim_template',
+      'trials:copper_trim_template',
+      'trials:breeze_trim_template',
+      'luminous_nether:fungi_trim_template',
+      'luminous_nether:deadstone_trim_template',
+      'minecraft:prismarine_trim_template'])
+
+  event.add('exsanguination:golden_objects',
     [
-      'minecraft:netherite_ingot',
-      'minecraft:diamond_ingot',
-      'alexsmobs:mimicream'
+      "minecraft:golden_sword",
+      "farmersdelight:golden_knife",
+      "minecraft:golden_pickaxe",
+      "minecraft:golden_axe",
+      "minecraft:golden_shovel",
+      "minecraft:golden_hoe",
+      "minecraft:golden_helmet",
+      "minecraft:golden_chestplate",
+      "minecraft:golden_leggings",
+      "minecraft:golden_boots",
+      "spartanweaponry:golden_dagger",
+      "spartanweaponry:golden_parrying_dagger",
+      "spartanweaponry:golden_longsword",
+      "spartanweaponry:golden_katana",
+      "spartanweaponry:golden_saber",
+      "spartanweaponry:golden_rapier",
+      "spartanweaponry:golden_greatsword",
+      "spartanweaponry:golden_battle_hammer",
+      "spartanweaponry:golden_warhammer",
+      "spartanweaponry:golden_spear",
+      "spartanweaponry:golden_halberd",
+      "spartanweaponry:golden_pike",
+      "spartanweaponry:golden_lance",
+      "spartanweaponry:golden_longbow",
+      "spartanweaponry:golden_heavy_crossbow",
+      "spartanweaponry:golden_throwing_knife",
+      "spartanweaponry:golden_tomahawk",
+      "spartanweaponry:golden_javelin",
+      "spartanweaponry:golden_boomerang",
+      "spartanweaponry:golden_battleaxe",
+      "golden_flanged_mace",
+      "spartanweaponry:golden_glaive",
+      "spartanweaponry:golden_quarterstaff",
+      "spartanshields:golden_tower_shield",
+      "spartanshields:golden_basic_shield",
+      "spartanweaponry:golden_flanged_mace",
+      "tide:golden_fishing_rod",
+      "luminous_nether:gold_cultist_axe"
+    ])
+  event.add('exsanguination:chainmail_objects',
+    [
+      "minecraft:chainmail_helmet",
+      "minecraft:chainmail_chestplate",
+      "minecraft:chainmail_leggings",
+      "minecraft:chainmail_boots"
+    ])
+  event.add('exsanguination:wilted_objects',
+    [
+      'spartanweaponry:wraith_cestus',
+      'rootoffear:wraithwood_helmet',
+      'rootoffear:wraithwood_chestplate',
+      'rootoffear:wraithwood_leggings',
+      'rootoffear:wraithwood_boots'
+    ])
+  event.add('spartanweaponry:cestusae',
+    [
+      'spartanweaponry:wraith_cestus'
+    ])
+  event.add("spartanweaponry:silver_weapons",
+    [
+      "oreganized:silver_sword",
+      "oreganized:silver_axe",
+      "oreganized:silver_pickaxe",
+      "oreganized:silver_hoe",
+      "oreganized:silver_shovel"
     ])
 
   event.add("minecraft:weapons",
@@ -375,21 +448,126 @@ ServerEvents.tags('item', event => {
 })
 
 ServerEvents.tags('item', event => {
-  event.add('forge:decorativetag',
-    [
-      '#minecraft:candles'
-    ]
-  )
+
+event.add('exsanguination:netherite_repair',
+  [
+    'minecraft:netherite_ingot',
+    'minecraft:diamond_ingot',
+    'alexsmobs:mimicream'
+  ])
+event.add('exsanguination:electrum_repair',
+  [
+    'oreganized:electrum_ingot',
+    'minecraft:diamond_ingot',
+    'alexsmobs:mimicream'
+  ])
+event.add('exsanguination:silver_repair',
+  [
+    'oreganized:silver_ingot',
+    'minecraft:iron_ingot',
+    'alexsmobs:mimicream'
+  ])
+event.add('exsanguination:black_steel_repair',
+  [
+    'cataclysm:black_steel_ingot',
+    'minecraft:iron_ingot',
+    'alexsmobs:mimicream'
+  ])
 })
 
 ServerEvents.tags('item', event => {
-  event.add('exsanguination:flint',
+  event.add('exsanguination:flint_repair',
     [
       'minecraft:flint',
       'alexsmobs:mimicream'
     ]
   )
 })
+// and rusty tools
+ServerEvents.tags('item', event => {
+  event.add('exsanguination:iron_repair',
+    [
+      'minecraft:iron_ingot',
+      'alexsmobs:mimicream'
+    ]
+  )
+})
+
+ServerEvents.tags('item', event => {
+  event.add('exsanguination:diamond_repair',
+    [
+      'minecraft:diamond_ingot',
+      'alexsmobs:mimicream'
+    ]
+  )
+})
+
+ServerEvents.tags('item', event => {
+  event.add('exsanguination:copper_repair',
+    [
+      'minecraft:copper_ingot',
+      'alexsmobs:mimicream'
+    ]
+  )
+})
+
+
+ServerEvents.tags('item', event => {
+  event.add('exsanguination:scarlet_repair',
+    [
+      "alexscaves:scarlet_neodymium_ingot",
+      "minecraft:iron_ingot",
+      "alexsmobs:mimicream"
+    ]
+  )
+})
+
+ServerEvents.tags('item', event => {
+  event.add('exsanguination:azure_repair',
+    [
+      "alexscaves:azure_neodymium_ingot",
+      "minecraft:iron_ingot",
+      "alexsmobs:mimicream"
+    ]
+  )
+})
+ServerEvents.tags('item', event => {
+  event.add('exsanguination:misc_repair',
+    [
+      "alexsmobs:mimicream"
+    ]
+  )
+})
+
+
+ServerEvents.tags('item', event => {
+  event.add('exsanguination:bronze_repair',
+    [
+      "createbigcannons:bronze_ingot",
+      "oreganized:lead_ingot",
+      "alexsmobs:mimicream"
+    ]
+  )
+})
+
+ServerEvents.tags('item', event => {
+  event.add('exsanguination:resonarium_repair',
+    [
+      "deeperdarker:resonarium_plate",
+      "alexsmobs:mimicream"
+    ]
+  )
+})
+
+ServerEvents.tags('item', event => {
+  event.add('exsanguination:warden_repair',
+    [
+      "deeperdarker:reinforced_echo_shard",
+      "alexsmobs:mimicream"
+    ]
+  )
+})
+
 
 ServerEvents.tags('item', event => {
   event.add('toughasnails:thirst/2_thirst_drinks',
@@ -439,11 +617,11 @@ ServerEvents.tags('item', event => {
       'minecraft:suspicious_stew',
       'minecraft:mushroom_stew'])
   event.add('alexscaves:restricted_from_sack_of_sating', ['deeperdarker:heart_of_the_deep', 'deeperdarker:sliced_heart_of_the_deep'])
-  event.add('alexcaves:ferromagnetic_items', ['minecraft:iron_horse_armor', 'create:andesite_alloy', 'create:netherite_diving_boots', 'create:netherite_diving_helmet', 'create:netherite_backtank', 'revampedwolf:iron_wolf_armor', 'revampedwolf:netherite__wolf_armor', '#spartanweaponry:netherite_weapons'])
+  event.add('alexcaves:ferromagnetic_items', ['minecraft:iron_horse_armor', 'create:andesite_alloy', 'create:netherite_diving_boots', 'create:netherite_diving_helmet', 'create:netherite_backtank', '#spartanweaponry:netherite_weapons'])
   event.add('spartanweaponry:oilable_weapons', '#forge:tools')
   event.add('spartanweaponry:oilable_weapons', 'alexscaves_torpedoes:scarlet_sword')
   event.add('spartanweaponry:oilable_weapons', 'spartanweaponry:cestus')
-  event.add('spartanweaponry:oilable_weapons', 'spartanweaponry:studded_cestus')
+  event.add('spartanweaponry:oilable_weapons', 'spartanweaponry:wraith_cestus')
   event.add('minecraft:swords', 'minecraft:copper_sword')
   event.add('spartanweaponry:oilable_weapons', 'cataclysm:black_steel_sword')
   event.add('spartanweaponry:oilable_weapons', 'alexscaves_torpedoes:azure_sword')
@@ -487,7 +665,6 @@ ServerEvents.tags('item', event => {
   event.add('quark:pike_trophies', ['#c:skulls'])
   event.add('oreganized:has_kinetic_damage', '#spartanweaponry:electrum_weapons')
   event.remove('createbigcannons:nugget_copper', ['spelunkery:copper_nugget'])
-  event.add('forge:ingots/bronze', 'create:bronze_ingot')
   event.add('sculkhorde:mite_eggs', ['sculkhorde:mite_egg', 'sculkhorde:mite_egg_2', 'sculkhorde:mite_egg_3'])
   event.add('alexsmobs:grizzly_honey', ['alexscavesdelight:caramel_cookie', 'create:honeyed_apple', 'create:honey_bucket', 'alexscaves:caramel_apple', 'alexscavesdelight:caramel_pie', 'farmersdelight:honey_cookie'])
   event.add('dynamiclights:self', ['spelunkers_charm:mining_helmet', 'spelunkers_charm:candle_on_helmet'])
@@ -710,29 +887,30 @@ ServerEvents.tags('block', event => {
 }
 );
 
+let zombies_and_such = [
+  'minecraft:zombie',
+  'minecraft:husk',
+  'luminous_monsters:swamp_zombie',
+  'luminous_monsters:glacial_zombie',
+  'luminous_monsters:dark_oak_zombie',
+  'luminous_monsters:savanna_zombie',
+  'minecraft:skeleton',
+  'luminous_monsters:glacial_skeleton',
+  'luminous_monsters:dark_oak_skeleton',
+  'luminous_monsters:savanna_skeleton',
+  'luminous_monsters:cherry_skeleton',
+  'luminous_monsters:hollow'
+];
 
-
-
+LootJS.modifiers((event) => {
+  event.addEntityLootModifier(zombies_and_such).pool((p) => {
+    p.randomChanceWithEnchantment("minecraft:looting", [0.05, 0.6, 0.7, 0.8])
+    p.addLoot("minecraft:builder_fragments")
+  });
+});
 
 ServerEvents.tags('entity_type', event => {
-  event.add('jockey_api:adult_zombie_jockeys',
-
-    [
-      'minecraft:zombie',
-      'minecraft:husk',
-      'luminous_monsters:swamp_zombie',
-      'luminous_monsters:glacial_zombie',
-      'luminous_monsters:dark_oak_zombie',
-      'luminous_monsters:savanna_zombie',
-      'minecraft:skeleton',
-      'luminous_monsters:glacial_skeleton',
-      'luminous_monsters:dark_oak_skeleton',
-      'luminous_monsters:savanna_skeleton',
-      'luminous_monsters:cherry_skeleton',
-      'luminous_monsters:hollow_spawn'
-    ]
-
-  )
+  event.add('jockey_api:adult_zombie_jockeys', zombies_and_such)
 
   event.add('spelunkery:portal_fluid_immune',
 
@@ -1120,9 +1298,29 @@ ServerEvents.tags('entity_type', event => {
   )
 }
 );
+let hotZombies = [
+  "luminous_monsters:savanna_zombie",
+  "luminous_monsters:savanna_skeleton",
+  "luminous_monsters:hollow",
+  "minecraft:husk",
+  "trials:bogged_spawn_egg"
+]
 
+let coldZombies = [
+  "luminous_monsters:glacial_zombie",
+  "luminous_monsters:glacial_skeleton",
+  "luminous_monsters:dark_oak_zombie",
+  "luminous_monsters:dark_oak_skeleton",
+  "minecraft:stray"
+]
 // endermite, magma cube, skeleton, spider, cave spider, husk, illusioner,zombie, stray, bogged, breeze,snow golem, spawner soul reset
 LootJS.modifiers((event) => {
+  hotZombies.forEach(element => {
+    event.addEntityLootModifier(element).randomChance(0.05).addLoot(Item.of("createbigcannons:bronze_upgrade_smithing_template"));
+})
+  coldZombies.forEach(element => {
+    event.addEntityLootModifier(element).randomChance(0.05).addLoot(Item.of("oreganized:silver_upgrade_smithing_template"));
+  })
   event.addEntityLootModifier("quark:wraith").pool((p) => {
     p.randomChance(0.3)
     p.addLoot("jeg:ectoplasm");
@@ -1176,6 +1374,7 @@ LootJS.modifiers((event) => {
   event.addEntityLootModifier("deeperdarker:shattered").randomChanceWithEnchantment("minecraft:looting", [0.10, 0.15, 0.20, 0.35]).addLoot("deeperdarker:resonarium_upgrade_smithing_template");
   event.addEntityLootModifier("minecraft:elder_guardian").randomChanceWithEnchantment("minecraft:looting", [0.35, 0.40, 0.45, 0.50]).addLoot("minecraft:heart_of_the_sea");
   event.addEntityLootModifier("rootoffear:wilted").randomChance(0.9).addWeightedLoot([1, 6], [Item.of("scalinghealth:bandages")]);
+  event.addEntityLootModifier("rootoffear:wiltling").randomChance(0.2).addWeightedLoot([1, 6], [Item.of("scalinghealth:bandages")]);
   event.addEntityLootModifier("rootoffear:wilted").randomChance(0.5).addLoot("scalinghealth:heart_crystal");
   event.addEntityLootModifier("alexsmobs:underminer").randomChanceWithEnchantment("minecraft:looting", [0.10, 0.15, 0.20, 0.25]).addLoot("scalinghealth:medkit");
   event.addEntityLootModifier("alexsmobs:underminer").randomChance(0.1).addWeightedLoot([1, 2], [Item.of("firstaid:plaster")]);

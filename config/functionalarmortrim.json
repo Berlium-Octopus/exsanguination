@@ -289,7 +289,7 @@
         {
             "attribute": "oreganized:undead_resistance",
             "operation": "addition",
-            "amount": 0.05
+            "amount": 0.5
         },
         {
             "attribute": "forge:swim_speed",

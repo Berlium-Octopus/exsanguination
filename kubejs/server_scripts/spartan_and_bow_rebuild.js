@@ -62,6 +62,22 @@ ServerEvents.recipes(event => {
 
 ServerEvents.recipes(event => {
   event.shaped(
+    Item.of('minecraft:copper_pickaxe', 1), // arg 1: output
+    [
+      'AAA',
+      ' B ', // arg 2: the shape (array of strings)
+      ' E '
+    ],
+    {
+      A: 'minecraft:copper_ingot',
+      E: 'spartanweaponry:handle',
+      B: ['minecraft:slime_ball', 'minecraft:honeycomb', 'minecraft:honey_bottle']
+    }
+  ).replaceIngredient('minecraft:honey_bottle', 'minecraft:glass_bottle')
+}
+)
+ServerEvents.recipes(event => {
+  event.shaped(
     Item.of('farmersdelight:copper_knife', 1), // arg 1: output
   [
     'BA',

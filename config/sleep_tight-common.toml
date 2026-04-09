@@ -17,7 +17,7 @@
 	#Immediately attempt sleeping after laying down on a bed
 	sleep_immediately = true
 	#Makes players respawn by laying on their bed
-	respawn_laying = true
+	respawn_laying = false
 
 	[misc.heartstone_mod_integration]
 		#Gives some benefit when sleeping next to somebody else. By default only works in conjunction with heartstone mod
