@@ -9,12 +9,12 @@ ServerEvents.recipes(event => {
   event.shaped(
     Item.of('oreganized:silver_upgrade_smithing_template', 2),
     [
-      'CBC',
-      'BAB', // arg 2: the shape (array of strings)
-      'CBC'
+      'BAB',
+      'BCB', // arg 2: the shape (array of strings)
+      'BBB'
     ],
     {
-      A: 'createbigcannons:bronze_upgrade_smithing_template',
+      A: 'oreganized:silver_upgrade_smithing_template',
       B: 'minecraft:blue_concrete',
       C: 'minecraft:builder_fragments',
     }

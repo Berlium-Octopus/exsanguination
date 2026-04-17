@@ -9,6 +9,8 @@ const $ResourceLocation2 = Java.loadClass("net.minecraft.resources.ResourceLocat
 const Mth = Java.loadClass("net.minecraft.util.Mth")
 let Axis = Platform.isClientEnvironment() ? Java.loadClass("com.mojang.math.Axis") : null
 let Minecraft = Platform.isClientEnvironment() ? Java.loadClass("net.minecraft.client.Minecraft") : null
+let $AreaEffectCloud = Java.loadClass('net.minecraft.world.entity.AreaEffectCloud')
+let $MobEffectInstance = Java.loadClass('net.minecraft.world.effect.MobEffectInstance')
 
 /**
  * @param {Internal.ContextUtils$PreRenderContext<Internal.LivingEntity>} context
@@ -69,7 +71,6 @@ global.tick = entity => {
             let targetYaw = Math.atan2(look.z(), look.x()) * (180 / JavaMath.PI) - 90
             let curYaw = entity.yRot
             let newYaw = lerpAngleDeg(curYaw, targetYaw, bodyT)
-
             entity.setYaw(newYaw)
             entity.yHeadRot = newYaw
             entity.yBodyRot = newYaw
@@ -352,8 +353,6 @@ global.explodingdeath = entity => {
 
 
 function spawnLingeringCloud(entity) {
-    let $AreaEffectCloud = Java.loadClass('net.minecraft.world.entity.AreaEffectCloud')
-    let $MobEffectInstance = Java.loadClass('net.minecraft.world.effect.MobEffectInstance')
     let areaeffectcloud = new $AreaEffectCloud(entity.level, entity.x, entity.y, entity.z)
     let activeeffects = entity.getActiveEffects()
     if (!activeeffects.isEmpty()) {
@@ -404,6 +403,7 @@ global.animation = event => {
     return true;
 }
 // Ok This Kinda Works
+
 function rotateHeadBone(entity, boneName) {
     let RenderUtils = Java.loadClass("software.bernie.geckolib.util.RenderUtils")
     let geoModel = RenderUtils.getGeoModelForEntity(entity)
@@ -420,7 +420,7 @@ function rotateHeadBone(entity, boneName) {
 
 
 /**
- * @param {Internal.ContextUtils$ApplyRotationsContext<Internal.TameableMobJS>} context
+ * @param {Internal.ContextUtils$ApplyRotationsContext} context
  */
 global.applyRotations = context => {
     let { poseStack, entity, partialTick } = context

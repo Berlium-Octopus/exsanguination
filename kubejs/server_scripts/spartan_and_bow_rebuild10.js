@@ -45,8 +45,8 @@ ServerEvents.recipes(event => {
   event.shaped(
     Item.of('cataclysm:black_steel_pickaxe', 1), // arg 1: output
   [
-    'AA ',
-    'AE ', // arg 2: the shape (array of strings)
+    'AAA',
+    ' E ', // arg 2: the shape (array of strings)
     ' C '
   ],
   {
@@ -179,7 +179,7 @@ ServerEvents.recipes(event => {
     ' E '// arg 2: the shape (array of strings)
   ],
   {
-    A: 'cataclysm:black_steel_nugget',
+    A: 'cataclysm:black_steel_ingot',
     E: 'spartanweaponry:handle',
     B: 'minecraft:string'
   }
@@ -244,11 +244,11 @@ ServerEvents.recipes(event => {
   event.shaped(
     Item.of('spartanweaponry:steel_parrying_dagger', 1), // arg 1: output
   [
-    'BAB'
+    'PAP'
   ],
   {
     A: 'spartanweaponry:steel_dagger',
-    B: 'cataclysm:black_steel_ingot'
+    P: 'cataclysm:black_steel_nugget',
   }
 )
   }
@@ -265,7 +265,7 @@ ServerEvents.recipes(event => {
   ],
   {
     A: 'spartanweaponry:steel_dagger',
-    P: 'cataclysm:black_steel_ingot',
+    P: 'cataclysm:black_steel_nugget',
     E: 'spartanweaponry:pole',
     B: 'minecraft:string'
   }
@@ -322,7 +322,7 @@ ServerEvents.recipes(event => {
   ],
   {
     A: 'cataclysm:black_steel_axe',
-    P: 'cataclysm:black_steel_ingot',
+    P: 'cataclysm:black_steel_nugget',
     E: 'spartanweaponry:handle'
   }
 )
@@ -340,7 +340,7 @@ ServerEvents.recipes(event => {
   ],
   {
     A: 'cataclysm:black_steel_shovel',
-    P: 'cataclysm:black_steel_ingot',
+    P: 'cataclysm:black_steel_nugget',
     E: 'spartanweaponry:handle'
   }
 )
@@ -358,7 +358,7 @@ ServerEvents.recipes(event => {
   ],
   {
     A: 'cataclysm:black_steel_shovel',
-    P: 'cataclysm:black_steel_ingot',
+    P: 'cataclysm:black_steel_nugget',
     E: 'spartanweaponry:pole',
 
   }
@@ -376,7 +376,7 @@ ServerEvents.recipes(event => {
 
   ],
   {
-    P: 'cataclysm:black_steel_ingot',
+    P: 'cataclysm:black_steel_nugget',
     O: 'minecraft:string',
     B: '#minecraft:planks',
   }
@@ -388,7 +388,7 @@ ServerEvents.recipes(event => {
   event.shaped(
     Item.of('spartanweaponry:steel_warhammer', 1), // arg 1: output
   [
-    ' B ',
+    ' P ',
     'PO ',
     ' E '
 
@@ -397,7 +397,7 @@ ServerEvents.recipes(event => {
     P: 'cataclysm:black_steel_shovel',
     E: 'spartanweaponry:pole',
     O: 'cataclysm:black_steel_ingot',
-    B: 'cataclysm:black_steel_ingot'
+    P: 'cataclysm:black_steel_nugget',
   }
 )
   }
@@ -451,7 +451,7 @@ ServerEvents.recipes(event => {
 
   ],
   {
-    P: 'cataclysm:black_steel_ingot',
+    P: 'cataclysm:black_steel_nugget',
     E: 'cataclysm:black_steel_sword',
     F: 'cataclysm:black_steel_ingot'
   }
@@ -469,7 +469,7 @@ ServerEvents.recipes(event => {
 
   ],
   {
-    P: 'cataclysm:black_steel_ingot',
+    P: 'cataclysm:black_steel_nugget',
     E: 'cataclysm:black_steel_sword',
     F: 'cataclysm:black_steel_ingot'
   }
@@ -487,7 +487,7 @@ ServerEvents.recipes(event => {
 
   ],
   {
-    P: 'cataclysm:black_steel_ingot',
+    P: 'cataclysm:black_steel_nugget',
     E: 'cataclysm:black_steel_sword',
     F: 'cataclysm:black_steel_ingot',
     G: 'spartanweaponry:handle'
@@ -506,7 +506,7 @@ ServerEvents.recipes(event => {
 
   ],
   {
-    P: 'cataclysm:black_steel_ingot',
+    P: 'cataclysm:black_steel_nugget',
     E: 'cataclysm:black_steel_sword',
     F: 'cataclysm:black_steel_ingot'
   }
@@ -524,7 +524,7 @@ ServerEvents.recipes(event => {
 
   ],
   {
-    P: 'cataclysm:black_steel_ingot',
+    P: 'cataclysm:black_steel_nugget',
     E: 'cataclysm:black_steel_sword'
   }
 )
@@ -542,7 +542,7 @@ ServerEvents.recipes(event => {
 
   ],
   {
-    P: 'cataclysm:black_steel_ingot',
+    P: 'cataclysm:black_steel_nugget',
     E: 'cataclysm:black_steel_hoe',
     G: 'spartanweaponry:pole'
   }

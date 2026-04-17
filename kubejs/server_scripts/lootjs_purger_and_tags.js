@@ -1,4 +1,5 @@
 // "deeperdarker:sculk prob or Mobtype.(deeperdarker:sculk) or .Mobtype("SCULK")" <- Throwback to the time i don't know 
+// Add Storms Of The Wild and Alexs Caves Exemplified Once The Thing Is FIxed
 ServerEvents.tags('worldgen/biome', event => {
   event.add('toughasnails:purified_water_biomes', ['minecraft:frozen_peaks', 'minecraft:desert', 'minecraft:badlands', 'minecraft:wooded_badlands', 'minecraft:frozen_river', 'minecraft:eroded_badlands', 'biomesoplenty:volcano', 'biomesoplenty:volcanic_plains', 'minecraft:snowy_plains', 'alexscaves:primordial_caves', 'biomesoplenty:origin_valley', 'minecraft:cherry_grove', 'minecraft:ice_spikes', 'biomesoplenty:cold_desert', 'biomesoplenty:hot_springs', 'biomesoplenty:mystic_grove', 'biomesoplenty:end_corruption'])
   event.add('toughasnails:dirty_water_biomes', ['biomesoplenty:rainforest', 'biomesoplenty:end_reef', 'biomesoplenty:rocky_rainforest', 'biomesoplenty:gravel_beach', 'alexscaves:abyssal_chasm', 'biomesoplenty:marsh', 'minecraft:lush_caves', 'minecraft:deep_dark', 'biomesoplenty:wetland', 'biomesoplenty:mediterranean_forest', 'biomesoplenty:wasteland', 'biomesoplenty:end_wilds', 'minecraft:dripstone_caves', 'biomesoplenty:floodplain', 'biomesoplenty:marsh', 'minecraft:old_growth_spruce_taiga', 'biomesoplenty:wasteland_steppe', 'biomesoplenty:fungal_jungle', 'minecraft:mushroom_fields', 'biomesoplenty:bayou', 'biomesoplenty:floodplain', 'minecraft:jungle', 'deeperdarker:overcast_columns', 'deeperdarker:blooming_caverns', 'deeperdarker:echoing_forest', 'deeperdarker:deeplands'])
@@ -15,7 +16,9 @@ ServerEvents.tags('spartanweaponry:weapon_traits', event => {
   // Soups as hot food
   event.add('spartanweaponry:cestus', 'spartanweaponry:versatile_shovel')
 })
-
+ServerEvents.tags("entity_type", event => {
+  event.add("rootoffear:not_scared_by_wilted", "rootoffear:wiltling")
+})
 ServerEvents.tags('spartanweaponry:weapon_traits', event => {
   event.remove('spartanweaponry:flanged_mace', 'spartanweaponry:undead_damage_bonus')
   event.remove('spartanweaponry:katana', 'spartanweaponry:two_handed_1')
@@ -437,17 +440,12 @@ ServerEvents.tags('item', event => {
       'minecraft:golden_axe',
       'minecraft:diamond_axe',
       'cataclysm:black_steel_axe'])
-})
 
-ServerEvents.tags('item', event => {
   event.add('neoforge:decorativetag',
     [
       '#minecraft:candles'
     ]
   )
-})
-
-ServerEvents.tags('item', event => {
 
 event.add('exsanguination:netherite_repair',
   [
@@ -473,46 +471,36 @@ event.add('exsanguination:black_steel_repair',
     'minecraft:iron_ingot',
     'alexsmobs:mimicream'
   ])
-})
 
-ServerEvents.tags('item', event => {
   event.add('exsanguination:flint_repair',
     [
       'minecraft:flint',
       'alexsmobs:mimicream'
     ]
   )
-})
 // and rusty tools
-ServerEvents.tags('item', event => {
   event.add('exsanguination:iron_repair',
     [
       'minecraft:iron_ingot',
       'alexsmobs:mimicream'
     ]
   )
-})
 
-ServerEvents.tags('item', event => {
   event.add('exsanguination:diamond_repair',
     [
       'minecraft:diamond_ingot',
       'alexsmobs:mimicream'
     ]
   )
-})
 
-ServerEvents.tags('item', event => {
   event.add('exsanguination:copper_repair',
     [
       'minecraft:copper_ingot',
       'alexsmobs:mimicream'
     ]
   )
-})
 
 
-ServerEvents.tags('item', event => {
   event.add('exsanguination:scarlet_repair',
     [
       "alexscaves:scarlet_neodymium_ingot",
@@ -520,9 +508,7 @@ ServerEvents.tags('item', event => {
       "alexsmobs:mimicream"
     ]
   )
-})
 
-ServerEvents.tags('item', event => {
   event.add('exsanguination:azure_repair',
     [
       "alexscaves:azure_neodymium_ingot",
@@ -530,17 +516,12 @@ ServerEvents.tags('item', event => {
       "alexsmobs:mimicream"
     ]
   )
-})
-ServerEvents.tags('item', event => {
   event.add('exsanguination:misc_repair',
     [
       "alexsmobs:mimicream"
     ]
   )
-})
 
-
-ServerEvents.tags('item', event => {
   event.add('exsanguination:bronze_repair',
     [
       "createbigcannons:bronze_ingot",
@@ -548,18 +529,14 @@ ServerEvents.tags('item', event => {
       "alexsmobs:mimicream"
     ]
   )
-})
 
-ServerEvents.tags('item', event => {
   event.add('exsanguination:resonarium_repair',
     [
       "deeperdarker:resonarium_plate",
       "alexsmobs:mimicream"
     ]
   )
-})
 
-ServerEvents.tags('item', event => {
   event.add('exsanguination:warden_repair',
     [
       "deeperdarker:reinforced_echo_shard",
@@ -646,7 +623,7 @@ ServerEvents.tags('item', event => {
   event.add('curios:charm', ['alexscaves:totem_of_possession', 'luminous_nether:nether_beast_totem', 'archeological:diamond_charm', 'scalinghealth:heart_crystal_shard', 'deeperdarker:sliced_heart_of_the_deep', 'rootoffear:agitated_primitive_heart'])
   event.add('toughasnails:cooling_trims', ['minecraft:copper_ingot', 'oreganized:silver_ingot', 'minecraft:iron_ingot', 'alexscaves:pure_darkness', 'biomesoplenty:rose_quartz', 'cataclysm:cursium_ingot'])
   event.add('toughasnails:heating_trims', ['alexscaves:tectonic_shard', 'minecraft:iron_ingot', 'cataclysm:ignitium_ingot', 'oreganized:electrum_ingot', 'minecraft:netherite_ingot'])
-  event.add('toughasnails:heating_held_items', ['luminous_nether:molten_coal', 'minecraft:torch', 'supplementaries:sconce', 'spelunkery:spring_water_bucket', 'oreganized:molten_lead_bucket', 'createbigcannons:molten_nethersteel_bucket', 'createbigcannons:molten_cast_iron_bucket', 'createbigcannons:molten_bronze_bucket', 'createbigcannons:molten_steel_bucket'])
+  event.add('toughasnails:heating_held_items', ['flimsytorches:flimsy_torch','luminous_nether:molten_coal', 'minecraft:torch', 'supplementaries:sconce', 'spelunkery:spring_water_bucket', 'oreganized:molten_lead_bucket', 'createbigcannons:molten_nethersteel_bucket', 'createbigcannons:molten_cast_iron_bucket', 'createbigcannons:molten_bronze_bucket', 'createbigcannons:molten_steel_bucket'])
   event.add('toughasnails:thermoregulator_heating_fuel', ['luminous_nether:molten_coal'])
   event.add('toughasnails:cooling_held_items', ['deeperdarker:sliced_heart_of_the_deep', 'deeperdarker:heart_of_the_deep', 'scalinghealth:power_crystal', 'netherexp:ectoplasm_bucket', 'minecraft:soul_torch', 'supplementaries:sconce_soul'])
   event.add('toughasnails:cooling_consumed_items', ['alexscavesdelight:bioluminesscence_custard', 'immersive_weathering:ice_sickle', 'alexscaves:vanilla_ice_cream', 'alexscaves:chocolate_ice_cream', 'alexscaves:sweetberry_ice_cream', 'alexscavesdelight:chocolate_ice_cream', 'alexscavesdelight:sweetberry_ice_cream', 'alexscavesdelight:vanilla_ice_cream', 'farmersdelight:melon_popsicle', 'farmersdelight:glow_berry_custard', 'alexscavesdelight:tree_star_juice'])
@@ -899,12 +876,14 @@ let zombies_and_such = [
   'luminous_monsters:dark_oak_skeleton',
   'luminous_monsters:savanna_skeleton',
   'luminous_monsters:cherry_skeleton',
-  'luminous_monsters:hollow'
+  'luminous_monsters:hollow',
+  'minecraft:drowned',
+  'trials:breeze'
 ];
 
 LootJS.modifiers((event) => {
   event.addEntityLootModifier(zombies_and_such).pool((p) => {
-    p.randomChanceWithEnchantment("minecraft:looting", [0.05, 0.6, 0.7, 0.8])
+    p.randomChanceWithEnchantment("minecraft:looting", [0.1, 0.15, 0.2, 0.25])
     p.addLoot("minecraft:builder_fragments")
   });
 });
@@ -1289,6 +1268,14 @@ ServerEvents.tags('entity_type', event => {
 }
 );
 
+LootJS.modifiers((event) => {
+  event.addBlockLootModifier([
+    'flimsytorches:unlit_flimsy_torch',
+  ]).pool((p) => {
+    p.addLoot("flimsytorches:unlit_flimsy_torch")
+  });
+});
+
 ServerEvents.tags('entity_type', event => {
   event.add('alexscaves:resists_radiation',
 
@@ -1373,8 +1360,8 @@ LootJS.modifiers((event) => {
   event.addEntityLootModifier("minecraft:creeper").randomChanceWithEnchantment("minecraft:looting", [0.1, 0.15, 0.2, 0.25]).addLoot("minecraft:flint");
   event.addEntityLootModifier("deeperdarker:shattered").randomChanceWithEnchantment("minecraft:looting", [0.10, 0.15, 0.20, 0.35]).addLoot("deeperdarker:resonarium_upgrade_smithing_template");
   event.addEntityLootModifier("minecraft:elder_guardian").randomChanceWithEnchantment("minecraft:looting", [0.35, 0.40, 0.45, 0.50]).addLoot("minecraft:heart_of_the_sea");
-  event.addEntityLootModifier("rootoffear:wilted").randomChance(0.9).addWeightedLoot([1, 6], [Item.of("scalinghealth:bandages")]);
-  event.addEntityLootModifier("rootoffear:wiltling").randomChance(0.2).addWeightedLoot([1, 6], [Item.of("scalinghealth:bandages")]);
+  event.addEntityLootModifier("rootoffear:wilted").randomChance(0.9).addWeightedLoot([1, 10], [Item.of("scalinghealth:bandages")]);
+  event.addEntityLootModifier("rootoffear:wiltling").randomChance(0.5).addWeightedLoot([1, 2], [Item.of("scalinghealth:bandages")]);
   event.addEntityLootModifier("rootoffear:wilted").randomChance(0.5).addLoot("scalinghealth:heart_crystal");
   event.addEntityLootModifier("alexsmobs:underminer").randomChanceWithEnchantment("minecraft:looting", [0.10, 0.15, 0.20, 0.25]).addLoot("scalinghealth:medkit");
   event.addEntityLootModifier("alexsmobs:underminer").randomChance(0.1).addWeightedLoot([1, 2], [Item.of("firstaid:plaster")]);

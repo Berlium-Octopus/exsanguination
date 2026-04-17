@@ -93,47 +93,7 @@ StartupEvents.registry('mob_effect', event => {
         .color(0xA1BF33)
         .harmful()
         .modifyAttribute("forge:entity_gravity", "562e606d-278c-45a7-9f48-655e1787b75f", -0.001, 'addition')
-        .effectTick((entity, level) => {
-            // Only run on server for players
-            if (!entity || level.isClientSide() || !entity.isPlayer()) return;
-            const player = entity;
-            const activeEffect = player.getActiveEffect('lostcities:unlisted');
-            if (!activeEffect) return;
-
-            const remainingTicks = activeEffect.getDuration();
-            // When only 1 tick remains, schedule the teleport (runs after effect expires)
-            if (remainingTicks <= 1 && !player.persistentData.getBoolean('lostcities_teleport_scheduled')) {
-                player.persistentData.putBoolean('lostcities_teleport_scheduled', true);
-                player.server.scheduleInTicks(1, () => {
-                    // Safety check: effect should be gone now
-                    if (player.isRemoved() || player.getActiveEffect('lostcities:unlisted')) return;
-                    // Only teleport if player is in the lostcity dimension
-                    if (player.level.dimension != 'lostcities:lostcity') return;
-
-                    const respawnDim = player.getRespawnDimension();
-                    const respawnPos = player.getRespawnPosition();
-                    const hasValidSpawn = respawnPos != null && respawnDim != null;
-
-                    // Apply safe-fall & protection effects, clear status
-                    player.removeAllEffects();
-                    player.addEffect('minecraft:slow_falling', 700, 1, false, true);
-                    player.addEffect('toughasnails:climate_clemency', 300, 1, false, true);
-                    player.addEffect('minecraft:fire_resistance', 300, 1, false, true);
-                    player.tell(Text.of("It's just A Dream"));
-                    player.extinguish();
-
-                    // Teleport
-                    if (hasValidSpawn) {
-                        player.teleportTo(respawnDim.location(), respawnPos.x, respawnPos.y, respawnPos.z, 0.0, 0.0);
-                    } else {
-                        player.teleportTo('minecraft:overworld', 0, 120, 0, 0.0, 0.0);
-                    }
-
-                    player.persistentData.remove('lostcities_teleport_scheduled');
-                });
-            }
-        });
-});
+})
 StartupEvents.registry('mob_effect', event => {
     event.create('exsanguination:reincarnatus') // Create the effect under "kubejs:custom_effect"
         .color(0xF8D7780) // Sets the color of the Effect's Particles.

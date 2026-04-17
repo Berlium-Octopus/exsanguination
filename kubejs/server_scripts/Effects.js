@@ -115,22 +115,22 @@ global.livingFallEvent = event => {
 BlockEvents.broken(event => {
   if (event.level.dimension != "minecraft:overworld") return
   if (event.block.hasTag("sereneseasons:year_round_crops")) {
-    if (Math.random() > 0.95) {
+    if (Math.random() > 0.99) {
       event.block.down.createEntity('sleep_tight:bedbug').spawn()
     }
   }
   if (event.block.hasTag("immersive_weathering:leaf_pile_replaceable")) {
-    if (Math.random() > 0.95) {
+    if (Math.random() > 0.98) {
       event.block.down.createEntity('sleep_tight:bedbug').spawn()
     }
   }
   if (event.block.hasTag("sereneseasons:summer_crops")) {
-    if (Math.random() > 0.95) {
+    if (Math.random() > 0.97) {
       event.block.down.createEntity('sleep_tight:bedbug').spawn()
     }
   }
   if (event.block.hasTag("minecraft:leaves")) {
-    if (Math.random() > 0.95) {
+    if (Math.random() > 0.98) {
       event.block.down.createEntity('sleep_tight:bedbug').spawn()
     }
   }
@@ -318,6 +318,7 @@ PlayerEvents.loggedIn(event => {
   if (!event.player.stages.has('new_join')) {
     event.player.stages.add('new_join')
     event.server.runCommandSilent(`/effect give @p exsanguination:reincarnatus 40 0`)
+    event.server.runCommandSilent(`/effect give @p toughasnails:climate_clemency 9000 0`)
     event.server.runCommandSilent(`/difficulty hard`)
     event.server.runCommandSilent('/gamerule reducedDebugInfo true')
   }
@@ -419,14 +420,16 @@ BlockEvents.rightClicked('minecraft:campfire', event => {
       break;
   }
 });
-
-BlockEvents.rightClicked('minecraft:soul_campfire', event => {
+let exoticCampfires = [
+"minecraft:soul_campfire",
+"netherexp:ancient_campfire"
+]
+BlockEvents.rightClicked(exoticCampfires, event => {
   const { player, block, server, player: { mainHandItem } } = event
   switch (event.player.mainHandItem.getId()) {
     case 'create:wrench':
       event.player.damageHeldItem('main_hand', 1)
       event.server.runCommandSilent(`playsound minecraft:block.fire.extinguish block @a ${block.x} ${block.y} ${block.z} 1 1`)
-      event.block.popItem("luminous_nether:ghostly_essense");
       event.block.set('minecraft:campfire', block.properties);
       player.swing();
       event.cancel();
@@ -436,7 +439,7 @@ BlockEvents.rightClicked('minecraft:soul_campfire', event => {
 
 
 BlockEvents.rightClicked('minecraft:fletching_table', event => {
-  const { player, block, server, player: { mainHandItem } } = event
+  const { player } = event
   if (event.hand != "main_hand") return
   switch (event.player.mainHandItem.getId()) {
     case 'minecraft:feather':
@@ -449,7 +452,7 @@ BlockEvents.rightClicked('minecraft:fletching_table', event => {
 });
 
 
-BlockEvents.rightClicked('immersive_weathering:earthen_clay', 'immersive_weathering:silt', 'immersive_weathering:loam', 'farmersdelight:rich_soil', 'biomemakeover:peat', event => {
+BlockEvents.rightClicked(['immersive_weathering:earthen_clay', 'immersive_weathering:silt', 'immersive_weathering:loam', 'farmersdelight:rich_soil', 'biomemakeover:peat'], event => {
   switch (event.player.mainHandItem.getId()) {
     case 'minecraft:wooden_hoe':
     case 'minecraft:stone_hoe':
@@ -495,8 +498,6 @@ ItemEvents.rightClicked('alexsmobs:spectral_dagger', event => {
     event.player.damageHeldItem("main_hand", 100)
   }
 });
-
-
 ItemEvents.rightClicked('spelunkery:depth_gauge', event => {
   if (event.hand == "MAIN_HAND") {
     event.player.damageHeldItem("main_hand", 1)

@@ -1,0 +1,51 @@
+
+#Torch Burn Duration
+[torch_duration]
+	#Age required before torch degrades. A value of 5 lasts approximately 17 minutes on average.
+	#Flimsy Torch Age (Default: 5)
+	#Range: 0 ~ 15
+	flimsyTorchAge = 8
+	#Used Torch Age (Default: 5)
+	#Range: 0 ~ 15
+	usedTorchAge = 8
+	#Smoldering Torch Age (Default: 5)
+	#Range: 0 ~ 15
+	smolderingTorchAge = 8
+
+#Lantern Duration Multiplier
+[lantern_multiplier]
+	#Multiplier affecting the burn duration of torches placed in lanterns. A value of 1.5 extends the lifetime by 50%.
+	#Lantern Age Multiplier (Default: 1.5)
+	#Range: 0.1 ~ 100.0
+	lanternDurationMultiplier = 2
+
+#Other Torches
+[other_torches]
+	#List of torches from other mods to be replaced by flimsy torches if generated.
+	#Ground torches to be replaced
+	otherGroundTorches = ["othermod:other_torch", "anothermod:another_torch"]
+	#Wall torches to be replaced
+	otherWallTorches = ["othermod:other_wall_torch", "anothermod:another_wall_torch"]
+
+#General Settings
+[general]
+	#Chance of a generated torch to remain a regular, non-flimsy torch. A value of 0.01 equals 1%.
+	#Setting this to 0 or 1 bypasses random checks, slightly improving performance.
+	#Chance Lucky Torch (Default: 0.01)
+	#Range: 0.0 ~ 1.0
+	chanceLuckyTorch = 0.1
+
+#Villager Torch Behavior
+[villager_torch_behavior]
+	#Interval between each attempt to replace a torch. A value of 20 equals 1 second.
+	#Torch Replace Interval. (Default: 100)
+	#Range: > 1
+	torchReplaceInterval = 100
+	#Defines which torch types villagers are allowed to replace. Lower condition torches are prioritized first.
+	#Allow villagers to replace Burnt Out torches
+	allowBurntOutReplacement = true
+	#Allow villagers to replace Smoldering Torches
+	allowSmolderingReplacement = true
+	#Allow villagers to replace Used Torches
+	allowUsedReplacement = false
+

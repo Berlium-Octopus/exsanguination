@@ -1,4 +1,10 @@
 // @ts-script
+// KonSola5's Script Modified
+
+ForgeEvents.onEvent("net.minecraftforge.event.entity.living.MobEffectEvent$Expired", event => {
+    global.travelOutCity(event)
+})
+
 // Vommiter's Script Modified
 ForgeEvents.onEvent("net.minecraftforge.event.entity.EntityTravelToDimensionEvent", event => {
     global.portalEvent(event)

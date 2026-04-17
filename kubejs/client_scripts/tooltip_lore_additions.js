@@ -1,12 +1,14 @@
 ClientEvents.tick(e => {
   // From YukkuriC, modified
+  let { player } = Client
+  if (!player) return
   if (!Client.player.potionEffects.isActive('lostcities:unlisted')) return
-  if (!Client.paused && Client.player.age % 1) return
-
+  if (!Client.paused && player.age % 20 === 0) return
   // Sprint Cancel
-  Client.player.setSprinting(false)
-  Client.options.keySprint.setDown(false)
-  // Fancy Display Nuke
+  if (player.sprinting) {
+    player.setSprinting(false)
+    Client.options.keySprint.setDown(false)
+  }
   if (Client.currentScreen?.class == 'class net.minecraft.client.gui.screens.PauseScreen') {
     Client.forceSetScreen(null)
   }
@@ -32,13 +34,6 @@ JEIEvents.information(event => {
   event.addItem(["sculkhorde:calcite_clump"], ["Due to how delicate this ore is, only Resonarium and Warden tools can extract the Calcite in the ore"])
   event.addItem(["minecraft:compass", "alexsmobs:dimensional_carver"], ["When a compass that is loaded with a lodestone's location is on the offhand and a dimensional carver is on the mainhand, you can create a proto-waystone that consumes the compass after use"])
   event.addItem('sculkhorde:blade_of_purity', ['A sword that can purify land and inflicts purity on Sculk Mobs.'])
-  /*
-  event.addItem(["alexscaves_torpedoes:shadow_sword",
-    "alexscaves_torpedoes:shadow_pickaxe",
-    "alexscaves_torpedoes:shadow_axe",
-    "alexscaves_torpedoes:shadow_shovel",
-    "alexscaves_torpedoes:shadow_hoe"], "Very clinggy toolset, might give you rabies if you don't hold on")
-    */
   event.addItem('spelunkers_charm:rock', ['Obtained from smashing stone with a wooden club.'])
   event.addItem('luminous_beasts:jungle_pendant', ['When on offhand, grants a 50% chance to give resistance when killing a target but when worn as a belt-piece it prevents stunning'])
   event.addItem('spelunkers_charm:deepslate_rock', ['Obtained from deepslate and cobbled deepslate.'])
@@ -62,15 +57,15 @@ JEIEvents.information(event => {
   event.addItem('luminous_nether:nether_beast_totem', ['Could be found inside of Nether Vases and Mineshafts', 'This totem protects from Exsanguination,', 'Hemorrhage, Nausea and Blooded.'])
   event.addItem('archeological:old_bandages', ['Grants immunity to Mining Fatigue and Weakness.'])
   event.addItem('jeg:flare', ['The flares that are not §4Ominous §0are safe to use while the §4Ominous §0ones will start an incursion.'])
-  event.addItem(['biomesoplenty:spider_egg'], 'Provides a Spider Climbing Ability')
-  event.addItem(['archeological:ancient_socks'], 'Provides a Double Jump Ability')
-  event.addItem(['luminous_nether:pale_melon_slice'], 'Converts Piglin Cultists to Piglins when Vulnerable, these Piglins are immune to zombification')
-  event.addItem(['luminous_nether:popshroom_juice'], 'Converts Piglin to Piglins Cultists when Stunned')
-  event.addItem(['alexscavesdelight:filled_heart_of_iron'], 'Provides- wait,Dear god no....')
-  event.addItem('minecraft:stick', ['Can be used to light up campfires'])
+  event.addItem(['biomesoplenty:spider_egg'], ['Provides a Spider Climbing Ability'])
+  event.addItem(['archeological:ancient_socks'], ['Provides a Double Jump Ability'])
+  event.addItem(['luminous_nether:pale_melon_slice'], ['Converts Piglin Cultists to Piglins when Vulnerable, these Piglins are immune to zombification'])
+  event.addItem(['luminous_nether:popshroom_juice'], ['Converts Piglin to Piglins Cultists when Stunned'])
+  event.addItem(['alexscavesdelight:filled_heart_of_iron'], ['Provides- wait,Dear god no....'])
+  event.addItem(['flimsytorches:unlit_flimsy_torch', 'flimsytorches:flimsy_torch'], ['Can be lit up by using a campfire, with a chance of lighting you up.'])
   event.addItem('sculkhorde:soul_disrupter', ['Weakens Sculk Reapers when pointed at.'])
   event.addItem(['minecraft:campfire', 'minecraft:soul_campfire', 'netherexp:ancient_campfire'], ['Burns infinitely if fed a Cinder Flour', 'Converted back to a normal campfire via wrench'])
-  event.addItem(['alexscaves:azure_neodymium_ingot'], 'Heart Of Iron hates these')
+  event.addItem(['alexscaves:azure_neodymium_ingot'], ['Heart Of Iron hates these'])
   event.addItem('alexsmobs:emu_leggings', ['Has a chance to dodge projectiles.'])
   event.addItem('alexsmobs:flying_fish_boots', ['Faster swimming speed in water and provides a leaping ability when in water.'])
   event.addItem('vinery:stinky_wine', ['Would repel mousquitoes in exchange for some hearts.'])
@@ -97,10 +92,18 @@ JEIEvents.information(event => {
   event.addItem(['luminous_beasts:spore_bundle', 'luminous_nether:spore_bundle'], ['Explodes and harms attackers after death.'])
 });
 
+
 JEIEvents.hideItems(event => {
+  event.hide(Item.of('minecraft:splash_potion', '{Potion:"potioncore:spawn_teleport"}').strongNBT())
+  event.hide(Item.of('minecraft:tipped_arrow', '{Potion:"potioncore:spawn_teleport"}').strongNBT())
+  event.hide(Item.of('minecraft:lingering_potion', '{Potion:"potioncore:spawn_teleport"}').strongNBT())
+  event.hide(Item.of('minecraft:potion', '{Potion:"potioncore:spawn_teleport"}').strongNBT())
   event.hide(Item.of('minecraft:potion', '{Potion:"luminous_nether:antidote_potion"}').strongNBT())
   event.hide(Item.of('minecraft:splash_potion', '{Potion:"luminous_nether:antidote_potion"}').strongNBT())
-  event.hide("create:potions")
+  event.hide(Item.of('minecraft:lingering_potion', '{Potion:"luminous_nether:antidote_potion"}').strongNBT())
+  event.hide(Item.of('minecraft:tipped_arrow', '{Potion:"luminous_nether:antidote_potion"}').strongNBT())
+
+  event.hide("create:potions")  
   event.hide([
     'trials:mace',
     'luminous_nether:ash_wall_candle',
@@ -137,8 +140,8 @@ JEIEvents.hideItems(event => {
   ])
   event.hide('jeg:combat_rifle')
   event.hide([
-"spartanshields:lead_basic_shield",
-"spartanshields:lead_tower_shield"
+    "spartanshields:lead_basic_shield",
+    "spartanshields:lead_tower_shield"
   ])
   event.hide([
     "minecraft:wooden_sword",
@@ -383,7 +386,7 @@ ItemEvents.tooltip(event => {
       text.remove(1)
     }
   })
-  event.addAdvanced(["scalinghealth:medkit",'#spartanweaponry:arrows'], (item, advanced, text) => {
+  event.addAdvanced(["scalinghealth:medkit", '#spartanweaponry:arrows'], (item, advanced, text) => {
     text.remove(1)
     text.remove(1)
   })
@@ -417,22 +420,22 @@ ItemEvents.tooltip(event => {
     }
   })
   event.addAdvanced(['cataclysm:cursed_bow'], (item, advanced, text) => {
-      text.remove(1)
-      text.remove(1)
-  })
-  event.addAdvanced(["#spartanweaponry:throwing_knives","#spartanweaponry:tomahawks","#spartanweaponry:javelins"], (item, advanced, text) => {
-    text.remove(1)
     text.remove(1)
     text.remove(1)
   })
-  
-  event.addAdvanced(['spartanweaponry:netherite_heavy_crossbow', "#spartanweaponry:warhammers","#spartanweaponry:katanas","#spartanweaponry:rapiers","#spartanweaponry:flanged_maces", "#spartanweaponry:battleaxes", "#spartanweaponry:longswords", "#spartanweaponry:pikes", "#spartanweaponry:quarterstaves"], (item, advanced, text) => {
+  event.addAdvanced(["#spartanweaponry:throwing_knives", "#spartanweaponry:tomahawks", "#spartanweaponry:javelins"], (item, advanced, text) => {
+    text.remove(1)
+    text.remove(1)
+    text.remove(1)
+  })
+
+  event.addAdvanced(['spartanweaponry:netherite_heavy_crossbow', "#spartanweaponry:warhammers", "#spartanweaponry:katanas", "#spartanweaponry:rapiers", "#spartanweaponry:flanged_maces", "#spartanweaponry:battleaxes", "#spartanweaponry:longswords", "#spartanweaponry:pikes", "#spartanweaponry:quarterstaves"], (item, advanced, text) => {
     if (event.shift) {
       text.remove(1)
       text.remove(1)
     }
-    })
-  event.addAdvanced(['#spartanweaponry:greatswords',"#spartanweaponry:lances","#spartanweaponry:halberds","#spartanweaponry:sabers","#spartanweaponry:scythes", "#spartanweaponry:battle_hammers", "#spartanweaponry:glaives"], (item, advanced, text) => {
+  })
+  event.addAdvanced(['#spartanweaponry:greatswords', "#spartanweaponry:lances", "#spartanweaponry:halberds", "#spartanweaponry:sabers", "#spartanweaponry:scythes", "#spartanweaponry:battle_hammers", "#spartanweaponry:glaives"], (item, advanced, text) => {
     if (event.shift) {
       text.remove(1)
       text.remove(1)
@@ -510,7 +513,20 @@ ItemEvents.tooltip(event => {
     "sculkhorde:sculk_bee_nest_cell",
     "sculkhorde:sculk_resin",
     "sculkhorde:sculk_acidic_projectile",
-    "sculkhorde:ferriscite",
+    "cataclysm:soul_render",
+    "cataclysm:the_incinerator",
+    "cataclysm:the_annihilator",
+    "cataclysm:the_immolator",
+    "cataclysm:gauntlet_of_bulwark"
+  ], (item, advanced, text) => {
+    text.remove(1)
+    text.remove(1)
+  })
+});
+
+
+ItemEvents.tooltip(event => {
+  event.addAdvanced(["sculkhorde:ferriscite",
     "sculkhorde:ferriscite_pickaxe",
     "sculkhorde:ferriscite_axe",
     "sculkhorde:ferriscite_shovel",
@@ -519,14 +535,7 @@ ItemEvents.tooltip(event => {
     "sculkhorde:diascite_shovel",
     "sculkhorde:diascite_axe",
     "sculkhorde:diascite_pickaxe",
-    "sculkhorde:diascite",
-    "cataclysm:soul_render", 
-    "cataclysm:the_incinerator",
-    "cataclysm:the_annihilator",
-    "cataclysm:the_immolator",
-    "cataclysm:gauntlet_of_bulwark"
-], (item, advanced, text) => {
-      text.remove(1)
+    "sculkhorde:diascite"], (item, advanced, text) => {
       text.remove(1)
     })
 });
@@ -543,7 +552,7 @@ ItemEvents.tooltip(event => {
   })
 });
 ItemEvents.tooltip(event => {
-  event.addAdvanced(['jeg:pocket_bubble', 'jeg:ammo_pouch', 'jeg:firearm_blueprint', 'jeg:advanced_firearm_blueprint'], (item, advanced, text) => {
+  event.addAdvanced(['spartanweaponry:pole','spartanweaponry:handle','spartanweaponry:simple_pole','spartanweaponry:simple_handle','jeg:pocket_bubble', 'jeg:ammo_pouch', 'jeg:firearm_blueprint', 'jeg:advanced_firearm_blueprint'], (item, advanced, text) => {
     text.remove(1)
   })
 });

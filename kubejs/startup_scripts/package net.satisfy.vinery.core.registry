@@ -1,0 +1,1064 @@
+package net.satisfy.vinery.core.registry;
+
+import dev.architectury.core.item.ArchitecturySpawnEggItem;
+import dev.architectury.registry.registries.DeferredRegister;
+import dev.architectury.registry.registries.Registrar;
+import dev.architectury.registry.registries.RegistrySupplier;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.flag.FeatureFlag;
+import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.food.Foods;
+import net.minecraft.world.food.FoodProperties.Builder;
+import net.minecraft.world.item.HangingSignItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.SignItem;
+import net.minecraft.world.item.ArmorItem.Type;
+import net.minecraft.world.level.block.BarrelBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ButtonBlock;
+import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.PressurePlateBlock;
+import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.TrapDoorBlock;
+import net.minecraft.world.level.block.PressurePlateBlock.Sensitivity;
+import net.minecraft.world.level.block.grower.AbstractTreeGrower;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
+import net.satisfy.vinery.core.Vinery;
+import net.satisfy.vinery.core.block.AppleLeavesBlock;
+import net.satisfy.vinery.core.block.ApplePressBlock;
+import net.satisfy.vinery.core.block.BasketBlock;
+import net.satisfy.vinery.core.block.BigBottleStorageBlock;
+import net.satisfy.vinery.core.block.BigTableBlock;
+import net.satisfy.vinery.core.block.CabinetBlock;
+import net.satisfy.vinery.core.block.ChairBlock;
+import net.satisfy.vinery.core.block.CompletionistBannerBlock;
+import net.satisfy.vinery.core.block.CompletionistWallBannerBlock;
+import net.satisfy.vinery.core.block.DarkCherryLeavesBlock;
+import net.satisfy.vinery.core.block.DirtPathSlabBlock;
+import net.satisfy.vinery.core.block.DirtSlabBlock;
+import net.satisfy.vinery.core.block.FacingBlock;
+import net.satisfy.vinery.core.block.FermentationBarrelBlock;
+import net.satisfy.vinery.core.block.FlowerBoxBlock;
+import net.satisfy.vinery.core.block.FlowerPotBigBlock;
+import net.satisfy.vinery.core.block.FourBottleStorageBlock;
+import net.satisfy.vinery.core.block.GrapeBush;
+import net.satisfy.vinery.core.block.GrapeVineBlock;
+import net.satisfy.vinery.core.block.GrapevinePotBlock;
+import net.satisfy.vinery.core.block.LatticeBlock;
+import net.satisfy.vinery.core.block.ModHangingSignBlock;
+import net.satisfy.vinery.core.block.ModStandingSignBlock;
+import net.satisfy.vinery.core.block.ModWallHangingSignBlock;
+import net.satisfy.vinery.core.block.ModWallSignBlock;
+import net.satisfy.vinery.core.block.NineBottleStorageBlock;
+import net.satisfy.vinery.core.block.PaleStemBlock;
+import net.satisfy.vinery.core.block.ShelfBlock;
+import net.satisfy.vinery.core.block.SpreadableGrassSlabBlock;
+import net.satisfy.vinery.core.block.StackableLogBlock;
+import net.satisfy.vinery.core.block.StoragePotBlock;
+import net.satisfy.vinery.core.block.TableBlock;
+import net.satisfy.vinery.core.block.WindowBlock;
+import net.satisfy.vinery.core.block.WineBottleBlock;
+import net.satisfy.vinery.core.block.WineBoxBlock;
+import net.satisfy.vinery.core.block.state.properties.VineryWoodType;
+import net.satisfy.vinery.core.entity.DarkCherryBoatEntity;
+import net.satisfy.vinery.core.item.BasketItem;
+import net.satisfy.vinery.core.item.DarkCherryBoatItem;
+import net.satisfy.vinery.core.item.DrinkBlockItem;
+import net.satisfy.vinery.core.item.GrapeBushSeedItem;
+import net.satisfy.vinery.core.item.GrapeItem;
+import net.satisfy.vinery.core.item.GrapejuiceBottleItem;
+import net.satisfy.vinery.core.item.RottenCherryItem;
+import net.satisfy.vinery.core.item.WinemakerBootsItem;
+import net.satisfy.vinery.core.item.WinemakerChestItem;
+import net.satisfy.vinery.core.item.WinemakerHelmetItem;
+import net.satisfy.vinery.core.item.WinemakerLegsItem;
+import net.satisfy.vinery.core.util.GeneralUtil;
+import net.satisfy.vinery.core.util.WineSettings;
+import net.satisfy.vinery.core.world.feature.VineryConfiguredFeatures;
+import org.jetbrains.annotations.NotNull;
+
+public class ObjectRegistry {
+   public static final DeferredRegister<Item> ITEMS;
+   public static final Registrar<Item> ITEM_REGISTRAR;
+   public static final DeferredRegister<Block> BLOCKS;
+   public static final Registrar<Block> BLOCK_REGISTRAR;
+   public static final RegistrySupplier<Block> DARK_CHERRY_SIGN;
+   public static final RegistrySupplier<Block> DARK_CHERRY_WALL_SIGN;
+   public static final RegistrySupplier<Block> DARK_CHERRY_HANGING_SIGN;
+   public static final RegistrySupplier<Block> DARK_CHERRY_WALL_HANGING_SIGN;
+   public static final RegistrySupplier<Item> DARK_CHERRY_SIGN_ITEM;
+   public static final RegistrySupplier<Item> DARK_CHERRY_HANGING_SIGN_ITEM;
+   public static final RegistrySupplier<Block> RED_GRAPE_BUSH;
+   public static final RegistrySupplier<Item> RED_GRAPE_SEEDS;
+   public static final RegistrySupplier<Item> RED_GRAPE;
+   public static final RegistrySupplier<Block> WHITE_GRAPE_BUSH;
+   public static final RegistrySupplier<Item> WHITE_GRAPE_SEEDS;
+   public static final RegistrySupplier<Item> WHITE_GRAPE;
+   public static final RegistrySupplier<Block> SAVANNA_RED_GRAPE_BUSH;
+   public static final RegistrySupplier<Item> SAVANNA_RED_GRAPE_SEEDS;
+   public static final RegistrySupplier<Item> SAVANNA_RED_GRAPE;
+   public static final RegistrySupplier<Block> SAVANNA_WHITE_GRAPE_BUSH;
+   public static final RegistrySupplier<Item> SAVANNA_WHITE_GRAPE_SEEDS;
+   public static final RegistrySupplier<Item> SAVANNA_WHITE_GRAPE;
+   public static final RegistrySupplier<Block> TAIGA_RED_GRAPE_BUSH;
+   public static final RegistrySupplier<Item> TAIGA_RED_GRAPE_SEEDS;
+   public static final RegistrySupplier<Item> TAIGA_RED_GRAPE;
+   public static final RegistrySupplier<Block> TAIGA_WHITE_GRAPE_BUSH;
+   public static final RegistrySupplier<Item> TAIGA_WHITE_GRAPE_SEEDS;
+   public static final RegistrySupplier<Item> TAIGA_WHITE_GRAPE;
+   public static final RegistrySupplier<Block> JUNGLE_RED_GRAPE_BUSH;
+   public static final RegistrySupplier<Item> JUNGLE_RED_GRAPE_SEEDS;
+   public static final RegistrySupplier<Item> JUNGLE_RED_GRAPE;
+   public static final RegistrySupplier<Block> JUNGLE_WHITE_GRAPE_BUSH;
+   public static final RegistrySupplier<Item> JUNGLE_WHITE_GRAPE_SEEDS;
+   public static final RegistrySupplier<Item> JUNGLE_WHITE_GRAPE;
+   public static final RegistrySupplier<Block> DARK_CHERRY_SAPLING;
+   public static final RegistrySupplier<Block> APPLE_TREE_SAPLING;
+   public static final RegistrySupplier<Item> CHERRY;
+   public static final RegistrySupplier<Item> ROTTEN_CHERRY;
+   public static final RegistrySupplier<Block> GRAPEVINE_LEAVES;
+   public static final RegistrySupplier<Block> DARK_CHERRY_LEAVES;
+   public static final RegistrySupplier<Block> APPLE_LEAVES;
+   public static final RegistrySupplier<Block> WHITE_GRAPE_BAG;
+   public static final RegistrySupplier<Block> RED_GRAPE_BAG;
+   public static final RegistrySupplier<Block> CHERRY_BAG;
+   public static final RegistrySupplier<Block> APPLE_BAG;
+   public static final RegistrySupplier<Block> GRAPEVINE_POT;
+   public static final RegistrySupplier<Block> FERMENTATION_BARREL;
+   public static final RegistrySupplier<Block> APPLE_PRESS;
+   public static final RegistrySupplier<Block> DARK_CHERRY_CHAIR;
+   public static final RegistrySupplier<Block> DARK_CHERRY_TABLE;
+   public static final RegistrySupplier<Block> DARK_CHERRY_CABINET;
+   public static final RegistrySupplier<Block> DARK_CHERRY_DRAWER;
+   public static final RegistrySupplier<Block> DARK_CHERRY_WINE_RACK_BIG;
+   public static final RegistrySupplier<Block> DARK_CHERRY_WINE_RACK_SMALL;
+   public static final RegistrySupplier<Block> DARK_CHERRY_WINE_RACK_MID;
+   public static final RegistrySupplier<Block> DARK_CHERRY_BARREL;
+   public static final RegistrySupplier<Block> APPLE_LOG;
+   public static final RegistrySupplier<Block> APPLE_WOOD;
+   public static final RegistrySupplier<Block> STRIPPED_DARK_CHERRY_LOG;
+   public static final RegistrySupplier<Block> DARK_CHERRY_LOG;
+   public static final RegistrySupplier<Block> STRIPPED_DARK_CHERRY_WOOD;
+   public static final RegistrySupplier<Block> DARK_CHERRY_WOOD;
+   public static final RegistrySupplier<Block> DARK_CHERRY_BEAM;
+   public static final RegistrySupplier<Block> DARK_CHERRY_PLANKS;
+   public static final RegistrySupplier<Block> DARK_CHERRY_FLOORBOARD;
+   public static final RegistrySupplier<Block> DARK_CHERRY_STAIRS;
+   public static final RegistrySupplier<Block> DARK_CHERRY_SLAB;
+   public static final RegistrySupplier<Block> DARK_CHERRY_FENCE;
+   public static final RegistrySupplier<Block> DARK_CHERRY_FENCE_GATE;
+   public static final RegistrySupplier<Block> DARK_CHERRY_BUTTON;
+   public static final RegistrySupplier<Block> DARK_CHERRY_PRESSURE_PLATE;
+   public static final RegistrySupplier<Block> DARK_CHERRY_DOOR;
+   public static final RegistrySupplier<Block> DARK_CHERRY_TRAPDOOR;
+   public static final RegistrySupplier<Item> DARK_CHERRY_BOAT;
+   public static final RegistrySupplier<Item> DARK_CHERRY_CHEST_BOAT;
+   public static final RegistrySupplier<Block> WINDOW_BLOCK;
+   public static final RegistrySupplier<Block> WINDOW;
+   public static final RegistrySupplier<Block> LOAM;
+   public static final RegistrySupplier<Block> LOAM_STAIRS;
+   public static final RegistrySupplier<Block> LOAM_SLAB;
+   public static final RegistrySupplier<Block> COARSE_DIRT_SLAB;
+   public static final RegistrySupplier<Block> DIRT_SLAB;
+   public static final RegistrySupplier<Block> GRASS_SLAB;
+   public static final RegistrySupplier<Block> DIRT_PATH_SLAB;
+   public static final RegistrySupplier<Item> WINE_BOTTLE;
+   public static final RegistrySupplier<Item> APPLE_JUICE;
+   public static final RegistrySupplier<Item> RED_GRAPEJUICE;
+   public static final RegistrySupplier<Item> WHITE_GRAPEJUICE;
+   public static final RegistrySupplier<Item> RED_SAVANNA_GRAPEJUICE;
+   public static final RegistrySupplier<Item> WHITE_SAVANNA_GRAPEJUICE;
+   public static final RegistrySupplier<Item> RED_TAIGA_GRAPEJUICE;
+   public static final RegistrySupplier<Item> WHITE_TAIGA_GRAPEJUICE;
+   public static final RegistrySupplier<Item> RED_JUNGLE_GRAPEJUICE;
+   public static final RegistrySupplier<Item> WHITE_JUNGLE_GRAPEJUICE;
+   public static final RegistrySupplier<Block> CHORUS_WINE;
+   public static final RegistrySupplier<Block> CHERRY_WINE;
+   public static final RegistrySupplier<Block> MAGNETIC_WINE;
+   public static final RegistrySupplier<Block> JO_SPECIAL_MIXTURE;
+   public static final RegistrySupplier<Block> CRISTEL_WINE;
+   public static final RegistrySupplier<Block> GLOWING_WINE;
+   public static final RegistrySupplier<Block> CREEPERS_CRUSH;
+   public static final RegistrySupplier<Block> MEAD;
+   public static final RegistrySupplier<Block> RED_WINE;
+   public static final RegistrySupplier<Block> JELLIE_WINE;
+   public static final RegistrySupplier<Block> STAL_WINE;
+   public static final RegistrySupplier<Block> NOIR_WINE;
+   public static final RegistrySupplier<Block> BOLVAR_WINE;
+   public static final RegistrySupplier<Block> SOLARIS_WINE;
+   public static final RegistrySupplier<Block> EISWEIN;
+   public static final RegistrySupplier<Block> CHENET_WINE;
+   public static final RegistrySupplier<Block> KELP_CIDER;
+   public static final RegistrySupplier<Block> AEGIS_WINE;
+   public static final RegistrySupplier<Block> CLARK_WINE;
+   public static final RegistrySupplier<Block> MELLOHI_WINE;
+   public static final RegistrySupplier<Block> STRAD_WINE;
+   public static final RegistrySupplier<Block> APPLE_CIDER;
+   public static final RegistrySupplier<Block> APPLE_WINE;
+   public static final RegistrySupplier<Block> LILITU_WINE;
+   public static final RegistrySupplier<Block> BOTTLE_MOJANG_NOIR;
+   public static final RegistrySupplier<Block> VILLAGERS_FRIGHT;
+   public static final RegistrySupplier<Item> APPLE_MASH;
+   public static final RegistrySupplier<Block> GRAPEVINE_STEM;
+   public static final RegistrySupplier<Block> STORAGE_POT;
+   public static final RegistrySupplier<Block> FLOWER_BOX;
+   public static final RegistrySupplier<Block> FLOWER_POT_BIG;
+   public static final RegistrySupplier<Block> WINE_BOX;
+   public static final RegistrySupplier<Block> DARK_CHERRY_BIG_TABLE;
+   public static final RegistrySupplier<Block> DARK_CHERRY_SHELF;
+   public static final RegistrySupplier<Block> BASKET;
+   public static final RegistrySupplier<Item> BASKET_ITEM;
+   public static final RegistrySupplier<Block> STACKABLE_LOG;
+   public static final RegistrySupplier<Item> STRAW_HAT;
+   public static final RegistrySupplier<Item> WINEMAKER_APRON;
+   public static final RegistrySupplier<Item> WINEMAKER_LEGGINGS;
+   public static final RegistrySupplier<Item> WINEMAKER_BOOTS;
+   public static final RegistrySupplier<Item> MULE_SPAWN_EGG;
+   public static final RegistrySupplier<Item> WANDERING_WINEMAKER_SPAWN_EGG;
+   public static final RegistrySupplier<Block> POTTED_APPLE_TREE_SAPLING;
+   public static final RegistrySupplier<Block> POTTED_DARK_CHERRY_TREE_SAPLING;
+   public static final RegistrySupplier<Block> OAK_WINE_RACK_BIG;
+   public static final RegistrySupplier<Block> OAK_WINE_RACK_SMALL;
+   public static final RegistrySupplier<Block> OAK_WINE_RACK_MID;
+   public static final RegistrySupplier<Block> BIRCH_WINE_RACK_BIG;
+   public static final RegistrySupplier<Block> BIRCH_WINE_RACK_SMALL;
+   public static final RegistrySupplier<Block> BIRCH_WINE_RACK_MID;
+   public static final RegistrySupplier<Block> SPRUCE_WINE_RACK_BIG;
+   public static final RegistrySupplier<Block> SPRUCE_WINE_RACK_SMALL;
+   public static final RegistrySupplier<Block> SPRUCE_WINE_RACK_MID;
+   public static final RegistrySupplier<Block> DARK_OAK_WINE_RACK_BIG;
+   public static final RegistrySupplier<Block> DARK_OAK_WINE_RACK_SMALL;
+   public static final RegistrySupplier<Block> DARK_OAK_WINE_RACK_MID;
+   public static final RegistrySupplier<Block> JUNGLE_WINE_RACK_BIG;
+   public static final RegistrySupplier<Block> JUNGLE_WINE_RACK_SMALL;
+   public static final RegistrySupplier<Block> JUNGLE_WINE_RACK_MID;
+   public static final RegistrySupplier<Block> ACACIA_WINE_RACK_BIG;
+   public static final RegistrySupplier<Block> ACACIA_WINE_RACK_SMALL;
+   public static final RegistrySupplier<Block> ACACIA_WINE_RACK_MID;
+   public static final RegistrySupplier<Block> MANGROVE_WINE_RACK_BIG;
+   public static final RegistrySupplier<Block> MANGROVE_WINE_RACK_SMALL;
+   public static final RegistrySupplier<Block> MANGROVE_WINE_RACK_MID;
+   public static final RegistrySupplier<Block> BAMBOO_WINE_RACK_BIG;
+   public static final RegistrySupplier<Block> BAMBOO_WINE_RACK_SMALL;
+   public static final RegistrySupplier<Block> BAMBOO_WINE_RACK_MID;
+   public static final RegistrySupplier<Block> CHERRY_WINE_RACK_BIG;
+   public static final RegistrySupplier<Block> CHERRY_WINE_RACK_SMALL;
+   public static final RegistrySupplier<Block> CHERRY_WINE_RACK_MID;
+   public static final RegistrySupplier<Block> VINERY_STANDARD;
+   public static final RegistrySupplier<Block> VINERY_WALL_STANDARD;
+   public static final RegistrySupplier<Block> OAK_LATTICE;
+   public static final RegistrySupplier<Block> SPRUCE_LATTICE;
+   public static final RegistrySupplier<Block> CHERRY_LATTICE;
+   public static final RegistrySupplier<Block> BIRCH_LATTICE;
+   public static final RegistrySupplier<Block> DARK_OAK_LATTICE;
+   public static final RegistrySupplier<Block> ACACIA_LATTICE;
+   public static final RegistrySupplier<Block> BAMBOO_LATTICE;
+   public static final RegistrySupplier<Block> JUNGLE_LATTICE;
+   public static final RegistrySupplier<Block> MANGROVE_LATTICE;
+   public static final RegistrySupplier<Block> DARK_CHERRY_LATTICE;
+   public static final RegistrySupplier<Block> WHITE_SAVANNA_GRAPE_BAG;
+   public static final RegistrySupplier<Block> RED_SAVANNA_GRAPE_BAG;
+   public static final RegistrySupplier<Block> WHITE_TAIGA_GRAPE_BAG;
+   public static final RegistrySupplier<Block> RED_TAIGA_GRAPE_BAG;
+   public static final RegistrySupplier<Block> WHITE_JUNGLE_GRAPE_BAG;
+   public static final RegistrySupplier<Block> RED_JUNGLE_GRAPE_BAG;
+   public static final RegistrySupplier<Item> APPLE_CIDER_ITEM;
+   public static final RegistrySupplier<Item> APPLE_WINE_ITEM;
+   public static final RegistrySupplier<Item> MEAD_ITEM;
+   public static final RegistrySupplier<Item> GLOWING_WINE_ITEM;
+   public static final RegistrySupplier<Item> SOLARIS_WINE_ITEM;
+   public static final RegistrySupplier<Item> KELP_CIDER_ITEM;
+   public static final RegistrySupplier<Item> EISWEIN_ITEM;
+   public static final RegistrySupplier<Item> AEGIS_WINE_ITEM;
+   public static final RegistrySupplier<Item> VILLAGERS_FRIGHT_ITEM;
+   public static final RegistrySupplier<Item> CLARK_WINE_ITEM;
+   public static final RegistrySupplier<Item> JELLIE_WINE_ITEM;
+   public static final RegistrySupplier<Item> NOIR_WINE_ITEM;
+   public static final RegistrySupplier<Item> RED_WINE_ITEM;
+   public static final RegistrySupplier<Item> STRAD_WINE_ITEM;
+   public static final RegistrySupplier<Item> CHERRY_WINE_ITEM;
+   public static final RegistrySupplier<Item> CRISTEL_WINE_ITEM;
+   public static final RegistrySupplier<Item> LILITU_WINE_ITEM;
+   public static final RegistrySupplier<Item> JO_SPECIAL_MIXTURE_ITEM;
+   public static final RegistrySupplier<Item> BOLVAR_WINE_ITEM;
+   public static final RegistrySupplier<Item> MAGNETIC_WINE_ITEM;
+   public static final RegistrySupplier<Item> STAL_WINE_ITEM;
+   public static final RegistrySupplier<Item> CHENET_WINE_ITEM;
+   public static final RegistrySupplier<Item> BOTTLE_MOJANG_NOIR_ITEM;
+   public static final RegistrySupplier<Item> CHORUS_WINE_ITEM;
+   public static final RegistrySupplier<Item> CREEPERS_CRUSH_ITEM;
+   public static final RegistrySupplier<Item> MELLOHI_WINE_ITEM;
+
+   public static void init() {
+      ITEMS.register();
+      BLOCKS.register();
+   }
+
+   public static Properties properties(float strength) {
+      return properties(strength, strength);
+   }
+
+   public static Properties properties(float breakSpeed, float explosionResist) {
+      return Properties.m_284310_().m_60913_(breakSpeed, explosionResist);
+   }
+
+   private static net.minecraft.world.item.Item.Properties getSettings(Consumer<net.minecraft.world.item.Item.Properties> consumer) {
+      net.minecraft.world.item.Item.Properties settings = new net.minecraft.world.item.Item.Properties();
+      consumer.accept(settings);
+      return settings;
+   }
+
+   static net.minecraft.world.item.Item.Properties getSettings() {
+      return getSettings((settings) -> {
+      });
+   }
+
+   private static WineSettings createWineSettings(Supplier<MobEffect> effect, int duration, int strength) {
+      return new WineSettings(effect, duration, strength);
+   }
+
+   private static RegistrySupplier<Item> registerWineItem(String name, Supplier<Block> wineBlock, Supplier<WineSettings> wineSettings, boolean scaleDurationWithAge, DrinkBlockItem.BottleSize size) {
+      return registerItem(name, () -> {
+         return new DrinkBlockItem((Block)wineBlock.get(), ((WineSettings)wineSettings.get()).getProperties(), ((WineSettings)wineSettings.get()).getBaseDuration(), scaleDurationWithAge, size);
+      });
+   }
+
+   private static RegistrySupplier<Item> registerFixedDurationWineItem(String name, Supplier<Block> wineBlock, int fixedDurationTicks, Supplier<MobEffect> effectSupplier, int amplifier, DrinkBlockItem.BottleSize size) {
+      return registerItem(name, () -> {
+         return new DrinkBlockItem((Block)wineBlock.get(), (new net.minecraft.world.item.Item.Properties()).m_41489_((new Builder()).m_38762_(new MobEffectInstance((MobEffect)effectSupplier.get(), fixedDurationTicks, amplifier), 1.0F).m_38758_(0.3F).m_38765_().m_38767_()), fixedDurationTicks, false, size);
+      });
+   }
+
+   private static Properties getGrapevineSettings() {
+      return Properties.m_284310_().m_60978_(2.0F).m_60977_().m_60918_(SoundType.f_56736_).m_60955_();
+   }
+
+   private static Properties getLogBlockSettings() {
+      return Properties.m_284310_().m_60978_(2.0F).m_60918_(SoundType.f_56736_);
+   }
+
+   private static Properties getWineSettings() {
+      return Properties.m_60926_(Blocks.f_50058_).m_60955_().m_60966_();
+   }
+
+   private static ButtonBlock woodenButton(FeatureFlag... featureFlags) {
+      Properties properties = Properties.m_284310_().m_60910_().m_60978_(0.5F).m_278166_(PushReaction.DESTROY);
+      if (featureFlags.length > 0) {
+         properties = properties.m_246843_(featureFlags);
+      }
+
+      return new ButtonBlock(properties, BlockSetType.f_271401_, 30, true);
+   }
+
+   public static <T extends Block> RegistrySupplier<T> registerWithItem(String name, Supplier<T> block) {
+      return GeneralUtil.registerWithItem(BLOCKS, BLOCK_REGISTRAR, ITEMS, ITEM_REGISTRAR, Vinery.identifier(name), block);
+   }
+
+   public static <T extends Block> RegistrySupplier<T> registerWithoutItem(String path, Supplier<T> block) {
+      return GeneralUtil.registerWithoutItem(BLOCKS, BLOCK_REGISTRAR, Vinery.identifier(path), block);
+   }
+
+   public static <T extends Item> RegistrySupplier<T> registerItem(String path, Supplier<T> itemSupplier) {
+      return GeneralUtil.registerItem(ITEMS, ITEM_REGISTRAR, Vinery.identifier(path), itemSupplier);
+   }
+
+   static {
+      ITEMS = DeferredRegister.create("vinery", Registries.f_256913_);
+      ITEM_REGISTRAR = ITEMS.getRegistrar();
+      BLOCKS = DeferredRegister.create("vinery", Registries.f_256747_);
+      BLOCK_REGISTRAR = BLOCKS.getRegistrar();
+      DARK_CHERRY_SIGN = registerWithoutItem("dark_cherry_sign", () -> {
+         return new ModStandingSignBlock(Properties.m_60926_(Blocks.f_50095_), VineryWoodType.DARK_CHERRY);
+      });
+      DARK_CHERRY_WALL_SIGN = registerWithoutItem("dark_cherry_wall_sign", () -> {
+         return new ModWallSignBlock(Properties.m_60926_(Blocks.f_50158_), VineryWoodType.DARK_CHERRY);
+      });
+      DARK_CHERRY_HANGING_SIGN = registerWithoutItem("dark_cherry_hanging_sign", () -> {
+         return new ModHangingSignBlock(Properties.m_60926_(Blocks.f_244319_), VineryWoodType.DARK_CHERRY);
+      });
+      DARK_CHERRY_WALL_HANGING_SIGN = registerWithoutItem("dark_cherry_wall_hanging_sign", () -> {
+         return new ModWallHangingSignBlock(Properties.m_60926_(Blocks.f_244093_), VineryWoodType.DARK_CHERRY);
+      });
+      DARK_CHERRY_SIGN_ITEM = ITEMS.register("dark_cherry_sign", () -> {
+         return new SignItem((new net.minecraft.world.item.Item.Properties()).m_41487_(16), (Block)DARK_CHERRY_SIGN.get(), (Block)DARK_CHERRY_WALL_SIGN.get());
+      });
+      DARK_CHERRY_HANGING_SIGN_ITEM = ITEMS.register("dark_cherry_hanging_sign", () -> {
+         return new HangingSignItem((Block)DARK_CHERRY_HANGING_SIGN.get(), (Block)DARK_CHERRY_WALL_HANGING_SIGN.get(), (new net.minecraft.world.item.Item.Properties()).m_41487_(16));
+      });
+      RED_GRAPE_BUSH = registerWithoutItem("red_grape_bush", () -> {
+         return new GrapeBush(Properties.m_60926_(Blocks.f_50685_), GrapeTypeRegistry.RED);
+      });
+      RED_GRAPE_SEEDS = registerItem("red_grape_seeds", () -> {
+         return new GrapeBushSeedItem((Block)RED_GRAPE_BUSH.get(), getSettings(), GrapeTypeRegistry.RED);
+      });
+      RED_GRAPE = registerItem("red_grape", () -> {
+         return new GrapeItem(getSettings().m_41489_(Foods.f_38808_), GrapeTypeRegistry.RED, (Item)RED_GRAPE_SEEDS.get());
+      });
+      WHITE_GRAPE_BUSH = registerWithoutItem("white_grape_bush", () -> {
+         return new GrapeBush(Properties.m_60926_(Blocks.f_50685_), GrapeTypeRegistry.WHITE);
+      });
+      WHITE_GRAPE_SEEDS = registerItem("white_grape_seeds", () -> {
+         return new GrapeBushSeedItem((Block)WHITE_GRAPE_BUSH.get(), getSettings(), GrapeTypeRegistry.WHITE);
+      });
+      WHITE_GRAPE = registerItem("white_grape", () -> {
+         return new GrapeItem(getSettings().m_41489_(Foods.f_38808_), GrapeTypeRegistry.WHITE, (Item)WHITE_GRAPE_SEEDS.get());
+      });
+      SAVANNA_RED_GRAPE_BUSH = registerWithoutItem("savanna_grape_bush_red", () -> {
+         return new GrapeBush.SavannaGrapeBush(Properties.m_60926_(Blocks.f_50685_), GrapeTypeRegistry.SAVANNA_RED);
+      });
+      SAVANNA_RED_GRAPE_SEEDS = registerItem("savanna_grape_seeds_red", () -> {
+         return new GrapeBushSeedItem((Block)SAVANNA_RED_GRAPE_BUSH.get(), getSettings(), GrapeTypeRegistry.SAVANNA_RED);
+      });
+      SAVANNA_RED_GRAPE = registerItem("savanna_grapes_red", () -> {
+         return new GrapeItem(getSettings().m_41489_(Foods.f_38808_), GrapeTypeRegistry.SAVANNA_RED, (Item)SAVANNA_RED_GRAPE_SEEDS.get());
+      });
+      SAVANNA_WHITE_GRAPE_BUSH = registerWithoutItem("savanna_grape_bush_white", () -> {
+         return new GrapeBush.SavannaGrapeBush(Properties.m_60926_(Blocks.f_50685_), GrapeTypeRegistry.SAVANNA_WHITE);
+      });
+      SAVANNA_WHITE_GRAPE_SEEDS = registerItem("savanna_grape_seeds_white", () -> {
+         return new GrapeBushSeedItem((Block)SAVANNA_WHITE_GRAPE_BUSH.get(), getSettings(), GrapeTypeRegistry.SAVANNA_WHITE);
+      });
+      SAVANNA_WHITE_GRAPE = registerItem("savanna_grapes_white", () -> {
+         return new GrapeItem(getSettings().m_41489_(Foods.f_38808_), GrapeTypeRegistry.SAVANNA_WHITE, (Item)SAVANNA_WHITE_GRAPE_SEEDS.get());
+      });
+      TAIGA_RED_GRAPE_BUSH = registerWithoutItem("taiga_grape_bush_red", () -> {
+         return new GrapeBush.TaigaGrapeBush(Properties.m_60926_(Blocks.f_50685_), GrapeTypeRegistry.TAIGA_RED);
+      });
+      TAIGA_RED_GRAPE_SEEDS = registerItem("taiga_grape_seeds_red", () -> {
+         return new GrapeBushSeedItem((Block)TAIGA_RED_GRAPE_BUSH.get(), getSettings(), GrapeTypeRegistry.TAIGA_RED);
+      });
+      TAIGA_RED_GRAPE = registerItem("taiga_grapes_red", () -> {
+         return new GrapeItem(getSettings().m_41489_(Foods.f_38808_), GrapeTypeRegistry.TAIGA_RED, (Item)TAIGA_RED_GRAPE_SEEDS.get());
+      });
+      TAIGA_WHITE_GRAPE_BUSH = registerWithoutItem("taiga_grape_bush_white", () -> {
+         return new GrapeBush.TaigaGrapeBush(Properties.m_60926_(Blocks.f_50685_), GrapeTypeRegistry.TAIGA_WHITE);
+      });
+      TAIGA_WHITE_GRAPE_SEEDS = registerItem("taiga_grape_seeds_white", () -> {
+         return new GrapeBushSeedItem((Block)TAIGA_WHITE_GRAPE_BUSH.get(), getSettings(), GrapeTypeRegistry.TAIGA_WHITE);
+      });
+      TAIGA_WHITE_GRAPE = registerItem("taiga_grapes_white", () -> {
+         return new GrapeItem(getSettings().m_41489_(Foods.f_38808_), GrapeTypeRegistry.TAIGA_WHITE, (Item)TAIGA_WHITE_GRAPE_SEEDS.get());
+      });
+      JUNGLE_RED_GRAPE_BUSH = registerWithoutItem("jungle_grape_bush_red", () -> {
+         return new GrapeVineBlock(Properties.m_60926_(Blocks.f_50685_), GrapeTypeRegistry.JUNGLE_RED);
+      });
+      JUNGLE_RED_GRAPE_SEEDS = registerItem("jungle_grape_seeds_red", () -> {
+         return new GrapeBushSeedItem((Block)JUNGLE_RED_GRAPE_BUSH.get(), getSettings(), GrapeTypeRegistry.JUNGLE_RED);
+      });
+      JUNGLE_RED_GRAPE = registerItem("jungle_grapes_red", () -> {
+         return new GrapeItem(getSettings().m_41489_(Foods.f_38811_), GrapeTypeRegistry.JUNGLE_RED, (Item)JUNGLE_RED_GRAPE_SEEDS.get());
+      });
+      JUNGLE_WHITE_GRAPE_BUSH = registerWithoutItem("jungle_grape_bush_white", () -> {
+         return new GrapeVineBlock(Properties.m_60926_(Blocks.f_50685_), GrapeTypeRegistry.JUNGLE_WHITE);
+      });
+      JUNGLE_WHITE_GRAPE_SEEDS = registerItem("jungle_grape_seeds_white", () -> {
+         return new GrapeBushSeedItem((Block)JUNGLE_WHITE_GRAPE_BUSH.get(), getSettings(), GrapeTypeRegistry.JUNGLE_WHITE);
+      });
+      JUNGLE_WHITE_GRAPE = registerItem("jungle_grapes_white", () -> {
+         return new GrapeItem(getSettings().m_41489_(Foods.f_38811_), GrapeTypeRegistry.JUNGLE_WHITE, (Item)JUNGLE_WHITE_GRAPE_SEEDS.get());
+      });
+      DARK_CHERRY_SAPLING = registerWithItem("dark_cherry_sapling", () -> {
+         return new SaplingBlock(new AbstractTreeGrower() {
+            @NotNull
+            protected ResourceKey<ConfiguredFeature<?, ?>> m_213888_(RandomSource random, boolean bees) {
+               return random.m_188499_() ? VineryConfiguredFeatures.DARK_CHERRY_KEY : VineryConfiguredFeatures.DARK_CHERRY_VARIANT_KEY;
+            }
+         }, Properties.m_284310_().m_60910_().m_60977_().m_60966_().m_60918_(SoundType.f_56740_));
+      });
+      APPLE_TREE_SAPLING = registerWithItem("apple_tree_sapling", () -> {
+         return new SaplingBlock(new AbstractTreeGrower() {
+            protected ResourceKey<ConfiguredFeature<?, ?>> m_213888_(RandomSource random, boolean bees) {
+               return random.m_188499_() ? VineryConfiguredFeatures.APPLE_KEY : VineryConfiguredFeatures.APPLE_VARIANT_KEY;
+            }
+         }, Properties.m_284310_().m_60910_().m_60977_().m_60966_().m_60918_(SoundType.f_56740_));
+      });
+      CHERRY = registerItem("cherry", () -> {
+         return new Item(getSettings().m_41489_(Foods.f_38827_));
+      });
+      ROTTEN_CHERRY = registerItem("rotten_cherry", () -> {
+         return new RottenCherryItem(getSettings().m_41489_(Foods.f_38797_));
+      });
+      GRAPEVINE_LEAVES = registerWithItem("grapevine_leaves", () -> {
+         return new LeavesBlock(Properties.m_60926_(Blocks.f_50050_));
+      });
+      DARK_CHERRY_LEAVES = registerWithItem("dark_cherry_leaves", () -> {
+         return new DarkCherryLeavesBlock(Properties.m_60926_(Blocks.f_50050_));
+      });
+      APPLE_LEAVES = registerWithItem("apple_leaves", () -> {
+         return new AppleLeavesBlock(Properties.m_60926_(Blocks.f_50050_));
+      });
+      WHITE_GRAPE_BAG = registerWithItem("white_grape_bag", () -> {
+         return new FacingBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56745_));
+      });
+      RED_GRAPE_BAG = registerWithItem("red_grape_bag", () -> {
+         return new FacingBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56745_));
+      });
+      CHERRY_BAG = registerWithItem("cherry_bag", () -> {
+         return new FacingBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56745_));
+      });
+      APPLE_BAG = registerWithItem("apple_bag", () -> {
+         return new FacingBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56745_));
+      });
+      GRAPEVINE_POT = registerWithItem("grapevine_pot", () -> {
+         return new GrapevinePotBlock(Properties.m_60926_(Blocks.f_50618_));
+      });
+      FERMENTATION_BARREL = registerWithItem("fermentation_barrel", () -> {
+         return new FermentationBarrelBlock(Properties.m_60926_(Blocks.f_50618_).m_60955_());
+      });
+      APPLE_PRESS = registerWithItem("apple_press", () -> {
+         return new ApplePressBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      DARK_CHERRY_CHAIR = registerWithItem("dark_cherry_chair", () -> {
+         return new ChairBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_));
+      });
+      DARK_CHERRY_TABLE = registerWithItem("dark_cherry_table", () -> {
+         return new TableBlock(Properties.m_60926_(Blocks.f_50705_));
+      });
+      DARK_CHERRY_CABINET = registerWithItem("dark_cherry_cabinet", () -> {
+         return new CabinetBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_), (SoundEvent)SoundEventRegistry.CABINET_OPEN.get(), (SoundEvent)SoundEventRegistry.CABINET_CLOSE.get());
+      });
+      DARK_CHERRY_DRAWER = registerWithItem("dark_cherry_drawer", () -> {
+         return new CabinetBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_), (SoundEvent)SoundEventRegistry.DRAWER_OPEN.get(), (SoundEvent)SoundEventRegistry.DRAWER_CLOSE.get());
+      });
+      DARK_CHERRY_WINE_RACK_BIG = registerWithItem("dark_cherry_wine_rack_big", () -> {
+         return new NineBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      DARK_CHERRY_WINE_RACK_SMALL = registerWithItem("dark_cherry_wine_rack_small", () -> {
+         return new FourBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      DARK_CHERRY_WINE_RACK_MID = registerWithItem("dark_cherry_wine_rack_mid", () -> {
+         return new BigBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      DARK_CHERRY_BARREL = registerWithItem("dark_cherry_barrel", () -> {
+         return new BarrelBlock(Properties.m_60926_(Blocks.f_50618_));
+      });
+      APPLE_LOG = registerWithItem("apple_log", GeneralUtil::logBlock);
+      APPLE_WOOD = registerWithItem("apple_wood", GeneralUtil::logBlock);
+      STRIPPED_DARK_CHERRY_LOG = registerWithItem("stripped_dark_cherry_log", GeneralUtil::logBlock);
+      DARK_CHERRY_LOG = registerWithItem("dark_cherry_log", GeneralUtil::logBlock);
+      STRIPPED_DARK_CHERRY_WOOD = registerWithItem("stripped_dark_cherry_wood", GeneralUtil::logBlock);
+      DARK_CHERRY_WOOD = registerWithItem("dark_cherry_wood", GeneralUtil::logBlock);
+      DARK_CHERRY_BEAM = registerWithItem("dark_cherry_beam", GeneralUtil::logBlock);
+      DARK_CHERRY_PLANKS = registerWithItem("dark_cherry_planks", () -> {
+         return new Block(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_280658_(NoteBlockInstrument.BIT).m_284180_(MapColor.f_283798_));
+      });
+      DARK_CHERRY_FLOORBOARD = registerWithItem("dark_cherry_floorboard", () -> {
+         return new Block(Properties.m_60926_((BlockBehaviour)DARK_CHERRY_PLANKS.get()));
+      });
+      DARK_CHERRY_STAIRS = registerWithItem("dark_cherry_stairs", () -> {
+         return new StairBlock(((Block)DARK_CHERRY_PLANKS.get()).m_49966_(), Properties.m_60926_((BlockBehaviour)DARK_CHERRY_PLANKS.get()));
+      });
+      DARK_CHERRY_SLAB = registerWithItem("dark_cherry_slab", () -> {
+         return new SlabBlock(Properties.m_60926_((BlockBehaviour)DARK_CHERRY_PLANKS.get()));
+      });
+      DARK_CHERRY_FENCE = registerWithItem("dark_cherry_fence", () -> {
+         return new FenceBlock(Properties.m_60926_(Blocks.f_50132_));
+      });
+      DARK_CHERRY_FENCE_GATE = registerWithItem("dark_cherry_fence_gate", () -> {
+         return new FenceGateBlock(Properties.m_60926_(Blocks.f_50132_), WoodType.f_271224_);
+      });
+      DARK_CHERRY_BUTTON = registerWithItem("dark_cherry_button", () -> {
+         return woodenButton(FeatureFlags.f_244571_);
+      });
+      DARK_CHERRY_PRESSURE_PLATE = registerWithItem("dark_cherry_pressure_plate", () -> {
+         return new PressurePlateBlock(Sensitivity.EVERYTHING, Properties.m_60926_(Blocks.f_50167_), BlockSetType.f_271401_);
+      });
+      DARK_CHERRY_DOOR = registerWithItem("dark_cherry_door", () -> {
+         return new DoorBlock(Properties.m_60926_(Blocks.f_50154_), BlockSetType.f_271401_);
+      });
+      DARK_CHERRY_TRAPDOOR = registerWithItem("dark_cherry_trapdoor", () -> {
+         return new TrapDoorBlock(Properties.m_60926_(Blocks.f_50216_), BlockSetType.f_271401_);
+      });
+      DARK_CHERRY_BOAT = ITEMS.register("dark_cherry_boat", () -> {
+         return new DarkCherryBoatItem(false, DarkCherryBoatEntity.Type.DARK_CHERRY, new net.minecraft.world.item.Item.Properties());
+      });
+      DARK_CHERRY_CHEST_BOAT = ITEMS.register("dark_cherry_chest_boat", () -> {
+         return new DarkCherryBoatItem(true, DarkCherryBoatEntity.Type.DARK_CHERRY, new net.minecraft.world.item.Item.Properties());
+      });
+      WINDOW_BLOCK = registerWithItem("window_block", () -> {
+         return new Block(Properties.m_60926_(Blocks.f_50058_));
+      });
+      WINDOW = registerWithItem("window", () -> {
+         return new WindowBlock(Properties.m_60926_(Blocks.f_50185_));
+      });
+      LOAM = registerWithItem("loam", () -> {
+         return new Block(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_222469_));
+      });
+      LOAM_STAIRS = registerWithItem("loam_stairs", () -> {
+         return new StairBlock(((Block)LOAM.get()).m_49966_(), Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_222469_));
+      });
+      LOAM_SLAB = registerWithItem("loam_slab", () -> {
+         return new SlabBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_222469_));
+      });
+      COARSE_DIRT_SLAB = registerWithItem("coarse_dirt_slab", () -> {
+         return new SlabBlock(Properties.m_60926_(Blocks.f_50546_));
+      });
+      DIRT_SLAB = registerWithItem("dirt_slab", () -> {
+         return new DirtSlabBlock(Properties.m_60926_(Blocks.f_50493_));
+      });
+      GRASS_SLAB = registerWithItem("grass_slab", () -> {
+         return new SpreadableGrassSlabBlock(Properties.m_60926_(Blocks.f_50440_));
+      });
+      DIRT_PATH_SLAB = registerWithItem("dirt_path_slab", () -> {
+         return new DirtPathSlabBlock(Properties.m_60926_(Blocks.f_152481_));
+      });
+      WINE_BOTTLE = registerItem("wine_bottle", () -> {
+         return new Item(getSettings());
+      });
+
+      APPLE_JUICE = registerItem("apple_juice", () -> {
+         return new GrapejuiceBottleItem(getSettings().m_41495_(((Item)WINE_BOTTLE.get()).m_5456_()));
+      });
+
+      RED_GRAPEJUICE = registerItem("red_grapejuice", () -> {
+         return new GrapejuiceBottleItem(getSettings().m_41495_(((Item)WINE_BOTTLE.get()).m_5456_()));
+      });
+      
+      WHITE_GRAPEJUICE = registerItem("white_grapejuice", () -> {
+         return new GrapejuiceBottleItem(getSettings().m_41495_(((Item)WINE_BOTTLE.get()).m_5456_()));
+      });
+      
+      RED_SAVANNA_GRAPEJUICE = registerItem("red_savanna_grapejuice", () -> {
+         return new GrapejuiceBottleItem(getSettings().m_41495_(((Item)WINE_BOTTLE.get()).m_5456_()));
+      });
+      WHITE_SAVANNA_GRAPEJUICE = registerItem("white_savanna_grapejuice", () -> {
+         return new GrapejuiceBottleItem(getSettings().m_41495_(((Item)WINE_BOTTLE.get()).m_5456_()));
+      });
+      RED_TAIGA_GRAPEJUICE = registerItem("red_taiga_grapejuice", () -> {
+         return new GrapejuiceBottleItem(getSettings().m_41495_(((Item)WINE_BOTTLE.get()).m_5456_()));
+      });
+      WHITE_TAIGA_GRAPEJUICE = registerItem("white_taiga_grapejuice", () -> {
+         return new GrapejuiceBottleItem(getSettings().m_41495_(((Item)WINE_BOTTLE.get()).m_5456_()));
+      });
+      RED_JUNGLE_GRAPEJUICE = registerItem("red_jungle_grapejuice", () -> {
+         return new GrapejuiceBottleItem(getSettings().m_41495_(((Item)WINE_BOTTLE.get()).m_5456_()));
+      });
+      WHITE_JUNGLE_GRAPEJUICE = registerItem("white_jungle_grapejuice", () -> {
+         return new GrapejuiceBottleItem(getSettings().m_41495_(((Item)WINE_BOTTLE.get()).m_5456_()));
+      });
+
+      CHORUS_WINE = registerWithoutItem("chorus_wine", () -> {
+         return new WineBottleBlock(getWineSettings(), 1);
+      });
+
+      CHERRY_WINE = registerWithoutItem("cherry_wine", () -> {
+         return new WineBottleBlock(getWineSettings(), 3);
+      });
+      MAGNETIC_WINE = registerWithoutItem("magnetic_wine", () -> {
+         return new WineBottleBlock(getWineSettings(), 1);
+      });
+      JO_SPECIAL_MIXTURE = registerWithoutItem("jo_special_mixture", () -> {
+         return new WineBottleBlock(getWineSettings(), 1);
+      });
+      CRISTEL_WINE = registerWithoutItem("cristel_wine", () -> {
+         return new WineBottleBlock(getWineSettings(), 1);
+      });
+      GLOWING_WINE = registerWithoutItem("glowing_wine", () -> {
+         return new WineBottleBlock(getWineSettings(), 3);
+      });
+      CREEPERS_CRUSH = registerWithoutItem("creepers_crush", () -> {
+         return new WineBottleBlock(getWineSettings(), 2);
+      });
+      MEAD = registerWithoutItem("mead", () -> {
+         return new WineBottleBlock(getWineSettings(), 2);
+      });
+      RED_WINE = registerWithoutItem("red_wine", () -> {
+         return new WineBottleBlock(getWineSettings(), 3);
+      });
+      JELLIE_WINE = registerWithoutItem("jellie_wine", () -> {
+         return new WineBottleBlock(getWineSettings(), 1);
+      });
+      STAL_WINE = registerWithoutItem("stal_wine", () -> {
+         return new WineBottleBlock(getWineSettings(), 3);
+      });
+      NOIR_WINE = registerWithoutItem("noir_wine", () -> {
+         return new WineBottleBlock(getWineSettings(), 3);
+      });
+      BOLVAR_WINE = registerWithoutItem("bolvar_wine", () -> {
+         return new WineBottleBlock(getWineSettings(), 3);
+      });
+      SOLARIS_WINE = registerWithoutItem("solaris_wine", () -> {
+         return new WineBottleBlock(getWineSettings(), 3);
+      });
+      EISWEIN = registerWithoutItem("eiswein", () -> {
+         return new WineBottleBlock(getWineSettings(), 2);
+      });
+      CHENET_WINE = registerWithoutItem("chenet_wine", () -> {
+         return new WineBottleBlock(getWineSettings(), 2);
+      });
+      KELP_CIDER = registerWithoutItem("kelp_cider", () -> {
+         return new WineBottleBlock(getWineSettings(), 3);
+      });
+      AEGIS_WINE = registerWithoutItem("aegis_wine", () -> {
+         return new WineBottleBlock(getWineSettings(), 2);
+      });
+      CLARK_WINE = registerWithoutItem("clark_wine", () -> {
+         return new WineBottleBlock(getWineSettings(), 3);
+      });
+      MELLOHI_WINE = registerWithoutItem("mellohi_wine", () -> {
+         return new WineBottleBlock(getWineSettings(), 2);
+      });
+      STRAD_WINE = registerWithoutItem("strad_wine", () -> {
+         return new WineBottleBlock(getWineSettings(), 2);
+      });
+      APPLE_CIDER = registerWithoutItem("apple_cider", () -> {
+         return new WineBottleBlock(getWineSettings(), 2);
+      });
+      APPLE_WINE = registerWithoutItem("apple_wine", () -> {
+         return new WineBottleBlock(getWineSettings(), 3);
+      });
+      LILITU_WINE = registerWithoutItem("lilitu_wine", () -> {
+         return new WineBottleBlock(getWineSettings(), 1);
+      });
+      BOTTLE_MOJANG_NOIR = registerWithoutItem("bottle_mojang_noir", () -> {
+         return new WineBottleBlock(getWineSettings(), 3);
+      });
+      VILLAGERS_FRIGHT = registerWithoutItem("villagers_fright", () -> {
+         return new WineBottleBlock(getWineSettings(), 3);
+      });
+      APPLE_MASH = registerItem("apple_mash", () -> {
+         return new Item(getSettings().m_41489_(Foods.f_38810_));
+      });
+      GRAPEVINE_STEM = registerWithItem("grapevine_stem", () -> {
+         return new PaleStemBlock(getGrapevineSettings());
+      });
+      STORAGE_POT = registerWithItem("storage_pot", () -> {
+         return new StoragePotBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_), SoundEvents.f_276624_, SoundEvents.f_276624_);
+      });
+      FLOWER_BOX = registerWithItem("flower_box", () -> {
+         return new FlowerBoxBlock(Properties.m_60926_(Blocks.f_50276_));
+      });
+      FLOWER_POT_BIG = registerWithItem("flower_pot_big", () -> {
+         return new FlowerPotBigBlock(Properties.m_60926_(Blocks.f_50276_));
+      });
+      WINE_BOX = registerWithItem("wine_box", () -> {
+         return new WineBoxBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60955_());
+      });
+      DARK_CHERRY_BIG_TABLE = registerWithItem("dark_cherry_big_table", () -> {
+         return new BigTableBlock(Properties.m_284310_().m_60913_(2.0F, 2.0F).m_278166_(PushReaction.IGNORE));
+      });
+      DARK_CHERRY_SHELF = registerWithItem("dark_cherry_shelf", () -> {
+         return new ShelfBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      BASKET = registerWithoutItem("basket", () -> {
+         return new BasketBlock(Properties.m_284310_().m_284180_(MapColor.f_283825_).m_280658_(NoteBlockInstrument.BIT).m_60978_(1.5F).m_60918_(SoundType.f_154653_).m_278183_().m_60955_());
+      });
+      BASKET_ITEM = registerItem("basket", () -> {
+         return new BasketItem((Block)BASKET.get(), getSettings());
+      });
+      STACKABLE_LOG = registerWithItem("stackable_log", () -> {
+         return new StackableLogBlock(getLogBlockSettings().m_60955_().m_60953_((state) -> {
+            return (Boolean)state.m_61143_(StackableLogBlock.FIRED) ? 13 : 0;
+         }));
+      });
+      STRAW_HAT = registerItem("straw_hat", () -> {
+         return new WinemakerHelmetItem(ArmorMaterialRegistry.WINEMAKER_ARMOR, Type.HELMET, getSettings().m_41497_(Rarity.EPIC), Vinery.identifier("textures/models/armor/winemaker.png"));
+      });
+      WINEMAKER_APRON = registerItem("winemaker_apron", () -> {
+         return new WinemakerChestItem(ArmorMaterialRegistry.WINEMAKER_ARMOR, Type.CHESTPLATE, getSettings().m_41497_(Rarity.EPIC), Vinery.identifier("textures/models/armor/winemaker.png"));
+      });
+      WINEMAKER_LEGGINGS = registerItem("winemaker_leggings", () -> {
+         return new WinemakerLegsItem(ArmorMaterialRegistry.WINEMAKER_ARMOR, Type.LEGGINGS, getSettings().m_41497_(Rarity.RARE), Vinery.identifier("textures/models/armor/winemaker.png"));
+      });
+      WINEMAKER_BOOTS = registerItem("winemaker_boots", () -> {
+         return new WinemakerBootsItem(ArmorMaterialRegistry.WINEMAKER_ARMOR, Type.BOOTS, getSettings().m_41497_(Rarity.RARE), Vinery.identifier("textures/models/armor/winemaker.png"));
+      });
+      MULE_SPAWN_EGG = registerItem("mule_spawn_egg", () -> {
+         return new ArchitecturySpawnEggItem(EntityTypeRegistry.MULE, -1, -1, getSettings());
+      });
+      WANDERING_WINEMAKER_SPAWN_EGG = registerItem("wandering_winemaker_spawn_egg", () -> {
+         return new ArchitecturySpawnEggItem(EntityTypeRegistry.WANDERING_WINEMAKER, -1, -1, getSettings());
+      });
+      POTTED_APPLE_TREE_SAPLING = registerWithoutItem("potted_apple_tree_sapling", () -> {
+         return new FlowerPotBlock((Block)APPLE_TREE_SAPLING.get(), Properties.m_60926_(Blocks.f_50233_));
+      });
+      POTTED_DARK_CHERRY_TREE_SAPLING = registerWithoutItem("potted_dark_cherry_tree_sapling", () -> {
+         return new FlowerPotBlock((Block)DARK_CHERRY_SAPLING.get(), Properties.m_60926_(Blocks.f_50233_));
+      });
+      OAK_WINE_RACK_BIG = registerWithItem("oak_wine_rack_big", () -> {
+         return new NineBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      OAK_WINE_RACK_SMALL = registerWithItem("oak_wine_rack_small", () -> {
+         return new FourBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      OAK_WINE_RACK_MID = registerWithItem("oak_wine_rack_mid", () -> {
+         return new BigBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      BIRCH_WINE_RACK_BIG = registerWithItem("birch_wine_rack_big", () -> {
+         return new NineBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      BIRCH_WINE_RACK_SMALL = registerWithItem("birch_wine_rack_small", () -> {
+         return new FourBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      BIRCH_WINE_RACK_MID = registerWithItem("birch_wine_rack_mid", () -> {
+         return new BigBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      SPRUCE_WINE_RACK_BIG = registerWithItem("spruce_wine_rack_big", () -> {
+         return new NineBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      SPRUCE_WINE_RACK_SMALL = registerWithItem("spruce_wine_rack_small", () -> {
+         return new FourBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      SPRUCE_WINE_RACK_MID = registerWithItem("spruce_wine_rack_mid", () -> {
+         return new BigBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      DARK_OAK_WINE_RACK_BIG = registerWithItem("dark_oak_wine_rack_big", () -> {
+         return new NineBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      DARK_OAK_WINE_RACK_SMALL = registerWithItem("dark_oak_wine_rack_small", () -> {
+         return new FourBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      DARK_OAK_WINE_RACK_MID = registerWithItem("dark_oak_wine_rack_mid", () -> {
+         return new BigBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      JUNGLE_WINE_RACK_BIG = registerWithItem("jungle_wine_rack_big", () -> {
+         return new NineBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      JUNGLE_WINE_RACK_SMALL = registerWithItem("jungle_wine_rack_small", () -> {
+         return new FourBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      JUNGLE_WINE_RACK_MID = registerWithItem("jungle_wine_rack_mid", () -> {
+         return new BigBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      ACACIA_WINE_RACK_BIG = registerWithItem("acacia_wine_rack_big", () -> {
+         return new NineBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      ACACIA_WINE_RACK_SMALL = registerWithItem("acacia_wine_rack_small", () -> {
+         return new FourBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      ACACIA_WINE_RACK_MID = registerWithItem("acacia_wine_rack_mid", () -> {
+         return new BigBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      MANGROVE_WINE_RACK_BIG = registerWithItem("mangrove_wine_rack_big", () -> {
+         return new NineBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      MANGROVE_WINE_RACK_SMALL = registerWithItem("mangrove_wine_rack_small", () -> {
+         return new FourBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      MANGROVE_WINE_RACK_MID = registerWithItem("mangrove_wine_rack_mid", () -> {
+         return new BigBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      BAMBOO_WINE_RACK_BIG = registerWithItem("bamboo_wine_rack_big", () -> {
+         return new NineBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      BAMBOO_WINE_RACK_SMALL = registerWithItem("bamboo_wine_rack_small", () -> {
+         return new FourBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      BAMBOO_WINE_RACK_MID = registerWithItem("bamboo_wine_rack_mid", () -> {
+         return new BigBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      CHERRY_WINE_RACK_BIG = registerWithItem("cherry_wine_rack_big", () -> {
+         return new NineBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      CHERRY_WINE_RACK_SMALL = registerWithItem("cherry_wine_rack_small", () -> {
+         return new FourBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      CHERRY_WINE_RACK_MID = registerWithItem("cherry_wine_rack_mid", () -> {
+         return new BigBottleStorageBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56736_).m_60955_());
+      });
+      VINERY_STANDARD = registerWithItem("vinery_standard", () -> {
+         return new CompletionistBannerBlock(Properties.m_284310_().m_60978_(1.0F).m_280658_(NoteBlockInstrument.BASS).m_60910_().m_60918_(SoundType.f_56736_));
+      });
+      VINERY_WALL_STANDARD = registerWithoutItem("vinery_wall_standard", () -> {
+         return new CompletionistWallBannerBlock(Properties.m_284310_().m_60978_(1.0F).m_280658_(NoteBlockInstrument.BASS).m_60910_().m_60918_(SoundType.f_56736_));
+      });
+      OAK_LATTICE = registerWithItem("oak_lattice", () -> {
+         return new LatticeBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(Blocks.f_50705_.m_49962_(Blocks.f_50705_.m_49966_())).m_60955_());
+      });
+      SPRUCE_LATTICE = registerWithItem("spruce_lattice", () -> {
+         return new LatticeBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(Blocks.f_50741_.m_49962_(Blocks.f_50741_.m_49966_())).m_60955_());
+      });
+      CHERRY_LATTICE = registerWithItem("cherry_lattice", () -> {
+         return new LatticeBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(Blocks.f_271304_.m_49962_(Blocks.f_271304_.m_49966_())).m_60955_());
+      });
+      BIRCH_LATTICE = registerWithItem("birch_lattice", () -> {
+         return new LatticeBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(Blocks.f_50742_.m_49962_(Blocks.f_50742_.m_49966_())).m_60955_());
+      });
+      DARK_OAK_LATTICE = registerWithItem("dark_oak_lattice", () -> {
+         return new LatticeBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(Blocks.f_50745_.m_49962_(Blocks.f_50745_.m_49966_())).m_60955_());
+      });
+      ACACIA_LATTICE = registerWithItem("acacia_lattice", () -> {
+         return new LatticeBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(Blocks.f_50744_.m_49962_(Blocks.f_50744_.m_49966_())).m_60955_());
+      });
+      BAMBOO_LATTICE = registerWithItem("bamboo_lattice", () -> {
+         return new LatticeBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(Blocks.f_244477_.m_49962_(Blocks.f_244477_.m_49966_())).m_60955_());
+      });
+      JUNGLE_LATTICE = registerWithItem("jungle_lattice", () -> {
+         return new LatticeBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(Blocks.f_50743_.m_49962_(Blocks.f_50743_.m_49966_())).m_60955_());
+      });
+      MANGROVE_LATTICE = registerWithItem("mangrove_lattice", () -> {
+         return new LatticeBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(Blocks.f_220865_.m_49962_(Blocks.f_220865_.m_49966_())).m_60955_());
+      });
+      DARK_CHERRY_LATTICE = registerWithItem("dark_cherry_lattice", () -> {
+         return new LatticeBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(Blocks.f_220865_.m_49962_(Blocks.f_220865_.m_49966_())).m_60955_());
+      });
+      WHITE_SAVANNA_GRAPE_BAG = registerWithItem("white_savanna_grape_bag", () -> {
+         return new FacingBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56745_));
+      });
+      RED_SAVANNA_GRAPE_BAG = registerWithItem("red_savanna_grape_bag", () -> {
+         return new FacingBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56745_));
+      });
+      WHITE_TAIGA_GRAPE_BAG = registerWithItem("white_taiga_grape_bag", () -> {
+         return new FacingBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56745_));
+      });
+      RED_TAIGA_GRAPE_BAG = registerWithItem("red_taiga_grape_bag", () -> {
+         return new FacingBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56745_));
+      });
+      WHITE_JUNGLE_GRAPE_BAG = registerWithItem("white_jungle_grape_bag", () -> {
+         return new FacingBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56745_));
+      });
+      RED_JUNGLE_GRAPE_BAG = registerWithItem("red_jungle_grape_bag", () -> {
+         return new FacingBlock(Properties.m_284310_().m_60913_(2.0F, 3.0F).m_60918_(SoundType.f_56745_));
+      });
+      APPLE_CIDER_ITEM = registerWineItem("apple_cider", APPLE_CIDER, () -> {
+         return createWineSettings(() -> {
+            return MobEffects.f_19600_;
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.BIG);
+      APPLE_WINE_ITEM = registerWineItem("apple_wine", APPLE_WINE, () -> {
+         return createWineSettings(() -> {
+            return MobEffects.f_19606_;
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.BIG);
+      MEAD_ITEM = registerWineItem("mead", MEAD, () -> {
+         return createWineSettings(() -> {
+            return MobEffects.f_19598_;
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.BIG);
+      GLOWING_WINE_ITEM = registerWineItem("glowing_wine", GLOWING_WINE, () -> {
+         return createWineSettings(() -> {
+            return MobEffects.f_19619_;
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.BIG);
+      SOLARIS_WINE_ITEM = registerWineItem("solaris_wine", SOLARIS_WINE, () -> {
+         return createWineSettings(() -> {
+            return MobEffects.f_19616_;
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.SMALL);
+      KELP_CIDER_ITEM = registerWineItem("kelp_cider", KELP_CIDER, () -> {
+         return createWineSettings(() -> {
+            return (MobEffect)MobEffectRegistry.WATER_WALKER.get();
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.SMALL);
+      EISWEIN_ITEM = registerWineItem("eiswein", EISWEIN, () -> {
+         return createWineSettings(() -> {
+            return (MobEffect)MobEffectRegistry.FROSTY_ARMOR_EFFECT.get();
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.BIG);
+      AEGIS_WINE_ITEM = registerWineItem("aegis_wine", AEGIS_WINE, () -> {
+         return createWineSettings(() -> {
+            return (MobEffect)MobEffectRegistry.ARMOR_EFFECT.get();
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.BIG);
+      VILLAGERS_FRIGHT_ITEM = registerWineItem("villagers_fright", VILLAGERS_FRIGHT, () -> {
+         return createWineSettings(() -> {
+            return MobEffects.f_19594_;
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.SMALL);
+      CLARK_WINE_ITEM = registerWineItem("clark_wine", CLARK_WINE, () -> {
+         return createWineSettings(() -> {
+            return (MobEffect)MobEffectRegistry.IMPROVED_JUMP_BOOST.get();
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.SMALL);
+      JELLIE_WINE_ITEM = registerWineItem("jellie_wine", JELLIE_WINE, () -> {
+         return createWineSettings(() -> {
+            return (MobEffect)MobEffectRegistry.JELLIE.get();
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.BIG);
+      NOIR_WINE_ITEM = registerWineItem("noir_wine", NOIR_WINE, () -> {
+         return createWineSettings(() -> {
+            return MobEffects.f_19603_;
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.SMALL);
+      RED_WINE_ITEM = registerWineItem("red_wine", RED_WINE, () -> {
+         return createWineSettings(() -> {
+            return MobEffects.f_19591_;
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.SMALL);
+      STRAD_WINE_ITEM = registerWineItem("strad_wine", STRAD_WINE, () -> {
+         return createWineSettings(() -> {
+            return MobEffects.f_19611_;
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.BIG);
+      CHERRY_WINE_ITEM = registerWineItem("cherry_wine", CHERRY_WINE, () -> {
+         return createWineSettings(() -> {
+            return MobEffects.f_19609_;
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.SMALL);
+      CRISTEL_WINE_ITEM = registerWineItem("cristel_wine", CRISTEL_WINE, () -> {
+         return createWineSettings(() -> {
+            return MobEffects.f_19608_;
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.BIG);
+      LILITU_WINE_ITEM = registerWineItem("lilitu_wine", LILITU_WINE, () -> {
+         return createWineSettings(() -> {
+            return (MobEffect)MobEffectRegistry.PARTY_EFFECT.get();
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.BIG);
+      JO_SPECIAL_MIXTURE_ITEM = registerWineItem("jo_special_mixture", JO_SPECIAL_MIXTURE, () -> {
+         return createWineSettings(() -> {
+            return (MobEffect)MobEffectRegistry.CLIMBING_EFFECT.get();
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.BIG);
+      BOLVAR_WINE_ITEM = registerWineItem("bolvar_wine", BOLVAR_WINE, () -> {
+         return createWineSettings(() -> {
+            return (MobEffect)MobEffectRegistry.LAVA_WALKER.get();
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.SMALL);
+      MAGNETIC_WINE_ITEM = registerWineItem("magnetic_wine", MAGNETIC_WINE, () -> {
+         return createWineSettings(() -> {
+            return (MobEffect)MobEffectRegistry.MAGNET.get();
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.BIG);
+      STAL_WINE_ITEM = registerWineItem("stal_wine", STAL_WINE, () -> {
+         return createWineSettings(() -> {
+            return (MobEffect)MobEffectRegistry.HEALTH_EFFECT.get();
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.SMALL);
+      CHENET_WINE_ITEM = registerWineItem("chenet_wine", CHENET_WINE, () -> {
+         return createWineSettings(() -> {
+            return (MobEffect)MobEffectRegistry.CLIMBING_EFFECT.get();
+         }, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.BIG);
+
+      BOTTLE_MOJANG_NOIR_ITEM = registerWineItem("bottle_mojang_noir", BOTTLE_MOJANG_NOIR, () -> {
+         return createWineSettings(() -> { return (MobEffect)MobEffectRegistry.EXPERIENCE_EFFECT.get();}, 1600, 0);
+      }, true, DrinkBlockItem.BottleSize.SMALL);
+
+      
+      CHORUS_WINE_ITEM = registerFixedDurationWineItem("chorus_wine", CHORUS_WINE, 10, () -> {
+         return (MobEffect)MobEffectRegistry.TELEPORT.get();
+      }, 0, DrinkBlockItem.BottleSize.BIG);
+      CREEPERS_CRUSH_ITEM = registerFixedDurationWineItem("creepers_crush", CREEPERS_CRUSH, 100, () -> {
+         return (MobEffect)MobEffectRegistry.CREEPER_EFFECT.get();
+      }, 0, DrinkBlockItem.BottleSize.BIG);
+      MELLOHI_WINE_ITEM = registerFixedDurationWineItem("mellohi_wine", MELLOHI_WINE, 0, () -> {
+         return MobEffects.f_19601_;
+      }, 0, DrinkBlockItem.BottleSize.BIG);
+   }
+}

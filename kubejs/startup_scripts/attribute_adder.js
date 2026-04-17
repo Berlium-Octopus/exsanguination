@@ -72,6 +72,15 @@ BlockEvents.modification(event => {
 })
 
 BlockEvents.modification(event => {
+    event.modify('flimsytorches:unlit_flimsy_torch', block => {
+        block.lightEmission = 0
+    })
+    event.modify('flimsytorches:unlit_flimsy_wall_torch', block => {
+        block.lightEmission = 0
+    })
+})
+
+BlockEvents.modification(event => {
     event.modify('netherexp:soul_torchflower', block => {
         block.lightEmission = 10
     })

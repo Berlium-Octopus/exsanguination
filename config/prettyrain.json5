@@ -54,7 +54,7 @@
 		"useResourcepackResolution": true
 	},
 	"fog": {
-		"density": 20,
+		"density": 30,
 		"gravity": 0.20000000298023224,
 		"size": 0.5
 	},

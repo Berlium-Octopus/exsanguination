@@ -552,7 +552,7 @@
 	"Utility Recipes" = true
 	"Vexes Die With Their Masters" = false
 	"Villagers Follow Emeralds" = true
-	"Zombie Villagers On Normal" = true
+	"Zombie Villagers On Normal" = false
 
 	[tweaks.automatic_recipe_unlock]
 		#A list of recipe names that should NOT be added in by default
@@ -1625,7 +1625,7 @@
 		#Should item attributes be colored relative to your current equipped item?
 		#e.g. if wearing an Iron Helmet, the armor value in a Diamond Helmet will show as green, and vice versa would be red.
 		#If set to false, item attributes will show in white or red if they're negative values.
-		"Show Upgrade Status" = true
+		"Show Upgrade Status" = false
 		"Animate Up Down Arrows" = true
 		"Enchanting Stacks" = ["minecraft:diamond_sword", "minecraft:diamond_pickaxe", "minecraft:diamond_shovel", "minecraft:diamond_axe", "minecraft:diamond_hoe", "minecraft:diamond_helmet", "minecraft:diamond_chestplate", "minecraft:diamond_leggings", "minecraft:diamond_boots", "minecraft:shears", "minecraft:bow", "minecraft:fishing_rod", "minecraft:crossbow", "minecraft:trident", "minecraft:elytra", "minecraft:shield", "quark:pickarang", "supplementaries:slingshot", "supplementaries:bubble_blower", "farmersdelight:diamond_knife", "the_bumblezone:stinger_spear", "the_bumblezone:crystal_cannon", "the_bumblezone:honey_crystal_shield", "the_bumblezone:honey_bee_leggings_2"]
 		#A list of additional stacks to display on each enchantment
@@ -1748,9 +1748,9 @@
 		#Makes villages spawn less often when close to spawn
 		"Village Spawn Nerf" = true
 		#Distance at which villages will spawn as normal. Effect scales linearly from world spawn
-		"Village Spawn Nerf Distance" = 10000
+		"Village Spawn Nerf Distance" = 15000
 		"Non Griefing Entities" = ["minecraft:creeper", "minecraft:enderman"]
-		"Elytra Allowed Dimensions" = ["minecraft:the_end", "minecraft:nether", "deeperdarker:otherside", "lostcities:lostcity"]
+		"Elytra Allowed Dimensions" = ["minecraft:the_end"]
 
 	[experimental.overlay_shader]
 		#Sets the name of the shader to load on a regular basis. This can load any shader the Camera module can (and requires the Camera module enabled to apply said logic).

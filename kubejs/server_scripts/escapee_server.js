@@ -61,7 +61,7 @@ EntityEvents.spawned(event => {
 })
 
 EntityJSEvents.addGoalSelectors("lostcities:escapee", e => {
-  e.meleeAttack(1, 1.1, false)
+  e.meleeAttack(0, 1.1, false)
   e.randomStroll(3, 1, 30, true)
   e.leapAtTarget(4, 0.2)
   e.randomLookAround(5)

@@ -1,4 +1,4 @@
-Java Adapters (From KJS Discord)
+Java Adapters
 new JavaAdapter(interface, interface2, /* ... */, interfaceN, {
   override1() { /* ... */ },
   override2() { /* ... */ },

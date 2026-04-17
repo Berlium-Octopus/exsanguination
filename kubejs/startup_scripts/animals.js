@@ -1,7 +1,7 @@
 // priority: 100
+// Can't find method net.minecraft.world.item.ItemStack.m_41622_(number,boolean,null). (startup_scripts:animals.js#257)
 // Make Silver Armor + Molybdochalkos Armor From Leather
 // Replace Cast Iron With Black Steel? By Black steel duplication with iron or by ferroslime stuff
-// Wraith Cetuses As A Real Item
 Platform.mods.kubejs.name = 'Exsanguination Originals'
 // Platform.setModName("spartandeeperdarker", "Spartan Deeper and Darker")
 
@@ -11,18 +11,8 @@ StartupEvents.modifyCreativeTab("kubejs:tab", event => {
   // THIS IS NOT MINE IT'S PART OF LUMINOUS NETHER AND THE CONSUME FUNTION IS NOT FUNCTIONAL SO I MADE THIS TO CHEESE THE BUG
 })
 
-/*
-const $GlovesItem = Java.loadClass('com.aetherteam.aether.item.accessories.gloves.GlovesItem')
-//const $ItemProperties = Java.loadClass('net.minecraft.world.item.Item$Properties') // Already defined in another file
-
-StartupEvents.registry('item', item => {
-  item.createCustom(
-    'kubejs:test_gloves',() => new $GlovesItem['(net.minecraft.world.item.ArmorMaterial,double,net.minecraft.resources.ResourceLocation,java.util.function.Supplier,net.minecraft.world.item.Item$Properties)']('iron',0.5,'kubejs:test_gloves',() => 'minecraft:item.armor.equip_chain',new $ItemProperties())
-  )
-})
-*/
-
 // Xeru and IIIAP (FOR SUS GRIME)
+// THIS IS GETTING REDICIOUS
 const $SwordBaseItem = Java.loadClass("com.oblivioussp.spartanweaponry.item.SwordBaseItem")
 const $DoorBlock = Java.loadClass('net.minecraft.world.level.block.DoorBlock')
 const $TrapDoorBlock = Java.loadClass('net.minecraft.world.level.block.TrapDoorBlock')
@@ -35,16 +25,67 @@ const $SoundEvents = Java.loadClass('net.minecraft.sounds.SoundEvents')
 const $SOULSAND = Java.loadClass('net.jadenxgamer.netherexp.registry.block.custom.JNEBrushableBlock')
 const $DDBlocks = Java.loadClass('com.kyanite.deeperdarker.content.DDBlocks')
 const $SculkSound = Java.loadClass("com.github.sculkhorde.core.ModSounds")
+const $BurntOutTorchBlock = Java.loadClass("com.fnkee.flimsytorches.blocks.BurntOutTorchBlock")
+const $BurntOutTorchItem = Java.loadClass("com.fnkee.flimsytorches.items.BurntOutTorchItem")
+const $BurntOutWallTorchBlock = Java.loadClass("com.fnkee.flimsytorches.blocks.BurntOutWallTorchBlock")
+const $Direction = Java.loadClass("net.minecraft.core.Direction")
+
 
 let door
 let trapDoor
 let sands
+let unlit_torch
+let unlit_wall_torch
 
 StartupEvents.registry('block', e => {
   trapDoor = e.createCustom('rootoffear:faded_oak_trapdoor', () => new $TrapDoorBlock($Properties.copy($Blocks.OAK_TRAPDOOR), $BlockSetType.OAK))
   door = e.createCustom('rootoffear:faded_oak_door', () => new $DoorBlock($Properties.copy($Blocks.OAK_DOOR), $BlockSetType.OAK))
-  // Make Sus Grime Textures
   sands = e.createCustom('deeperdarker:suspicious_sculk_grime', () => new $SOULSAND($DDBlocks.SCULK_GRIME.get(), $Properties.copy($DDBlocks.SCULK_GRIME.get()), $SoundEvents.BRUSH_SAND, $SoundEvents.BRUSH_SAND_COMPLETED))
+  unlit_torch = e.createCustom('flimsytorches:unlit_flimsy_torch', () => new $BurntOutTorchBlock($Properties.copy($Blocks.TORCH).noOcclusion(), null))
+  unlit_wall_torch = e.createCustom('flimsytorches:unlit_flimsy_wall_torch', () => new $BurntOutWallTorchBlock($Properties.copy($Blocks.WALL_TORCH).noOcclusion(), null))
+})
+
+StartupEvents.registry('item', e => {
+  e.createCustom('rootoffear:faded_oak_trapdoor', () => new $BlockItem(trapDoor.get(), new $IProperties()))
+  e.createCustom('rootoffear:faded_oak_door', () => new $BlockItem(door.get(), new $IProperties()))
+  e.createCustom('deeperdarker:suspicious_sculk_grime', () => new $BlockItem(sands.get(), new $IProperties()))
+  e.createCustom('flimsytorches:unlit_flimsy_torch', () => new $BurntOutTorchItem(unlit_torch.get(), unlit_wall_torch.get(), new $IProperties(), $Direction.UP))
+})
+
+// Based Of dayofni's script, actually most of it is theirs say thank youu
+StartupEvents.registry('item', event => {
+  event.create("minecraft:fire_starter")
+    .displayName("Flint Fire Starter")
+    .maxDamage(8)
+    .useAnimation("bow").useDuration(itemstack => 64)
+    .use((level, player, hand) => true)
+    .finishUsing((itemstack, level, entity) => {
+      let player = entity.isPlayer()
+      let hit = entity.rayTrace(3),
+        block = hit.block
+      if (block == null || block == undefined) return 
+      if (block && (block.id == "minecraft:campfire" || block.id == "minecraft:soul_campfire" || block.id == "netherexp:ancient_campfire")) {
+        block.set(block.id, { infinite: false, facing: block.properties.facing, runs_out: true, lit: true })
+      }
+      else if (block && block.id == "flimsytorches:unlit_flimsy_torch") {
+        block.set("flimsytorches:flimsy_torch", {facing: block.properties.facing})
+      }
+      else if (block && block.id != 'minecraft:water' && block.up.id == 'minecraft:air') {
+        block.up.set('minecraft:fire')
+      }
+      entity.playSound("minecraft:item.firecharge.use", 1, 2);
+      itemstack.hurtAndBreak(1, player, null)
+      return itemstack
+    })
+})
+
+// Thanks Reverter
+ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingEntityUseItemEvent$Finish', event => {
+  const { entity, item } = event
+if (item.id == "minecraft:fire_starter") {
+  entity.addItemCooldown(item, 400)
+
+}
 })
 
 BlockEvents.modification(event => {
@@ -54,15 +95,11 @@ BlockEvents.modification(event => {
   })
 })
 
-StartupEvents.registry('item', e => {
-  e.createCustom('rootoffear:faded_oak_trapdoor', () => new $BlockItem(trapDoor.get(), new $IProperties()))
-  e.createCustom('rootoffear:faded_oak_door', () => new $BlockItem(door.get(), new $IProperties()))
-  e.createCustom('deeperdarker:suspicious_sculk_grime', () => new $BlockItem(sands.get(), new $IProperties()))
-})
-
 // Add Electrum, Warden, Resonarium, Netherite, Silver, Molybdochalkos Horse Armor
 // From Reveter
 const $HorseArmorItem = Java.loadClass('net.minecraft.world.item.HorseArmorItem')
+
+
 
 StartupEvents.registry('item', event => {
   event.createCustom('minecraft:netherite_horse_armor', () => new $HorseArmorItem['(int,net.minecraft.resources.ResourceLocation,net.minecraft.world.item.Item$Properties)'](11, 'kubejs:textures/entity/horse/armor/horse_armor.png', (new $IProperties()).stacksTo(1)))
@@ -79,10 +116,9 @@ StartupEvents.registry('item', e => {
   e.create('domesticationinnovation:amoy_collar').texture('kubejs:item/lightnodago_tag').displayName("Amoy's Collar").rarity('alexscaves:nuclear')
   e.create('minecraft:nether_star_shard').texture('kubejs:item/nether_star_shard').displayName("Nether Star Shard").rarity('UNCOMMON').fireResistant()
 })
-// public static final RegistryObject<SwordBaseItem> STUDDED_CESTUS = REGISTRY.register("studded_cestus", () -> new SwordBaseItem(new Item.Properties(), WeaponMaterial.IRON, WeaponArchetype.CESTUS, Defaults.DamageBaseCestus, Defaults.DamageMultiplierCestus, Defaults.SpeedCestus));
 
 StartupEvents.registry('item', e => {
-  e.create('minecraft:flint_shard').texture('kubejs:item/flint_shard').displayName("Flint Shards")
+  e.create('minecraft:flint_shard').texture('kubejs:item/flint_shard').displayName("Flint Shard")
   e.create('rootoffear:agitated_primitive_heart').texture('kubejs:item/heart_crystal').displayName("Agitated Primitive Heart").rarity('RARE')
   e.create('alexscaves:brainiac_greymatter').texture('kubejs:item/heart_crystal').displayName("Brainiac Greymatter")
   e.createCustom('spartanweaponry:wraith_cestus', () => new $SwordBaseItem(new $IProperties().stacksTo(1), $MATERIAL.DIAMOND, $WeaponArchetype.CESTUS, $Defaults.DamageBaseCestus, $Defaults.DamageMultiplierCestus, $Defaults.SpeedCestus))
@@ -213,10 +249,11 @@ StartupEvents.registry("item", event => {
     .use((level, player, hand) => player.health < player.maxHealth)
     .glow(true)
     .finishUsing((itemstack, level, entity) => {
+      let player = entity.isPlayer()
       let effects = entity.potionEffects
       effects.add("minecraft:regeneration", 300)
       effects.add("minecraft:absorption", 1000)
-      itemstack.setDamageValue(itemstack.damageValue + 1)
+      itemstack.hurtAndBreak(1, player, null)
       entity.playSound("minecraft:item.armor.equip_leather", 1, 2);
       return itemstack
     })
@@ -260,7 +297,6 @@ StartupEvents.registry('block', event => {
     .slipperiness(0.8)
     .textureAll('kubejs:block/polymer_block')
 })
-
 
 StartupEvents.registry('block', event => {
   event.create('minecraft:diamond_ingot_block')
@@ -900,6 +936,7 @@ StartupEvents.registry('item', e => {
 StartupEvents.registry('item', e => {
   e.create('minecraft:builder_fragments').texture('kubejs:item/builder_fragments')
     .rarity('COMMON')
+    .displayName("Ruby")
 })
 StartupEvents.registry('item', e => {
   e.create('minecraft:terracotta_trim_template').texture('kubejs:item/terracota_trim').displayName('Smithing Template')
@@ -969,35 +1006,6 @@ StartupEvents.registry('item', e => {
 
 StartupEvents.registry('item', e => {
   e.create('minecraft:diamond_layered_padding').texture('kubejs:item/diamond_layered_padding').displayName('Diamond Layered Padding')
-
-})
-
-StartupEvents.registry('item', event => {
-  event.create('vinery:stinky_wine').texture('kubejs:item/stinky_wine').food(food => {
-    food
-      .hunger(0.5)
-      .saturation(0.5)
-      .effect('alexsmobs:mosquito_repellent', 9000, 0, 1.0)
-      .effect('alexsmobs:exsanguination', 195, 0, 1.0)
-      .effect('minecraft:nausea', 205, 0, 1.0)
-      .effect('luminous_nether:hemorrhage', 195, 0, 1.0)
-      .alwaysEdible()
-      .eaten(ctx => {
-        ctx.player.give('vinery:wine_bottle')
-        ctx.player.give('quark:clear_shard')
-        ctx.player.give('quark:clear_shard')
-        ctx.player.give('quark:clear_shard')
-        ctx.player.give('quark:clear_shard')
-        ctx.player.give('quark:clear_shard')
-        ctx.player.give('quark:clear_shard')
-        ctx.player.give('quark:clear_shard')
-        ctx.player.give('quark:clear_shard')
-        ctx.player.give('quark:clear_shard')
-        ctx.player.give('quark:clear_shard')
-        ctx.player.give('quark:clear_shard')
-        ctx.player.give('quark:clear_shard')
-      })
-  }).useAnimation("drink");
 })
 
 StartupEvents.registry('item', event => {
@@ -1118,3 +1126,20 @@ StartupEvents.registry('fluid', event => {
     .translucent()
     .noBlock()
 })
+/*
+let STINKY_WINE;
+const $DrinkBlockItem = Java.loadClass("net.satisfy.vinery.core.item.DrinkBlockItem")
+const $WineBottleBlock = Java.loadClass("net.satisfy.vinery.core.block.WineBottleBlock")
+const $WineSettings = Java.loadClass("net.satisfy.vinery.core.util.WineSettings")
+const $MobEffect = Java.loadClass("net.minecraft.world.effect.MobEffect")
+
+StartupEvents.registry('block', e => {
+  STINKY_WINE = e.createCustom("vinery:stinky_wine", () => new $WineBottleBlock($Properties.copy($Blocks.GLASS), 3));
+});
+
+StartupEvents.registry('item', e => {
+  const AMEffects = Java.loadClass("com.github.alexthe666.alexsmobs.effect.AMEffectRegistry")
+  let STINKY_WINE_SETTINGS = new $WineSettings(() => {return AMEffects.MOSQUITO_REPELLENT.get()}, 1600, 0)
+  e.createCustom('vinery:stinky_wine', () => new $DrinkBlockItem(STINKY_WINE.get(), STINKY_WINE_SETTINGS.getProperties(), STINKY_WINE_SETTINGS.getBaseDuration(), true, $DrinkBlockItem.BottleSize.SMALL))
+})
+  */

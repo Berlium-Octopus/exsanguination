@@ -257,3 +257,127 @@ ServerEvents.recipes(event => {
 )
   }
 )
+
+
+ServerEvents.recipes(event => {
+  event.shaped(
+    Item.of('minecraft:leather_chestplate', 1), // arg 1: output
+    [
+      'E E',
+      'CCC', // arg 2: the shape (array of strings)
+      'CCC'
+    ],
+    {
+      C: 'minecraft:leather',
+      E: 'minecraft:leather_padding'
+    }
+  )
+}
+)
+
+ServerEvents.recipes(event => {
+  event.shaped(
+    Item.of('minecraft:leather_boots', 1), // arg 1: output
+    [
+      'E E', // arg 2: the shape (array of strings)
+      'C C'
+    ],
+    {
+      C: 'minecraft:leather',
+      E: 'minecraft:leather_padding'
+    }
+  )
+}
+)
+
+ServerEvents.recipes(event => {
+  event.shaped(
+    Item.of('minecraft:leather_leggings', 1), // arg 1: output
+    [
+      'ECE',
+      'C C', // arg 2: the shape (array of strings)
+      'C C'
+    ],
+    {
+      C: 'minecraft:leather',
+      E: 'minecraft:leather_padding'
+    }
+  )
+}
+)
+
+ServerEvents.recipes(event => {
+  event.shaped(
+    Item.of('minecraft:leather_helmet', 1), // arg 1: output
+    [
+      'CCC',
+      'C C', // arg 2: the shape (array of strings)
+    ],
+    {
+      C: 'minecraft:leather'
+    }
+  )
+}
+)
+
+
+
+
+ServerEvents.recipes(event => {
+  event.shaped(
+    Item.of('minecraft:chainmail_chestplate', 1), // arg 1: output
+    [
+      'C C',
+      'CCC', // arg 2: the shape (array of strings)
+      'CCC'
+    ],
+    {
+      C: "minecraft:chain"
+    }
+  )
+}
+)
+
+ServerEvents.recipes(event => {
+  event.shaped(
+    Item.of('minecraft:chainmail_boots', 1), // arg 1: output
+    [
+      'C C', // arg 2: the shape (array of strings)
+      'C C'
+    ],
+    {
+      C: "minecraft:chain"
+    }
+  )
+}
+)
+
+ServerEvents.recipes(event => {
+  event.shaped(
+    Item.of('minecraft:chainmail_leggings', 1), // arg 1: output
+    [
+      'CCC',
+      'C C', // arg 2: the shape (array of strings)
+      'C C'
+    ],
+    {
+      C: "minecraft:chain"
+    }
+  )
+}
+)
+
+ServerEvents.recipes(event => {
+  event.shaped(
+    Item.of('minecraft:chainmail_helmet', 1), // arg 1: output
+    [
+      'CCC',
+      'C C', // arg 2: the shape (array of strings)
+    ],
+    {
+      C: "minecraft:chain"
+    }
+  )
+}
+)
+

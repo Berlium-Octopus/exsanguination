@@ -117,6 +117,7 @@ ServerEvents.recipes(event => {
   event.remove({ output: 'toughasnails:thermometer' })
   event.remove({ id: 'spelunkery:leather' })
   event.remove({ output: 'minecraft:shield' })
+  event.remove({ output: 'rootoffear:faded_oak_wood' })
   event.remove({ output: 'alexscaves:raygun' })
   event.remove({ output: 'alexscaves:raygun' })
   event.remove({ output: 'minecraft:crossbow' })
@@ -535,7 +536,7 @@ ServerEvents.recipes(event => {
   event.recipes.create.sequenced_assembly([
     Item.of('quark:pickarang').withChance(100.0),
   ], 'spartanweaponry:diamond_boomerang', [ // 'create:golden_sheet' is the input
-    event.recipes.createDeploying('spartanweaponry:diamond_boomerang', ['quark:diamond_heart']),
+    event.recipes.createDeploying('spartanweaponry:diamond_boomerang', ['spartanweaponry:diamond_boomerang','quark:diamond_heart']),
     event.recipes.createPressing('spartanweaponry:diamond_boomerang', ['spartanweaponry:diamond_boomerang']),
   ]).transitionalItem('spartanweaponry:diamond_boomerang').loops(1) // set the transitional item and the number of loops
 });
@@ -739,7 +740,7 @@ ServerEvents.recipes(event => {
     {
       A: 'minecraft:stick',
       B: '#minecraft:planks',
-      C: '#c:coal'
+      C: "#minecraft:coals"
     }
   )
 }
@@ -1091,6 +1092,14 @@ ServerEvents.recipes(event => {
     'supplementaries:ash'         // Arg 3: the item to replace it with
   )
 })
+ServerEvents.recipes(event => {
+  event.replaceOutput(
+    { output: 'flimsytorches:flimsy_torch' }, // Arg 1: the filter
+    'flimsytorches:flimsy_torch',            // Arg 2: the item to replace
+    'flimsytorches:unlit_flimsy_torch'         // Arg 3: the item to replace it with
+  )
+})
+
 
 ServerEvents.recipes(event => {
   event.replaceInput(
@@ -1799,6 +1808,31 @@ ServerEvents.recipes(event => {
 
 ServerEvents.recipes(event => {
   event.shapeless(
+    Item.of('flimsytorches:flimsy_torch'), // arg 1: output
+    [
+      'flimsytorches:unlit_flimsy_torch',
+      'minecraft:flint_and_steel'
+    ]
+  ).damageIngredient("minecraft:flint_and_steel", 1)
+}
+)
+
+ServerEvents.recipes(event => {
+  event.shapeless(
+    Item.of("minecraft:fire_starter"), // arg 1: output
+    [
+      "spartanweaponry:simple_handle",
+      "minecraft:flint_shard",
+      "minecraft:string"
+    ]
+  )
+}
+)
+
+
+
+ServerEvents.recipes(event => {
+  event.shapeless(
     Item.of("minecraft:stick", 1), // arg 1: output
     [
       "#minecraft:saplings"
@@ -2005,16 +2039,15 @@ ServerEvents.recipes(event => {
 
 ServerEvents.recipes(event => {
   event.shaped(
-    Item.of('scalinghealth:heart_crystal_shard', 4), // arg 1: output
+    Item.of('scalinghealth:heart_crystal_shard', 8), // arg 1: output
     [
-      ' A ',
-      'CBC', // arg 2: the shape (array of strings)
-      ' C '
+      ' B ',
+      'BAB', // arg 2: the shape (array of strings)
+      ' B '
     ],
     {
       A: 'minecraft:enchanted_golden_apple',
       B: 'scalinghealth:heart_dust',  //arg 3: the mapping object
-      C: 'minecraft:apple',
     }
   )
 
@@ -2024,13 +2057,13 @@ ServerEvents.recipes(event => {
   event.shaped(
     Item.of('scalinghealth:heart_crystal', 1), // arg 1: output
     [
-      ' A ',
+      'AAA',
       'ABA', // arg 2: the shape (array of strings)
-      ' A '
+      'AAA'
     ],
     {
-      A: 'scalinghealth:bandages',
-      B: 'minecraft:rotten_flesh',  //arg 3: the mapping object
+      A: "scalinghealth:bandages",
+      B: "farmersdelight:organic_compost",  //arg 3: the mapping object
     }
   )
 }
@@ -2040,9 +2073,9 @@ ServerEvents.recipes(event => {
   event.shaped(
     Item.of('scalinghealth:heart_crystal', 2), // arg 1: output
     [
-      ' A ',
+      'AAA',
       'ABA', // arg 2: the shape (array of strings)
-      ' A '
+      'AAA'
     ],
     {
       A: 'scalinghealth:bandages',
@@ -2054,11 +2087,11 @@ ServerEvents.recipes(event => {
 
 ServerEvents.recipes(event => {
   event.shaped(
-    Item.of('scalinghealth:heart_crystal', 4), // arg 1: output
+    Item.of('scalinghealth:heart_crystal', 1), // arg 1: output
     [
-      ' A ',
+      'AAA',
       'ABA', // arg 2: the shape (array of strings)
-      ' A '
+      'AAA'
     ],
     {
       A: 'scalinghealth:bandages',
@@ -2798,6 +2831,8 @@ ServerEvents.recipes(event => {
 });
 
 ServerEvents.recipes(event => {
+  event.recipes.create.mixing(["create:asurine"], [Fluid.of('minecraft:water', 1000), "2x minecraft:prismarine_crystals", "minecraft:cobblestone"]).heated()
+  event.recipes.create.mixing(["create:veridium"], [Fluid.of('minecraft:lava', 1000), "2x minecraft:clay_ball", "minecraft:cobblestone"])
   event.recipes.create.mixing(['16x jeg:explosive_charge'], ['16x supplementaries:bomb', 'jeg:circuit_board', '8x minecraft:string'])
   event.recipes.create.mixing(['4x jeg:molotov_cocktail'], ['createbigcannons:packed_guncotton', '4x vinery:wine_bottle', 'immersive_weathering:tallow'])
   event.recipes.create.pressing('9x minecraft:nether_star_shard', 'minecraft:nether_star')

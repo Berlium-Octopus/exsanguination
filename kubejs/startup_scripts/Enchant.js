@@ -468,13 +468,6 @@ if (doubledamage.includes(source.getType())) {
     }
 }
 
-if (cramming.includes(source.getType())) {
-    let cram = (0)
-    if (uncrammable.toString().includes(entity.type)) {
-        event.setAmount((cram))
-    }
-}
-
 
 // I think i need to rework These enchants
 
@@ -627,17 +620,22 @@ global.rangedweapon = event => {
 
 }
 
-ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", (event) => {
+ForgeEvents.onEvent($LivingAttackEvent, (event) => {
     let { entity, source } = event
     if (magic.includes(source.getType())) {
         if (entity.level.isClientSide()) return
         if (!entity.isLiving()) return
-        // if (source.actual === null) return
-        let cram = (0)
         if (listSculk2.toString().includes(entity.type)) {
-            event.setAmount((cram))
+            event.cancel()
         }
     }
+
+    if (cramming.includes(source.getType())) {
+        if (uncrammable.toString().includes(entity.type)) {
+            event.cancel()
+        }
+    }
+
 })
 
 

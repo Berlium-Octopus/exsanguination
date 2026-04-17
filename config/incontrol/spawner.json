@@ -31,7 +31,7 @@
     },
         {
         "mob": ["minecraft:vex"],
-        "persecond": 0.4,
+        "persecond": 0.1,
         "attempts": 1,
         "amount": {
             "minimum": 1,
@@ -61,7 +61,7 @@
     },
            {
         "mob": "alexsmobs:mimicube",
-        "persecond": 0.6,
+        "persecond": 0.4,
         "attempts": 1,
         "amount": {
             "minimum": 1,
@@ -76,11 +76,11 @@
     },
         {
             "mob": ["lostcities:escapee", "minecraft:endermite"],
-            "persecond": 0.6,
-            "attempts": 5,
+            "persecond": 0.3,
+            "attempts": 1,
             "amount": {
                 "minimum": 1,
-                "maximum": 8
+                "maximum": 1
             },
             "conditions": {
                 "dimension": "lostcities:lostcity",
